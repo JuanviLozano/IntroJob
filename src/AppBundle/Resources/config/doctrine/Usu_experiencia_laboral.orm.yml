@@ -1,0 +1,27 @@
+AppBundle\Entity\Usu_experiencia_laboral:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\Usu_experiencia_laboralRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        oficio:
+            type: string
+            length: 255
+        nombreEmpresa:
+            type: string
+            length: 255
+            column: nombre_empresa
+        fechaInicio:
+            type: date
+            column: fecha_inicio
+        fechaFin:
+            type: date
+            column: fecha_fin
+        descripcion:
+            type: text
+    lifecycleCallbacks: {  }

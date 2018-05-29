@@ -1,0 +1,18 @@
+AppBundle\Entity\Usu_habilidades:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\Usu_habilidadesRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        nombreHabilidad:
+            type: string
+            length: 255
+            column: nombre_habilidad
+        porcentaje:
+            type: integer
+    lifecycleCallbacks: {  }

@@ -1,0 +1,30 @@
+AppBundle\Entity\Usu_educacion:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\Usu_educacionRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        tipoEducacion:
+            type: string
+            length: 255
+            column: tipo_educacion
+        fechaInicion:
+            type: date
+            column: fecha_inicion
+        fechaFin:
+            type: date
+            column: fecha_fin
+        centro:
+            type: string
+            length: 255
+        rama:
+            type: string
+            length: 255
+        descripcion:
+            type: text
+    lifecycleCallbacks: {  }
