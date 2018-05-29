@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Jobhunt | Tu buscador de trabajo</title>
+    <title>IntroJob | Tu buscador de trabajo</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="keywords" content="">
@@ -23,7 +23,7 @@
 
 <div class="page-loading">
     <img src="images/loader.gif" alt="" />
-    <span>Skip Loader</span>
+    <span>Cargando</span>
 </div>
 
 <div class="theme-layout" id="scrollup">
@@ -89,7 +89,13 @@
                 <!-- Pantalla PC -->
                 {% if is_granted('ROLE_USER') %}
                 <div class="my-profiles-sec">
-                    <span><img src="http://placehold.it/50x50" alt="" /> {{ app.user.nombre }} <i class="la la-bars"></i></span>
+                    <span>
+                        {% if(app.user.imagen == null) %}
+                            <img src="/img_user/usuario.png" alt="" class="img-profile-60" />
+                        {% else %}
+                            <img src="/img_user/{{ app.user.imagen }}" alt="" class="img-profile-60" />
+                        {% endif %}
+                        {{ app.user.nombre }} <i class="la la-bars"></i></span>
                 </div>
                 <nav>
                     <ul>
@@ -218,7 +224,13 @@
 <div class="profile-sidebar">
     <span class="close-profile"><i class="la la-close"></i></span>
     <div class="can-detail-s">
-        <div class="cst"><img src="http://placehold.it/145x145" alt="" /></div>
+        <div class="cst">
+            {% if(app.user.imagen == null) %}
+                <img src="/img_user/usuario.png" alt="" class="img-profile-145" />
+            {% else %}
+                <img src="/img_user/{{ app.user.imagen }}" alt="" class="img-profile-145" />
+            {% endif %}
+        </div>
         <h3>{{ app.user.nombre }}<br>{{ app.user.apellidos }}</h3>
         <span><i>Programador Frontend and Backend</i> at Atract Solutions</span>
         <p>{{ app.user.email }}</p>
@@ -227,12 +239,13 @@
     </div>
     <div class="tree_widget-sec">
         <ul>
+            <li><a href="{{ path('perfil') }}" title=""><i class="la la-file-text"></i>Mi perfil</a></li>
             <li class="inner-child active">
-                <a href="#" title=""><i class="la la-file-text"></i>My Profile</a>
-                <ul style="display: block;">
-                    <li><a href="#" title="">My Profile</a></li>
-                    <li><a href="#" title="">Social Network</a></li>
-                    <li><a href="#" title="">Contact Information</a></li>
+                <a href="{{ path('perfil') }}" title=""><i class="la la-file-text"></i>Mis datos</a>
+                <ul>
+                    <li><a href="{{ path('perfil') }}" title="Mi perfil">Mi perfil</a></li>
+                    <li><a href="#" title="">Mis redes sociales</a></li>
+                    <li><a href="#" title="">Contacto</a></li>
                 </ul>
             </li>
             <li class="inner-child">

@@ -1,7 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7d9064e1-529c-4da0-8c35-33e485ffdc4a" name="Default" comment="" />
+    <list default="true" id="7d9064e1-529c-4da0-8c35-33e485ffdc4a" name="Default" comment="Creación de las entidades para la información personal del usuario (posibles modificaciones)">
+      <change afterPath="$PROJECT_DIR$/app/Resources/views/datos-personales/perfil.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/AppBundle/Controller/PerfilController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/views/plantillas/plantilla.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/plantillas/plantilla.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/config/routing.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/routing.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/SecurityController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Resources/config/routing.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Resources/config/routing.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/img_user/1527584676.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/img_user/1527584769.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/img_user/1527586289.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/img_user/1527586465.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/img_user/1527589462.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/img_user/1527589556.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/img_user/1527589578.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/img_user/1527589635.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/img_user/1527589767.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/img_user/1527589782.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/img_user/1527589810.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/img_user/1527589824.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/img_user/1527589964.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/img_user/1527589994.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/img_user/1527590011.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/img_user/1527590022.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/img_user/1527590028.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/img_user/1527590034.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/img_user/1527590044.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/img_user/1527590065.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/img_user/1527590074.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/img_user/1527590080.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/img_user/1527590088.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/img_user/1527590105.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/img_user/1527590125.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/img_user/1527590139.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/img_user/1527590263.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/img_user/1527590312.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/img_user/1527590357.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/img_user/1527590467.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/img_user/1527590503.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/img_user/1527590730.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/img_user/1527590750.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/img_user/1527591059.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/img_user/1527591074.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/img_user/1527591121.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/img_user/1527591909.jpeg" beforeDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,14 +60,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="UsuarioType.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Form/UsuarioType.php">
+      <file leaf-file-name="plantilla.html.twig" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Resources/views/plantillas/plantilla.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="65" column="18" selection-start-line="65" selection-start-column="18" selection-end-line="65" selection-end-column="18" />
-              <folding>
-                <element signature="e#34#74#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="434">
+              <caret line="230" column="88" selection-start-line="230" selection-start-column="88" selection-end-line="230" selection-end-column="88" />
             </state>
           </provider>
         </entry>
@@ -29,8 +72,8 @@
       <file leaf-file-name="SecurityController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/SecurityController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="151">
-              <caret line="17" column="42" selection-start-line="17" selection-start-column="42" selection-end-line="17" selection-end-column="42" />
+            <state relative-caret-position="536">
+              <caret line="42" column="41" selection-start-line="42" selection-start-column="41" selection-end-line="42" selection-end-column="41" />
               <folding>
                 <element signature="e#40#97#0#PHP" expanded="true" />
               </folding>
@@ -38,16 +81,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="plantilla.html.twig" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Resources/views/plantillas/plantilla.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="93" column="32" lean-forward="true" selection-start-line="93" selection-start-column="32" selection-end-line="93" selection-end-column="32" />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -58,16 +99,33 @@
       <find>date</find>
       <find>app.</find>
       <find>index</find>
+      <find>my</find>
+      <find>seo</find>
+      <find>portol</find>
+      <find>Dow</find>
+      <find>app.user</find>
+      <find>profile_img</find>
+      <find>http</find>
+      <find>http://placehold.it/145x145</find>
+      <find>img-</find>
     </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/app/Resources/views/plantillas/login.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/Usuario.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Resources/config/doctrine/Usuario.orm.yml" />
         <option value="$PROJECT_DIR$/app/Resources/views/security/registro.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Form/UsuarioType.php" />
+        <option value="$PROJECT_DIR$/app/Resources/views/datos-personales/perfil.html.twig.html" />
+        <option value="$PROJECT_DIR$/app/config/routing.yml" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Controller/PerfilController.php" />
+        <option value="$PROJECT_DIR$/app/Resources/views/datos-personales/perfil.html.twig" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Resources/config/doctrine/Usuario.orm.yml" />
+        <option value="$PROJECT_DIR$/web/css/style.css" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/SecurityController.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/plantillas/plantilla.html.twig" />
       </list>
@@ -174,6 +232,14 @@
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="Resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="datos-personales" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="introjob" type="b2602c69:ProjectViewProjectNode" />
+              <item name="introjob" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
               <item name="plantillas" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -248,6 +314,17 @@
               <item name="config" type="462c0819:PsiDirectoryNode" />
               <item name="doctrine" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="introjob" type="b2602c69:ProjectViewProjectNode" />
+              <item name="introjob" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="introjob" type="b2602c69:ProjectViewProjectNode" />
+              <item name="introjob" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -255,6 +332,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -284,14 +362,25 @@
       <updated>1527526298497</updated>
       <workItem from="1527526300851" duration="8106000" />
       <workItem from="1527539333088" duration="5681000" />
+      <workItem from="1527617429123" duration="6300000" />
+      <workItem from="1527628144722" duration="2115000" />
     </task>
+    <task id="LOCAL-00001" summary="Creación de las entidades para la información personal del usuario (posibles modificaciones)">
+      <created>1527622236739</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1527622236739</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13787000" />
+    <option name="totallyTimeSpent" value="22202000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -299,7 +388,7 @@
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="7" visible="true" weight="0.0" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" />
@@ -317,10 +406,58 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
+  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Creación de las entidades para la información personal del usuario (posibles modificaciones)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Creación de las entidades para la información personal del usuario (posibles modificaciones)" />
+  </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/plantillas/login.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="952">
+          <caret line="56" column="24" lean-forward="true" selection-start-line="56" selection-start-column="24" selection-end-line="56" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Form/UsuarioType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="952">
+          <caret line="65" column="18" selection-start-line="65" selection-start-column="18" selection-end-line="65" selection-end-column="18" />
+          <folding>
+            <element signature="e#34#74#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/SecurityController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="17" column="42" selection-start-line="17" selection-start-column="42" selection-end-line="17" selection-end-column="42" />
+          <folding>
+            <element signature="e#40#97#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/plantillas/plantilla.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1581">
+          <caret line="93" column="32" lean-forward="true" selection-start-line="93" selection-start-column="32" selection-end-line="93" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Form/UsuarioType.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1173">
@@ -352,25 +489,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DRa12948.3808/main_files/HTML/Jobhunt/candidates_my_resume_add_new.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="4" lean-forward="true" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DRa12948.3808/main_files/HTML/Jobhunt/candidates_my_resume_add_new.html" />
     <entry file="file://$PROJECT_DIR$/app/config/security.yml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/config/routing_dev.yml">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/routing.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="5" selection-start-line="16" selection-end-line="16" selection-end-column="5" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/trabajo/lista.html.twig">
       <provider selected="true" editor-type-id="text-editor">
@@ -379,45 +503,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="8851" column="24" selection-start-line="8851" selection-start-column="20" selection-end-line="8851" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DRa12948.3808/main_files/HTML/Jobhunt/candidates_my_resume_add_new.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" lean-forward="true" selection-end-line="870" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DRa12460.5888/main_files/HTML/Jobhunt/candidates_my_resume_add_new.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="40" selection-end-line="870" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/plantillas/login.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="63" column="25" selection-start-line="63" selection-start-column="25" selection-end-line="63" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DRa12948.3808/main_files/HTML/Jobhunt/candidates_my_resume_add_new.html" />
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DRa12460.5888/main_files/HTML/Jobhunt/candidates_my_resume_add_new.html" />
     <entry file="file://$PROJECT_DIR$/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Encoder/UserPasswordEncoderInterface.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="30" column="20" selection-start-line="30" selection-start-column="20" selection-end-line="30" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/config/doctrine/Usuario.orm.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="706">
-          <caret line="50" column="25" lean-forward="true" selection-start-line="50" selection-start-column="25" selection-end-line="50" selection-end-column="25" />
         </state>
       </provider>
     </entry>
@@ -430,8 +521,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Form/UsuarioType.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="65" column="18" selection-start-line="65" selection-start-column="18" selection-end-line="65" selection-end-column="18" />
+        <state relative-caret-position="1088">
+          <caret line="73" column="18" selection-start-line="73" selection-start-column="18" selection-end-line="73" selection-end-column="18" />
           <folding>
             <element signature="e#34#74#0#PHP" expanded="true" />
           </folding>
@@ -452,10 +543,85 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DRa9576.18416/main_files/HTML/Jobhunt/employer_profile.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="353" column="45" selection-start-line="428" selection-start-column="73" selection-end-line="428" selection-end-column="76" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/routing.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="41" selection-start-line="23" selection-start-column="41" selection-end-line="23" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DRa9576.42306/main_files/HTML/Jobhunt/candidates_single.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="480" column="40" selection-start-line="480" selection-start-column="40" selection-end-line="480" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/PerfilController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/config/doctrine/Usuario.orm.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="332">
+          <caret line="63" column="18" lean-forward="true" selection-start-line="63" selection-start-column="18" selection-end-line="63" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/datos-personales/perfil.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="638">
+          <caret line="121" column="63" selection-start-line="121" selection-start-column="63" selection-end-line="121" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/plantillas/login.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="24" column="42" selection-start-line="24" selection-start-column="42" selection-end-line="24" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../cheking/web/build/css/custom.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="264" column="21" selection-start-line="264" selection-start-column="21" selection-end-line="264" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="757">
+          <caret line="11575" column="12" selection-start-line="11575" selection-start-column="12" selection-end-line="11575" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../cheking/app/Resources/views/plantillas/listado.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="25" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../cheking/src/AppBundle/Controller/GestionController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2091" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/SecurityController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="151">
-          <caret line="17" column="42" selection-start-line="17" selection-start-column="42" selection-end-line="17" selection-end-column="42" />
+        <state relative-caret-position="536">
+          <caret line="42" column="41" selection-start-line="42" selection-start-column="41" selection-end-line="42" selection-end-column="41" />
           <folding>
             <element signature="e#40#97#0#PHP" expanded="true" />
           </folding>
@@ -464,8 +630,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/plantillas/plantilla.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="93" column="32" lean-forward="true" selection-start-line="93" selection-start-column="32" selection-end-line="93" selection-end-column="32" />
+        <state relative-caret-position="434">
+          <caret line="230" column="88" selection-start-line="230" selection-start-column="88" selection-end-line="230" selection-end-column="88" />
         </state>
       </provider>
     </entry>

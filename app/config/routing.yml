@@ -17,3 +17,8 @@ logout:
 lista: 
     path: /list_trabajos
     defaults: { _controller: "AppBundle:Trabajo:list" }
+
+#Datos personales
+perfil:
+    path: /profile
+    defaults: { _controller: "AppBundle:Perfil:perfil" }

@@ -2,3 +2,7 @@
 lista:
     path:     /lista
     defaults: { _controller: AppBundle:Trabajo:lista }
+
+perfil:
+    path:     /perfil
+    defaults: { _controller: AppBundle:Perfil:perfil }

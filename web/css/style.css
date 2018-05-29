@@ -11572,3 +11572,11 @@ header.style4 .account-btns > li a,
     -o-transition: all 0.4s ease 0s;
     transition: all 0.4s ease 0s;
 }
+
+.img-profile-60 {
+    width: 60px;
+}
+
+.img-profile-145 {
+    width: 145px;
+}
