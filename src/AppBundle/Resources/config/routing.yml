@@ -1,0 +1,4 @@
+
+lista:
+    path:     /lista
+    defaults: { _controller: AppBundle:Trabajo:lista }

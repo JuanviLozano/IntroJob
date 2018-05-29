@@ -1,0 +1,111 @@
+{% extends 'plantillas/login.html.twig' %}
+{% block contenido %}
+
+    <section>
+        <div class="block no-padding  gray">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="inner2">
+                            <div class="inner-title2">
+                                <h3>Registro de usuario</h3>
+                                <span>Registrate para estar al tanto de las nuevas ofertas de empleo</span>
+                            </div>
+                            <div class="page-breacrumbs">
+                                <ul class="breadcrumbs">
+                                    <li><a href="{{ path('login') }}" title="">Index</a></li>
+                                    <li><a href="{{ path('registro') }}" title="">Register</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="block remove-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="account-popup-area signup-popup-box static">
+                            <div class="account-popup">
+                                <h3>Registro de sesión</h3>
+                                <span>Rellena el formulario para registrarse en Introjob y poder ver ofertas de trabajo mas detalladas</span>
+                                {{ form_start(form, { 'attr' : {'role':'form', 'class': 'form-horizontal form-label-left'} }) }}
+                                
+                                    <div class="cfield">
+                                        {{ form_widget(form.username) }}
+                                        <i class="la la-user"></i>
+                                        <span class="text-danger">{{ form_errors(form.username) }}</span>
+                                    </div>
+                                    <div class="cfield">
+                                        {{ form_widget(form.password) }}
+                                        <span class="text-danger">{{ form_errors(form.password) }}</span>
+                                        <i class="la la-key"></i>
+                                    </div>
+                                    <div class="cfield">
+                                        {{ form_widget(form.nombre) }}
+                                        <span class="text-danger">{{ form_errors(form.nombre) }}</span>
+                                        <i class="la la-user"></i>
+                                    </div>
+                                    <div class="cfield">
+                                        {{ form_widget(form.apellidos) }}
+                                        <span class="la-envelopetext-danger">{{ form_errors(form.apellidos) }}</span>
+                                        <i class="la la-user"></i>
+                                    </div>
+                                    <div class="cfield">
+                                        {{ form_widget(form.email) }}
+                                        <span class="text-danger">{{ form_errors(form.email) }}</span>
+                                        <i class="la la-envelope-o"></i>
+                                    </div>
+                                    <div class="cfield">
+                                        {{ form_widget(form.fecha_nacimiento) }}
+                                        <span class="text-danger">{{ form_errors(form.fecha_nacimiento) }}</span>
+                                        <i class="la la-calendar-o"></i>
+                                    </div>
+                                    <div class="dropdown-field">
+                                        {{ form_widget(form.sexo) }}
+                                    </div>
+                                    <div class="dropdown-field">
+                                        {{ form_widget(form.pais_origen) }}
+                                    </div>
+                                    <div class="dropdown-field">
+                                        {{ form_widget(form.provincia) }}
+                                    </div>
+                                    <div class="cfield">
+                                        {{ form_widget(form.direccion) }}
+                                        <span class="text-danger">{{ form_errors(form.direccion) }}</span>
+                                        <i class="la la-building"></i>
+                                    </div>
+                                    <div class="cfield">
+                                        {{ form_widget(form.cod_postal) }}
+                                        <span class="text-danger">{{ form_errors(form.cod_postal) }}</span>
+                                        <i class="la la-building"></i>
+                                    </div>
+                                    <div class="cfield">
+                                        {{ form_widget(form.telefono) }}
+                                        <span class="text-danger">{{ form_errors(form.telefono) }}</span>
+                                        <i class="la la-phone"></i>
+                                    </div>
+                                    <div class="col-lg-12 align-content-center">
+                                        <div class="upload-portfolio">
+                                            <div class="uploadbox">
+                                                <label for="appbundle_usuario_imagen" class="custom-file-upload">
+                                                    <i class="la la-cloud-upload"></i> <span>Subir imagen<br>Opcional</span>
+                                                </label>
+                                                {{ form_widget(form.imagen) }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                {{ form_end(form) }}
+                            </div>
+                        </div><!-- SIGNUP POPUP -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+{% endblock %}
