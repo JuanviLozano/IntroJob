@@ -102,11 +102,12 @@ $(document).on('ready',function(){
     $('.tree_widget-sec > ul > li.inner-child:first > ul').slideDown();
     $('.tree_widget-sec > ul > li.inner-child:first').addClass('active');
     $('.tree_widget-sec > ul > li.inner-child > a').on('click', function(){
+        console.log('fredfe');
         $('.tree_widget-sec > ul > li.inner-child').removeClass('active');
         $('.tree_widget-sec > ul > li > ul').slideUp();
         $(this).parent().addClass('active');
         $(this).next('ul').slideDown();
-        return false;
+
     });
 
     $('.btns-profiles-sec > span').on('click', function(){
@@ -192,10 +193,10 @@ $(document).on('ready',function(){
         $(this).next().slideToggle();
     });
 
-    $('.scroll-to a, .scrollup, .back-top, .tree_widget-sec > ul > li > ul > li a, .cand-extralink a').on('click', function(e) {
+    /*$('.scroll-to a, .scrollup, .back-top, .tree_widget-sec > ul > li > ul > li a, .cand-extralink a').on('click', function(e) {
         e.preventDefault();
         $('html, body').animate({ scrollTop: $($(this).attr('href')).offset().top}, 500, 'linear');
-    });
+    });*/
     
     $('.fav-job').on('click', function(){
         $(this).toggleClass('active');

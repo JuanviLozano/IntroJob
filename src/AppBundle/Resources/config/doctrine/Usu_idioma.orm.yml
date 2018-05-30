@@ -12,7 +12,9 @@ AppBundle\Entity\Usu_idioma:
         lenguaje:
             type: string
             length: 255
-        nivel:
-            type: string
-            length: '20'
     lifecycleCallbacks: {  }
+
+    oneToMany:
+        idioma:
+            targetEntity: Usuario_idioma
+            mappedBy: idioma

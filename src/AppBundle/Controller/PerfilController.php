@@ -11,4 +11,9 @@ class PerfilController extends Controller
         return $this->render('datos-personales/perfil.html.twig');
     }
 
+    public function curriculumAction()
+    {
+        return $this->render('datos-personales/curriculum.html.twig');
+    }
+
 }

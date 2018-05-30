@@ -225,5 +225,33 @@ class Usu_informacion
     {
         return $this->infoPersonal;
     }
-}
+    /**
+     * @var \AppBundle\Entity\Usuario
+     */
+    private $usuario;
 
+
+    /**
+     * Set usuario
+     *
+     * @param \AppBundle\Entity\Usuario $usuario
+     *
+     * @return Usu_informacion
+     */
+    public function setUsuario(\AppBundle\Entity\Usuario $usuario = null)
+    {
+        $this->usuario = $usuario;
+
+        return $this;
+    }
+
+    /**
+     * Get usuario
+     *
+     * @return \AppBundle\Entity\Usuario
+     */
+    public function getUsuario()
+    {
+        return $this->usuario;
+    }
+}

@@ -56,4 +56,3 @@ class Provincias
         return $this->provincia;
     }
 }
-

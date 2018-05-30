@@ -25,3 +25,11 @@ AppBundle\Entity\Usu_experiencia_laboral:
         descripcion:
             type: text
     lifecycleCallbacks: {  }
+
+    manyToOne:
+        usuario:
+            targetEntity: Usuario
+            inversedBy: experiencia
+            joinColumn:
+                name: id_usuario
+                referencedColumnName: id

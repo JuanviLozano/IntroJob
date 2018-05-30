@@ -16,3 +16,11 @@ AppBundle\Entity\Usu_habilidades:
         porcentaje:
             type: integer
     lifecycleCallbacks: {  }
+
+    manyToOne:
+        usuario:
+            targetEntity: Usuario
+            inversedBy: habilidades
+            joinColumn:
+                name: id_usuario
+                referencedColumnName: id

@@ -240,14 +240,7 @@
     <div class="tree_widget-sec">
         <ul>
             <li><a href="{{ path('perfil') }}" title=""><i class="la la-file-text"></i>Mi perfil</a></li>
-            <li class="inner-child active">
-                <a href="{{ path('perfil') }}" title=""><i class="la la-file-text"></i>Mis datos</a>
-                <ul>
-                    <li><a href="{{ path('perfil') }}" title="Mi perfil">Mi perfil</a></li>
-                    <li><a href="#" title="">Mis redes sociales</a></li>
-                    <li><a href="#" title="">Contacto</a></li>
-                </ul>
-            </li>
+            <li><a href="{{ path('curriculum') }}" title=""><i class="la la-file-text"></i>Currículum</a></li>
             <li class="inner-child">
                 <a href="#" title=""><i class="la la-briefcase"></i>My Resume</a>
                 <ul>
@@ -276,14 +269,6 @@
             </li>
             <li class="inner-child">
                 <a href="#" title=""><i class="la la-user"></i>Job Alerts</a>
-                <ul>
-                    <li><a href="#" title="">My Profile</a></li>
-                    <li><a href="#" title="">Social Network</a></li>
-                    <li><a href="#" title="">Contact Information</a></li>
-                </ul>
-            </li>
-            <li class="inner-child">
-                <a href="#" title=""><i class="la la-file-text"></i>Cv & Cover Letter</a>
                 <ul>
                     <li><a href="#" title="">My Profile</a></li>
                     <li><a href="#" title="">Social Network</a></li>
@@ -425,6 +410,9 @@
 <script src={{ asset("js/select-chosen.js") }} type="text/javascript"></script>
 <script src={{ asset("js/jquery.scrollbar.min.js") }} type="text/javascript"></script>
 <script src={{ asset("js/circle-progress.min.js") }} type="text/javascript"></script>
+<script src={{ asset("js/tag.js") }} type="text/javascript" type="text/javascript"></script>
+<script src={{ asset("js/maps3.js") }} type="text/javascript"></script>
+<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCYc537bQom7ajFpWE5sQaVyz1SQa9_tuY&sensor=true&libraries=places"></script>
 
 </body>
 </html>

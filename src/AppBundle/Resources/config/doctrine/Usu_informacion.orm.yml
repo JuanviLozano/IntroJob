@@ -32,3 +32,11 @@ AppBundle\Entity\Usu_informacion:
             type: text
             column: info_personal
     lifecycleCallbacks: {  }
+
+    manyToOne:
+        usuario:
+            targetEntity: Usuario
+            inversedBy: informacion
+            joinColumn:
+                name: id_usuario
+                referencedColumnName: id

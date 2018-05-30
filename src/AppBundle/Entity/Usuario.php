@@ -420,5 +420,52 @@ class Usuario implements UserInterface
     public function getPais() 
     {
     }
-}
 
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $educacion;
+
+
+    /**
+     * Add educacion
+     *
+     * @param \AppBundle\Entity\Usu_educacion $educacion
+     *
+     * @return Usuario
+     */
+    public function addEducacion(\AppBundle\Entity\Usu_educacion $educacion)
+    {
+        $this->educacion[] = $educacion;
+
+        return $this;
+    }
+
+    /**
+     * Remove educacion
+     *
+     * @param \AppBundle\Entity\Usu_educacion $educacion
+     */
+    public function removeEducacion(\AppBundle\Entity\Usu_educacion $educacion)
+    {
+        $this->educacion->removeElement($educacion);
+    }
+
+    /**
+     * Get educacion
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getEducacion()
+    {
+        return $this->educacion;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->educacion = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+}

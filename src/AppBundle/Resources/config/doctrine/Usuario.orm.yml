@@ -91,3 +91,29 @@ AppBundle\Entity\Usuario:
             options:
                 fixed: false
     lifecycleCallbacks: {  }
+
+    #educacion
+    oneToMany:
+        educacion:
+            targetEntity: Usu_educacion
+            mappedBy: usuario
+    #experiencia
+    oneToMany:
+        experiencia:
+            targetEntity: Usu_experiencia_laboral
+            mappedBy: usuario
+    #habilidades
+    oneToMany:
+        habilidades:
+            targetEntity: Usu_habilidades
+            mappedBy: usuario
+    #informacion
+    oneToMany:
+        informacion:
+            targetEntity: Usu_informacion
+            mappedBy: usuario
+    #idioma
+    oneToMany:
+        idioma:
+            targetEntity: Usuario_idioma
+            mappedBy: usuario

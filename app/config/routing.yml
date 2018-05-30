@@ -22,3 +22,6 @@ lista:
 perfil:
     path: /profile
     defaults: { _controller: "AppBundle:Perfil:perfil" }
+curriculum:
+    path: /profile/curriculum
+    defaults: { _controller: "AppBundle:Perfil:curriculum" }

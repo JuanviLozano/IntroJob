@@ -28,3 +28,11 @@ AppBundle\Entity\Usu_educacion:
         descripcion:
             type: text
     lifecycleCallbacks: {  }
+
+    manyToOne:
+        usuario:
+            targetEntity: Usuario
+            inversedBy: educacion
+            joinColumn:
+                name: id_usuario
+                referencedColumnName: id

@@ -56,4 +56,3 @@ class Paises
         return $this->nombre;
     }
 }
-
