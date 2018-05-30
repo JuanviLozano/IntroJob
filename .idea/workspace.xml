@@ -1,53 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7d9064e1-529c-4da0-8c35-33e485ffdc4a" name="Default" comment="Creación de las entidades para la información personal del usuario (posibles modificaciones)">
-      <change afterPath="$PROJECT_DIR$/app/Resources/views/datos-personales/perfil.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/AppBundle/Controller/PerfilController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/plantillas/plantilla.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/plantillas/plantilla.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/config/routing.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/routing.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/SecurityController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Resources/config/routing.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Resources/config/routing.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/img_user/1527584676.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/img_user/1527584769.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/img_user/1527586289.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/img_user/1527586465.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/img_user/1527589462.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/img_user/1527589556.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/img_user/1527589578.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/img_user/1527589635.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/img_user/1527589767.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/img_user/1527589782.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/img_user/1527589810.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/img_user/1527589824.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/img_user/1527589964.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/img_user/1527589994.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/img_user/1527590011.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/img_user/1527590022.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/img_user/1527590028.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/img_user/1527590034.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/img_user/1527590044.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/img_user/1527590065.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/img_user/1527590074.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/img_user/1527590080.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/img_user/1527590088.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/img_user/1527590105.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/img_user/1527590125.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/img_user/1527590139.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/img_user/1527590263.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/img_user/1527590312.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/img_user/1527590357.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/img_user/1527590467.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/img_user/1527590503.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/img_user/1527590730.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/img_user/1527590750.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/img_user/1527591059.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/img_user/1527591074.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/img_user/1527591121.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/img_user/1527591909.jpeg" beforeDir="false" />
-    </list>
+    <list default="true" id="7d9064e1-529c-4da0-8c35-33e485ffdc4a" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -60,23 +14,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="plantilla.html.twig" pinned="false" current-in-tab="true">
+      <file leaf-file-name="plantilla.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Resources/views/plantillas/plantilla.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="434">
-              <caret line="230" column="88" selection-start-line="230" selection-start-column="88" selection-end-line="230" selection-end-column="88" />
+            <state relative-caret-position="451">
+              <caret line="231" column="17" selection-start-line="231" selection-start-column="17" selection-end-line="231" selection-end-column="17" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SecurityController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="SecurityController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/SecurityController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="536">
-              <caret line="42" column="41" selection-start-line="42" selection-start-column="41" selection-end-line="42" selection-end-column="41" />
-              <folding>
-                <element signature="e#40#97#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="119">
+              <caret line="7" column="73" lean-forward="true" selection-start-line="7" selection-start-column="73" selection-end-line="7" selection-end-column="73" />
             </state>
           </provider>
         </entry>
@@ -363,7 +314,7 @@
       <workItem from="1527526300851" duration="8106000" />
       <workItem from="1527539333088" duration="5681000" />
       <workItem from="1527617429123" duration="6300000" />
-      <workItem from="1527628144722" duration="2115000" />
+      <workItem from="1527628144722" duration="2525000" />
     </task>
     <task id="LOCAL-00001" summary="Creación de las entidades para la información personal del usuario (posibles modificaciones)">
       <created>1527622236739</created>
@@ -372,26 +323,33 @@
       <option name="project" value="LOCAL" />
       <updated>1527622236739</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Creación de las entidades para la información personal del usuario (posibles modificaciones)">
+      <created>1527630417451</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1527630417451</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22202000" />
+    <option name="totallyTimeSpent" value="22612000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Messages" weight="0.32943678" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="7" visible="true" weight="0.0" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.0" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="right" id="Database" order="3" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -582,6 +540,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="638">
           <caret line="121" column="63" selection-start-line="121" selection-start-column="63" selection-end-line="121" selection-end-column="63" />
+          <folding>
+            <element signature="e#178#271#0#HTML" expanded="true" />
+            <element signature="e#7320#7339#0#HTML" expanded="true" />
+            <element signature="e#7668#7687#0#HTML" expanded="true" />
+            <element signature="e#8012#8031#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -618,20 +582,17 @@
         <state relative-caret-position="-2091" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/SecurityController.php">
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/plantillas/plantilla.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="536">
-          <caret line="42" column="41" selection-start-line="42" selection-start-column="41" selection-end-line="42" selection-end-column="41" />
-          <folding>
-            <element signature="e#40#97#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="451">
+          <caret line="231" column="17" selection-start-line="231" selection-start-column="17" selection-end-line="231" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/plantillas/plantilla.html.twig">
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/SecurityController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="434">
-          <caret line="230" column="88" selection-start-line="230" selection-start-column="88" selection-end-line="230" selection-end-column="88" />
+        <state relative-caret-position="119">
+          <caret line="7" column="73" lean-forward="true" selection-start-line="7" selection-start-column="73" selection-end-line="7" selection-end-column="73" />
         </state>
       </provider>
     </entry>
