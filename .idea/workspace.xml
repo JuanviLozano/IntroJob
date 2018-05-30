@@ -1,33 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7d9064e1-529c-4da0-8c35-33e485ffdc4a" name="Default" comment="Creación de las entidades para la información personal del usuario (posibles modificaciones)">
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/datos-personales/curriculum.html.twig" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Usuario_idioma.php" />
+    <list default="true" id="7d9064e1-529c-4da0-8c35-33e485ffdc4a" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/plantillas/plantilla.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/plantillas/plantilla.html.twig" />
-      <change beforePath="$PROJECT_DIR$/app/config/routing.yml" afterPath="$PROJECT_DIR$/app/config/routing.yml" />
-      <change beforePath="$PROJECT_DIR$/bin/symfony_requirements" afterPath="$PROJECT_DIR$/bin/symfony_requirements" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/PerfilController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/PerfilController.php" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Paises.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Paises.php" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Provincias.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Provincias.php" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Usu_educacion.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Usu_educacion.php" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Usu_experiencia_laboral.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Usu_experiencia_laboral.php" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Usu_habilidades.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Usu_habilidades.php" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Usu_idioma.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Usu_idioma.php" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Usu_informacion.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Usu_informacion.php" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Usuario.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Usuario.php" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Resources/config/doctrine/Usu_educacion.orm.yml" afterPath="$PROJECT_DIR$/src/AppBundle/Resources/config/doctrine/Usu_educacion.orm.yml" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Resources/config/doctrine/Usu_experiencia_laboral.orm.yml" afterPath="$PROJECT_DIR$/src/AppBundle/Resources/config/doctrine/Usu_experiencia_laboral.orm.yml" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Resources/config/doctrine/Usu_habilidades.orm.yml" afterPath="$PROJECT_DIR$/src/AppBundle/Resources/config/doctrine/Usu_habilidades.orm.yml" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Resources/config/doctrine/Usu_idioma.orm.yml" afterPath="$PROJECT_DIR$/src/AppBundle/Resources/config/doctrine/Usu_idioma.orm.yml" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Resources/config/doctrine/Usu_informacion.orm.yml" afterPath="$PROJECT_DIR$/src/AppBundle/Resources/config/doctrine/Usu_informacion.orm.yml" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Resources/config/doctrine/Usuario.orm.yml" afterPath="$PROJECT_DIR$/src/AppBundle/Resources/config/doctrine/Usuario.orm.yml" />
-      <change beforePath="$PROJECT_DIR$/var/SymfonyRequirements.php" afterPath="$PROJECT_DIR$/var/SymfonyRequirements.php" />
-      <change beforePath="$PROJECT_DIR$/web/config.php" afterPath="$PROJECT_DIR$/web/config.php" />
-      <change beforePath="$PROJECT_DIR$/web/css/style.css" afterPath="$PROJECT_DIR$/web/css/style.css" />
-      <change beforePath="$PROJECT_DIR$/web/js/maps3.js" afterPath="$PROJECT_DIR$/web/js/maps3.js" />
-      <change beforePath="$PROJECT_DIR$/web/js/script.js" afterPath="$PROJECT_DIR$/web/js/script.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -55,8 +30,8 @@
       <file leaf-file-name="curriculum.html.twig" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Resources/views/datos-personales/curriculum.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="28" column="24" lean-forward="false" selection-start-line="28" selection-start-column="24" selection-end-line="28" selection-end-column="24" />
+            <state relative-caret-position="289">
+              <caret line="33" column="71" lean-forward="false" selection-start-line="33" selection-start-column="71" selection-end-line="33" selection-end-column="71" />
               <folding />
             </state>
           </provider>
@@ -373,7 +348,7 @@
       <workItem from="1527539333088" duration="5681000" />
       <workItem from="1527617429123" duration="6300000" />
       <workItem from="1527628144722" duration="2525000" />
-      <workItem from="1527689171760" duration="8548000" />
+      <workItem from="1527689171760" duration="8650000" />
     </task>
     <task id="LOCAL-00001" summary="Creación de las entidades para la información personal del usuario (posibles modificaciones)">
       <created>1527622236739</created>
@@ -389,11 +364,18 @@
       <option name="project" value="LOCAL" />
       <updated>1527630417451</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="V2.0">
+      <created>1527697801856</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1527697801856</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31160000" />
+    <option name="totallyTimeSpent" value="31262000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -474,7 +456,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Creación de las entidades para la información personal del usuario (posibles modificaciones)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Creación de las entidades para la información personal del usuario (posibles modificaciones)" />
+    <MESSAGE value="V2.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="V2.0" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -785,8 +768,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/datos-personales/curriculum.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="28" column="24" lean-forward="false" selection-start-line="28" selection-start-column="24" selection-end-line="28" selection-end-column="24" />
+        <state relative-caret-position="289">
+          <caret line="33" column="71" lean-forward="false" selection-start-line="33" selection-start-column="71" selection-end-line="33" selection-end-column="71" />
           <folding />
         </state>
       </provider>
