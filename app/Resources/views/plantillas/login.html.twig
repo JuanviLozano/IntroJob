@@ -8,6 +8,9 @@
     <meta name="keywords" content="">
     <meta name="author" content="CreativeLayers">
 
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="{{ asset('images/ij.png') }}" />
+
     <!-- Styles -->
     <link rel="stylesheet" type="text/css" href={{ asset("css/bootstrap-grid.css") }} />
     <link rel="stylesheet" href={{ asset("css/icons.css") }}>
@@ -22,7 +25,7 @@
 <body>
 
 <div class="page-loading">
-    <img src="images/loader.gif" alt="" />
+    <img src="{{ asset('images/loader.gif') }}" alt="cargando" />
     <span>Cargando</span>
 </div>
 
@@ -30,7 +33,7 @@
 	
     <div class="responsive-header">
         <div class="responsive-menubar">
-                <div class="res-logo"><a href="{{ path('index') }}" title=""><img src="http://placehold.it/178x40" alt="" /></a></div>
+                <div class="res-logo"><a href="{{ path('index') }}" title=""><img src="{{ asset('images/introjobs-title.png') }}" alt="" /></a></div>
                 <div class="menu-resaction">
                         <div class="res-openmenu">
                                 <img src="images/icon.png" alt="" /> Menu
@@ -84,7 +87,7 @@
         <div class="menu-sec">
             <div class="container">
                 <div class="logo">
-                        <a href="{{ path('index') }}" title=""><img src="http://placehold.it/178x40" alt="" /></a>
+                        <a href="{{ path('index') }}" title=""><img src="{{ asset('images/introjobs-title.png') }}" alt="" /></a>
                 </div><!-- Logo -->
 				<div class="btn-extars">
 					<a href="{{ path('registro') }}" title="" class="post-job-btn"><i class="la la-plus"></i>Registrarse</a>
@@ -121,7 +124,7 @@
 						<div class="widget">
 							<div class="about_widget">
 								<div class="logo">
-									<a href="#" title=""><img src="http://placehold.it/178x40" alt="" /></a>
+									<a href="#" title=""><img src="{{ asset('images/introjobs-title.png') }}" alt="" /></a>
 								</div>
 								<span>Collin Street West, Victor 8007, Australia.</span>
 								<span>+1 246-345-0695</span>
