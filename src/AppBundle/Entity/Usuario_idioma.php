@@ -168,4 +168,3 @@ class Usuario_idioma
         return $this->idioma;
     }
 }
-
