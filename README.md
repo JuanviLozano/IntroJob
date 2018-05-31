@@ -105,9 +105,9 @@ Los ficheros que teneis que tocar son:
      }
      ```
   * **app/web** - Aquí teneis que insertar .css o .js pero que no se os olvide llamarlos en las plantillas con:
-     ´´´
+     ```
      <link rel="stylesheet" type="text/css" href={{ asset("css/style.css") }} />
-     ´´´
+     ```
      
  Si teneis alguna duda o no entendeis algo preguntarme.
 
