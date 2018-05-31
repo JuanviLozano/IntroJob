@@ -63,6 +63,54 @@ It comes pre-configured with the following bundles:
 All libraries and bundles included in the Symfony Standard Edition are
 released under the MIT or BSD license.
 
+Sinstrucciones básicas
+========================
+Los ficheros que teneis que tocar son:
+ * **app/Resources/views** - Aquí se tocaran las vistas, siempre que toqueis alguna que el nombre sea claro para poder 
+     entender donde estais y al resto del grupo.
+ 
+ * **app/config/routing** - Si creais una nueva vista tendreis que crear su ruta para luego definirla en el controlador 
+     y que os pinte la vista.
+     
+ * **app/src/Controller** - Funcionalidad de la página, de esto me encargare yo casí de todo si teneis que tocar algo os
+     lo indicare mas adelante.
+     
+ * **app/src/Entity** - Se estan haciendo mediante YML, lo cual si realizais cambios para añadir campos de una entidad teneis
+     que tocar el archivo situado en (app/src/Resources/config/doctrine), ahí teneis que crear el nuevo campo y tendréis que
+     usar estos comandos para llevar acabo los cambios:
+     
+     * php bin/console doctrine:generate:entity ---> generar la entidad y especificar que va a ser por yml no por annotation
+     * php bin/console doctrine:generate:entities AppBundle --no-backup ---> crea las entidades desde el archivo yml 
+     * php bin/console doctrine:schema:update --force ---> crea las entidades en la base de datos
+     
+     Si quereis modificar algun campo teneis que cambiarlo en ambas partes, en la entidad y en el archivo yml. 
+     
+ * **app/src/Form** - Se realizan y se les da el diseño a los formularios, no tendréis que tocar esto si no teneis que crear 
+     formularios pero no esta mal hecharle un ojo.
+     
+ * **app/src/Repository** - Aquí se crean las consultas para sacar datos de la base de datos. Un ejemplo sería el siguiente:
+     * Controller
+     ```
+     $this->getDoctrine()->getRepository(User::Class)->Usuarios();
+     ```
+     * Repository
+     ```
+     public function Usuario() 
+     {
+        $result = $this->getEntityManager()
+                       ->createQuery('SELECT u.nombre
+                                      FROM AppBundle:User u');
+        
+        return $result->getResult();
+     }
+     ```
+  * **app/web** - Aquí teneis que insertar .css o .js pero que no se os olvide llamarlos en las plantillas con:
+     ´´´
+     <link rel="stylesheet" type="text/css" href={{ asset("css/style.css") }} />
+     ´´´
+     
+ Si teneis alguna duda o no entendeis algo preguntarme.
+
 Enjoy!
 
 [1]:  https://symfony.com/doc/3.4/setup.html
