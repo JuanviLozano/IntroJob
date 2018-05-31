@@ -22,6 +22,9 @@ lista:
 perfil:
     path: /profile
     defaults: { _controller: "AppBundle:Perfil:perfil" }
+perfil-editar:
+    path: /editar-usuario/{id}
+    defaults: { _controller: "AppBundle:Perfil:editarPerfil" }
 curriculum:
     path: /profile/curriculum
     defaults: { _controller: "AppBundle:Perfil:curriculum" }

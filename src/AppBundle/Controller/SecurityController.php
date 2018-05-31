@@ -37,7 +37,7 @@ class SecurityController extends Controller
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
 
-            if(!empty($imagen)) {
+            if(empty($imagen)) {
                 $file = $form['imagen']->getData();
                 $ext = $file->guessExtension();
                 $file_name = time().'.'.$ext;

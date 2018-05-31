@@ -467,11 +467,12 @@ input[type="radio"] {
 label {
   position: relative;
   display: inline-block;
+  padding: 0 0 0 2em;
   height: 1.5em;
   line-height: 1.5;
   cursor: pointer;
 }
-/*
+
 label::before,
 label::after {
   position: absolute;
@@ -491,7 +492,16 @@ label::before {
   -o-border-radius: 3px;
   border-radius: 3px;
 
-}*/
+}
+
+span > label {
+    padding: 0;
+}
+span > label::before {
+    border: none;
+    width: 0px !important;
+    height: 0px !important;
+}
 
 /* Checkbox */
 input[type="checkbox"] + label::after {
