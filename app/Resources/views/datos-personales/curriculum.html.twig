@@ -26,26 +26,26 @@
                             <div class="profile-title">
                                 <h3>Tu información personal</h3>
                                 <div class="steps-sec">
-                                    <div class="step active">
+                                    <div class="step active" id="circle-educacion">
                                         <p><i class="la la-graduation-cap"></i></p>
                                         <span>Educación</span>
                                     </div>
-                                    <div class="step">
+                                    <div class="step" id="circle-experiencia">
                                         <p><i class="la la-file-text"></i></p>
                                         <span>Experiencia</span>
                                     </div>
-                                    <div class="step">
+                                    <div class="step" id="circle-habilidades">
                                         <p><i class="la  la-check-circle"></i></p>
                                         <span>Habilidades</span>
                                     </div>
-                                    <div class="step">
+                                    <div class="step" id="circle-informacion">
                                         <p><i class="la  la-user"></i></p>
                                         <span>Información</span>
                                     </div>
                                 </div>
                             </div>
                             <div class="profile-form-edit">
-                                <div id="educacion" class="" class="contact-edit">
+                                <div id="educacion" class="contact-edit" style="display: none;">
                                     <form action="">
                                         <div class="row">
                                             <div class="col-lg-12">
@@ -85,12 +85,11 @@
                                                 </div>
                                             </div>
                                             <div class="col-lg-12">
-                                                <button type="submit">Next</button>
+                                                <button type="button" id="edu-siguiente">Siguiente</button>
                                             </div>
                                         </div>
-                                    </form>
                                 </div>
-                                <div id="esperiencia" class="contact-edit">
+                                <div id="experiencia" class="contact-edit" style="display: none;">
                                     <form action="">
                                         <div class="row">
                                             <div class="col-lg-12">
@@ -124,12 +123,12 @@
                                                 </div>
                                             </div>
                                             <div class="col-lg-12">
-                                                <button type="submit">Next</button>
+                                                <button type="button" id="expe-siguiente">Siguiente</button>
                                             </div>
                                         </div>
                                     </form>
                                 </div>
-                                <div id="habilidades" class="contact-edit">
+                                <div id="habilidades" class="contact-edit" style="display: none;">
                                     <form action="">
                                         <div class="row">
                                             <div class="col-lg-6">
@@ -149,15 +148,6 @@
                                                     <input type="text" placeholder="Del 1 al 100 cuanto sabes" />
                                                 </div>
                                             </div>
-                                            <div class="col-lg-12">
-                                                <button type="submit">Next</button>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-                                <div id="idioma" class="contact-edit">
-                                    <form action="">
-                                        <div class="row">
                                             <div class="col-lg-6">
                                                 <span class="pf-title">Idioma</span>
                                                 <div class="pf-field">
@@ -175,12 +165,12 @@
                                                 </div>
                                             </div>
                                             <div class="col-lg-12">
-                                                <button type="submit">Next</button>
+                                                <button type="button" id="habili-siguiente">Siguiente</button>
                                             </div>
                                         </div>
                                     </form>
                                 </div>
-                                <div id="informacion" class="contact-edit">
+                                <div id="informacion" class="contact-edit" style="display: none;">
                                     <form action="">
                                         <div class="row">
                                             <div class="col-lg-6">
@@ -238,7 +228,7 @@
                                                 </div>
                                             </div>
                                             <div class="col-lg-12">
-                                                <button type="submit">Next</button>
+                                                <button type="button" id="info-sigiente">Finalizar</button>
                                             </div>
                                         </div>
                                     </form>

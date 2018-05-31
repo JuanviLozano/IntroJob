@@ -23,11 +23,12 @@ class PerfilController extends Controller
     {
         $allpassword = $usuario->getPassword();
         $form = $this->createForm(UsuarioType::Class, $usuario);
-        $foto = $usuario->getImagen();
+        $foto_antigua = $usuario->getImagen();
 
         $form->handleRequest($request);
         if($form->isSubmitted() && $form->isValid()) {
 
+            $foto = $form['imagen']->getData();
             // Control de la password
             $password = $usuario->getPassword();
             if(!empty($password)) {
@@ -38,26 +39,20 @@ class PerfilController extends Controller
                 $usuario->setPassword($allpassword);
             }
 
-            $foto_antigua = $usuario->getImagen();
-
-            if($foto != 'usuario.png' || $foto == null) {
-                unlink('img_user/'.$foto_antigua);
-            }
-            $file = $form['imagen']->getData();
-            $ext = $file->guessExtension();
-            $file_name = time().'.'.$ext;
-
-            if($foto != $usuario->setImagen($file_name)) {
+            // Edición de la foto
+            if($foto) {
+                if($foto_antigua != 'usuario.png') {
+                    unlink('img_user/'.$foto_antigua);
+                }
+                $file = $form['imagen']->getData();
+                $ext = $file->guessExtension();
+                $file_name = time().'.'.$ext;
                 $file->move('img_user',$file_name);
                 $usuario->setImagen($file_name);
-            }
-            else {
-                $usuario->setImagen($foto);
             }
 
             $usuario = $form->getData();
             $em = $this->getDoctrine()->getManager();
-
             $em->persist($usuario);
             $em->flush();
             $this->addFlash('mensaje', 'Usuario actualizado correctamente');

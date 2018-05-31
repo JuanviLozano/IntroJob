@@ -259,6 +259,36 @@ $(document).on('ready',function(){
     /* Table Scroll */
     $('.manage-jobs-sec > table').parent().addClass('addscroll')
 
+    /* Curriculum */
+    $('#educacion').show();
+
+    $('#edu-siguiente').on('click',function() {
+        $('#circle-experiencia').addClass('active');
+        $('#educacion').hide();
+        $('#habilidades').hide();
+        $('#informacion').hide();
+        $('#experiencia').show();
+    });
+
+    $('#expe-siguiente').on('click',function() {
+        $('#circle-habilidades').addClass('active');
+        $('#experiencia').hide();
+        $('#informacion').hide();
+        $('#educacion').hide();
+        $('#habilidades').show();
+    });
+
+    $('#habili-siguiente').on('click',function() {
+        $('#circle-informacion').addClass('active');
+        $('#habilidades').hide();
+        $('#experiencia').hide();
+        $('#educacion').hide();
+        $('#informacion').show();
+    });
+
+    $('#info-sigiente').on('click',function() {
+        console.log('enviar datos');
+    });
 });
 
 
