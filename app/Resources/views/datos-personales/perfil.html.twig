@@ -26,9 +26,9 @@
 
                             </div>
                             <div class="can-detail-s">
-                                <div class="cst"><img src="http://placehold.it/145x145" alt="" /></div>
+                                <div class="cst"><img src="{{ app.user.imagen }}" alt="Tu imagen de perfil" class="img-profile-145" /></div>
                                 <h3>{{ app.user.nombre }}<br>{{ app.user.apellidos }}</h3>
-                                <span><i>UX / UI Designer</i> at Atract Solutions</span>
+                                <span><i>{{ app.user.especialidad }}</i></span>
                                 <p>{{ app.user.email }}</p>
                                 <p>{{ app.user.fechaNacimiento }}</p>
                                 <p><i class="la la-map-marker"></i>{{ app.user.paisOrigen }} / {{ app.user.provincia }}</p>

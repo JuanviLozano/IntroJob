@@ -40,11 +40,6 @@ class Usu_informacion
     /**
      * @var string
      */
-    private $especialidad;
-
-    /**
-     * @var string
-     */
     private $infoPersonal;
 
 
@@ -176,30 +171,6 @@ class Usu_informacion
     public function getCalificacion()
     {
         return $this->calificacion;
-    }
-
-    /**
-     * Set especialidad
-     *
-     * @param string $especialidad
-     *
-     * @return Usu_informacion
-     */
-    public function setEspecialidad($especialidad)
-    {
-        $this->especialidad = $especialidad;
-
-        return $this;
-    }
-
-    /**
-     * Get especialidad
-     *
-     * @return string
-     */
-    public function getEspecialidad()
-    {
-        return $this->especialidad;
     }
 
     /**

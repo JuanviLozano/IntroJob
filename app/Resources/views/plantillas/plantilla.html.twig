@@ -46,39 +46,39 @@
         <div class="responsive-opensec">
             <!-- MOVIL -->
             {% if is_granted('ROLE_USER') %}
-            <div class="responsivemenu">
-                <ul>
-                    <li class="menu-item-has-children">
-                        <a title="Inicio">Inicio</a>
-                        <ul>
-                            <li><a href="{{ path('index') }}" title="">Página principal</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="{{ path('lista') }}" title="Busqueda de empleos">Buscador de empleo</a>
-                    </li>
-                </ul>
-            </div>
+                <div class="responsivemenu">
+                    <ul>
+                        <li class="menu-item-has-children">
+                            <a title="Inicio">Inicio</a>
+                            <ul>
+                                <li><a href="{{ path('index') }}" title="">Página principal</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="{{ path('lista') }}" title="Busqueda de empleos">Buscador de empleo</a>
+                        </li>
+                    </ul>
+                </div>
             {% else %}
-            <div class="btn-extars">
-                <a href="{{ path('registro') }}" title="" class="post-job-btn"><i class="la la-plus"></i>Registrarse</a>
-                <ul class="account-btns">
-                    <li class="signin-popup"><a href="{{ path('login') }}" title=""><i class="la la-external-link-square"></i> Iniciar sesión</a></li>
-                </ul>
-            </div><!-- Btn Extras -->
-            <div class="responsivemenu">
-                <ul>
-                    <li class="menu-item-has-children">
-                        <a title="Inicio">Inicio</a>
-                        <ul>
-                            <li><a href="{{ path('index') }}" title="">Página principal</a></li>
-                        </ul>
-                    </li>
-                    <li class="menu-item-has-children">
-                        <a href="{{ path('logout') }}" title="Inicio">Cerrar sesion</a>
-                    </li>
-                </ul>
-            </div>    
+                <div class="btn-extars">
+                    <a href="{{ path('registro') }}" title="" class="post-job-btn"><i class="la la-plus"></i>Registrarse</a>
+                    <ul class="account-btns">
+                        <li class="signin-popup"><a href="{{ path('login') }}" title=""><i class="la la-external-link-square"></i> Iniciar sesión</a></li>
+                    </ul>
+                </div><!-- Btn Extras -->
+                <div class="responsivemenu">
+                    <ul>
+                        <li class="menu-item-has-children">
+                            <a title="Inicio">Inicio</a>
+                            <ul>
+                                <li><a href="{{ path('index') }}" title="">Página principal</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu-item-has-children">
+                            <a href="{{ path('logout') }}" title="Inicio">Cerrar sesion</a>
+                        </li>
+                    </ul>
+                </div>
             {% endif %}
         </div>
     </div>
@@ -91,48 +91,44 @@
                 </div><!-- Logo -->
                 <!-- Pantalla PC -->
                 {% if is_granted('ROLE_USER') %}
-                <div class="my-profiles-sec">
+                    <div class="my-profiles-sec">
                     <span>
-                        {% if(app.user.imagen == null) %}
-                            <img src="/img_user/usuario.png" alt="" class="img-profile-60" />
-                        {% else %}
-                            <img src="/img_user/{{ app.user.imagen }}" alt="" class="img-profile-60" />
-                        {% endif %}
+                        <img src="/img_user/{{ app.user.imagen }}" alt="" class="img-profile-60" />
                         {{ app.user.nombre }} <i class="la la-bars"></i></span>
-                </div>
-                <nav>
-                    <ul>
-                        <li class="menu-item-has-children">
-                            <a title="Inicio">Inicio</a>
-                            <ul>
-                                <li><a href="{{ path('index') }}" title="">Página principal</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="{{ path('lista') }}" title="Busqueda de empleos">Buscador de empleo</a>
-                        </li>
-                    </ul>
-                </nav><!-- Menus -->
-                {% else %}
-                <nav>
-                    <ul>
-                        <li class="menu-item-has-children">
-                            <a title="Inicio">Inicio</a>
-                            <ul>
-                                <li><a href="{{ path('index') }}" title="">Página principal</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="{{ path('lista') }}" title="Busqueda de empleos">Buscador de empleo</a>
-                        </li>
-                    </ul>
-                    <div class="btn-extars">
-                        <a href="{{ path('registro') }}" title="" class="post-job-btn"><i class="la la-plus"></i>Registrarse</a>
-                        <ul class="account-btns">
-                            <li class="signin-popup"><a href="{{ path('login') }}" title=""><i class="la la-external-link-square"></i> Iniciar sesión</a></li>
-                        </ul>
                     </div>
-                </nav><!-- Menus -->
+                    <nav>
+                        <ul>
+                            <li class="menu-item-has-children">
+                                <a title="Inicio">Inicio</a>
+                                <ul>
+                                    <li><a href="{{ path('index') }}" title="">Página principal</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="{{ path('lista') }}" title="Busqueda de empleos">Buscador de empleo</a>
+                            </li>
+                        </ul>
+                    </nav><!-- Menus -->
+                {% else %}
+                    <nav>
+                        <ul>
+                            <li class="menu-item-has-children">
+                                <a title="Inicio">Inicio</a>
+                                <ul>
+                                    <li><a href="{{ path('index') }}" title="">Página principal</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="{{ path('lista') }}" title="Busqueda de empleos">Buscador de empleo</a>
+                            </li>
+                        </ul>
+                        <div class="btn-extars">
+                            <a href="{{ path('registro') }}" title="" class="post-job-btn"><i class="la la-plus"></i>Registrarse</a>
+                            <ul class="account-btns">
+                                <li class="signin-popup"><a href="{{ path('login') }}" title=""><i class="la la-external-link-square"></i> Iniciar sesión</a></li>
+                            </ul>
+                        </div>
+                    </nav><!-- Menus -->
                 {% endif %}
             </div>
         </div>
@@ -224,72 +220,64 @@
 
 </div>
 {% if is_granted('ROLE_USER') %}
-<div class="profile-sidebar">
-    <span class="close-profile"><i class="la la-close"></i></span>
-    <div class="can-detail-s">
-        <div class="cst">
-            {% if(app.user.imagen == null) %}
-                <img src="/img_user/usuario.png" alt="" class="img-profile-145" />
-            {% else %}
+    <div class="profile-sidebar">
+        <span class="close-profile"><i class="la la-close"></i></span>
+        <div class="can-detail-s">
+            <div class="cst">
                 <img src="/img_user/{{ app.user.imagen }}" alt="" class="img-profile-145" />
-            {% endif %}
+            </div>
+            <h3>{{ app.user.nombre }}<br>{{ app.user.apellidos }}</h3>
+            <span><i>{{ app.user.especialidad }}</i></span>
+            <p>{{ app.user.email }}</p>
+            <p>{{ app.user.fechaNacimiento }}</p>
+            <p><i class="la la-map-marker"></i>{{ app.user.paisOrigen }} / {{ app.user.provincia }}</p>
         </div>
-        <h3>{{ app.user.nombre }}<br>{{ app.user.apellidos }}</h3>
-        <span><i>Programador Frontend and Backend</i> at Atract Solutions</span>
-        <p>{{ app.user.email }}</p>
-        <p>{{ app.user.fechaNacimiento }}</p>
-        <p><i class="la la-map-marker"></i>{{ app.user.paisOrigen }} / {{ app.user.provincia }}</p>
-    </div>
-    <div class="tree_widget-sec">
-        <ul>
-            <li><a href="{{ path('perfil') }}" title=""><i class="la la-file-text"></i>Mi perfil</a></li>
-            <li><a href="{{ path('curriculum') }}" title=""><i class="la la-file-text"></i>Currículum</a></li>
-            <li class="inner-child">
-                <a href="#" title=""><i class="la la-briefcase"></i>My Resume</a>
-                <ul>
-                    <li><a href="#" title="">Education</a></li>
-                    <li><a href="#" title="">Work Experience</a></li>
-                    <li><a href="#" title="">Portfolio</a></li>
-                    <li><a href="#" title="">Professional Skills</a></li>
-                    <li><a href="#" title="">Awards</a></li>
-                </ul>
-            </li>
-            <li class="inner-child">
-                <a href="#" title=""><i class="la la-money"></i>Shorlisted Job</a>
-                <ul>
-                    <li><a href="#" title="">My Profile</a></li>
-                    <li><a href="#" title="">Social Network</a></li>
-                    <li><a href="#" title="">Contact Information</a></li>
-                </ul>
-            </li>
-            <li class="inner-child">
-                <a href="#" title=""><i class="la la-paper-plane"></i>Applied Job</a>
-                <ul>
-                    <li><a href="#" title="">My Profile</a></li>
-                    <li><a href="#" title="">Social Network</a></li>
-                    <li><a href="#" title="">Contact Information</a></li>
-                </ul>
-            </li>
-            <li class="inner-child">
-                <a href="#" title=""><i class="la la-user"></i>Job Alerts</a>
-                <ul>
-                    <li><a href="#" title="">My Profile</a></li>
-                    <li><a href="#" title="">Social Network</a></li>
-                    <li><a href="#" title="">Contact Information</a></li>
-                </ul>
-            </li>
-            <li class="inner-child">
-                <a href="#" title=""><i class="la la-flash"></i>Change Password</a>
-                <ul>
-                    <li><a href="#" title="">My Profile</a></li>
-                    <li><a href="#" title="">Social Network</a></li>
-                    <li><a href="#" title="">Contact Information</a></li>
-                </ul>
-            </li>
-            <li><a href="{{ path('logout') }}" title=""><i class="la la-unlink"></i>Cerrar sesión</a></li>
-        </ul>
-    </div>
-</div><!-- Profile Sidebar -->
+        <div class="tree_widget-sec">
+            <ul>
+                <li class="inner-child">
+                    <a title=""><i class="la la-briefcase"></i>Mi perfil</a>
+                    <ul>
+                        <li><a href="{{ path('perfil') }}" title="">Sobre mi</a></li>
+                        <li><a href="{{ path('perfil-editar', {id:app.user.id}) }}" title="">Editar mi información</a></li>
+                    </ul>
+                </li>
+                <li><a href="{{ path('curriculum') }}" title=""><i class="la la-file-text"></i>Currículum</a></li>
+                <li class="inner-child">
+                    <a href="#" title=""><i class="la la-money"></i>Shorlisted Job</a>
+                    <ul>
+                        <li><a href="#" title="">My Profile</a></li>
+                        <li><a href="#" title="">Social Network</a></li>
+                        <li><a href="#" title="">Contact Information</a></li>
+                    </ul>
+                </li>
+                <li class="inner-child">
+                    <a href="#" title=""><i class="la la-paper-plane"></i>Applied Job</a>
+                    <ul>
+                        <li><a href="#" title="">My Profile</a></li>
+                        <li><a href="#" title="">Social Network</a></li>
+                        <li><a href="#" title="">Contact Information</a></li>
+                    </ul>
+                </li>
+                <li class="inner-child">
+                    <a href="#" title=""><i class="la la-user"></i>Job Alerts</a>
+                    <ul>
+                        <li><a href="#" title="">My Profile</a></li>
+                        <li><a href="#" title="">Social Network</a></li>
+                        <li><a href="#" title="">Contact Information</a></li>
+                    </ul>
+                </li>
+                <li class="inner-child">
+                    <a href="#" title=""><i class="la la-flash"></i>Change Password</a>
+                    <ul>
+                        <li><a href="#" title="">My Profile</a></li>
+                        <li><a href="#" title="">Social Network</a></li>
+                        <li><a href="#" title="">Contact Information</a></li>
+                    </ul>
+                </li>
+                <li><a href="{{ path('logout') }}" title=""><i class="la la-unlink"></i>Cerrar sesión</a></li>
+            </ul>
+        </div>
+    </div><!-- Profile Sidebar -->
 {% endif %}
 <div class="view-resumesec">
     <div class="view-resumes">
@@ -419,4 +407,3 @@
 
 </body>
 </html>
-

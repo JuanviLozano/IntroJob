@@ -25,9 +25,6 @@ AppBundle\Entity\Usu_informacion:
         calificacion:
             type: string
             length: 255
-        especialidad:
-            type: string
-            length: 255
         infoPersonal:
             type: text
             column: info_personal

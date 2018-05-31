@@ -468,4 +468,33 @@ class Usuario implements UserInterface
         $this->educacion = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
+    /**
+     * @var string
+     */
+    private $especialidad;
+
+
+    /**
+     * Set especialidad
+     *
+     * @param string $especialidad
+     *
+     * @return Usuario
+     */
+    public function setEspecialidad($especialidad)
+    {
+        $this->especialidad = $especialidad;
+
+        return $this;
+    }
+
+    /**
+     * Get especialidad
+     *
+     * @return string
+     */
+    public function getEspecialidad()
+    {
+        return $this->especialidad;
+    }
 }

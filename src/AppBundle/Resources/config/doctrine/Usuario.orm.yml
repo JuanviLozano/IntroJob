@@ -84,6 +84,12 @@ AppBundle\Entity\Usuario:
             nullable: false
             options:
                 unsigned: false
+        especialidad:
+            type: string
+            nullable: true
+            length: 255
+            options:
+                fixed: false
         imagen:
             type: string
             nullable: true

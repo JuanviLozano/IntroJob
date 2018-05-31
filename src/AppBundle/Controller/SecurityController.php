@@ -27,17 +27,17 @@ class SecurityController extends Controller
     {
         return $this->redirectToRoute('login');
     }
-    
+
     public function registroAction(Request $request, UserPasswordEncoderInterface $passwordEncoder) {
         $user = new Usuario();
-        
+
         $form = $this->createForm(UsuarioType::class, $user);
         $imagen = $user->getImagen();
 
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
 
-            if($imagen != null) {
+            if(!empty($imagen)) {
                 $file = $form['imagen']->getData();
                 $ext = $file->guessExtension();
                 $file_name = time().'.'.$ext;
@@ -45,12 +45,12 @@ class SecurityController extends Controller
                 $user->setImagen($file_name);
             }
             else {
-                $user->setImagen($imagen);
+                $user->setImagen('usuario.png');
             }
 
             $password = $passwordEncoder->encodePassword($user, $user->getPassword());
             $user->setPassword($password);
-            
+
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($user);
             $entityManager->flush();

@@ -23,76 +23,95 @@ class UsuarioType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('username', TextType::Class, array(
-                    'attr' => array('placeholder' => 'Nombre del usuario'),
-                    'required' => true
-                ))
-                ->add('password', PasswordType::Class, array(
-                    'attr' => array('placeholder' => '*********'),
-                    'required' => true
-                ))
-                ->add('nombre', TextType::Class, array(
-                    'attr' => array('placeholder' => 'Nombre'),
-                    'required' => true
-                ))
-                ->add('apellidos', TextType::Class, array(
-                    'attr' => array('placeholder' => 'Apellidos'),
-                    'required' => true
-                ))
-                ->add('fecha_nacimiento', TextType::Class, array(
-                    'attr' => array('placeholder' => 'dd/mm/yyyy'),
-                    'required' => true
-                ))
-                ->add('sexo', ChoiceType::Class, array(
-                    'choices' => [
-                        'Hombre' => 'hombre',
-                        'Mujer' => 'mujer',
-                        'Indefinido' => 'indefinido'
-                    ],
-                    'attr' => ['class' => 'chosen']
-                ))
-                ->add('pais_origen', EntityType::Class, array(
-                    'class' => 'AppBundle:Paises',
-                    'choice_label' => 'nombre',
-                    'attr' => [
-                        'class' => 'chosen'
-                    ]
-                ))
-                ->add('provincia', EntityType::Class, array(
-                    'class' => 'AppBundle:Provincias',
-                    'choice_label' => 'provincia',
-                    'attr' => [
-                        'class' => 'chosen'
-                    ]
-                ))
-                ->add('direccion', TextType::Class, array(
-                    'attr' => array('placeholder' => 'Dirección | Opcional'),
-                    'required' => true
-                ))
-                ->add('cod_postal', TextType::Class, array(
-                    'attr' => array('placeholder' => 'Código postal'),
-                    'required' => true
-                ))
+            'label' => 'Nombre usuario',
+            'attr' => array('placeholder' => 'Nombre del usuario'),
+            'required' => true
+        ))
+            ->add('password', PasswordType::Class, array(
+                'label' => 'Contraseña',
+                'attr' => array('placeholder' => '*********'),
+                'required' => true
+            ))
+            ->add('nombre', TextType::Class, array(
+                'label' => 'Nombre',
+                'attr' => array('placeholder' => 'Nombre'),
+                'required' => true
+            ))
+            ->add('apellidos', TextType::Class, array(
+                'label' => 'Appelidos',
+                'attr' => array('placeholder' => 'Apellidos'),
+                'required' => true
+            ))
+            ->add('fecha_nacimiento', TextType::Class, array(
+                'label' => 'Fecha de nacimiento',
+                'attr' => array('placeholder' => 'dd/mm/yyyy'),
+                'required' => true
+            ))
+            ->add('sexo', ChoiceType::Class, array(
+                'label' => 'Sexo',
+                'choices' => [
+                    'Hombre' => 'hombre',
+                    'Mujer' => 'mujer',
+                    'Indefinido' => 'indefinido'
+                ],
+                'attr' => ['class' => 'chosen']
+            ))
+            ->add('pais_origen', EntityType::Class, array(
+                'label' => 'Pais de origen',
+                'class' => 'AppBundle:Paises',
+                'choice_label' => 'nombre',
+                'attr' => [
+                    'class' => 'chosen'
+                ]
+            ))
+            ->add('provincia', EntityType::Class, array(
+                'label' => 'Provincia',
+                'class' => 'AppBundle:Provincias',
+                'choice_label' => 'provincia',
+                'attr' => [
+                    'class' => 'chosen'
+                ]
+            ))
+            ->add('direccion', TextType::Class, array(
+                'label' => 'Dirección',
+                'attr' => array('placeholder' => 'Dirección | Opcional'),
+                'required' => true
+            ))
+            ->add('cod_postal', TextType::Class, array(
+                'label' => 'Código postal',
+                'attr' => array('placeholder' => 'Código postal'),
+                'required' => true
+            ))
 
-                ->add('email', EmailType::Class, array(
-                    'attr' => array('placeholder' => 'Correo electrónico'),
-                    'required' => true
-                ))
-                ->add('telefono', TextType::Class, array(
-                    'attr' => array('placeholder' => 'Teléfono móvil'),
-                    'required' => true
-                ))
-                ->add('imagen', FileType::Class, array(
-                    'required' => false,
-                    'attr' => [
-                        'id' => 'file-upload'
-                    ]
-                ))
-                ->add('Enviar', SubmitType::Class, array(
-                    'label' => 'Registrarse'
-                ));
+            ->add('email', EmailType::Class, array(
+                'label' => 'Email',
+                'attr' => array('placeholder' => 'Correo electrónico'),
+                'required' => true
+            ))
+            ->add('telefono', TextType::Class, array(
+                'label' => 'Telefono',
+                'attr' => array('placeholder' => 'Teléfono móvil'),
+                'required' => true
+            ))
+            ->add('especialidad', TextType::Class, array(
+                'label' => 'Especialidad',
+                'attr' => array('placeholder' => 'Ej: Programador web'),
+                'required' => false
+            ))
+            ->add('imagen', FileType::Class, array(
+                'label' => 'Imagen',
+                'mapped' => false,
+                'required' => false,
+                'attr' => [
+                    'id' => 'file-upload'
+                ]
+            ))
+            ->add('Enviar', SubmitType::Class, array(
+                'label' => 'Registrarse'
+            ));
     }/**
-     * {@inheritdoc}
-     */
+ * {@inheritdoc}
+ */
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(

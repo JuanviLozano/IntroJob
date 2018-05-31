@@ -2,7 +2,15 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Entity\Usuario;
+
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+
+use AppBundle\Form\UsuarioType;
+
 
 class PerfilController extends Controller
 {
@@ -10,6 +18,48 @@ class PerfilController extends Controller
     {
         return $this->render('datos-personales/perfil.html.twig');
     }
+
+    public function editarPerfilAction(Request $request, Usuario $usuario, UserPasswordEncoderInterface $passwordEncoder)
+    {
+        $allpassword = $usuario->getPassword();
+        $form = $this->createForm(UsuarioType::Class, $usuario);
+
+        $form->handleRequest($request);
+        if($form->isSubmitted() && $form->isValid()) {
+
+            // Control de la password
+            $password = $usuario->getPassword();
+            if(!empty($password)) {
+                $password = $passwordEncoder->encodePassword($usuario, $usuario->getPassword());
+                $usuario->setPassword();
+            }
+            else {
+                $usuario->setPassword($allpassword);
+            }
+
+            $foto_antigua = $usuario->getImagen();
+            unlink($foto_antigua);
+            $file = $form['imagen']->getData();
+            $ext = $file->guessExtension();
+            $file_name = time().'.'.$ext;
+            $usuario->setImagen($file_name);
+
+            $usuario = $form->getData();
+            $em = $this->getDoctrine()->getManager();
+
+            $em->persist($usuario);
+            $em->flush();
+            $this->addFlash('mensaje', 'Usuario actualizado correctamente');
+
+            return $this->redirectToRoute('perfil');
+
+        }
+        return $this->render('datos-personales/editar-usuario.html.twig', array(
+            'form' => $form->createView()
+        ));
+    }
+
+    /* ---------------- CURRICULUM ---------------- */
 
     public function curriculumAction()
     {
