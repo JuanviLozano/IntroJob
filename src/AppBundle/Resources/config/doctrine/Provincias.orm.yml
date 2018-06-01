@@ -1,0 +1,20 @@
+AppBundle\Entity\Provincias:
+    type: entity
+    table: provincias
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        provincia:
+            type: string
+            nullable: true
+            length: 80
+            options:
+                fixed: false
+    lifecycleCallbacks: {  }

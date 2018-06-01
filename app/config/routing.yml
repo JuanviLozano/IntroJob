@@ -1,0 +1,30 @@
+index:
+    path: /
+    defaults: { _controller: "AppBundle:Default:index" }
+
+#Login y Registro
+login:
+    path: /login
+    defaults: { _controller: "AppBundle:Security:login" }
+    methods: [GET, POST]
+registro:
+    path: /register
+    defaults: { _controller: "AppBundle:Security:registro" }
+logout:
+    path: /logout
+    defaults: { _controller: "AppBundle:Security:logout" }
+#Trabajo
+lista: 
+    path: /list_trabajos
+    defaults: { _controller: "AppBundle:Trabajo:list" }
+
+#Datos personales
+perfil:
+    path: /profile
+    defaults: { _controller: "AppBundle:Perfil:perfil" }
+perfil-editar:
+    path: /editar-usuario
+    defaults: { _controller: "AppBundle:Perfil:editarPerfil" }
+curriculum:
+    path: /profile/curriculum
+    defaults: { _controller: "AppBundle:Perfil:curriculum" }

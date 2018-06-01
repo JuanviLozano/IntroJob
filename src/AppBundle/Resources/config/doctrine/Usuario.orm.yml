@@ -1,0 +1,99 @@
+AppBundle\Entity\Usuario:
+    type: entity
+    table: usuario
+    repositoryClass: AppBundle\Repository\UsuarioRepository
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        username:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+        password:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+        nombre:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+        apellidos:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+        fechaNacimiento:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+            column: fecha_nacimiento
+        sexo:
+            type: string
+            nullable: false
+            length: 10
+            options:
+                fixed: false
+        paisOrigen:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+        provincia:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+        direccion:
+            type: string
+            nullable: true
+            length: 255
+            options:
+                fixed: false
+        codPostal:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: cod_postal
+        email:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+        telefono:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+        especialidad:
+            type: string
+            nullable: true
+            length: 255
+            options:
+                fixed: false
+        imagen:
+            type: string
+            nullable: true
+            length: 255
+            options:
+                fixed: false
+    lifecycleCallbacks: {  }
