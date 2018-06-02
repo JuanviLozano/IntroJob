@@ -1,0 +1,36 @@
+AppBundle\Entity\Usu_informacion:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\Usu_informacionRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        expectativaSalario:
+            type: integer
+            column: expectativa_salario
+        nivelCarrera:
+            type: string
+            length: 255
+            column: nivel_carrera
+        industria:
+            type: string
+            length: 255
+        experiencia:
+            type: string
+            length: 255
+        infoPersonal:
+            type: text
+            column: info_personal
+    lifecycleCallbacks: {  }
+
+    manyToOne:
+        usuario:
+            targetEntity: Usuario
+            inversedBy: informacion
+            joinColumn:
+                name: id_usuario
+                referencedColumnName: id

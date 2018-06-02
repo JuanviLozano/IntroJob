@@ -1,0 +1,37 @@
+AppBundle\Entity\Usu_exp_laboral:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\Usu_exp_laboralRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        oficio:
+            type: string
+            length: 255
+        nombreEmpresa:
+            type: string
+            length: 255
+            column: nombre_empresa
+        fechaInicio:
+            type: string
+            length: '7'
+            column: fecha_inicio
+        fechaFin:
+            type: string
+            length: '7'
+            column: fecha_fin
+        descripcion:
+            type: text
+    lifecycleCallbacks: {  }
+
+    manyToOne:
+        usuario:
+            targetEntity: Usuario
+            inversedBy: experiencia
+            joinColumn:
+                name: id_usuario
+                referencedColumnName: id

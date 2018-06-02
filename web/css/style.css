@@ -5408,7 +5408,7 @@ aside .widget.border:first-child {
     width: 100%;
     margin: 0;
     position: relative;
-    padding-left: 67px;
+    padding: 0 67px;
     margin: 15px 0;
 }
 .job-overview ul > li i {

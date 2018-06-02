@@ -1,0 +1,20 @@
+AppBundle\Entity\Nivel:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\NivelRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        titulo:
+            type: string
+            length: '10'
+    lifecycleCallbacks: {  }
+
+    oneToMany:
+        usuIdioma:
+            targetEntity: Usu_idioma
+            mappedBy: nivel

@@ -454,10 +454,7 @@ class Usuario implements UserInterface, \Serializable
     }
 
     /**
-     * String representation of object
-     * @link http://php.net/manual/en/serializable.serialize.php
-     * @return string the string representation of the object or null
-     * @since 5.1.0
+     * @return string
      */
     public function serialize()
     {
@@ -480,13 +477,7 @@ class Usuario implements UserInterface, \Serializable
     }
 
     /**
-     * Constructs the object
-     * @link http://php.net/manual/en/serializable.unserialize.php
-     * @param string $serialized <p>
-     * The string representation of the object.
-     * </p>
-     * @return void
-     * @since 5.1.0
+     * @param string $serialized
      */
     public function unserialize($serialized)
     {
@@ -513,13 +504,6 @@ class Usuario implements UserInterface, \Serializable
      */
     private  $usuario;
 
-    /**
-     * Usuario constructor.
-     */
-    public function __construct()
-    {
-        $this->usuario = new ArrayCollection();
-    }
 
     /**
      * Add usuario
@@ -553,6 +537,93 @@ class Usuario implements UserInterface, \Serializable
     public function getUsuarios()
     {
         return $this->usuario;
+    }
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $idioma;
+
+
+    /**
+     * Add idioma
+     *
+     * @param \AppBundle\Entity\Usu_idioma $idioma
+     *
+     * @return Usuario
+     */
+    public function addIdioma(\AppBundle\Entity\Usu_idioma $idioma)
+    {
+        $this->idioma[] = $idioma;
+
+        return $this;
+    }
+
+    /**
+     * Remove idioma
+     *
+     * @param \AppBundle\Entity\Usu_idioma $idioma
+     */
+    public function removeIdioma(\AppBundle\Entity\Usu_idioma $idioma)
+    {
+        $this->idioma->removeElement($idioma);
+    }
+
+    /**
+     * Get idioma
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getIdioma()
+    {
+        return $this->idioma;
+    }
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $conocimiento;
+
+
+    /**
+     * Add conocimiento
+     *
+     * @param \AppBundle\Entity\Usu_conocimiento $conocimiento
+     *
+     * @return Usuarios
+     */
+    public function addConocimiento(\AppBundle\Entity\Usu_conocimiento $conocimiento)
+    {
+        $this->conocimiento[] = $conocimiento;
+
+        return $this;
+    }
+
+    /**
+     * Remove conocimiento
+     *
+     * @param \AppBundle\Entity\Usu_conocimiento $conocimiento
+     */
+    public function removeConocimiento(\AppBundle\Entity\Usu_conocimiento $conocimiento)
+    {
+        $this->conocimiento->removeElement($conocimiento);
+    }
+
+    /**
+     * Get conocimiento
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getConocimiento()
+    {
+        return $this->conocimiento;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->conocimiento = new ArrayCollection();
     }
 
 }

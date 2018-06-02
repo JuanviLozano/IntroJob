@@ -1,0 +1,41 @@
+AppBundle\Entity\Usu_idioma:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\Usu_idiomaRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        leido:
+            type: string
+            length: '20'
+        hablado:
+            type: string
+            length: '20'
+        escrito:
+            type: string
+            length: '20'
+    lifecycleCallbacks: {  }
+
+    manyToOne:
+        usuario:
+            targetEntity: Usuario
+            inversedBy: idioma
+            joinColumn:
+                name: id_usuario
+                referencedColumnName: id
+        idiomas:
+            targetEntity: Idioma
+            inversedBy: usuIdioma
+            joinColumn:
+                name: id_idioma
+                referencedColumnName: id
+        nivel:
+            targetEntity: Nivel
+            inversedBy: usuIdioma
+            joinColumn:
+                name: id_nivel
+                referencedColumnName: id

@@ -1,0 +1,36 @@
+AppBundle\Entity\Usu_educacion:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\Usu_educacionRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        tipo:
+            type: string
+            length: 255
+        fechaInicio:
+            type: string
+            length: '7'
+            column: fecha_inicio
+        fechaFin:
+            type: string
+            length: '7'
+            column: fecha_fin
+        centro:
+            type: string
+            length: 255
+        descripcion:
+            type: text
+    lifecycleCallbacks: {  }
+
+    manyToOne:
+        usuario:
+            targetEntity: Usuario
+            inversedBy: educacion
+            joinColumn:
+                name: id_usuario
+                referencedColumnName: id

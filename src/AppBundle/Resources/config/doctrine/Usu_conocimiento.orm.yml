@@ -1,0 +1,31 @@
+AppBundle\Entity\Usu_conocimiento:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\Usu_conocimientoRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        tipo:
+            type: string
+            length: 255
+        especialidad:
+            type: string
+            length: 255
+        descripcion:
+            type: text
+        centro:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }
+
+    manyToOne:
+        usuario:
+            targetEntity: Usuario
+            inversedBy: conocimiento
+            joinColumn:
+                name: id_usuario
+                referencedColumnName: id

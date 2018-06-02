@@ -28,3 +28,34 @@ perfil-editar:
 curriculum:
     path: /profile/curriculum
     defaults: { _controller: "AppBundle:Perfil:curriculum" }
+
+#Rutas conocimientos
+addConocimiento:
+    path: /curriculum/add_conocimiento
+    defaults: { _controller: "AppBundle:Conocimiento:addConocimiento" }
+editConocimiento:
+    path: /curriculum/edit_conocimiento/{id}
+    defaults: { _controller: "AppBundle:Curriculum:editConocimiento" }
+deleteConocimiento:
+    path: /curriculum/delete_conocimiento/{id}
+    defaults: { _controller: "AppBundle:Curriculum:deleteConocimiento" }
+
+#Rutas educacion
+educacion:
+    path: /curriculum/edit_educacion/{id}
+    defaults: { _controller: "AppBundle:Curriculum:editEducacion" }
+
+#Rutas experiencia
+experiencia:
+    path: /curriculum/edit_experiencia/{id}
+    defaults: { _controller: "AppBundle:Curriculum:editExperiencia" }
+
+#Rutas idioma
+idioma:
+    path: /curriculum/edit_idioma/{id}
+    defaults: { _controller: "AppBundle:Curriculum:editIdioma" }
+
+#Rutas informacion
+informacion:
+    path: /curriculum/edit_informacion/{id}
+    defaults: { _controller: "AppBundle:Curriculum:editInformacion" }
