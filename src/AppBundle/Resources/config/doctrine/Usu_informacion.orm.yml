@@ -9,9 +9,9 @@ AppBundle\Entity\Usu_informacion:
             generator:
                 strategy: AUTO
     fields:
-        expectativaSalarial:
+        expectativaSalario:
             type: integer
-            column: expectativa_salarial
+            column: expectativa_salario
         nivelCarrera:
             type: string
             length: 255
@@ -20,9 +20,6 @@ AppBundle\Entity\Usu_informacion:
             type: string
             length: 255
         experiencia:
-            type: string
-            length: 255
-        calificacion:
             type: string
             length: 255
         infoPersonal:

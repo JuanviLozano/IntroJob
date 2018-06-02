@@ -1,7 +1,7 @@
-AppBundle\Entity\Usu_habilidades:
+AppBundle\Entity\Usu_conocimiento:
     type: entity
     table: null
-    repositoryClass: AppBundle\Repository\Usu_habilidadesRepository
+    repositoryClass: AppBundle\Repository\Usu_conocimientoRepository
     id:
         id:
             type: integer
@@ -9,18 +9,23 @@ AppBundle\Entity\Usu_habilidades:
             generator:
                 strategy: AUTO
     fields:
-        nombreHabilidad:
+        tipo:
             type: string
             length: 255
-            column: nombre_habilidad
-        porcentaje:
-            type: integer
+        especialidad:
+            type: string
+            length: 255
+        descripcion:
+            type: text
+        centro:
+            type: string
+            length: 255
     lifecycleCallbacks: {  }
 
     manyToOne:
         usuario:
             targetEntity: Usuario
-            inversedBy: habilidades
+            inversedBy: conocimiento
             joinColumn:
                 name: id_usuario
                 referencedColumnName: id

@@ -9,12 +9,33 @@ AppBundle\Entity\Usu_idioma:
             generator:
                 strategy: AUTO
     fields:
-        lenguaje:
+        leido:
             type: string
-            length: 255
+            length: '20'
+        hablado:
+            type: string
+            length: '20'
+        escrito:
+            type: string
+            length: '20'
     lifecycleCallbacks: {  }
 
-    oneToMany:
-        idioma:
-            targetEntity: Usuario_idioma
-            mappedBy: idioma
+    manyToOne:
+        usuario:
+            targetEntity: Usuario
+            inversedBy: idioma
+            joinColumn:
+                name: id_usuario
+                referencedColumnName: id
+        idiomas:
+            targetEntity: Idioma
+            inversedBy: usuIdioma
+            joinColumn:
+                name: id_idioma
+                referencedColumnName: id
+        nivel:
+            targetEntity: Nivel
+            inversedBy: usuIdioma
+            joinColumn:
+                name: id_nivel
+                referencedColumnName: id

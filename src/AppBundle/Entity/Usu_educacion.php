@@ -1,11 +1,12 @@
 <?php
 
 namespace AppBundle\Entity;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * Usu_educacion
  */
-class Usu_educacion
+class Usu_educacion implements UserInterface, \Serializable
 {
     /**
      * @var int
@@ -15,15 +16,15 @@ class Usu_educacion
     /**
      * @var string
      */
-    private $tipoEducacion;
+    private $tipo;
 
     /**
-     * @var \DateTime
+     * @var string
      */
-    private $fechaInicion;
+    private $fechaInicio;
 
     /**
-     * @var \DateTime
+     * @var string
      */
     private $fechaFin;
 
@@ -31,11 +32,6 @@ class Usu_educacion
      * @var string
      */
     private $centro;
-
-    /**
-     * @var string
-     */
-    private $rama;
 
     /**
      * @var string
@@ -54,57 +50,57 @@ class Usu_educacion
     }
 
     /**
-     * Set tipoEducacion
+     * Set tipo
      *
-     * @param string $tipoEducacion
+     * @param string $tipo
      *
      * @return Usu_educacion
      */
-    public function setTipoEducacion($tipoEducacion)
+    public function setTipo($tipo)
     {
-        $this->tipoEducacion = $tipoEducacion;
+        $this->tipo = $tipo;
 
         return $this;
     }
 
     /**
-     * Get tipoEducacion
+     * Get tipo
      *
      * @return string
      */
-    public function getTipoEducacion()
+    public function getTipo()
     {
-        return $this->tipoEducacion;
+        return $this->tipo;
     }
 
     /**
-     * Set fechaInicion
+     * Set fechaInicio
      *
-     * @param \DateTime $fechaInicion
+     * @param string $fechaInicio
      *
      * @return Usu_educacion
      */
-    public function setFechaInicion($fechaInicion)
+    public function setFechaInicio($fechaInicio)
     {
-        $this->fechaInicion = $fechaInicion;
+        $this->fechaInicio = $fechaInicio;
 
         return $this;
     }
 
     /**
-     * Get fechaInicion
+     * Get fechaInicio
      *
-     * @return \DateTime
+     * @return string
      */
-    public function getFechaInicion()
+    public function getFechaInicio()
     {
-        return $this->fechaInicion;
+        return $this->fechaInicio;
     }
 
     /**
      * Set fechaFin
      *
-     * @param \DateTime $fechaFin
+     * @param string $fechaFin
      *
      * @return Usu_educacion
      */
@@ -118,7 +114,7 @@ class Usu_educacion
     /**
      * Get fechaFin
      *
-     * @return \DateTime
+     * @return string
      */
     public function getFechaFin()
     {
@@ -147,30 +143,6 @@ class Usu_educacion
     public function getCentro()
     {
         return $this->centro;
-    }
-
-    /**
-     * Set rama
-     *
-     * @param string $rama
-     *
-     * @return Usu_educacion
-     */
-    public function setRama($rama)
-    {
-        $this->rama = $rama;
-
-        return $this;
-    }
-
-    /**
-     * Get rama
-     *
-     * @return string
-     */
-    public function getRama()
-    {
-        return $this->rama;
     }
 
     /**
@@ -224,5 +196,53 @@ class Usu_educacion
     public function getUsuario()
     {
         return $this->usuario;
+    }
+
+
+    public function getRoles()
+    {
+        return null;
+    }
+
+    public function getPassword()
+    {
+        return null;
+    }
+
+    public function getSalt()
+    {
+        return null;
+    }
+
+    public function getUsername()
+    {
+        return null;
+    }
+
+    public function eraseCredentials()
+    {
+        return null;
+    }
+
+    public function serialize()
+    {
+        return serialize(array(
+            $this->id,
+            $this->tipo,
+            $this->centro,
+            $this->descripcion,
+            $this->usuario,
+        ));
+    }
+
+    public function unserialize($serialized)
+    {
+        list (
+            $this->id,
+            $this->tipo,
+            $this->centro,
+            $this->descripcion,
+            $this->usuario,
+        ) = $this->unserialize($serialized);
     }
 }

@@ -6,3 +6,23 @@ lista:
 perfil:
     path:     /perfil
     defaults: { _controller: AppBundle:Perfil:perfil }
+
+edit_conocimiento:
+    path:     /editConocimiento
+    defaults: { _controller: AppBundle:Curriculum:editConocimiento }
+
+edit_educacion:
+    path:     /editEducacion
+    defaults: { _controller: AppBundle:Curriculum:editEducacion }
+
+edit_experiencia:
+    path:     /editExperiencia
+    defaults: { _controller: AppBundle:Curriculum:editExperiencia }
+
+edit_idioma:
+    path:     /editIdioma
+    defaults: { _controller: AppBundle:Curriculum:editIdioma }
+
+edit_informacion:
+    path:     /editInformacion
+    defaults: { _controller: AppBundle:Curriculum:editInformacion }

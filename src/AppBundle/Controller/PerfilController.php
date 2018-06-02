@@ -19,8 +19,9 @@ class PerfilController extends Controller
         return $this->render('datos-personales/perfil.html.twig');
     }
 
-    public function editarPerfilAction(Request $request, Usuario $usuario, UserPasswordEncoderInterface $passwordEncoder)
+    public function editarPerfilAction(Request $request, UserPasswordEncoderInterface $passwordEncoder)
     {
+        $usuario = $this->getUser();
         $allpassword = $usuario->getPassword();
         $form = $this->createForm(UsuarioType::Class, $usuario);
         $foto_antigua = $usuario->getImagen();
@@ -29,6 +30,7 @@ class PerfilController extends Controller
         if($form->isSubmitted() && $form->isValid()) {
 
             $foto = $form['imagen']->getData();
+
             // Control de la password
             $password = $usuario->getPassword();
             if(!empty($password)) {
@@ -39,7 +41,6 @@ class PerfilController extends Controller
                 $usuario->setPassword($allpassword);
             }
 
-            // Edición de la foto
             if($foto) {
                 if($foto_antigua != 'usuario.png') {
                     unlink('img_user/'.$foto_antigua);
@@ -53,6 +54,7 @@ class PerfilController extends Controller
 
             $usuario = $form->getData();
             $em = $this->getDoctrine()->getManager();
+
             $em->persist($usuario);
             $em->flush();
             $this->addFlash('mensaje', 'Usuario actualizado correctamente');

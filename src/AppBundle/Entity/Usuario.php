@@ -2,12 +2,13 @@
 
 namespace AppBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * Usuario
  */
-class Usuario implements UserInterface
+class Usuario implements UserInterface, \Serializable
 {
     /**
      * @var integer
@@ -73,6 +74,11 @@ class Usuario implements UserInterface
      * @var integer
      */
     private $telefono;
+
+    /**
+     * @var string
+     */
+    private $especialidad;
 
     /**
      * @var string
@@ -379,102 +385,6 @@ class Usuario implements UserInterface
     }
 
     /**
-     * Set imagen
-     *
-     * @param string $imagen
-     *
-     * @return Usuario
-     */
-    public function setImagen($imagen)
-    {
-        $this->imagen = $imagen;
-
-        return $this;
-    }
-
-    /**
-     * Get imagen
-     *
-     * @return string
-     */
-    public function getImagen()
-    {
-        return $this->imagen;
-    }
-    
-    public function getRoles()
-    {
-        return [
-            'ROLE_USER'
-        ];
-    }
-    public function getSalt()
-    {
-        return null;
-    }
-    public function eraseCredentials() 
-    {
-        return null;
-    }
-    
-    public function getPais() 
-    {
-    }
-
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     */
-    private $educacion;
-
-
-    /**
-     * Add educacion
-     *
-     * @param \AppBundle\Entity\Usu_educacion $educacion
-     *
-     * @return Usuario
-     */
-    public function addEducacion(\AppBundle\Entity\Usu_educacion $educacion)
-    {
-        $this->educacion[] = $educacion;
-
-        return $this;
-    }
-
-    /**
-     * Remove educacion
-     *
-     * @param \AppBundle\Entity\Usu_educacion $educacion
-     */
-    public function removeEducacion(\AppBundle\Entity\Usu_educacion $educacion)
-    {
-        $this->educacion->removeElement($educacion);
-    }
-
-    /**
-     * Get educacion
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getEducacion()
-    {
-        return $this->educacion;
-    }
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->educacion = new \Doctrine\Common\Collections\ArrayCollection();
-    }
-
-    /**
-     * @var string
-     */
-    private $especialidad;
-
-
-    /**
      * Set especialidad
      *
      * @param string $especialidad
@@ -497,4 +407,223 @@ class Usuario implements UserInterface
     {
         return $this->especialidad;
     }
+
+    /**
+     * Set imagen
+     *
+     * @param string $imagen
+     *
+     * @return Usuario
+     */
+    public function setImagen($imagen)
+    {
+        $this->imagen = $imagen;
+
+        return $this;
+    }
+
+    /**
+     * Get imagen
+     *
+     * @return string
+     */
+    public function getImagen()
+    {
+        return $this->imagen;
+    }
+
+    public function getRoles()
+    {
+        return [
+            'ROLE_USER'
+        ];
+    }
+
+    public function getSalt()
+    {
+        return null;
+    }
+
+    public function eraseCredentials()
+    {
+        return null;
+    }
+
+    public function getPais()
+    {
+    }
+
+    /**
+     * @return string
+     */
+    public function serialize()
+    {
+        return serialize(array(
+            $this->id,
+            $this->username,
+            $this->password,
+            $this->nombre,
+            $this->apellidos,
+            $this->sexo,
+            $this->paisOrigen,
+            $this->provincia,
+            $this->telefono,
+            $this->direccion,
+            $this->codPostal,
+            $this->imagen,
+            $this->email,
+            $this->fechaNacimiento,
+        ));
+    }
+
+    /**
+     * @param string $serialized
+     */
+    public function unserialize($serialized)
+    {
+        list(
+            $this->id,
+            $this->username,
+            $this->password,
+            $this->nombre,
+            $this->apellidos,
+            $this->sexo,
+            $this->paisOrigen,
+            $this->provincia,
+            $this->telefono,
+            $this->direccion,
+            $this->codPostal,
+            $this->imagen,
+            $this->email,
+            $this->fechaNacimiento,
+            ) = unserialize($serialized);
+    }
+
+    /**
+     * @var \Doctrine\Common\Collections
+     */
+    private  $usuario;
+
+
+    /**
+     * Add usuario
+     *
+     * @param \AppBundle\Entity\Usuario $usuario
+     *
+     * @return Usuario
+     */
+    public function addUsuario(\AppBundle\Entity\Usuario $usuario)
+    {
+        $this->usuario[] = $usuario;
+
+        return $this;
+    }
+
+    /**
+     * Remove usuario
+     *
+     * @param \AppBundle\Entity\Usuario $usuario
+     */
+    public function removeUsuario(\AppBundle\Entity\Usuario $usuario)
+    {
+        $this->usuario->removeElement($usuario);
+    }
+
+    /**
+     * Get usuario
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getUsuarios()
+    {
+        return $this->usuario;
+    }
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $idioma;
+
+
+    /**
+     * Add idioma
+     *
+     * @param \AppBundle\Entity\Usu_idioma $idioma
+     *
+     * @return Usuario
+     */
+    public function addIdioma(\AppBundle\Entity\Usu_idioma $idioma)
+    {
+        $this->idioma[] = $idioma;
+
+        return $this;
+    }
+
+    /**
+     * Remove idioma
+     *
+     * @param \AppBundle\Entity\Usu_idioma $idioma
+     */
+    public function removeIdioma(\AppBundle\Entity\Usu_idioma $idioma)
+    {
+        $this->idioma->removeElement($idioma);
+    }
+
+    /**
+     * Get idioma
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getIdioma()
+    {
+        return $this->idioma;
+    }
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $conocimiento;
+
+
+    /**
+     * Add conocimiento
+     *
+     * @param \AppBundle\Entity\Usu_conocimiento $conocimiento
+     *
+     * @return Usuarios
+     */
+    public function addConocimiento(\AppBundle\Entity\Usu_conocimiento $conocimiento)
+    {
+        $this->conocimiento[] = $conocimiento;
+
+        return $this;
+    }
+
+    /**
+     * Remove conocimiento
+     *
+     * @param \AppBundle\Entity\Usu_conocimiento $conocimiento
+     */
+    public function removeConocimiento(\AppBundle\Entity\Usu_conocimiento $conocimiento)
+    {
+        $this->conocimiento->removeElement($conocimiento);
+    }
+
+    /**
+     * Get conocimiento
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getConocimiento()
+    {
+        return $this->conocimiento;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->conocimiento = new ArrayCollection();
+    }
+
 }

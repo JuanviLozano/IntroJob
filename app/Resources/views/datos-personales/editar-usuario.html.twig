@@ -25,100 +25,129 @@
                         <div class="padding-left">
                             <div class="profile-title">
                                 <h3>Tu información personal</h3>
+                                <div class="steps-sec">
+                                    <div class="step active" id="circle-educacion">
+                                        <p><i class="la la-graduation-cap"></i></p>
+                                        <span>Educación</span>
+                                    </div>
+                                    <div class="step" id="circle-experiencia">
+                                        <p><i class="la la-file-text"></i></p>
+                                        <span>Experiencia</span>
+                                    </div>
+                                    <div class="step" id="circle-habilidades">
+                                        <p><i class="la  la-check-circle"></i></p>
+                                        <span>Habilidades</span>
+                                    </div>
+                                    <div class="step" id="circle-informacion">
+                                        <p><i class="la  la-user"></i></p>
+                                        <span>Información</span>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="profile-form-edit ">
-                                <div id="educacion" class="contact-edit" id="contactform">
-                                    {{ form_start(form, { 'attr' : {'role':'form'}}) }}
+                            <div class="profile-form-edit">
+                                {{ form_start(form, { 'attr' : {'role':'form'}}) }}
+                                <div id="educacion" class="contact-edit" style="display: none;">
                                     <div class="row">
                                         <div class="col-lg-12">
-                                            <span class="pf-title">{{ form_label(form.username) }}</span>
+                                            <span class="pf-title">Nombre del usuario</span>
                                             <div class="pf-field">
                                                 {{ form_widget(form.username) }}
-                                                <span class="text-danger">{{ form_errors(form.username) }}</span>
                                             </div>
                                         </div>
                                         <div class="col-lg-12">
-                                            <span class="pf-title">{{ form_label(form.password) }}</span>
+                                            <span class="pf-title">Contraseña</span>
                                             <div class="pf-field">
                                                 {{ form_widget(form.password) }}
-                                                <span class="text-danger">{{ form_errors(form.password) }}</span>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <span class="pf-title">{{ form_label(form.nombre) }}</span>
-                                            <div class="pf-field">
-                                                {{ form_widget(form.nombre) }}
-                                                <span class="text-danger">{{ form_errors(form.nombre) }}</span>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <span class="pf-title">{{ form_label(form.apellidos) }}</span>
-                                            <div class="pf-field">
-                                                {{ form_widget(form.apellidos) }}
-                                                <span class="text-danger">{{ form_errors(form.apellidos) }}</span>
                                             </div>
                                         </div>
                                         <div class="col-lg-12">
-                                            <span class="pf-title">{{ form_label(form.email) }}</span>
+                                            <span class="pf-title">Correo electónico</span>
                                             <div class="pf-field">
                                                 {{ form_widget(form.email) }}
-                                                <span class="text-danger">{{ form_errors(form.email) }}</span>
                                             </div>
                                         </div>
                                         <div class="col-lg-12">
-                                            <span class="pf-title">{{ form_label(form.fecha_nacimiento) }}</span>
+                                            <button type="button" id="edu-siguiente">Siguiente</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="experiencia" class="contact-edit" style="display: none;">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <span class="pf-title">Nombre</span>
+                                            <div class="pf-field">
+                                                {{ form_widget(form.nombre) }}
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <span class="pf-title">Apellidos</span>
+                                            <div class="pf-field">
+                                                {{ form_widget(form.apellidos) }}
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <span class="pf-title">Fecha de nacimiento</span>
                                             <div class="pf-field">
                                                 {{ form_widget(form.fecha_nacimiento) }}
-                                                <span class="text-danger">{{ form_errors(form.fecha_nacimiento) }}</span>
                                             </div>
                                         </div>
-                                        <div class="col-lg-12">
-                                            <span class="pf-title">{{ form_label(form.sexo) }}</span>
-                                            <div class="dropdown-field">
+                                        <div class="col-lg-6">
+                                            <span class="pf-title">Sexo</span>
+                                            <div class="pf-field">
                                                 {{ form_widget(form.sexo) }}
                                             </div>
                                         </div>
+                                        <div class="col-lg-12">
+                                            <button type="button" id="expe-siguiente">Siguiente</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="habilidades" class="contact-edit" style="display: none;">
+                                    <div class="row">
                                         <div class="col-lg-6">
-                                            <span class="pf-title">{{ form_label(form.pais_origen) }}</span>
-                                            <div class="dropdown-field">
+                                            <span class="pf-title">Pais origen</span>
+                                            <div class="pf-field">
                                                 {{ form_widget(form.pais_origen) }}
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
-                                            <span class="pf-title">{{ form_label(form.provincia) }}</span>
-                                            <div class="dropdown-field">
+                                            <span class="pf-title">Provincia</span>
+                                            <div class="pf-field">
                                                 {{ form_widget(form.provincia) }}
                                             </div>
                                         </div>
-                                        <div class="col-lg-12">
-                                            <span class="pf-title">{{ form_label(form.direccion) }}</span>
+                                        <div class="col-lg-6">
+                                            <span class="pf-title">Direccion</span>
                                             <div class="pf-field">
                                                 {{ form_widget(form.direccion) }}
-                                                <span class="text-danger">{{ form_errors(form.direccion) }}</span>
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
-                                            <span class="pf-title">{{ form_label(form.cod_postal) }}</span>
+                                            <span class="pf-title">Código postal</span>
                                             <div class="pf-field">
                                                 {{ form_widget(form.cod_postal) }}
-                                                <span class="text-danger">{{ form_errors(form.cod_postal) }}</span>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <span class="pf-title">{{ form_label(form.telefono) }}</span>
-                                            <div class="pf-field">
-                                                {{ form_widget(form.telefono) }}
-                                                <span class="text-danger">{{ form_errors(form.telefono) }}</span>
                                             </div>
                                         </div>
                                         <div class="col-lg-12">
-                                            <span class="pf-title">{{ form_label(form.especialidad) }}</span>
+                                            <button type="button" id="habili-siguiente">Siguiente</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="informacion" class="contact-edit" style="display: none;">
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <span class="pf-title">Teléfono</span>
                                             <div class="pf-field">
-                                                {{ form_widget(form.especialidad) }}
-                                                <span class="text-danger">{{ form_errors(form.especialidad) }}</span>
+                                                {{ form_widget(form.telefono) }}
                                             </div>
                                         </div>
-                                        <div class="col-lg-12 justify-content-center">
+                                        <div class="col-lg-6">
+                                            <span class="pf-title">Especialidad</span>
+                                            <div class="pf-field">
+                                                {{ form_widget(form.especialidad) }}
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
                                             <div class="upload-portfolio">
 
                                                 <div class="uploadbox">
@@ -133,8 +162,8 @@
                                             {{ form_widget(form.Enviar) }}
                                         </div>
                                     </div>
-                                    {{ form_end(form) }}
                                 </div>
+                                {{ form_end(form) }}
                             </div>
                         </div>
                     </div>
@@ -142,5 +171,6 @@
             </div>
         </div>
     </section>
+
 
 {% endblock %}

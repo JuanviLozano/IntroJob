@@ -1,11 +1,12 @@
 <?php
 
 namespace AppBundle\Entity;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
- * Usu_experiencia_laboral
+ * Usu_exp_laboral
  */
-class Usu_experiencia_laboral
+class Usu_exp_laboral implements UserInterface, \Serializable
 {
     /**
      * @var int
@@ -23,12 +24,12 @@ class Usu_experiencia_laboral
     private $nombreEmpresa;
 
     /**
-     * @var \DateTime
+     * @var string
      */
     private $fechaInicio;
 
     /**
-     * @var \DateTime
+     * @var string
      */
     private $fechaFin;
 
@@ -53,7 +54,7 @@ class Usu_experiencia_laboral
      *
      * @param string $oficio
      *
-     * @return Usu_experiencia_laboral
+     * @return Usu_exp_laboral
      */
     public function setOficio($oficio)
     {
@@ -77,7 +78,7 @@ class Usu_experiencia_laboral
      *
      * @param string $nombreEmpresa
      *
-     * @return Usu_experiencia_laboral
+     * @return Usu_exp_laboral
      */
     public function setNombreEmpresa($nombreEmpresa)
     {
@@ -99,9 +100,9 @@ class Usu_experiencia_laboral
     /**
      * Set fechaInicio
      *
-     * @param \DateTime $fechaInicio
+     * @param string $fechaInicio
      *
-     * @return Usu_experiencia_laboral
+     * @return Usu_exp_laboral
      */
     public function setFechaInicio($fechaInicio)
     {
@@ -113,7 +114,7 @@ class Usu_experiencia_laboral
     /**
      * Get fechaInicio
      *
-     * @return \DateTime
+     * @return string
      */
     public function getFechaInicio()
     {
@@ -123,9 +124,9 @@ class Usu_experiencia_laboral
     /**
      * Set fechaFin
      *
-     * @param \DateTime $fechaFin
+     * @param string $fechaFin
      *
-     * @return Usu_experiencia_laboral
+     * @return Usu_exp_laboral
      */
     public function setFechaFin($fechaFin)
     {
@@ -137,7 +138,7 @@ class Usu_experiencia_laboral
     /**
      * Get fechaFin
      *
-     * @return \DateTime
+     * @return string
      */
     public function getFechaFin()
     {
@@ -149,7 +150,7 @@ class Usu_experiencia_laboral
      *
      * @param string $descripcion
      *
-     * @return Usu_experiencia_laboral
+     * @return Usu_exp_laboral
      */
     public function setDescripcion($descripcion)
     {
@@ -178,7 +179,7 @@ class Usu_experiencia_laboral
      *
      * @param \AppBundle\Entity\Usuario $usuario
      *
-     * @return Usu_experiencia_laboral
+     * @return Usu_exp_laboral
      */
     public function setUsuario(\AppBundle\Entity\Usuario $usuario = null)
     {
@@ -195,5 +196,57 @@ class Usu_experiencia_laboral
     public function getUsuario()
     {
         return $this->usuario;
+    }
+
+
+    public function getRoles()
+    {
+        return null;
+    }
+
+    public function getPassword()
+    {
+        return null;
+    }
+
+    public function getSalt()
+    {
+        return null;
+    }
+
+    public function getUsername()
+    {
+        return null;
+    }
+
+    public function eraseCredentials()
+    {
+        return null;
+    }
+
+    public function serialize()
+    {
+        return serialize(array(
+            $this->id,
+            $this->usuario,
+            $this->descripcion,
+            $this->fechaFin,
+            $this->fechaInicio,
+            $this->nombreEmpresa,
+            $this->oficio,
+        ));
+    }
+
+    public function unserialize($serialized)
+    {
+        list (
+            $this->id,
+            $this->usuario,
+            $this->descripcion,
+            $this->fechaFin,
+            $this->fechaInicio,
+            $this->nombreEmpresa,
+            $this->oficio,
+        ) = $this->unserialize($serialized);
     }
 }

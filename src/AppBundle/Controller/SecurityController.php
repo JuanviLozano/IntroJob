@@ -32,20 +32,22 @@ class SecurityController extends Controller
         $user = new Usuario();
 
         $form = $this->createForm(UsuarioType::class, $user);
-        $imagen = $user->getImagen();
+        $foto_antigua = $user->getImagen();
 
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
 
-            if(empty($imagen)) {
+            $foto = $form['imagen']->getData();
+
+            if($foto) {
+                if($foto_antigua != 'usuario.png') {
+                    unlink('img_user/'.$foto_antigua);
+                }
                 $file = $form['imagen']->getData();
                 $ext = $file->guessExtension();
                 $file_name = time().'.'.$ext;
                 $file->move('img_user',$file_name);
                 $user->setImagen($file_name);
-            }
-            else {
-                $user->setImagen('usuario.png');
             }
 
             $password = $passwordEncoder->encodePassword($user, $user->getPassword());

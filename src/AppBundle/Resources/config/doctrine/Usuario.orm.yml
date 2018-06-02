@@ -1,7 +1,7 @@
 AppBundle\Entity\Usuario:
     type: entity
     table: usuario
-    repositoryClass: AppBundle\Repository\Usuario
+    repositoryClass: AppBundle\Repository\UsuarioRepository
     id:
         id:
             type: integer
@@ -98,28 +98,34 @@ AppBundle\Entity\Usuario:
                 fixed: false
     lifecycleCallbacks: {  }
 
+    ############## Relaciones ##############
+
+    #Idiomas
+    oneToMany:
+        idioma:
+            targetEntity: Usu_idioma
+            mappedBy: usuario
+
     #educacion
     oneToMany:
         educacion:
             targetEntity: Usu_educacion
             mappedBy: usuario
-    #experiencia
+
+    #experiencia_laboral
     oneToMany:
         experiencia:
-            targetEntity: Usu_experiencia_laboral
+            targetEntity: Usu_exp_laboral
             mappedBy: usuario
-    #habilidades
-    oneToMany:
-        habilidades:
-            targetEntity: Usu_habilidades
-            mappedBy: usuario
+
     #informacion
     oneToMany:
         informacion:
             targetEntity: Usu_informacion
             mappedBy: usuario
-    #idioma
+
+    #conocimiento
     oneToMany:
-        idioma:
-            targetEntity: Usuario_idioma
+        conocimiento:
+            targetEntity: Usu_conocimiento
             mappedBy: usuario

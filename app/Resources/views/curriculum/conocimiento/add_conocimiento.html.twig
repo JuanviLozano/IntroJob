@@ -1,0 +1,63 @@
+{% extends 'plantillas/plantilla.html.twig' %}
+
+{% block contenido %}
+
+    <section class="overlape">
+        <div class="block no-padding">
+            <div data-velocity="-.1" style="background: url(http://placehold.it/1600x800) repeat scroll 50% 422.28px transparent;" class="parallax scrolly-invisible no-parallax"></div><!-- PARALLAX BACKGROUND IMAGE -->
+            <div class="container fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="inner-header">
+                            <h3>Insertar estudios</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="block no-padding">
+            <div class="container">
+                <div class="row no-gape justify-content-center">
+                    <div class="col-lg-9 column" style="margin-bottom: 50px">
+                        <div class="padding-left">
+                            <div class="profile-form-edit">
+                                {{ form_start(form, { 'attr' : {'role':'form'}}) }}
+                                <div id="educacion" class="contact-edit" style="display: none;">
+                                    <div class="col-lg-12">
+                                        <span class="pf-title">Tipo de estudio</span>
+                                        <div class="pf-field">
+                                            {{ form_widget(form.tipo) }}
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <span class="pf-title">Especialidad</span>
+                                        <div class="pf-field">
+                                            {{ form_widget(form.especialidad) }}
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <span class="pf-title">Centro</span>
+                                        <div class="pf-field">
+                                            {{ form_widget(form.centro) }}
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <span class="pf-title">Descripción</span>
+                                        <div class="pf-field">
+                                            {{ form_widget(form.descripcion) }}
+                                        </div>
+                                    </div>
+                                </div>
+                                {{ form_end(form) }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

@@ -1,11 +1,12 @@
 <?php
 
 namespace AppBundle\Entity;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * Usu_informacion
  */
-class Usu_informacion
+class Usu_informacion implements UserInterface, \Serializable
 {
     /**
      * @var int
@@ -15,7 +16,7 @@ class Usu_informacion
     /**
      * @var int
      */
-    private $expectativaSalarial;
+    private $expectativaSalario;
 
     /**
      * @var string
@@ -35,11 +36,6 @@ class Usu_informacion
     /**
      * @var string
      */
-    private $calificacion;
-
-    /**
-     * @var string
-     */
     private $infoPersonal;
 
 
@@ -54,27 +50,27 @@ class Usu_informacion
     }
 
     /**
-     * Set expectativaSalarial
+     * Set expectativaSalario
      *
-     * @param integer $expectativaSalarial
+     * @param integer $expectativaSalario
      *
      * @return Usu_informacion
      */
-    public function setExpectativaSalarial($expectativaSalarial)
+    public function setExpectativaSalario($expectativaSalario)
     {
-        $this->expectativaSalarial = $expectativaSalarial;
+        $this->expectativaSalario = $expectativaSalario;
 
         return $this;
     }
 
     /**
-     * Get expectativaSalarial
+     * Get expectativaSalario
      *
      * @return int
      */
-    public function getExpectativaSalarial()
+    public function getExpectativaSalario()
     {
-        return $this->expectativaSalarial;
+        return $this->expectativaSalario;
     }
 
     /**
@@ -150,30 +146,6 @@ class Usu_informacion
     }
 
     /**
-     * Set calificacion
-     *
-     * @param string $calificacion
-     *
-     * @return Usu_informacion
-     */
-    public function setCalificacion($calificacion)
-    {
-        $this->calificacion = $calificacion;
-
-        return $this;
-    }
-
-    /**
-     * Get calificacion
-     *
-     * @return string
-     */
-    public function getCalificacion()
-    {
-        return $this->calificacion;
-    }
-
-    /**
      * Set infoPersonal
      *
      * @param string $infoPersonal
@@ -224,5 +196,57 @@ class Usu_informacion
     public function getUsuario()
     {
         return $this->usuario;
+    }
+
+
+    public function getRoles()
+    {
+        return null;
+    }
+
+    public function getPassword()
+    {
+        return null;
+    }
+
+    public function getSalt()
+    {
+        return null;
+    }
+
+    public function getUsername()
+    {
+        return null;
+    }
+
+    public function eraseCredentials()
+    {
+        return null;
+    }
+
+    public function serialize()
+    {
+        return serialize(array(
+            $this->id,
+            $this->usuario,
+            $this->experiencia,
+            $this->expectativaSalario,
+            $this->nivelCarrera,
+            $this->infoPersonal,
+            $this->industria,
+        ));
+    }
+
+    public function unserialize($serialized)
+    {
+        list (
+            $this->id,
+            $this->usuario,
+            $this->experiencia,
+            $this->expectativaSalario,
+            $this->nivelCarrera,
+            $this->infoPersonal,
+            $this->industria,
+        ) = $this->unserialize($serialized);
     }
 }

@@ -1,7 +1,7 @@
-AppBundle\Entity\Usu_experiencia_laboral:
+AppBundle\Entity\Usu_exp_laboral:
     type: entity
     table: null
-    repositoryClass: AppBundle\Repository\Usu_experiencia_laboralRepository
+    repositoryClass: AppBundle\Repository\Usu_exp_laboralRepository
     id:
         id:
             type: integer
@@ -17,10 +17,12 @@ AppBundle\Entity\Usu_experiencia_laboral:
             length: 255
             column: nombre_empresa
         fechaInicio:
-            type: date
+            type: string
+            length: '7'
             column: fecha_inicio
         fechaFin:
-            type: date
+            type: string
+            length: '7'
             column: fecha_fin
         descripcion:
             type: text
