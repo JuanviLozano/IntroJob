@@ -263,7 +263,7 @@ function checkDireccion(value) {
 }
 
 function checkCodPostal(value) {
-	//Fecha
+	//Código Postal
 	var re = /^(?:0[1-9]|[1-4]\d|5[0-2])\d{3}$/;
 	if (re.test(value)) return true;
 	else return false;
