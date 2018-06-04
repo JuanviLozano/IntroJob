@@ -17,6 +17,18 @@ class Provincias
      */
     private $provincia;
 
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $usuario;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->usuario = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * Get id
@@ -51,8 +63,43 @@ class Provincias
     {
         return $this->provincia;
     }
-    
-    public function __toString() {
-        return $this->provincia;
+
+    /**
+     * Add usuario
+     *
+     * @param \AppBundle\Entity\Usuario $usuario
+     *
+     * @return Provincias
+     */
+    public function addUsuario(\AppBundle\Entity\Usuario $usuario)
+    {
+        $this->usuario[] = $usuario;
+
+        return $this;
+    }
+
+    /**
+     * Remove usuario
+     *
+     * @param \AppBundle\Entity\Usuario $usuario
+     */
+    public function removeUsuario(\AppBundle\Entity\Usuario $usuario)
+    {
+        $this->usuario->removeElement($usuario);
+    }
+
+    /**
+     * Get usuario
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getUsuario()
+    {
+        return $this->usuario;
+    }
+
+    public function __toString()
+    {
+        return (string) $this->provincia;
     }
 }

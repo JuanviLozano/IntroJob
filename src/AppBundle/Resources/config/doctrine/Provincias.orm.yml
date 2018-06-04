@@ -18,3 +18,8 @@ AppBundle\Entity\Provincias:
             options:
                 fixed: false
     lifecycleCallbacks: {  }
+
+    oneToMany:
+        usuario:
+            targetEntity: Usuario
+            mappedBy: provincias

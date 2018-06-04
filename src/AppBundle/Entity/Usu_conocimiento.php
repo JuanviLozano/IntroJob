@@ -168,4 +168,3 @@ class Usu_conocimiento
         return $this->usuario;
     }
 }
-

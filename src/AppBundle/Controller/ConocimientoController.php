@@ -16,11 +16,12 @@ class ConocimientoController extends Controller
         $conocimiento = new Usu_conocimiento();
         $form = $this->createForm(Usu_conocimientoType::Class, $conocimiento);
 
+        $id = $this->getUser();
+
         $form->handleRequest($request);
         if($form->isValid() && $form->isSubmitted()) {
 
-            var_dump($conocimiento->getUsuario());
-            DIE();
+            $conocimiento->setUsuario($id);
             $em = $this->getDoctrine()->getManager();
             $em->persist($conocimiento);
             $em->flush();

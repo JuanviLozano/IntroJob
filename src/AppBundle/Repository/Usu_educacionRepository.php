@@ -10,4 +10,13 @@ namespace AppBundle\Repository;
  */
 class Usu_educacionRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function findById($id) {
+        $result = $this->getEntityManager()
+            ->createQuery('SELECT e
+                                           FROM AppBundle:Usu_educacion e
+                                           WHERE :id = e.usuario')
+            ->setParameter('id', $id);
+
+        return $result->getResult();
+    }
 }

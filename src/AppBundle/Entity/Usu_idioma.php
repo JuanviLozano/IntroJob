@@ -249,4 +249,9 @@ class Usu_idioma implements UserInterface, \Serializable
             $this->hablado,
         ) = $this->unserialize($serialized);
     }
+
+    public function __toString()
+    {
+        return (string) $this->getIdiomas();
+    }
 }

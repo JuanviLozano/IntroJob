@@ -56,7 +56,7 @@ class UsuarioType extends AbstractType
                 ],
                 'attr' => ['class' => 'chosen']
             ))
-            ->add('pais_origen', EntityType::Class, array(
+            ->add('paises', EntityType::Class, array(
                 'label' => 'Pais de origen',
                 'class' => 'AppBundle:Paises',
                 'choice_label' => 'nombre',
@@ -64,7 +64,7 @@ class UsuarioType extends AbstractType
                     'class' => 'chosen'
                 ]
             ))
-            ->add('provincia', EntityType::Class, array(
+            ->add('provincias', EntityType::Class, array(
                 'label' => 'Provincia',
                 'class' => 'AppBundle:Provincias',
                 'choice_label' => 'provincia',

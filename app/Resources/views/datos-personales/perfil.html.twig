@@ -31,7 +31,7 @@
                                 <span><i>{{ app.user.especialidad }}</i></span>
                                 <p>{{ app.user.email }}</p>
                                 <p>{{ app.user.fechaNacimiento }}</p>
-                                <p><i class="la la-map-marker"></i>{{ app.user.paisOrigen }} / {{ app.user.provincia }}</p>
+                                <p><i class="la la-map-marker"></i>{{ app.user.paises }} / {{ app.user.provincias }}</p>
                             </div>
                             <div class="download-cv">
                                 <a href="#" title="">Descargar CV <i class="la la-download"></i></a>
@@ -49,136 +49,70 @@
                                 <div class="col-lg-8 column">
                                     <div class="padding-left">
                                         <div class="manage-jobs-sec">
-                                            <div class="border-title"><h3>Información personal</h3><a href="#" title=""><i class="la la-plus"></i> Añadir información</a><ul class="action_job">
-                                                    <li><span>Editar</span><a href="#" title=""><i class="la la-pencil"></i></a></li>
+
+                                            <div class="border-title"><h3>Información personal</h3><a href="{{ path('addInformacion') }}" title="Añadir información"><i class="la la-plus"></i> Añadir información</a>
+                                                {% for informacion in informaciones %}
+                                                <ul class="action_job">
+                                                    <li><span>Editar</span><a href="{{ path('editInformacion', {id:informacion.id}) }}" title=""><i class="la la-pencil"></i></a></li>
                                                 </ul></div>
                                             <div class="edu-history-sec">
                                                 <div class="edu-history">
-                                                    <p>Hello my name is Mark William Connor and I’m a Web Designer & Web Developer from Melbourne, Australia. In pharetra orci dignissim, blandit mi semper, ultricies diam. Suspendisse malesuada suscipit nunc non volutpat. Sed porta nulla id orci laoreet tempor non consequat enim. Sed vitae aliquam velit. Aliquam ante erat, blandit at pretium et, accumsan ac est. Integer vehicula rhoncus molestie. Morbi ornare ipsum sed sem condimentum, et pulvinar tortor luctus. Suspendisse condimentum lorem ut elementum aliquam.</p>
-                                                    <p>Mauris nec erat ut libero vulputate pulvinar. Aliquam ante erat, blandit at pretium et, accumsan ac est. Integer vehicula rhoncus molestie. Morbi ornare ipsum sed sem condimentum, et pulvinar tortor luctus. Suspendisse condimentum lorem ut elementum aliquam. Mauris nec erat ut libero vulputate pulvinar.</p>
+                                                    <p>{{ informacion.infoPersonal }}</p>
                                                 </div>
                                             </div>
-                                            <div class="border-title"><h3>Estudios</h3><a href="{{ path('addConocimiento') }}" title="Añadir nuevo estudio"><i class="la la-plus"></i> Añadir estudio</a></div>
+                                            {% endfor %}
+                                            <div class="border-title"><h3>Estudios</h3><a href="{{ path('addEducacion') }}" title="Añadir nuevo estudio"><i class="la la-plus"></i> Añadir estudio</a></div>
                                             <div class="edu-history-sec">
+                                                {% for educacion in educaciones %}
                                                 <div class="edu-history">
                                                     <i class="la la-graduation-cap"></i>
                                                     <div class="edu-hisinfo">
-                                                        <h3>University</h3>
-                                                        <i>2008 - 2012</i>
-                                                        <span>Middle East Technical University <i>Computer Science</i></span>
-                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a ipsum tellus. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
+                                                        <h3>{{ educacion.tipo }}</h3>
+                                                        <i>{{ educacion.fechaInicio }} - {{ educacion.fechaFin }}</i>
+                                                        <span>{{ educacion.centro }}</span>
+                                                        <p>{{ educacion.descripcion }}</p>
                                                     </div>
                                                     <ul class="action_job">
-                                                        <li><span>Edit</span><a href="#" title=""><i class="la la-pencil"></i></a></li>
-                                                        <li><span>Delete</span><a href="#" title=""><i class="la la-trash-o"></i></a></li>
+                                                        <li><span>Edit</span><a href="{{ path('editEducacion', {id:educacion.id}) }}" title="Editar estudios"><i class="la la-pencil"></i></a></li>
+                                                        <li><span>Delete</span><a href="{{ path('deleteEducacion', {id:educacion.id}) }}" title="Borrar estudios"><i class="la la-trash-o"></i></a></li>
                                                     </ul>
                                                 </div>
-                                                <div class="edu-history">
-                                                    <i class="la la-graduation-cap"></i>
-                                                    <div class="edu-hisinfo">
-                                                        <h3>High School</h3>
-                                                        <i>2008 - 2012</i>
-                                                        <span>Tomms College <i>Bachlors in Fine Arts</i></span>
-                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a ipsum tellus. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
-                                                    </div>
-                                                    <ul class="action_job">
-                                                        <li><span>Edit</span><a href="#" title=""><i class="la la-pencil"></i></a></li>
-                                                        <li><span>Delete</span><a href="#" title=""><i class="la la-trash-o"></i></a></li>
-                                                    </ul>
-                                                </div>
+                                                {% endfor %}
                                             </div>
-                                            <div class="border-title"><h3>Work Experience</h3><a href="#" title=""><i class="la la-plus"></i> Add Experience</a></div>
+                                            <div class="border-title"><h3>Experiencia laboral</h3><a href="{{ path('addExperiencia') }}" title="Añadir nueva experiencia"><i class="la la-plus"></i> Añadir experiencia</a></div>
                                             <div class="edu-history-sec">
+                                                {% for experiencia in experiencias %}
                                                 <div class="edu-history style2">
                                                     <i></i>
                                                     <div class="edu-hisinfo">
-                                                        <h3>Web Designer <span>Inwave Studio</span></h3>
-                                                        <i>2008 - 2012</i>
-                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a ipsum tellus. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
+                                                        <h3>{{ experiencia.oficio }} <span>{{ experiencia.nombreEmpresa }}</span></h3>
+                                                        <i>{{ experiencia.fechaInicio }} - {{ experiencia.fechaFin }}</i>
+                                                        <p>{{ experiencia.descripcion }}</p>
                                                     </div>
                                                     <ul class="action_job">
-                                                        <li><span>Edit</span><a href="#" title=""><i class="la la-pencil"></i></a></li>
-                                                        <li><span>Delete</span><a href="#" title=""><i class="la la-trash-o"></i></a></li>
+                                                        <li><span>Edit</span><a href="{{ path('editExperiencia', {id:experiencia.id}) }}" title="Editar experiencia"><i class="la la-pencil"></i></a></li>
+                                                        <li><span>Delete</span><a href="{{ path('deleteExperiencia', {id:experiencia.id}) }}" title="Borrar experiencia"><i class="la la-trash-o"></i></a></li>
                                                     </ul>
                                                 </div>
-                                                <div class="edu-history style2">
-                                                    <i></i>
-                                                    <div class="edu-hisinfo">
-                                                        <h3>CEO Founder <span>Inwave Studio</span></h3>
-                                                        <i>2008 - 2012</i>
-                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a ipsum tellus. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
-                                                    </div>
-                                                    <ul class="action_job">
-                                                        <li><span>Edit</span><a href="#" title=""><i class="la la-pencil"></i></a></li>
-                                                        <li><span>Delete</span><a href="#" title=""><i class="la la-trash-o"></i></a></li>
-                                                    </ul>
-                                                </div>
+                                                {% endfor %}
                                             </div>
-                                            <div class="border-title"><h3>Professional Skills</h3><a href="#" title=""><i class="la la-plus"></i> Add Skills</a></div>
-                                            <div class="progress-sec">
-                                                <div class="progress-sec with-edit">
-                                                    <span>Adobe Photoshop</span>
-                                                    <div class="progressbar"> <div class="progress" style="width: 80%;"><span>80%</span></div> </div>
-                                                    <ul class="action_job">
-                                                        <li><span>Edit</span><a href="#" title=""><i class="la la-pencil"></i></a></li>
-                                                        <li><span>Delete</span><a href="#" title=""><i class="la la-trash-o"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                                <div class="progress-sec with-edit">
-                                                    <span>Production In Html</span>
-                                                    <div class="progressbar"> <div class="progress" style="width: 60%;"><span>60%</span></div> </div>
-                                                    <ul class="action_job">
-                                                        <li><span>Edit</span><a href="#" title=""><i class="la la-pencil"></i></a></li>
-                                                        <li><span>Delete</span><a href="#" title=""><i class="la la-trash-o"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                                <div class="progress-sec with-edit">
-                                                    <span>Graphic Design</span>
-                                                    <div class="progressbar"> <div class="progress" style="width: 75%;"><span>75%</span></div> </div>
-                                                    <ul class="action_job">
-                                                        <li><span>Edit</span><a href="#" title=""><i class="la la-pencil"></i></a></li>
-                                                        <li><span>Delete</span><a href="#" title=""><i class="la la-trash-o"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <div class="border-title"><h3>Professional Skills</h3><a href="#" title=""><i class="la la-plus"></i> Add Skills</a></div>
+                                            <div class="border-title"><h3>Idiomas</h3><a href="{{ path('addIdioma') }}" title="Añadir idioma"><i class="la la-plus"></i> Añadir idioma</a></div>
                                             <div class="edu-history-sec">
+                                                {% for idioma in idiomas %}
                                                 <div class="edu-history style2">
                                                     <i></i>
                                                     <div class="edu-hisinfo">
-                                                        <h3>Perfect Attendance Programs</h3>
-                                                        <i>2008 - 2012</i>
-                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a ipsum tellus. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
+                                                        <h3>Ingles - B2</h3>
+                                                        <p>Hablado: {{ idioma.hablado }}</p>
+                                                        <p>Escrito: {{ idioma.escrito }}</p>
+                                                        <p>Leido: {{ idioma.leido }}</p>
                                                     </div>
                                                     <ul class="action_job">
-                                                        <li><span>Edit</span><a href="#" title=""><i class="la la-pencil"></i></a></li>
-                                                        <li><span>Delete</span><a href="#" title=""><i class="la la-trash-o"></i></a></li>
+                                                        <li><span>Edit</span><a href="{{ path('addIdioma', {id:idioma.id}) }}" title="Editar idioma"><i class="la la-pencil"></i></a></li>
+                                                        <li><span>Delete</span><a href="{{ path('deleteIdioma', {id:idioma.id}) }}" title="Borrar idioma"><i class="la la-trash-o"></i></a></li>
                                                     </ul>
                                                 </div>
-                                                <div class="edu-history style2">
-                                                    <i></i>
-                                                    <div class="edu-hisinfo">
-                                                        <h3>Top Performer Recognition</h3>
-                                                        <i>2008 - 2012</i>
-                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a ipsum tellus. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
-                                                    </div>
-                                                    <ul class="action_job">
-                                                        <li><span>Edit</span><a href="#" title=""><i class="la la-pencil"></i></a></li>
-                                                        <li><span>Delete</span><a href="#" title=""><i class="la la-trash-o"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                                <div class="edu-history style2">
-                                                    <i></i>
-                                                    <div class="edu-hisinfo">
-                                                        <h3>King LLC</h3>
-                                                        <i>2008 - 2012</i>
-                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a ipsum tellus. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
-                                                    </div>
-                                                    <ul class="action_job">
-                                                        <li><span>Edit</span><a href="#" title=""><i class="la la-pencil"></i></a></li>
-                                                        <li><span>Delete</span><a href="#" title=""><i class="la la-trash-o"></i></a></li>
-                                                    </ul>
-                                                </div>
+                                                {% endfor %}
                                             </div>
                                         </div>
                                     </div>
@@ -187,12 +121,23 @@
                                     <div class="job-overview">
                                         <h3>Descripción general del empleo</h3>
                                         <ul>
-                                            <li><i class="la la-money"></i><h3>Expectativas salariales</h3><span>£15,000 - £20,000</span></li>
-                                            <li><i class="la la-mars-double"></i><h3>Genero</h3><span>{{ app.user.sexo }}</span></li>
-                                            <li><i class="la la-thumb-tack"></i><h3>Nivel de carrera</h3><span>Executive</span></li>
-                                            <li><i class="la la-puzzle-piece"></i><h3>Industria</h3><span>Management</span></li>
-                                            <li><i class="la la-shield"></i><h3>Experiencia</h3><span>2 Years</span></li>
-                                            <li><i class="la la-line-chart "></i><h3>Calificación</h3><span>Bachelor Degree</span></li>
+                                            {% for informacion in informaciones %}
+                                            <li><i class="la la-money"></i><h3>Expectativas salariales</h3>
+                                                <span>€{{ informacion.expectativaSalario }} - €{{ informacion.expectativaSalarioFinal }}</span>
+                                            </li>
+                                            <li><i class="la la-mars-double"></i><h3>Genero</h3>
+                                                <span>{{ app.user.sexo }}</span>
+                                            </li>
+                                            <li><i class="la la-thumb-tack"></i><h3>Nivel de carrera</h3>
+                                                <span>{{ informacion.nivelCarrera }}</span>
+                                            </li>
+                                            <li><i class="la la-puzzle-piece"></i><h3>Industria</h3>
+                                                <span>{{ informacion.industria }}</span>
+                                            </li>
+                                            <li><i class="la la-shield"></i><h3>Experiencia</h3>
+                                                <span>{{ informacion.experiencia }}</span>
+                                            </li>
+                                            {% endfor %}
                                         </ul>
                                     </div><!-- Job Overview -->
                                     <div class="quick-form-job">

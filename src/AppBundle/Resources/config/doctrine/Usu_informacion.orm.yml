@@ -12,6 +12,9 @@ AppBundle\Entity\Usu_informacion:
         expectativaSalario:
             type: integer
             column: expectativa_salario
+        expectativaSalarioFinal:
+            type: integer
+            column: expectativa_salario_final
         nivelCarrera:
             type: string
             length: 255

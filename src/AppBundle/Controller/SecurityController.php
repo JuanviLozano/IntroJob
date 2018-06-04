@@ -2,6 +2,7 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Entity\Usu_informacion;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 use Symfony\Component\HttpFoundation\Request;
@@ -21,6 +22,7 @@ class SecurityController extends Controller
             'last_username' => $lastUsername,
             'error'         => $error,
         ));
+
     }
 
     public function logoutAction()
@@ -40,7 +42,7 @@ class SecurityController extends Controller
             $foto = $form['imagen']->getData();
 
             if($foto) {
-                if($foto_antigua != 'usuario.png') {
+                if($foto_antigua != 'usuario.png' && $foto_antigua) {
                     unlink('img_user/'.$foto_antigua);
                 }
                 $file = $form['imagen']->getData();
@@ -48,6 +50,9 @@ class SecurityController extends Controller
                 $file_name = time().'.'.$ext;
                 $file->move('img_user',$file_name);
                 $user->setImagen($file_name);
+            }
+            else {
+                $user->setImagen('usuario.png');
             }
 
             $password = $passwordEncoder->encodePassword($user, $user->getPassword());
@@ -62,9 +67,8 @@ class SecurityController extends Controller
             return $this->redirectToRoute('login');
         }
 
-        return $this->render(
-            'security/registro.html.twig',
-            array('form' => $form->createView())
-        );
+        return $this->render('security/registro.html.twig', array(
+            'form' => $form->createView()
+        ));
     }
 }

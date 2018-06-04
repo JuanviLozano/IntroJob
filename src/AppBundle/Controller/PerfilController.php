@@ -2,8 +2,12 @@
 
 namespace AppBundle\Controller;
 
-use AppBundle\Entity\Usuario;
+use AppBundle\Entity\Usu_conocimiento;
 
+use AppBundle\Entity\Usu_educacion;
+use AppBundle\Entity\Usu_exp_laboral;
+use AppBundle\Entity\Usu_idioma;
+use AppBundle\Entity\Usu_informacion;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
@@ -16,7 +20,35 @@ class PerfilController extends Controller
 {
     public function perfilAction()
     {
-        return $this->render('datos-personales/perfil.html.twig');
+        $id = $this->getUser()->getId();
+
+        $conocimientos = $this->getDoctrine()
+            ->getRepository(Usu_conocimiento::Class)
+            ->findById($id);
+
+        $educaciones = $this->getDoctrine()
+            ->getRepository(Usu_educacion::Class)
+            ->findById($id);
+
+        $experiencias = $this->getDoctrine()
+            ->getRepository(Usu_exp_laboral::Class)
+            ->findById($id);
+
+        $idiomas = $this->getDoctrine()
+            ->getRepository(Usu_idioma::Class)
+            ->findById($id);
+
+        $informaciones = $this->getDoctrine()
+            ->getRepository(Usu_informacion::Class)
+            ->findById($id);
+
+        return $this->render('datos-personales/perfil.html.twig', array(
+            'conocimientos' => $conocimientos,
+            'educaciones' => $educaciones,
+            'experiencias' => $experiencias,
+            'idiomas' => $idiomas,
+            'informaciones' => $informaciones
+        ));
     }
 
     public function editarPerfilAction(Request $request, UserPasswordEncoderInterface $passwordEncoder)

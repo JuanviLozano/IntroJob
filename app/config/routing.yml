@@ -35,27 +35,48 @@ addConocimiento:
     defaults: { _controller: "AppBundle:Conocimiento:addConocimiento" }
 editConocimiento:
     path: /curriculum/edit_conocimiento/{id}
-    defaults: { _controller: "AppBundle:Curriculum:editConocimiento" }
+    defaults: { _controller: "AppBundle:Conocimiento:editConocimiento" }
 deleteConocimiento:
     path: /curriculum/delete_conocimiento/{id}
-    defaults: { _controller: "AppBundle:Curriculum:deleteConocimiento" }
+    defaults: { _controller: "AppBundle:Conocimiento:deleteConocimiento" }
 
 #Rutas educacion
-educacion:
+addEducacion:
+    path: /curriculum/add_educacion
+    defaults: { _controller: "AppBundle:Educacion:addEducacion" }
+editEducacion:
     path: /curriculum/edit_educacion/{id}
-    defaults: { _controller: "AppBundle:Curriculum:editEducacion" }
+    defaults: { _controller: "AppBundle:Educacion:editEducacion" }
+deleteEducacion:
+    path: /curriculum/delete_educacion/{id}
+    defaults: { _controller: "AppBundle:Educacion:deleteEducacion" }
 
 #Rutas experiencia
-experiencia:
+addExperiencia:
+    path: /curriculum/add_experiencia
+    defaults: { _controller: "AppBundle:Experiencia:addExperiencia" }
+editExperiencia:
     path: /curriculum/edit_experiencia/{id}
-    defaults: { _controller: "AppBundle:Curriculum:editExperiencia" }
+    defaults: { _controller: "AppBundle:Experiencia:editExperiencia" }
+deleteExperiencia:
+    path: /curriculum/remove_experiencia/{id}
+    defaults: { _controller: "AppBundle:Experiencia:deleteExperiencia" }
 
 #Rutas idioma
-idioma:
+addIdioma:
+    path: /curriculum/add_idioma
+    defaults: { _controller: "AppBundle:Idioma:addIdioma" }
+editIdioma:
     path: /curriculum/edit_idioma/{id}
-    defaults: { _controller: "AppBundle:Curriculum:editIdioma" }
+    defaults: { _controller: "AppBundle:Idioma:editIdioma" }
+deleteIdioma:
+    path: /curriculum/delete_idioma/{id}
+    defaults: { _controller: "AppBundle:Idioma:deleteIdioma" }
 
 #Rutas informacion
-informacion:
+addInformacion:
+    path: /curriculum/add_informacion
+    defaults: { _controller: "AppBundle:Informacion:addInformacion" }
+editInformacion:
     path: /curriculum/edit_informacion/{id}
-    defaults: { _controller: "AppBundle:Curriculum:editInformacion" }
+    defaults: { _controller: "AppBundle:Informacion:editInformacion" }

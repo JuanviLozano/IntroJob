@@ -49,18 +49,6 @@ AppBundle\Entity\Usuario:
             length: 10
             options:
                 fixed: false
-        paisOrigen:
-            type: string
-            nullable: false
-            length: 255
-            options:
-                fixed: false
-        provincia:
-            type: string
-            nullable: false
-            length: 255
-            options:
-                fixed: false
         direccion:
             type: string
             nullable: true
@@ -107,25 +95,35 @@ AppBundle\Entity\Usuario:
             mappedBy: usuario
 
     #educacion
-    oneToMany:
         educacion:
             targetEntity: Usu_educacion
             mappedBy: usuario
 
     #experiencia_laboral
-    oneToMany:
         experiencia:
             targetEntity: Usu_exp_laboral
             mappedBy: usuario
 
     #informacion
-    oneToMany:
         informacion:
             targetEntity: Usu_informacion
             mappedBy: usuario
 
     #conocimiento
-    oneToMany:
         conocimiento:
             targetEntity: Usu_conocimiento
             mappedBy: usuario
+
+    manyToOne:
+        provincias:
+            targetEntity: Provincias
+            inversedBy: usuario
+            joinColumn:
+                name: id_provincia
+                referencedColumnName: id
+        paises:
+            targetEntity: Paises
+            inversedBy: usuario
+            joinColumn:
+                name: id_paises
+                referencedColumnName: id

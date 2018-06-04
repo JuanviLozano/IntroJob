@@ -249,4 +249,33 @@ class Usu_informacion implements UserInterface, \Serializable
             $this->industria,
         ) = $this->unserialize($serialized);
     }
+    /**
+     * @var integer
+     */
+    private $expectativaSalarioFinal;
+
+
+    /**
+     * Set expectativaSalarioFinal
+     *
+     * @param integer $expectativaSalarioFinal
+     *
+     * @return Usu_informacion
+     */
+    public function setExpectativaSalarioFinal($expectativaSalarioFinal)
+    {
+        $this->expectativaSalarioFinal = $expectativaSalarioFinal;
+
+        return $this;
+    }
+
+    /**
+     * Get expectativaSalarioFinal
+     *
+     * @return integer
+     */
+    public function getExpectativaSalarioFinal()
+    {
+        return $this->expectativaSalarioFinal;
+    }
 }

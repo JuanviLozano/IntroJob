@@ -48,16 +48,6 @@ class Usuario implements UserInterface, \Serializable
     /**
      * @var string
      */
-    private $paisOrigen;
-
-    /**
-     * @var string
-     */
-    private $provincia;
-
-    /**
-     * @var string
-     */
     private $direccion;
 
     /**
@@ -241,54 +231,6 @@ class Usuario implements UserInterface, \Serializable
     }
 
     /**
-     * Set paisOrigen
-     *
-     * @param string $paisOrigen
-     *
-     * @return Usuario
-     */
-    public function setPaisOrigen($paisOrigen)
-    {
-        $this->paisOrigen = $paisOrigen;
-
-        return $this;
-    }
-
-    /**
-     * Get paisOrigen
-     *
-     * @return string
-     */
-    public function getPaisOrigen()
-    {
-        return $this->paisOrigen;
-    }
-
-    /**
-     * Set provincia
-     *
-     * @param string $provincia
-     *
-     * @return Usuario
-     */
-    public function setProvincia($provincia)
-    {
-        $this->provincia = $provincia;
-
-        return $this;
-    }
-
-    /**
-     * Get provincia
-     *
-     * @return string
-     */
-    public function getProvincia()
-    {
-        return $this->provincia;
-    }
-
-    /**
      * Set direccion
      *
      * @param string $direccion
@@ -465,10 +407,10 @@ class Usuario implements UserInterface, \Serializable
             $this->nombre,
             $this->apellidos,
             $this->sexo,
-            $this->paisOrigen,
-            $this->provincia,
             $this->telefono,
             $this->direccion,
+            $this->paises,
+            $this->provincias,
             $this->codPostal,
             $this->imagen,
             $this->email,
@@ -488,9 +430,9 @@ class Usuario implements UserInterface, \Serializable
             $this->nombre,
             $this->apellidos,
             $this->sexo,
-            $this->paisOrigen,
-            $this->provincia,
             $this->telefono,
+            $this->paises,
+            $this->provincias,
             $this->direccion,
             $this->codPostal,
             $this->imagen,
@@ -626,4 +568,183 @@ class Usuario implements UserInterface, \Serializable
         $this->conocimiento = new ArrayCollection();
     }
 
+    public function __toString()
+    {
+        return $this->serialize();
+    }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $educacion;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $experiencia;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $informacion;
+
+
+    /**
+     * Add educacion
+     *
+     * @param \AppBundle\Entity\Usu_educacion $educacion
+     *
+     * @return Usuario
+     */
+    public function addEducacion(\AppBundle\Entity\Usu_educacion $educacion)
+    {
+        $this->educacion[] = $educacion;
+
+        return $this;
+    }
+
+    /**
+     * Remove educacion
+     *
+     * @param \AppBundle\Entity\Usu_educacion $educacion
+     */
+    public function removeEducacion(\AppBundle\Entity\Usu_educacion $educacion)
+    {
+        $this->educacion->removeElement($educacion);
+    }
+
+    /**
+     * Get educacion
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getEducacion()
+    {
+        return $this->educacion;
+    }
+
+    /**
+     * Add experiencium
+     *
+     * @param \AppBundle\Entity\Usu_exp_laboral $experiencium
+     *
+     * @return Usuario
+     */
+    public function addExperiencium(\AppBundle\Entity\Usu_exp_laboral $experiencium)
+    {
+        $this->experiencia[] = $experiencium;
+
+        return $this;
+    }
+
+    /**
+     * Remove experiencium
+     *
+     * @param \AppBundle\Entity\Usu_exp_laboral $experiencium
+     */
+    public function removeExperiencium(\AppBundle\Entity\Usu_exp_laboral $experiencium)
+    {
+        $this->experiencia->removeElement($experiencium);
+    }
+
+    /**
+     * Get experiencia
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getExperiencia()
+    {
+        return $this->experiencia;
+    }
+
+    /**
+     * Add informacion
+     *
+     * @param \AppBundle\Entity\Usu_informacion $informacion
+     *
+     * @return Usuario
+     */
+    public function addInformacion(\AppBundle\Entity\Usu_informacion $informacion)
+    {
+        $this->informacion[] = $informacion;
+
+        return $this;
+    }
+
+    /**
+     * Remove informacion
+     *
+     * @param \AppBundle\Entity\Usu_informacion $informacion
+     */
+    public function removeInformacion(\AppBundle\Entity\Usu_informacion $informacion)
+    {
+        $this->informacion->removeElement($informacion);
+    }
+
+    /**
+     * Get informacion
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getInformacion()
+    {
+        return $this->informacion;
+    }
+    /**
+     * @var \AppBundle\Entity\Provincias
+     */
+    private $provincias;
+
+    /**
+     * @var \AppBundle\Entity\Paises
+     */
+    private $paises;
+
+
+    /**
+     * Set provincias
+     *
+     * @param \AppBundle\Entity\Provincias $provincias
+     *
+     * @return Usuario
+     */
+    public function setProvincias(\AppBundle\Entity\Provincias $provincias = null)
+    {
+        $this->provincias = $provincias;
+
+        return $this;
+    }
+
+    /**
+     * Get provincias
+     *
+     * @return \AppBundle\Entity\Provincias
+     */
+    public function getProvincias()
+    {
+        return $this->provincias;
+    }
+
+    /**
+     * Set paises
+     *
+     * @param \AppBundle\Entity\Paises $paises
+     *
+     * @return Usuario
+     */
+    public function setPaises(\AppBundle\Entity\Paises $paises = null)
+    {
+        $this->paises = $paises;
+
+        return $this;
+    }
+
+    /**
+     * Get paises
+     *
+     * @return \AppBundle\Entity\Paises
+     */
+    public function getPaises()
+    {
+        return $this->paises;
+    }
 }
