@@ -63,7 +63,7 @@ It comes pre-configured with the following bundles:
 All libraries and bundles included in the Symfony Standard Edition are
 released under the MIT or BSD license.
 
-Sinstrucciones básicas
+Instrucciones básicas
 ========================
 Los ficheros que teneis que tocar son:
  * **app/Resources/views** - Aquí se tocaran las vistas, siempre que toqueis alguna que el nombre sea claro para poder 
@@ -110,6 +110,8 @@ Los ficheros que teneis que tocar son:
      ```
      
  Si teneis alguna duda o no entendeis algo preguntarme.
+
+ Actualizar base de datos: php bin/console doctrine:schema:update --force
 
 Enjoy!
 
