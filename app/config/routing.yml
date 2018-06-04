@@ -85,3 +85,6 @@ editInformacion:
 loginEmp:
     path: /empresa/login
     defaults: { _controller: "AppBundle:SecurityEmpresa:login" }
+registroEmp:
+    path: /empresa/registro
+    defaults: { _controller: "AppBundle:SecurityEmpresa:registro" }
