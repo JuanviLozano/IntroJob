@@ -17,6 +17,7 @@ AppBundle\Entity\Usu_conocimiento:
             length: 255
         descripcion:
             type: text
+            nullable: true
         centro:
             type: string
             length: 255

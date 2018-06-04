@@ -6,6 +6,7 @@ use AppBundle\Entity\Usu_idioma;
 use AppBundle\Form\Usu_idiomaType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
 
 class IdiomaController extends Controller
 {
@@ -38,6 +39,10 @@ class IdiomaController extends Controller
     {
         $form = $this->createForm(Usu_idiomaType::Class, $idioma);
 
+        if($idioma->getUsuario() != $this->getUser()) {
+            throw new AccessDeniedHttpException();
+        }
+
         $form->handleRequest($request);
         if($form->isValid() && $form->isSubmitted()) {
 
@@ -56,6 +61,10 @@ class IdiomaController extends Controller
 
     public function deleteIdiomaAction(Usu_idioma $idioma)
     {
+        if($idioma->getUsuario() != $this->getUser()) {
+            throw new AccessDeniedHttpException();
+        }
+
         $em = $this->getDoctrine()->getManager();
         $em->remove($idioma);
         $em->flush();

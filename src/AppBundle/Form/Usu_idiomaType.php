@@ -20,7 +20,8 @@ class Usu_idiomaType extends AbstractType
                     'choices' => [
                         'Alto' => 'Alto',
                         'Medio' => 'Medio',
-                        'Bajo' => 'Bajo'
+                        'Bajo' => 'Bajo',
+                        'Nativo' => 'Nativo'
                     ],
                     'attr' => ['class' => 'chosen']
                 ))
@@ -28,7 +29,8 @@ class Usu_idiomaType extends AbstractType
                     'choices' => [
                         'Alto' => 'Alto',
                         'Medio' => 'Medio',
-                        'Bajo' => 'Bajo'
+                        'Bajo' => 'Bajo',
+                        'Nativo' => 'Nativo'
                     ],
                     'attr' => ['class' => 'chosen']
                 ))
@@ -36,7 +38,8 @@ class Usu_idiomaType extends AbstractType
                     'choices' => [
                         'Alto' => 'Alto',
                         'Medio' => 'Medio',
-                        'Bajo' => 'Bajo'
+                        'Bajo' => 'Bajo',
+                        'Nativo' => 'Nativo'
                     ],
                     'attr' => ['class' => 'chosen']
                 ))

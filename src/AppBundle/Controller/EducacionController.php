@@ -6,6 +6,7 @@ use AppBundle\Entity\Usu_educacion;
 use AppBundle\Form\Usu_educacionType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
 
 class EducacionController extends Controller
 {
@@ -39,6 +40,10 @@ class EducacionController extends Controller
     {
         $form = $this->createForm(Usu_educacionType::Class, $educacion);
 
+        if($educacion->getUsuario() != $this->getUser()) {
+            throw new AccessDeniedHttpException();
+        }
+
         $form->handleRequest($request);
         if($form->isValid() && $form->isSubmitted()) {
 
@@ -58,6 +63,10 @@ class EducacionController extends Controller
 
     public function deleteEducacionAction(Usu_educacion $educacion)
     {
+        if($educacion->getUsuario() != $this->getUser()) {
+            throw new AccessDeniedHttpException();
+        }
+
         $em = $this->getDoctrine()->getManager();
         $em->remove($educacion);
         $em->flush();

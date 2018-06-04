@@ -42,7 +42,6 @@
                             <li><a href="#education" title="">Educación</a></li>
                             <li><a href="#experience" title="">Experiencia laboral</a></li>
                             <li><a href="#skills" title="">Habilidades personales</a></li>
-                            <li><a href="#awards" title="">Estudios</a></li>
                         </ul>
                         <div class="cand-details-sec">
                             <div class="row">
@@ -50,7 +49,7 @@
                                     <div class="padding-left">
                                         <div class="manage-jobs-sec">
 
-                                            <div class="border-title"><h3>Información personal</h3><a href="{{ path('addInformacion') }}" title="Añadir información"><i class="la la-plus"></i> Añadir información</a>
+                                            <div class="border-title"><h3>Información personal</h3><a href="{{ path('addInformacion') }}" title="Añadir información" id="about"><i class="la la-plus"></i> Añadir información</a>
                                                 {% for informacion in informaciones %}
                                                 <ul class="action_job">
                                                     <li><span>Editar</span><a href="{{ path('editInformacion', {id:informacion.id}) }}" title=""><i class="la la-pencil"></i></a></li>
@@ -61,7 +60,7 @@
                                                 </div>
                                             </div>
                                             {% endfor %}
-                                            <div class="border-title"><h3>Estudios</h3><a href="{{ path('addEducacion') }}" title="Añadir nuevo estudio"><i class="la la-plus"></i> Añadir estudio</a></div>
+                                            <div class="border-title"><h3>Estudios</h3><a href="{{ path('addEducacion') }}" title="Añadir nuevo estudio" id="education"><i class="la la-plus"></i> Añadir estudio</a></div>
                                             <div class="edu-history-sec">
                                                 {% for educacion in educaciones %}
                                                 <div class="edu-history">
@@ -79,7 +78,7 @@
                                                 </div>
                                                 {% endfor %}
                                             </div>
-                                            <div class="border-title"><h3>Experiencia laboral</h3><a href="{{ path('addExperiencia') }}" title="Añadir nueva experiencia"><i class="la la-plus"></i> Añadir experiencia</a></div>
+                                            <div class="border-title"><h3>Experiencia laboral</h3><a href="{{ path('addExperiencia') }}" title="Añadir nueva experiencia" id="experience"><i class="la la-plus"></i> Añadir experiencia</a></div>
                                             <div class="edu-history-sec">
                                                 {% for experiencia in experiencias %}
                                                 <div class="edu-history style2">
@@ -96,16 +95,14 @@
                                                 </div>
                                                 {% endfor %}
                                             </div>
-                                            <div class="border-title"><h3>Idiomas</h3><a href="{{ path('addIdioma') }}" title="Añadir idioma"><i class="la la-plus"></i> Añadir idioma</a></div>
+                                            <div class="border-title"><h3>Idiomas</h3><a href="{{ path('addIdioma') }}" title="Añadir idioma" id="skills"><i class="la la-plus"></i> Añadir idioma</a></div>
                                             <div class="edu-history-sec">
                                                 {% for idioma in idiomas %}
                                                 <div class="edu-history style2">
                                                     <i></i>
                                                     <div class="edu-hisinfo">
-                                                        <h3>Ingles - B2</h3>
-                                                        <p>Hablado: {{ idioma.hablado }}</p>
-                                                        <p>Escrito: {{ idioma.escrito }}</p>
-                                                        <p>Leido: {{ idioma.leido }}</p>
+                                                        <h3>{{ idioma.idiomas }} - {{ idioma.nivel }}</h3>
+                                                        <p>Hablado: {{ idioma.hablado }} | Escrito: {{ idioma.escrito }} | Leido: {{ idioma.leido }}</p>
                                                     </div>
                                                     <ul class="action_job">
                                                         <li><span>Edit</span><a href="{{ path('addIdioma', {id:idioma.id}) }}" title="Editar idioma"><i class="la la-pencil"></i></a></li>
@@ -140,6 +137,7 @@
                                             {% endfor %}
                                         </ul>
                                     </div><!-- Job Overview -->
+                                    {% if is_granted('ROLE_EMPRESA') %}
                                     <div class="quick-form-job">
                                         <h3>Contacto</h3>
                                         <form>
@@ -149,6 +147,7 @@
                                             <button class="submit">Enviar email</button>
                                         </form>
                                     </div>
+                                    {% endif %}
                                 </div>
                             </div>
                         </div>

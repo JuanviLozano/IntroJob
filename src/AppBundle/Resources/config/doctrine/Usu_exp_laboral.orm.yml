@@ -26,6 +26,7 @@ AppBundle\Entity\Usu_exp_laboral:
             column: fecha_fin
         descripcion:
             type: text
+            nullable: true
     lifecycleCallbacks: {  }
 
     manyToOne:

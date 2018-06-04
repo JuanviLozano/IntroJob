@@ -35,11 +35,13 @@ class SecurityController extends Controller
 
         $form = $this->createForm(UsuarioType::class, $user);
         $foto_antigua = $user->getImagen();
+        $allpassword = $user->getPassword();
 
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
 
             $foto = $form['imagen']->getData();
+            $password = $user->getPassword();
 
             if($foto) {
                 if($foto_antigua != 'usuario.png' && $foto_antigua) {
@@ -55,8 +57,14 @@ class SecurityController extends Controller
                 $user->setImagen('usuario.png');
             }
 
-            $password = $passwordEncoder->encodePassword($user, $user->getPassword());
-            $user->setPassword($password);
+            if(!empty($password)) {
+                $password = $passwordEncoder->encodePassword($user, $user->getPassword());
+                $user->setPassword($password);
+            }
+            else {
+                $user->setPassword($allpassword);
+            }
+
 
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($user);

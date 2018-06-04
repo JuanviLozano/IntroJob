@@ -102,4 +102,43 @@ class Paises
     {
         return (string) $this->nombre;
     }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $empresa;
+
+
+    /**
+     * Add empresa
+     *
+     * @param \AppBundle\Entity\Empresa $empresa
+     *
+     * @return Paises
+     */
+    public function addEmpresa(\AppBundle\Entity\Empresa $empresa)
+    {
+        $this->empresa[] = $empresa;
+
+        return $this;
+    }
+
+    /**
+     * Remove empresa
+     *
+     * @param \AppBundle\Entity\Empresa $empresa
+     */
+    public function removeEmpresa(\AppBundle\Entity\Empresa $empresa)
+    {
+        $this->empresa->removeElement($empresa);
+    }
+
+    /**
+     * Get empresa
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getEmpresa()
+    {
+        return $this->empresa;
+    }
 }

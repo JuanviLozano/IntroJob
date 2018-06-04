@@ -23,3 +23,6 @@ AppBundle\Entity\Provincias:
         usuario:
             targetEntity: Usuario
             mappedBy: provincias
+        empresa:
+            targetEntity: Empresa
+            mappedBy: provincias

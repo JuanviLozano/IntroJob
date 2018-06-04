@@ -38,6 +38,10 @@ class InformacionController extends Controller
     {
         $form = $this->createForm(Usu_informacionType::Class, $informacion);
 
+        if($informacion->getUsuario() != $this->getUser()) {
+            throw new AccessDeniedHttpException();
+        }
+
         $form->handleRequest($request);
         if($form->isValid() && $form->isSubmitted()) {
 

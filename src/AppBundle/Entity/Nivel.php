@@ -97,4 +97,9 @@ class Nivel
     {
         return $this->usuIdioma;
     }
+
+    public function __toString()
+    {
+        return (string) $this->titulo;
+    }
 }

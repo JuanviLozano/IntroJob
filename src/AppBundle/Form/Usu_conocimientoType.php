@@ -28,7 +28,6 @@ class Usu_conocimientoType extends AbstractType
             ))
             ->add('descripcion', TextareaType::Class, array(
                 'label' => 'Descripción',
-                'attr' => array('placeholder' => 'Escriba una descripción breve de sus estudios...'),
                 'required' => false
             ))
             ->add('centro', TextType::Class, array(

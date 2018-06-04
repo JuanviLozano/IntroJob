@@ -23,3 +23,6 @@ AppBundle\Entity\Paises:
         usuario:
             targetEntity: Usuario
             mappedBy: paises
+        empresa:
+            targetEntity: Empresa
+            mappedBy: paises

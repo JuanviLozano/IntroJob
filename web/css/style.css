@@ -7625,6 +7625,21 @@ header.gradient{
     width: 100%;
     padding-bottom: 23px;
 }
+header.gradientEmpres{
+    background: rgb(157, 221, 151);
+    background: -moz-linear-gradient(45deg, rgb(157, 221, 151) 0%, rgb(0, 93, 4) 71%, rgb(0, 93, 4) 100%);
+    background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, rgb(157, 221, 151)), color-stop(71%, rgb(0, 93, 4)), color-stop(100%, rgb(0, 93, 4)));
+    background: -webkit-linear-gradient(45deg, rgb(157, 221, 151) 0%, rgb(0, 93, 4) 71%, rgb(0, 93, 4) 100%);
+    background: -o-linear-gradient(45deg, rgb(157, 221, 151) 0%, rgb(0, 93, 4) 71%, rgb(0, 93, 4) 100%);
+    background: -ms-linear-gradient(45deg, rgb(157, 221, 151) 0%, rgb(0, 93, 4) 71%, rgb(0, 93, 4) 100%);
+    background: linear-gradient(45deg, rgb(157, 221, 151) 0%, rgb(0, 93, 4) 71%, rgb(0, 93, 4) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8b91dd', endColorstr='#10195d',GradientType=1 );
+    position: relative;
+    z-index: 2;
+    float: left;
+    width: 100%;
+    padding-bottom: 23px;
+}
 #map_div {
     height: 450px;
     width: 100%;

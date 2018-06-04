@@ -25,6 +25,7 @@ AppBundle\Entity\Usu_educacion:
             length: 255
         descripcion:
             type: text
+            nullable: true
     lifecycleCallbacks: {  }
 
     manyToOne:

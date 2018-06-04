@@ -6,6 +6,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
 class Usu_educacionType extends AbstractType
 {
@@ -18,7 +19,11 @@ class Usu_educacionType extends AbstractType
                 ->add('fechaInicio')
                 ->add('fechaFin')
                 ->add('centro')
-                ->add('descripcion')
+                ->add('descripcion', TextareaType::Class, array(
+                    'label' => 'Descripción',
+                    'attr' => array('placeholder' => 'Escriba una descripción breve de sus estudios...'),
+                    'required' => false
+                ))
                 ->add('enviar', SubmitType::Class, array(
                     'label' => 'Guardar'
                 ));

@@ -15,7 +15,6 @@ class ExperienciaController extends Controller
     {
         $experiencia = new Usu_exp_laboral();
         $form = $this->createForm(Usu_exp_laboralType::Class, $experiencia);
-
         $id = $this->getUser();
 
         $form->handleRequest($request);
@@ -41,6 +40,10 @@ class ExperienciaController extends Controller
     {
         $form = $this->createForm(Usu_exp_laboralType::Class, $experiencia);
 
+        if($experiencia->getUsuario() != $this->getUser()) {
+            throw new AccessDeniedHttpException();
+        }
+
         $form->handleRequest($request);
         if($form->isValid() && $form->isSubmitted()) {
             $em = $this->getDoctrine()->getManager();
@@ -59,6 +62,10 @@ class ExperienciaController extends Controller
 
     public function deleteExperienciaAction(Usu_exp_laboral $experiencia)
     {
+        if($experiencia->getUsuario() != $this->getUser()) {
+            throw new AccessDeniedHttpException();
+        }
+
         $em = $this->getDoctrine()->getManager();
         $em->remove($experiencia);
         $em->flush();

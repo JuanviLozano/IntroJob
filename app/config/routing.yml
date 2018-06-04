@@ -80,3 +80,8 @@ addInformacion:
 editInformacion:
     path: /curriculum/edit_informacion/{id}
     defaults: { _controller: "AppBundle:Informacion:editInformacion" }
+
+#------------------------ ZONA EMPRESARIO ------------------------
+loginEmp:
+    path: /empresa/login
+    defaults: { _controller: "AppBundle:SecurityEmpresa:login" }

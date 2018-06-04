@@ -1,0 +1,57 @@
+AppBundle\Entity\Empresa:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\EmpresaRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        email:
+            type: string
+            length: 255
+            unique: true
+        password:
+            type: string
+            length: 255
+        nombre:
+            type: string
+            length: 255
+            unique: true
+        alias:
+            type: string
+            length: 255
+            unique: true
+        municipio:
+            type: string
+            length: 255
+        codigoPostal:
+            type: integer
+            column: codigo_postal
+        direccion:
+            type: string
+            length: 255
+        telefono:
+            type: integer
+        fax:
+            type: integer
+        imagen:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }
+
+    manyToOne:
+        provincias:
+            targetEntity: Provincias
+            inversedBy: empresa
+            joinColumn:
+                name: id_provincia
+                referencedColumnName: id
+        paises:
+            targetEntity: Paises
+            inversedBy: empresa
+            joinColumn:
+                name: id_paises
+                referencedColumnName: id
