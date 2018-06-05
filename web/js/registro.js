@@ -7,7 +7,7 @@
 document.getElementById("edu-siguiente").setAttribute("disabled", "disabled");
 
 var errorUsu = false;
-document.getElementById("appbundle_usuario_username").onblur = function() {
+document.getElementById("appbundle_usuario_username").onkeyup = function() {
 	var node = document.createElement("P");
 	var textnode = document.createTextNode("Nombre usuario incorrecto.");
 	node.appendChild(textnode);
@@ -22,12 +22,13 @@ document.getElementById("appbundle_usuario_username").onblur = function() {
 		errorUsu = false;
 		if (document.getElementById("usuReg")!=null)
 		document.getElementById("usuReg").remove();
+		this.style.borderColor = "#5cb85c";
 	}
 	activateNext();
 }
 
 var errorPass = false;
-document.getElementById("appbundle_usuario_password").onblur = function() {
+document.getElementById("appbundle_usuario_password").onkeyup = function() {
 	var node = document.createElement("P");
 	var textnode = document.createTextNode("Contraseña incorrecta.");
 	node.appendChild(textnode);
@@ -42,12 +43,13 @@ document.getElementById("appbundle_usuario_password").onblur = function() {
 		errorPass = false;
 		if (document.getElementById("passReg")!=null)
 		document.getElementById("passReg").remove();
+		this.style.borderColor = "#5cb85c";
 	}
 	activateNext();
 }
 
 var errorEmail = false;
-document.getElementById("appbundle_usuario_email").onblur = function() {
+document.getElementById("appbundle_usuario_email").onkeyup = function() {
 	var node = document.createElement("P");
 	var textnode = document.createTextNode("Email incorrecto.");
 	node.appendChild(textnode);
@@ -62,6 +64,7 @@ document.getElementById("appbundle_usuario_email").onblur = function() {
 		errorEmail = false;
 		if (document.getElementById("emailReg")!=null)
 		document.getElementById("emailReg").remove();
+		this.style.borderColor = "#5cb85c";
 	}
 	activateNext();
 }
@@ -110,7 +113,7 @@ function checkEmail(value) {
 document.getElementById("expe-siguiente").setAttribute("disabled", "disabled");
 
 var errorNom = false;
-document.getElementById("appbundle_usuario_nombre").onblur = function() {
+document.getElementById("appbundle_usuario_nombre").onkeyup = function() {
 	var node = document.createElement("P");
 	var textnode = document.createTextNode("Nombre incorrecto.");
 	node.appendChild(textnode);
@@ -125,12 +128,13 @@ document.getElementById("appbundle_usuario_nombre").onblur = function() {
 		errorNom = false;
 		if (document.getElementById("nomReg")!=null)
 		document.getElementById("nomReg").remove();
+		this.style.borderColor = "#5cb85c";
 	}
 	activateNextExpe();
 }
 
 var errorApe = false;
-document.getElementById("appbundle_usuario_apellidos").onblur = function() {
+document.getElementById("appbundle_usuario_apellidos").onkeyup = function() {
 	var node = document.createElement("P");
 	var textnode = document.createTextNode("Apellidos incorrecto.");
 	node.appendChild(textnode);
@@ -145,12 +149,13 @@ document.getElementById("appbundle_usuario_apellidos").onblur = function() {
 		errorApe = false;
 		if (document.getElementById("apeReg")!=null)
 		document.getElementById("apeReg").remove();
+		this.style.borderColor = "#5cb85c";
 	}
 	activateNextExpe();
 }
 
 var errorFechaNac = false;
-document.getElementById("appbundle_usuario_fecha_nacimiento").onblur = function() {
+document.getElementById("appbundle_usuario_fecha_nacimiento").onkeyup = function() {
 	var node = document.createElement("P");
 	var textnode = document.createTextNode("Fecha de nacimiento incorrecta.");
 	node.appendChild(textnode);
@@ -165,6 +170,7 @@ document.getElementById("appbundle_usuario_fecha_nacimiento").onblur = function(
 		errorFechaNac = false;
 		if (document.getElementById("fechaNacReg")!=null)
 		document.getElementById("fechaNacReg").remove();
+		this.style.borderColor = "#5cb85c";
 	}
 	activateNextExpe();
 }
@@ -204,7 +210,7 @@ function checkFechaNac(value) {
 document.getElementById("habili-siguiente").setAttribute("disabled", "disabled");
 
 var errorDir = false;
-document.getElementById("appbundle_usuario_direccion").onblur = function() {
+document.getElementById("appbundle_usuario_direccion").onkeyup = function() {
 	var node = document.createElement("P");
 	var textnode = document.createTextNode("Dirección incorrecta.");
 	node.appendChild(textnode);
@@ -219,12 +225,13 @@ document.getElementById("appbundle_usuario_direccion").onblur = function() {
 		errorDir = false;
 		if (document.getElementById("dirReg")!=null)
 		document.getElementById("dirReg").remove();
+		this.style.borderColor = "#5cb85c";
 	}
 	activateNextHabili();
 }
 
 var errorCod = false;
-document.getElementById("appbundle_usuario_cod_postal").onblur = function() {
+document.getElementById("appbundle_usuario_cod_postal").onkeyup = function() {
 	var node = document.createElement("P");
 	var textnode = document.createTextNode("Código postal incorrecto.");
 	node.appendChild(textnode);
@@ -239,6 +246,7 @@ document.getElementById("appbundle_usuario_cod_postal").onblur = function() {
 		errorCod = false;
 		if (document.getElementById("codReg")!=null)
 		document.getElementById("codReg").remove();
+		this.style.borderColor = "#5cb85c";
 	}
 	activateNextHabili();
 }
@@ -277,7 +285,7 @@ function checkCodPostal(value) {
 document.getElementById("appbundle_usuario_Enviar").setAttribute("disabled", "disabled");
 
 var errorTelf = false;
-document.getElementById("appbundle_usuario_telefono").onblur = function() {
+document.getElementById("appbundle_usuario_telefono").onkeyup = function() {
 	var node = document.createElement("P");
 	var textnode = document.createTextNode("Teléfono móvil incorrecto.");
 	node.appendChild(textnode);
@@ -292,12 +300,13 @@ document.getElementById("appbundle_usuario_telefono").onblur = function() {
 		errorTelf = false;
 		if (document.getElementById("telfReg")!=null)
 		document.getElementById("telfReg").remove();
+		this.style.borderColor = "#5cb85c";
 	}
 	activateSend();
 }
 
 var errorEsp = false;
-document.getElementById("appbundle_usuario_especialidad").onblur = function() {
+document.getElementById("appbundle_usuario_especialidad").onkeyup = function() {
 	var node = document.createElement("P");
 	var textnode = document.createTextNode("Especialidad incorrecta.");
 	node.appendChild(textnode);
@@ -312,6 +321,7 @@ document.getElementById("appbundle_usuario_especialidad").onblur = function() {
 		errorEsp = false;
 		if (document.getElementById("espReg")!=null)
 		document.getElementById("espReg").remove();
+		this.style.borderColor = "#5cb85c";
 	}
 	activateSend();
 }
