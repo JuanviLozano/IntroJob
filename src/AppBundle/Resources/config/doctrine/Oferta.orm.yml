@@ -84,3 +84,8 @@ AppBundle\Entity\Oferta:
             nullable: true
             column: personal_cargo
     lifecycleCallbacks: {  }
+
+    manyToMany:
+        empresa:
+            targetEntity: Empresa
+            mappedBy: oferta

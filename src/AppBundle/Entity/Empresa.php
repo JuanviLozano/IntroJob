@@ -442,4 +442,108 @@ class Empresa implements UserInterface, \Serializable
     {
         return $this->serialize();
     }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $oferta;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->oferta = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add ofertum
+     *
+     * @param \AppBundle\Entity\Oferta $ofertum
+     *
+     * @return Empresa
+     */
+    public function addOfertum(\AppBundle\Entity\Oferta $ofertum)
+    {
+        $this->oferta[] = $ofertum;
+
+        return $this;
+    }
+
+    /**
+     * Remove ofertum
+     *
+     * @param \AppBundle\Entity\Oferta $ofertum
+     */
+    public function removeOfertum(\AppBundle\Entity\Oferta $ofertum)
+    {
+        $this->oferta->removeElement($ofertum);
+    }
+
+    /**
+     * Get oferta
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getOferta()
+    {
+        return $this->oferta;
+    }
+    /**
+     * @var string
+     */
+    private $web;
+
+    /**
+     * @var string
+     */
+    private $descripcion;
+
+
+    /**
+     * Set web
+     *
+     * @param string $web
+     *
+     * @return Empresa
+     */
+    public function setWeb($web)
+    {
+        $this->web = $web;
+
+        return $this;
+    }
+
+    /**
+     * Get web
+     *
+     * @return string
+     */
+    public function getWeb()
+    {
+        return $this->web;
+    }
+
+    /**
+     * Set descripcion
+     *
+     * @param string $descripcion
+     *
+     * @return Empresa
+     */
+    public function setDescripcion($descripcion)
+    {
+        $this->descripcion = $descripcion;
+
+        return $this;
+    }
+
+    /**
+     * Get descripcion
+     *
+     * @return string
+     */
+    public function getDescripcion()
+    {
+        return $this->descripcion;
+    }
 }

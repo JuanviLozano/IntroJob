@@ -84,6 +84,17 @@ editInformacion:
     path: /usuario/curriculum/edit_informacion/{id}
     defaults: { _controller: "AppBundle:Informacion:editInformacion" }
 
+#Rutas conocimientos
+addConocimiento:
+    path: /usuario/curriculum/edit_conocimiento
+    defaults: { _controller: "AppBundle:Conocimiento:editConocimiento" }
+editConocimiento:
+    path: /usuario/curriculum/add_conocimiento
+    defaults: { _controller: "AppBundle:Conocimiento:addConocimiento" }
+deleteConocimiento:
+    path: /usuario/curriculum/delete_conocimiento
+    defaults: { _controller: "AppBundle:Conocimiento:deleteConocimiento" }
+
 #------------------------ ZONA EMPRESARIO ------------------------
 loginEmp:
     path: /empresa/login

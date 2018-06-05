@@ -602,5 +602,50 @@ class Oferta
     {
         return $this->personalCargo;
     }
-}
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $empresa;
 
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->empresa = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add empresa
+     *
+     * @param \AppBundle\Entity\Empresa $empresa
+     *
+     * @return Oferta
+     */
+    public function addEmpresa(\AppBundle\Entity\Empresa $empresa)
+    {
+        $this->empresa[] = $empresa;
+
+        return $this;
+    }
+
+    /**
+     * Remove empresa
+     *
+     * @param \AppBundle\Entity\Empresa $empresa
+     */
+    public function removeEmpresa(\AppBundle\Entity\Empresa $empresa)
+    {
+        $this->empresa->removeElement($empresa);
+    }
+
+    /**
+     * Get empresa
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getEmpresa()
+    {
+        return $this->empresa;
+    }
+}

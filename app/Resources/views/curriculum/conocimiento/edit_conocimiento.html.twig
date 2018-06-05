@@ -9,13 +9,19 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="inner-header">
-                            <h3>Información general</h3>
+                            <h3>¿Se nos olvida algo?<br>Conocimientos adicionales</h3>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    {% for flashMessage in app.session.flashbag.get('mensaje') %}
+        <div class="alert alert-success" role="alert">
+            <div class="container">{{ flashMessage }}</div>
+        </div>
+    {% endfor %}
 
     <section>
         <div class="block no-padding">
@@ -35,40 +41,28 @@
                                 {{ form_start(form, { 'attr' : {'role':'form'}}) }}
                                 <div id="educacion" class="contact-edit" style="display: none;">
                                     <div class="row">
-                                        <div class="col-lg-6">
-                                            <span class="pf-title">Salario minimo</span>
+                                        <div class="col-lg-12">
+                                            <span class="pf-title">Tipo de conocimiento</span>
                                             <div class="pf-field">
-                                                {{ form_widget(form.expectativaSalario) }}
+                                                {{ form_widget(form.tipo) }}
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
-                                            <span class="pf-title">Salario máximo</span>
+                                            <span class="pf-title">Especialidad</span>
                                             <div class="pf-field">
-                                                {{ form_widget(form.expectativaSalarioFinal) }}
+                                                {{ form_widget(form.especialidad) }}
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
-                                            <span class="pf-title">Sector</span>
+                                            <span class="pf-title">Centro</span>
                                             <div class="pf-field">
-                                                {{ form_widget(form.industria) }}
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <span class="pf-title">Experiencia</span>
-                                            <div class="pf-field">
-                                                {{ form_widget(form.experiencia) }}
+                                                {{ form_widget(form.centro) }}
                                             </div>
                                         </div>
                                         <div class="col-lg-12">
-                                            <span class="pf-title">Título académico</span>
+                                            <span class="pf-title">Descripción</span>
                                             <div class="pf-field">
-                                                {{ form_widget(form.nivelCarrera) }}
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-12">
-                                            <span class="pf-title">Información personal</span>
-                                            <div class="pf-field">
-                                                {{ form_widget(form.infoPersonal) }}
+                                                {{ form_widget(form.descripcion) }}
                                             </div>
                                         </div>
                                     </div>

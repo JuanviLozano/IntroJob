@@ -44,12 +44,20 @@ security:
             logout:
                 path:   /empresa/logout
                 target: /empresa/login
+        public:
+            pattern: /.*
+            security: false
+            http_basic:
+                realm: "Secured Demo Area"
     role_hierarchy:
         ROLE_USER: ROLE_USER
         ROLE_EMPRESA: ROLE_EMPRESA
     access_control:
-        - { path: ^/usuario/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/usuario/register, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/lista_trabajos, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/usuario/, roles: ROLE_USER }
+       - { path: ^/usuario/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+       - { path: ^/usuario/register, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+       - { path: ^/empresa/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+       - { path: ^/empresa/register, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+       - { path: ^/usuario/, roles: ROLE_USER }
+       - { path: ^/empresa/, roles: ROLE_EMPRESA }
+
 
