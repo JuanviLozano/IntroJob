@@ -1,0 +1,86 @@
+AppBundle\Entity\Oferta:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\OfertaRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        titulo:
+            type: string
+            length: 255
+        pais:
+            type: string
+            length: 255
+        provincia:
+            type: string
+            length: 255
+        ciudad:
+            type: string
+            length: 255
+        fechaCreacion:
+            type: datetime
+            column: fecha_creacion
+        salarioInicio:
+            type: integer
+            column: salario_inicio
+        salarioFin:
+            type: integer
+            column: salario_fin
+        experienciaMin:
+            type: string
+            length: 255
+            nullable: true
+            column: experiencia_min
+        estudiosMin:
+            type: string
+            length: 255
+            column: estudios_min
+        residente:
+            type: string
+            length: 255
+            nullable: true
+        conocimientos:
+            type: string
+            length: 255
+            nullable: true
+        requisitos:
+            type: string
+            length: 255
+            nullable: true
+        descripcion:
+            type: text
+        industria:
+            type: string
+            length: 255
+            nullable: true
+        referencia:
+            type: string
+            length: 255
+            nullable: true
+        categoria:
+            type: string
+            length: 255
+            nullable: true
+        nivel:
+            type: string
+            length: 255
+            nullable: true
+        nVacantes:
+            type: integer
+            nullable: true
+            column: n_vacantes
+        duracionContrato:
+            type: string
+            length: 255
+            nullable: true
+            column: duracion_contrato
+        personalCargo:
+            type: string
+            length: 255
+            nullable: true
+            column: personal_cargo
+    lifecycleCallbacks: {  }

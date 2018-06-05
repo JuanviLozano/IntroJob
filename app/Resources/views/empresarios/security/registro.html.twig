@@ -1,4 +1,4 @@
-{% extends 'plantillas/login.html.twig' %}
+{% extends 'empresarios/plantillas/login.html.twig' %}
 {% block contenido %}
 
     <section>
@@ -8,13 +8,13 @@
                     <div class="col-lg-12">
                         <div class="inner2">
                             <div class="inner-title2">
-                                <h3>Registro de usuario</h3>
-                                <span>Registrate para estar al tanto de las nuevas ofertas de empleo</span>
+                                <h3>Registro de empresa</h3>
+                                <span>Registrate para poder subir tus ofertas de empleo</span>
                             </div>
                             <div class="page-breacrumbs">
                                 <ul class="breadcrumbs">
-                                    <li><a href="{{ path('login') }}" title="">Index</a></li>
-                                    <li><a href="{{ path('registro') }}" title="">Register</a></li>
+                                    <li><a href="{{ path('loginEmp') }}" title="">Index</a></li>
+                                    <li><a href="{{ path('registroEmp') }}" title="">Register</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -30,35 +30,14 @@
                 <div class="row no-gape justify-content-center">
                     <div class="col-lg-9 column">
                         <div class="padding-left">
-                            <div class="profile-title">
-                                <h3>Tu información personal</h3>
-                                <div class="steps-sec">
-                                    <div class="step active" id="circle-educacion">
-                                        <p><i class="la la-graduation-cap"></i></p>
-                                        <span>Educación</span>
-                                    </div>
-                                    <div class="step" id="circle-experiencia">
-                                        <p><i class="la la-file-text"></i></p>
-                                        <span>Experiencia</span>
-                                    </div>
-                                    <div class="step" id="circle-habilidades">
-                                        <p><i class="la  la-check-circle"></i></p>
-                                        <span>Habilidades</span>
-                                    </div>
-                                    <div class="step" id="circle-informacion">
-                                        <p><i class="la  la-user"></i></p>
-                                        <span>Información</span>
-                                    </div>
-                                </div>
-                            </div>
                             <div class="profile-form-edit">
                                 {{ form_start(form, { 'attr' : {'role':'form'}}) }}
                                 <div id="educacion" class="contact-edit" style="display: none;">
                                     <div class="row">
                                         <div class="col-lg-12">
-                                            <span class="pf-title">Nombre del usuario</span>
+                                            <span class="pf-title">Correo electrónico</span>
                                             <div class="pf-field">
-                                                {{ form_widget(form.username) }}
+                                                {{ form_widget(form.email) }}
                                             </div>
                                         </div>
                                         <div class="col-lg-12">
@@ -68,13 +47,71 @@
                                             </div>
                                         </div>
                                         <div class="col-lg-12">
-                                            <span class="pf-title">Correo electónico</span>
+                                            <span class="pf-title">Nombre de la empresa</span>
                                             <div class="pf-field">
-                                                {{ form_widget(form.email) }}
+                                                {{ form_widget(form.nombre) }}
                                             </div>
                                         </div>
                                         <div class="col-lg-12">
-                                            {{ form_widget(form.Enviar) }}
+                                            <span class="pf-title">Alias de la empresa</span>
+                                            <div class="pf-field">
+                                                {{ form_widget(form.alias) }}
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <span class="pf-title">Pais de origen</span>
+                                            <div class="pf-field">
+                                                {{ form_widget(form.paises) }}
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <span class="pf-title">Provincia</span>
+                                            <div class="pf-field">
+                                                {{ form_widget(form.provincias) }}
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <span class="pf-title">Municipio</span>
+                                            <div class="pf-field">
+                                                {{ form_widget(form.municipio) }}
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <span class="pf-title">Código postal</span>
+                                            <div class="pf-field">
+                                                {{ form_widget(form.codigoPostal) }}
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <span class="pf-title">Dirección</span>
+                                            <div class="pf-field">
+                                                {{ form_widget(form.direccion) }}
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <span class="pf-title">Telefono</span>
+                                            <div class="pf-field">
+                                                {{ form_widget(form.telefono) }}
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <span class="pf-title">Fax</span>
+                                            <div class="pf-field">
+                                                {{ form_widget(form.fax) }}
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <div class="upload-portfolio">
+                                                <div class="uploadbox">
+                                                    <label for="appbundle_empresa_imagen" class="custom-file-upload">
+                                                        <i class="la la-cloud-upload"></i> <span>Subir imagen</span>
+                                                    </label>
+                                                    {{ form_widget(form.imagen) }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            {{ form_widget(form.enviar) }}
                                         </div>
                                     </div>
                                 </div>

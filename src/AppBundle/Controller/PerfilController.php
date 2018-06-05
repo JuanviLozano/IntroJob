@@ -100,11 +100,4 @@ class PerfilController extends Controller
         ));
     }
 
-    /* ---------------- CURRICULUM ---------------- */
-
-    public function curriculumAction()
-    {
-        return $this->render('datos-personales/curriculum.html.twig');
-    }
-
 }

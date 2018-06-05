@@ -26,7 +26,7 @@ $(document).on('ready',function(){
             }
         );
         });
-        return false;
+        //return false;
     });  
 
     /*** FIXED Menu APPEARS ON SCROLL DOWN ***/ 
@@ -171,7 +171,7 @@ $(document).on('ready',function(){
     $('.view-resume-list').on('click', function(){
         $('.view-resumesec').fadeIn();
         $('html').addClass('no-scroll');
-        return false;
+        //return false;
     });
     $('.close-resume-popup').on('click', function(){
         $('.view-resumesec').fadeOut();
@@ -181,7 +181,7 @@ $(document).on('ready',function(){
     $('.follow-companies-popup').on('click', function(){
         $('.follow-companiesec').fadeIn();
         $('html').addClass('no-scroll');
-        return false;
+        //return false;
     });
     $('.close-follow-company').on('click', function(){
         $('.follow-companiesec').fadeOut();
@@ -216,7 +216,7 @@ $(document).on('ready',function(){
 
     $('.del-resume').on('click', function(){
         $(this).parent().fadeOut();
-        return false;
+        //return false;
     });
 
     $('.cand-extralink li').on('click', function(){
@@ -240,7 +240,7 @@ $(document).on('ready',function(){
 	    $(this).parent().siblings().removeClass("active");
 	    $(this).parent().children("ul").slideToggle();
 	    $(this).parent().toggleClass("active");
-	    return false;
+	    //return false;
 	});
 
 	$('.res-openmenu').on('click', function(){

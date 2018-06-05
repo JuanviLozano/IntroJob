@@ -1,11 +1,12 @@
 <?php
 
 namespace AppBundle\Entity;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * Empresa
  */
-class Empresa
+class Empresa implements UserInterface, \Serializable
 {
     /**
      * @var int
@@ -369,5 +370,76 @@ class Empresa
     public function getPaises()
     {
         return $this->paises;
+    }
+
+    /**
+     * @return string|void
+     */
+    public function serialize()
+    {
+        return serialize(array(
+            $this->password,
+            $this->id,
+            $this->imagen,
+            $this->email,
+            $this->direccion,
+            $this->telefono,
+            $this->nombre,
+            $this->alias,
+            $this->municipio,
+            $this->paises,
+            $this->provincias
+        ));
+    }
+
+    /**
+     * @param string $serialized
+     */
+    public function unserialize($serialized)
+    {
+        list(
+            $this->password,
+            $this->id,
+            $this->imagen,
+            $this->email,
+            $this->direccion,
+            $this->telefono,
+            $this->nombre,
+            $this->alias,
+            $this->municipio,
+            $this->paises,
+            $this->provincias
+            ) = unserialize($serialized);
+    }
+
+    public function getRoles()
+    {
+        return [
+            'ROLE_EMPRESA'
+        ];
+    }
+
+    public function getSalt()
+    {
+        return null;
+    }
+
+    /**
+     * @return string
+     */
+    public function getUsername()
+    {
+        return $this->email;
+    }
+
+
+    public function eraseCredentials()
+    {
+        return null;
+    }
+
+    public function __toString()
+    {
+        return $this->serialize();
     }
 }
