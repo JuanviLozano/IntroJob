@@ -61,14 +61,20 @@
                                                 {{ form_widget(form.username) }}
                                             </div>
                                         </div>
-                                        <div class="col-lg-12">
+                                        <div class="col-lg-6">
                                             <span class="pf-title">Contraseña</span>
                                             <div class="pf-field">
-                                                {{ form_widget(form.password) }}
+                                                {{ form_widget(form.password.first) }}
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <span class="pf-title">Repetir ontraseña</span>
+                                            <div class="pf-field">
+                                                {{ form_widget(form.password.second) }}
                                             </div>
                                         </div>
                                         <div class="col-lg-12">
-                                            <span class="pf-title">Correo electónico</span>
+                                            <span class="pf-title">Correo electrónico</span>
                                             <div class="pf-field">
                                                 {{ form_widget(form.email) }}
                                             </div>

@@ -26,7 +26,9 @@
 
                             </div>
                             <div class="can-detail-s">
-                                <div class="cst"><img src="/img_user/{{ app.user.imagen }}" alt="Tu imagen de perfil" class="img-profile-145" /></div>
+                                <div class="cst">
+                                    <div style="background-image: url('/img_user/{{ app.user.imagen }}')" class="img-profile-145"></div>
+                                </div>
                                 <h3>{{ app.user.nombre }}<br>{{ app.user.apellidos }}</h3>
                                 <span><i>{{ app.user.especialidad }}</i></span>
                                 <p>{{ app.user.email }}</p>

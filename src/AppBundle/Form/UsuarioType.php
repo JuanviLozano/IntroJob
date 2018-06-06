@@ -3,6 +3,7 @@
 namespace AppBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -23,14 +24,18 @@ class UsuarioType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('username', TextType::Class, array(
-            'label' => 'Nombre usuario',
-            'attr' => array('placeholder' => 'Nombre del usuario'),
-            'required' => true
-        ))
-            ->add('password', PasswordType::Class, array(
-                'label' => 'Contraseña',
-                'attr' => array('placeholder' => '*********'),
+                'label' => 'Nombre usuario',
+                'attr' => array('placeholder' => 'Nombre del usuario'),
                 'required' => true
+            ))
+            ->add('password', RepeatedType::class, array(
+                'type' => PasswordType::class,
+                'invalid_message' => 'La contraseña no es igual.',
+                'options' => array('attr' => array('class' => 'password-field',
+                                                   'placeholder' => '************')),
+                'required' => true,
+                'first_options'  => array('label' => 'Contraseña'),
+                'second_options' => array('label' => 'Repetir contraseña'),
             ))
             ->add('nombre', TextType::Class, array(
                 'label' => 'Nombre',
