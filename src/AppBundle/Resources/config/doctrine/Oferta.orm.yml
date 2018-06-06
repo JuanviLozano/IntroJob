@@ -30,6 +30,10 @@ AppBundle\Entity\Oferta:
         salarioFin:
             type: integer
             column: salario_fin
+        topoPago:
+            type: string
+            length: 50
+            nullable: true
         experienciaMin:
             type: string
             length: 255

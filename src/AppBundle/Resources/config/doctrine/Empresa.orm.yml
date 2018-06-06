@@ -46,6 +46,22 @@ AppBundle\Entity\Empresa:
         descripcion:
             type: text
             nullable: true
+        facebook:
+            type: string
+            length: 255
+            nullable: true
+        google:
+            type: string
+            length: 255
+            nullable: true
+        twitter:
+            type: string
+            length: 255
+            nullable: true
+        linkedin:
+            type: string
+            length: 255
+            nullable: true
     lifecycleCallbacks: {  }
 
     manyToOne:

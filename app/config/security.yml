@@ -21,7 +21,7 @@ security:
             security: false
 
         usuarios:
-            pattern: /usuario/.*
+            pattern: ^/(usuario|index|list_trabajos)
             anonymous: ~
             provider: db_provider1
             form_login:
@@ -33,7 +33,7 @@ security:
                 path:   /usuario/logout
                 target: /usuario/login
         empresa:
-            pattern: /empresa/.*
+            pattern: ^/(empresa|index|list_trabajos)
             anonymous: ~
             provider: db_provider2
             form_login:
@@ -47,8 +47,7 @@ security:
         public:
             pattern: /.*
             security: false
-            http_basic:
-                realm: "Secured Demo Area"
+
     role_hierarchy:
         ROLE_USER: ROLE_USER
         ROLE_EMPRESA: ROLE_EMPRESA

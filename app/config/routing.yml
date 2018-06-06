@@ -1,5 +1,5 @@
 index:
-    path: /
+    path: /index
     defaults: { _controller: "AppBundle:Default:index" }
 
 #Login y Registro
@@ -17,6 +17,9 @@ logoutEmp:
     path: /empresa/logout
     defaults: { _controller: "AppBundle:Security:logout" }
 #Trabajo
+list:
+    path: /list_trabajos
+    defaults: { _controller: "AppBundle:Trabajo:list" }
 lista:
     path: /usuario/list_trabajos
     defaults: { _controller: "AppBundle:Trabajo:list" }
