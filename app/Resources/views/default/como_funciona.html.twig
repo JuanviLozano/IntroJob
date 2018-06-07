@@ -1,0 +1,66 @@
+{% extends 'plantillas/login.html.twig' %}
+
+{% block contenido %}
+
+    <section>
+        <div class="block no-padding  gray">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="inner2">
+                            <div class="inner-title2">
+                                <h3>¿Como funciona?</h3>
+                                <span>Obtenga un recorrido digital de como IntroJobs trabaja para usted.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="block ">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="how-works">
+                            <div class="how-workimg"><img src="{{ asset('images/img/regist.jpg') }}" alt="" /></div>
+                            <div class="how-work-detail">
+                                <div class="how-work-box">
+                                    <span>1</span>
+                                    <i class="la la-user"></i>
+                                    <h3>Registrar una cuenta</h3>
+                                    <p>Introjobs es el reclutamiento en linea para toda aquella persona que busque una oferta de trabajo en España. Entendemos que los solicitantes de empleo vienen a nosotros no solo por un trabajo, sino para organizar si información curricular.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="how-works flip">
+                            <div class="how-workimg"><img src="{{ asset('images/img/buscar.jpg') }}" alt="" /></div>
+                            <div class="how-work-detail">
+                                <div class="how-work-box">
+                                    <span>2</span>
+                                    <i class="la la-file-text"></i>
+                                    <h3>Especifique y busque su trabajo</h3>
+                                    <p>Recibirá las solicitudes por correo electrónico semanalmente. Tambien puede hacer uso del filtrado para encontrar ofertas de trabajo que se adecuen mejor a su perfil.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="how-works">
+                            <div class="how-workimg"><img src="{{ asset('images/img/trabajo.jpg') }}" alt="" /></div>
+                            <div class="how-work-detail">
+                                <div class="how-work-box">
+                                    <span>3</span>
+                                    <i class="la la-pencil"></i>
+                                    <h3>Solicitar empleo</h3>
+                                    <p>Una vez encontrado la oferta de trabajo deseada puede hacer uso de la comunicación directa mediante el correo de la empresa o solicitar el puesto y esperar a que el empresario se ponga en contacto con usted.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
