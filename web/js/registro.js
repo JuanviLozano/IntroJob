@@ -28,7 +28,7 @@ document.getElementById("appbundle_usuario_username").onkeyup = function() {
 }
 
 var errorPass = false;
-document.getElementById("appbundle_usuario_password").onkeyup = function() {
+document.getElementById("appbundle_usuario_password_first").onkeyup = function() {
 	var node = document.createElement("P");
 	var textnode = document.createTextNode("Contraseña incorrecta.");
 	node.appendChild(textnode);
@@ -72,7 +72,7 @@ document.getElementById("appbundle_usuario_email").onkeyup = function() {
 function activateNext() {
 	if (
 		checkNombreUsu(document.getElementById("appbundle_usuario_username").value) &&
-		checkPass(document.getElementById("appbundle_usuario_password").value) &&
+		checkPass(document.getElementById("appbundle_usuario_password_first").value) &&
 		checkEmail(document.getElementById("appbundle_usuario_email").value)
 		) {
 		document.getElementById("edu-siguiente").removeAttribute("disabled");
