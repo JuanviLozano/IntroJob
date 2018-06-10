@@ -55,7 +55,7 @@ security:
        - { path: ^/usuario/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
        - { path: ^/usuario/register, roles: IS_AUTHENTICATED_ANONYMOUSLY }
        - { path: ^/empresa/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-       - { path: ^/empresa/register, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+       - { path: ^/empresa/registro, roles: IS_AUTHENTICATED_ANONYMOUSLY }
        - { path: ^/usuario/, roles: ROLE_USER }
        - { path: ^/empresa/, roles: ROLE_EMPRESA }
 

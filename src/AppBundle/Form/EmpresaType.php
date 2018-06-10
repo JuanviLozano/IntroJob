@@ -79,6 +79,36 @@ class EmpresaType extends AbstractType
                     'class' => 'chosen'
                 ]
             ))
+            ->add('facebook',TextType::Class, array(
+                'label' => 'Facebook',
+                'attr' => array('placeholder' => 'Facebook'),
+                'required' => false
+            ))
+            ->add('google',TextType::Class, array(
+                'label' => 'Google +',
+                'attr' => array('placeholder' => 'Google +'),
+                'required' => false
+            ))
+            ->add('twitter',TextType::Class, array(
+                'label' => 'Twitter',
+                'attr' => array('placeholder' => 'Twitter'),
+                'required' => false
+            ))
+            ->add('linkedin',TextType::Class, array(
+                'label' => 'Linkedin',
+                'attr' => array('placeholder' => 'Linkedin'),
+                'required' => false
+            ))
+            ->add('web',TextType::Class, array(
+                'label' => 'Sitio Web',
+                'attr' => array('placeholder' => 'Sitio web'),
+                'required' => false
+            ))
+            ->add('descripcion',TextType::Class, array(
+                'label' => 'Descripción',
+                'attr' => array('placeholder' => 'Una descripción breve de la empresa...'),
+                'required' => false
+            ))
             ->add('enviar', SubmitType::Class);
     }/**
      * {@inheritdoc}

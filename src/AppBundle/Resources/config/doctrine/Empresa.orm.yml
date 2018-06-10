@@ -37,6 +37,7 @@ AppBundle\Entity\Empresa:
             type: integer
         fax:
             type: integer
+            nullable: true
         web:
             type: string
             length: 255

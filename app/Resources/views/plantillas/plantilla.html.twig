@@ -26,7 +26,7 @@
 
 <div class="page-loading">
     <img src="{{ asset('images/loader.gif') }}" alt="cargando" />
-    <span>Cargando</span>
+    <span>Salir</span>
 </div>
 
 <div class="theme-layout" id="scrollup">
@@ -63,6 +63,9 @@
                                 <li><a href="{{ path('perfil') }}" title="Perfil">Mi perfil</a></li>
                                 <li><a href="{{ path('perfil-editar') }}" title="Perfil">Editar perfil</a></li>
                             </ul>
+                        </li>
+                        <li>
+                            <a href="{{ path('logout') }}" title="Cerrar sesion">Cerrar sesión</a>
                         </li>
                     </ul>
                 </div>

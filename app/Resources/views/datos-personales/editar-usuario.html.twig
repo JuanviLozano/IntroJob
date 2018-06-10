@@ -60,13 +60,13 @@
                                         <div class="col-lg-6">
                                             <span class="pf-title">Contraseña</span>
                                             <div class="pf-field">
-                                                {{ form_widget(form.password.first) }}
+                                                {{ form_widget(form.password.first, {required : false}) }}
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
                                             <span class="pf-title">Repetir ontraseña</span>
                                             <div class="pf-field">
-                                                {{ form_widget(form.password.second) }}
+                                                {{ form_widget(form.password.second, {required : false}) }}
                                             </div>
                                         </div>
                                         <div class="col-lg-12">
