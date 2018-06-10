@@ -50,6 +50,28 @@ document.getElementById("appbundle_usuario_password_first").onkeyup = function()
 	activateNext();
 }
 
+var errorPassS = false;
+document.getElementById("appbundle_usuario_password_second").onkeyup = function() {
+	var node = document.createElement("P");
+	var textnode = document.createTextNode("Contraseña incorrecta.");
+	node.appendChild(textnode);
+	node.setAttribute("style", "color: red");
+	node.setAttribute("id", "passSReg");
+
+	if ((!checkPass(this.value) || this.value!=document.getElementById("appbundle_usuario_password_first").value) && errorPassS!=true) {
+		errorPassS = true;
+		this.after(node);
+		this.style.borderColor = "red";
+	}
+	else if (checkPass(this.value)) {
+		errorPassS = false;
+		if (document.getElementById("passSReg")!=null)
+		document.getElementById("passSReg").remove();
+		this.style.borderColor = "#5cb85c";
+	}
+	activateNext();
+}
+
 var errorEmail = false;
 document.getElementById("appbundle_usuario_email").onkeyup = function() {
 	var node = document.createElement("P");
@@ -76,6 +98,7 @@ function activateNext() {
 	if (
 		checkNombreUsu(document.getElementById("appbundle_usuario_username").value) &&
 		checkPass(document.getElementById("appbundle_usuario_password_first").value) &&
+		checkPass(document.getElementById("appbundle_usuario_password_second").value) &&
 		checkEmail(document.getElementById("appbundle_usuario_email").value)
 		) {
 		document.getElementById("edu-siguiente").removeAttribute("disabled");
