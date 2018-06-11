@@ -114,3 +114,6 @@ loginEmp:
 registroEmp:
     path: /empresa/registro
     defaults: { _controller: "AppBundle:SecurityEmpresa:registro" }
+ofertasEmp:
+    path: /empresa/ofertas
+    defaults: {_controller: "AppBundle:OfertasEmpresa:ofertaEmpresa" }

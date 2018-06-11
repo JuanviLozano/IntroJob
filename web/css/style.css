@@ -3081,10 +3081,10 @@ header.style3 .menu-sec nav {
     margin-top: -1px;
 }
 .how-to-sec.style2 .how-to::before {
-    background-image: url('../images/line3.png');
+    /*background-image: url('../images/line3.png');*/
 }
 .how-to-sec.style2 .how-to:nth-child(n+2)::before {
-    background-image: url(../images/line4.png);
+    /*background-image: url(../images/line4.png);*/
 }
 .how-to-sec.style2 .how-icon {
     background: #7dc246;
@@ -4358,6 +4358,25 @@ footer.style3 span, footer.style3 a {
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8b91dd', endColorstr='#10195d',GradientType=1 );
     opacity: 0.8;
 }
+.inner-header::before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    content: "";
+    z-index: -1;
+
+    background: rgb(157, 221, 151);
+    background: -moz-linear-gradient(45deg, rgb(157, 221, 151) 0%, rgb(0, 93, 4) 71%, rgb(0, 93, 4) 100%);
+    background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, rgb(157, 221, 151)), color-stop(71%, rgb(0, 93, 4)), color-stop(100%, rgb(0, 93, 4)));
+    background: -webkit-linear-gradient(45deg, rgb(157, 221, 151) 0%, rgb(0, 93, 4) 71%, rgb(0, 93, 4) 100%);
+    background: -o-linear-gradient(45deg, rgb(157, 221, 151) 0%, rgb(0, 93, 4) 71%, rgb(0, 93, 4) 100%);
+    background: -ms-linear-gradient(45deg, rgb(157, 221, 151) 0%, rgb(0, 93, 4) 71%, rgb(0, 93, 4) 100%);
+    background: linear-gradient(45deg, rgb(157, 221, 151) 0%, rgb(0, 93, 4) 71%, rgb(0, 93, 4) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8b91dd', endColorstr='#10195d',GradientType=1 );
+    opacity: 0.8;
+}
 .inner-header::after {
     position: absolute;
     left: 0;
@@ -4365,7 +4384,6 @@ footer.style3 span, footer.style3 a {
     width: 100%;
     height: 100%;
     content: "";
-    background-image: url('../images/lines.png');
     z-index: 0;
     opacity: 0.14;
 }

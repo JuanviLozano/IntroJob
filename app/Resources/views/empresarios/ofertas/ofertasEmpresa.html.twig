@@ -1,0 +1,102 @@
+{% extends 'empresarios/plantillas/login.html.twig' %}
+{% block contenido %}
+
+    <section class="overlape">
+        <div class="block no-padding">
+            <div data-velocity="-.1" style="background: repeat scroll 50% 422.28px transparent;" class="parallax scrolly-invisible no-parallax"></div><!-- PARALLAX BACKGROUND IMAGE -->
+            <div class="container fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="inner-header">
+                            <h3>Bienvenido {{ app.user.nombre }}</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="block no-padding">
+            <div class="container">
+                <div class="row no-gape">
+                    <aside class="col-lg-3 column border-right">
+                        <div class="widget">
+                            <div class="tree_widget-sec">
+                                <ul>
+                                    <li class="inner-child">
+                                        <a title="Perfil de la compañia"><i class="la la-file-text"></i>Perfil de la compañia</a>
+                                        <ul>
+                                            <li><a href="#" title="Mi perfil">Mi perfil</a></li>0
+                                            <li><a href="#" title="Redes sociales">Redes sociales</a></li>
+                                            <li><a href="#" title="Contacto">Información de contacto</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="inner-child">
+                                        <a title="Administrar ofertas"><i class="la la-briefcase"></i>Administrar ofertas</a>
+                                        <ul>
+                                            <li><a href="#" title="Lista de ofertas">Lista de ofertas</a></li>
+                                            <li><a href="#" title="Añadir oferta">Añadir ofertas</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="{{ path('logoutEmp') }}" title="Cerrar sesion"><i class="la la-unlink"></i>Cerrar sesión</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </aside>
+                    <div class="col-lg-9 column">
+                        <div class="padding-left">
+                            <div class="manage-jobs-sec">
+                                <h3>Administrar trabajos</h3>
+                                <div class="extra-job-info">
+                                    <span><i class="la la-clock-o"></i><strong>9</strong> Trabajos publicados</span>
+                                    <span><i class="la la-file-text"></i><strong>20</strong> Application</span>
+                                    <span><i class="la la-users"></i><strong>18</strong> Trabajos activos</span>
+                                </div>
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <td>Titulo</td>
+                                            <td>Categoría</td>
+                                            <td>Fecha de creación</td>
+                                            <td>Estado</td>
+                                            <td>Acción</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <div class="table-list-title">
+                                                    <h3><a href="#" title="">Web Designer / Developer</a></h3>
+                                                    <span><i class="la la-map-marker"></i>Sacramento, California</span>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <span class="applied-field">3+ Applied</span>
+                                            </td>
+                                            <td>
+                                                <span>October 27, 2017</span><br />
+                                                <span>April 25, 2011</span>
+                                            </td>
+                                            <td>
+                                                <span class="status active">Active</span>
+                                            </td>
+                                            <td>
+                                                <ul class="action_job">
+                                                    <li><span>Ver oferta</span><a href="#" title="Ver oferta"><i class="la la-eye"></i></a></li>
+                                                    <li><span>Editar</span><a href="#" title="Editar"><i class="la la-pencil"></i></a></li>
+                                                    <li><span>Borrar</span><a href="#" title="Borrar"><i class="la la-trash-o"></i></a></li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

@@ -677,4 +677,33 @@ class Oferta
     {
         return $this->empresa;
     }
+    /**
+     * @var boolean
+     */
+    private $estado;
+
+
+    /**
+     * Set estado
+     *
+     * @param boolean $estado
+     *
+     * @return Oferta
+     */
+    public function setEstado($estado)
+    {
+        $this->estado = $estado;
+
+        return $this;
+    }
+
+    /**
+     * Get estado
+     *
+     * @return boolean
+     */
+    public function getEstado()
+    {
+        return $this->estado;
+    }
 }

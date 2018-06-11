@@ -87,6 +87,8 @@ AppBundle\Entity\Oferta:
             length: 255
             nullable: true
             column: personal_cargo
+        estado:
+            type: boolean
     lifecycleCallbacks: {  }
 
     manyToMany:
