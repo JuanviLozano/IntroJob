@@ -60,21 +60,7 @@ class EmpresaType extends AbstractType
             ->add('fax',TextType::Class, array(
                 'label' => 'Fax',
                 'attr' => array('placeholder' => 'Fax')
-<<<<<<< HEAD
-            ));
-
-        $builder->add('email', EmailType::Class)
-            ->add('password', PasswordType::Class)
-            ->add('nombre', TextType::Class)
-            ->add('alias',TextType::Class)
-            ->add('municipio',TextType::Class)
-            ->add('codigoPostal',TextType::Class)
-            ->add('direccion',TextType::Class)
-            ->add('telefono',TextType::Class)
-            ->add('fax',TextType::Class)
-=======
             ))
->>>>>>> 3cc47f45d0c749331bdc91125fca6c4663eec119
             ->add('imagen',FileType::Class, array(
                 'label' => 'Imagen',
                 'mapped' => false,
