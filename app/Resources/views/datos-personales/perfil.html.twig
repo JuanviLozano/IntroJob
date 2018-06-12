@@ -111,30 +111,14 @@
                                                 </div>
                                                 {% endfor %}
                                             </div>
-                                            <div class="border-title"><h3>Conocimientos adicionales</h3><a href="{{ path('addConocimiento') }}" title="Añadir conocimiento" id="skills"><i class="la la-plus"></i> Añadir conocimiento</a></div>
-                                            <div class="edu-history-sec">
-                                                {% for conocimiento in conocimientos %}
-                                                    <div class="edu-history">
-                                                        <div class="edu-hisinfo">
-                                                            <h3>{{ conocimiento.tipo }} - <span>{{ conocimiento.especialidad }}</span></h3>
-                                                            <span>{{ conocimiento.centro }}</span>
-                                                            <p>{{ conocimiento.descripcion }}</p>
-                                                        </div>
-                                                        <ul class="action_job">
-                                                            <li><span>Edit</span><a href="{{ path('editConocimiento', {id:conocimiento.id}) }}" title="Editar conocimiento"><i class="la la-pencil"></i></a></li>
-                                                            <li><span>Delete</span><a href="{{ path('deleteConocimiento', {id:conocimiento.id}) }}" title="Borrar conocimiento"><i class="la la-trash-o"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                {% endfor %}
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-lg-4 column">
                                     <div class="job-overview">
-                                        {% for informacion in informaciones %}
                                         <h3>Descripción general del empleo</h3>
                                         <ul>
+                                            {% for informacion in informaciones %}
                                             <li><i class="la la-money"></i><h3>Expectativas salariales</h3>
                                                 <span>€{{ informacion.expectativaSalario }} - €{{ informacion.expectativaSalarioFinal }}</span>
                                             </li>
@@ -150,8 +134,8 @@
                                             <li><i class="la la-shield"></i><h3>Experiencia</h3>
                                                 <span>{{ informacion.experiencia }}</span>
                                             </li>
+                                            {% endfor %}
                                         </ul>
-                                        {% endfor %}
                                     </div><!-- Job Overview -->
                                     {% if is_granted('ROLE_EMPRESA') %}
                                     <div class="quick-form-job">

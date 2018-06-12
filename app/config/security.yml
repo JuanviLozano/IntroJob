@@ -2,62 +2,38 @@ security:
     encoders:
         AppBundle\Entity\Usuario: 
             algorithm: bcrypt
-        AppBundle\Entity\Empresa:
-            algorithm: bcrypt
-
+            
     providers:
-        db_provider1:
+        db_provider:
             entity:
                 class: AppBundle:Usuario
                 property: username
-        db_provider2:
-            entity:
-                class: AppBundle:Empresa
-                property: email
 
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
 
-        usuarios:
-            pattern: /usuario/.*
+        main:
             anonymous: ~
-            provider: db_provider1
             form_login:
-                login_path: /usuario/login
-                check_path: /usuario/login
+                login_path: login
+                check_path: login
                 username_parameter: username
                 password_parameter: password
             logout:
-                path:   /usuario/logout
-                target: /usuario/login
-        empresa:
-            pattern: /empresa/.*
-            anonymous: ~
-            provider: db_provider2
-            form_login:
-                login_path: /empresa/login
-                check_path: /empresa/login
-                username_parameter: username
-                password_parameter: password
-            logout:
-                path:   /empresa/logout
-                target: /empresa/login
-        public:
-            pattern: /.*
-            security: false
-            http_basic:
-                realm: "Secured Demo Area"
+                path:   /logout
+                target: /login
     role_hierarchy:
         ROLE_USER: ROLE_USER
-        ROLE_EMPRESA: ROLE_EMPRESA
     access_control:
-       - { path: ^/usuario/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-       - { path: ^/usuario/register, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-       - { path: ^/empresa/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-       - { path: ^/empresa/register, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-       - { path: ^/usuario/, roles: ROLE_USER }
-       - { path: ^/empresa/, roles: ROLE_EMPRESA }
-
+        - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/register, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/dentro, roles: IS_AUTHENTICATED_FULLY }
+        - { path: ^/profile, roles: IS_AUTHENTICATED_FULLY }
+        - { path: ^/lista_trabajos, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/editar-usuario, roles: IS_AUTHENTICATED_FULLY }
+        - { path: ^/profile/curriculum, roles: IS_AUTHENTICATED_FULLY }
+        - { path: ^/profile, roles: IS_AUTHENTICATED_FULLY }
+        - { path: ^/curriculum/, roles: IS_AUTHENTICATED_FULLY }
 

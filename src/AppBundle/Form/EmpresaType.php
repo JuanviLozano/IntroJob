@@ -19,42 +19,15 @@ class EmpresaType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('email', EmailType::Class, array(
-                'label' => 'Email',
-                'attr' => array('placeholder' => 'Email de la empresa')
-            ))
-            ->add('password', PasswordType::Class, array(
-                'label' => 'Contraseña',
-                'attr' => array('placeholder' => 'Contraseña')
-            ))
-            ->add('nombre', TextType::Class, array(
-                'label' => 'Nombre de la empresa',
-                'attr' => array('placeholder' => 'Nombre de la empresa')
-            ))
-            ->add('alias',TextType::Class, array(
-                'label' => 'Alias',
-                'attr' => array('placeholder' => 'Alias de la empresa')
-            ))
-            ->add('municipio',TextType::Class, array(
-                'label' => 'Municipio',
-                'attr' => array('placeholder' => 'Municipio')
-            ))
-            ->add('codigoPostal',TextType::Class, array(
-                'label' => 'Código postal',
-                'attr' => array('placeholder' => 'Código postal')
-            ))
-            ->add('direccion',TextType::Class, array(
-                'label' => 'Dirección',
-                'attr' => array('placeholder' => 'Dirección de la empresa')
-            ))
-            ->add('telefono',TextType::Class, array(
-                'label' => 'Teléfono',
-                'attr' => array('placeholder' => 'Teléfono de contacto')
-            ))
-            ->add('fax',TextType::Class, array(
-                'label' => 'Fax',
-                'attr' => array('placeholder' => 'Fax')
-            ))
+        $builder->add('email', EmailType::Class)
+            ->add('password', PasswordType::Class)
+            ->add('nombre', TextType::Class)
+            ->add('alias',TextType::Class)
+            ->add('municipio',TextType::Class)
+            ->add('codigoPostal',TextType::Class)
+            ->add('direccion',TextType::Class)
+            ->add('telefono',TextType::Class)
+            ->add('fax',TextType::Class)
             ->add('imagen',FileType::Class, array(
                 'label' => 'Imagen',
                 'mapped' => false,

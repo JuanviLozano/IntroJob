@@ -4,96 +4,82 @@ index:
 
 #Login y Registro
 login:
-    path: /usuario/login
+    path: /login
     defaults: { _controller: "AppBundle:Security:login" }
     methods: [GET, POST]
 registro:
-    path: /usuario/register
+    path: /register
     defaults: { _controller: "AppBundle:Security:registro" }
 logout:
-    path: /usuario/logout
-    defaults: { _controller: "AppBundle:Security:logout" }
-logoutEmp:
-    path: /empresa/logout
+    path: /logout
     defaults: { _controller: "AppBundle:Security:logout" }
 #Trabajo
-lista:
-    path: /usuario/list_trabajos
-    defaults: { _controller: "AppBundle:Trabajo:list" }
-listaEmp:
-    path: /empresa/list_trabajos
+lista: 
+    path: /list_trabajos
     defaults: { _controller: "AppBundle:Trabajo:list" }
 
 #Datos personales
 perfil:
-    path: /usuario/profile
+    path: /profile
     defaults: { _controller: "AppBundle:Perfil:perfil" }
 perfil-editar:
-    path: /usuario/editar-usuario
+    path: /editar-usuario
     defaults: { _controller: "AppBundle:Perfil:editarPerfil" }
+curriculum:
+    path: /profile/curriculum
+    defaults: { _controller: "AppBundle:Perfil:curriculum" }
 
 #Rutas conocimientos
 addConocimiento:
-    path: /usuario/curriculum/add_conocimiento
+    path: /curriculum/add_conocimiento
     defaults: { _controller: "AppBundle:Conocimiento:addConocimiento" }
 editConocimiento:
-    path: /usuario/curriculum/edit_conocimiento/{id}
+    path: /curriculum/edit_conocimiento/{id}
     defaults: { _controller: "AppBundle:Conocimiento:editConocimiento" }
 deleteConocimiento:
-    path: /usuario/curriculum/delete_conocimiento/{id}
+    path: /curriculum/delete_conocimiento/{id}
     defaults: { _controller: "AppBundle:Conocimiento:deleteConocimiento" }
 
 #Rutas educacion
 addEducacion:
-    path: /usuario/curriculum/add_educacion
+    path: /curriculum/add_educacion
     defaults: { _controller: "AppBundle:Educacion:addEducacion" }
 editEducacion:
-    path: /usuario/curriculum/edit_educacion/{id}
+    path: /curriculum/edit_educacion/{id}
     defaults: { _controller: "AppBundle:Educacion:editEducacion" }
 deleteEducacion:
-    path: /usuario/curriculum/delete_educacion/{id}
+    path: /curriculum/delete_educacion/{id}
     defaults: { _controller: "AppBundle:Educacion:deleteEducacion" }
 
 #Rutas experiencia
 addExperiencia:
-    path: /usuario/curriculum/add_experiencia
+    path: /curriculum/add_experiencia
     defaults: { _controller: "AppBundle:Experiencia:addExperiencia" }
 editExperiencia:
-    path: /usuario/curriculum/edit_experiencia/{id}
+    path: /curriculum/edit_experiencia/{id}
     defaults: { _controller: "AppBundle:Experiencia:editExperiencia" }
 deleteExperiencia:
-    path: /usuario/curriculum/remove_experiencia/{id}
+    path: /curriculum/remove_experiencia/{id}
     defaults: { _controller: "AppBundle:Experiencia:deleteExperiencia" }
 
 #Rutas idioma
 addIdioma:
-    path: /usuario/curriculum/add_idioma
+    path: /curriculum/add_idioma
     defaults: { _controller: "AppBundle:Idioma:addIdioma" }
 editIdioma:
-    path: /usuario/curriculum/edit_idioma/{id}
+    path: /curriculum/edit_idioma/{id}
     defaults: { _controller: "AppBundle:Idioma:editIdioma" }
 deleteIdioma:
-    path: /usuario/curriculum/delete_idioma/{id}
+    path: /curriculum/delete_idioma/{id}
     defaults: { _controller: "AppBundle:Idioma:deleteIdioma" }
 
 #Rutas informacion
 addInformacion:
-    path: /usuario/curriculum/add_informacion
+    path: /curriculum/add_informacion
     defaults: { _controller: "AppBundle:Informacion:addInformacion" }
 editInformacion:
-    path: /usuario/curriculum/edit_informacion/{id}
+    path: /curriculum/edit_informacion/{id}
     defaults: { _controller: "AppBundle:Informacion:editInformacion" }
-
-#Rutas conocimientos
-addConocimiento:
-    path: /usuario/curriculum/edit_conocimiento
-    defaults: { _controller: "AppBundle:Conocimiento:editConocimiento" }
-editConocimiento:
-    path: /usuario/curriculum/add_conocimiento
-    defaults: { _controller: "AppBundle:Conocimiento:addConocimiento" }
-deleteConocimiento:
-    path: /usuario/curriculum/delete_conocimiento
-    defaults: { _controller: "AppBundle:Conocimiento:deleteConocimiento" }
 
 #------------------------ ZONA EMPRESARIO ------------------------
 loginEmp:

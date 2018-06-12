@@ -36,10 +36,10 @@
             <div class="res-logo"><a href="{{ path('index') }}" title=""><img src="{{ asset('images/introjobs-title.png') }}" alt="" /></a></div>
             <div class="menu-resaction">
                 <div class="res-openmenu">
-                    <img src="images/icon.png" alt="Menu" /> Menu
+                    <img src="images/icon.png" alt="" /> Menu
                 </div>
                 <div class="res-closemenu">
-                    <img src="images/icon2.png" alt="Cerrar menu" /> Close
+                    <img src="images/icon2.png" alt="" /> Close
                 </div>
             </div>
         </div>
@@ -51,7 +51,7 @@
                         <li class="menu-item-has-children">
                             <a title="Inicio">Inicio</a>
                             <ul>
-                                <li><a href="{{ path('index') }}" title="Página principal">Página principal</a></li>
+                                <li><a href="{{ path('index') }}" title="">Página principal</a></li>
                             </ul>
                         </li>
                         <li>
@@ -61,9 +61,9 @@
                 </div>
             {% else %}
                 <div class="btn-extars">
-                    <a href="{{ path('registro') }}" title="registro usuarios" class="post-job-btn"><i class="la la-plus"></i>Registrarse</a>
+                    <a href="{{ path('registro') }}" title="" class="post-job-btn"><i class="la la-plus"></i>Registrarse</a>
                     <ul class="account-btns">
-                        <li class="signin-popup"><a href="{{ path('login') }}" title="Login usuarios"><i class="la la-external-link-square"></i> Iniciar sesión</a></li>
+                        <li class="signin-popup"><a href="{{ path('login') }}" title=""><i class="la la-external-link-square"></i> Iniciar sesión</a></li>
                     </ul>
                 </div><!-- Btn Extras -->
                 <div class="responsivemenu">
@@ -71,14 +71,14 @@
                         <li class="menu-item-has-children">
                             <a title="Inicio">Inicio</a>
                             <ul>
-                                <li><a href="{{ path('index') }}" title="Página principal">Página principal</a></li>
+                                <li><a href="{{ path('index') }}" title="">Página principal</a></li>
                             </ul>
                         </li>
                         <li class="menu-item-has-children">
                             <a title="Zona empresario">Zona empresario</a>
                             <ul>
-                                <li><a href="{{ path('loginEmp') }}" title="Login empresas">Login</a></li>
-                                <li><a href="{{ path('registroEmp') }}" title="Registro empresas">Registro</a></li>
+                                <li><a href="#" title="">Login</a></li>
+                                <li><a href="#" title="">Registro</a></li>
                             </ul>
                         </li>
                         <li>
@@ -94,13 +94,13 @@
         <div class="menu-sec">
             <div class="container">
                 <div class="logo">
-                    <a href="{{ path('index') }}" title="Página principal"><img src="{{ asset('images/introjobs-title.png') }}" alt="" /></a>
+                    <a href="{{ path('index') }}" title=""><img src="{{ asset('images/introjobs-title.png') }}" alt="" /></a>
                 </div><!-- Logo -->
                 <!-- Pantalla PC -->
                 {% if is_granted('ROLE_USER') %}
                     <div class="my-profiles-sec">
                     <span>
-                        <img src="/img_user/{{ app.user.imagen }}" alt="imagen del usuario" class="img-profile-60" />
+                        <img src="/img_user/{{ app.user.imagen }}" alt="" class="img-profile-60" />
                         {{ app.user.nombre }} <i class="la la-bars"></i></span>
                     </div>
                     <nav>
@@ -108,7 +108,7 @@
                             <li class="menu-item-has-children">
                                 <a title="Inicio">Inicio</a>
                                 <ul>
-                                    <li><a href="{{ path('index') }}" title="Página principal">Página principal</a></li>
+                                    <li><a href="{{ path('index') }}" title="">Página principal</a></li>
                                 </ul>
                             </li>
                             <li>
@@ -122,14 +122,14 @@
                             <li class="menu-item-has-children">
                                 <a title="Inicio">Inicio</a>
                                 <ul>
-                                    <li><a href="{{ path('index') }}" title="Página principal">Página principal</a></li>
+                                    <li><a href="{{ path('index') }}" title="">Página principal</a></li>
                                 </ul>
                             </li>
                             <li class="menu-item-has-children">
                                 <a title="Zona empresario">Zona empresario</a>
                                 <ul>
-                                    <li><a href="{{ path('loginEmp') }}" title="Login empresas">Login</a></li>
-                                    <li><a href="{{ path('registroEmp') }}" title="Registro empresas">Registro</a></li>
+                                    <li><a href="#" title="">Login</a></li>
+                                    <li><a href="#" title="">Registro</a></li>
                                 </ul>
                             </li>
                             <li>
@@ -139,7 +139,7 @@
                         <div class="btn-extars">
                             <a href="{{ path('registro') }}" title="" class="post-job-btn"><i class="la la-plus"></i>Registrarse</a>
                             <ul class="account-btns">
-                                <li class="signin-popup"><a href="{{ path('login') }}" title="Login usuario"><i class="la la-external-link-square"></i> Iniciar sesión</a></li>
+                                <li class="signin-popup"><a href="{{ path('login') }}" title=""><i class="la la-external-link-square"></i> Iniciar sesión</a></li>
                             </ul>
                         </div>
                     </nav><!-- Menus -->
@@ -249,10 +249,10 @@
         <div class="tree_widget-sec">
             <ul>
                 <li class="inner-child">
-                    <a title="Mi perfil"><i class="la la-briefcase"></i>Mi perfil</a>
+                    <a title=""><i class="la la-briefcase"></i>Mi perfil</a>
                     <ul>
-                        <li><a href="{{ path('perfil') }}" title="Sobre mi">Sobre mi</a></li>
-                        <li><a href="{{ path('perfil-editar') }}" title="Editar mi informacion">Editar mi información</a></li>
+                        <li><a href="{{ path('perfil') }}" title="">Sobre mi</a></li>
+                        <li><a href="{{ path('perfil-editar') }}" title="">Editar mi información</a></li>
                     </ul>
                 </li>
                 <li><a href="{{ path('logout') }}" title=""><i class="la la-unlink"></i>Cerrar sesión</a></li>
