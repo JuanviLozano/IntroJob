@@ -7,9 +7,9 @@
 document.getElementById("edu-siguiente").setAttribute("disabled", "disabled");
 
 var errorUsu = false;
-document.getElementById("appbundle_usuario_username").onkeyup = function() {
+document.getElementById("appbundle_usuario_username").onblur = function() {
 	var node = document.createElement("P");
-	var textnode = document.createTextNode("Nombre usuario incorrecto.");
+	var textnode = document.createTextNode("El campo debe contener al menos 6 caracteres.");
 	node.appendChild(textnode);
 	node.setAttribute("style", "color: red");
 	node.setAttribute("id", "usuReg");
@@ -22,15 +22,14 @@ document.getElementById("appbundle_usuario_username").onkeyup = function() {
 		errorUsu = false;
 		if (document.getElementById("usuReg")!=null)
 		document.getElementById("usuReg").remove();
-		this.style.borderColor = "#5cb85c";
 	}
 	activateNext();
 }
 
 var errorPass = false;
-document.getElementById("appbundle_usuario_password").onkeyup = function() {
+document.getElementById("appbundle_usuario_password").onblur = function() {
 	var node = document.createElement("P");
-	var textnode = document.createTextNode("Contraseña incorrecta.");
+	var textnode = document.createTextNode("La contraseña debe contener 8 caracteres, una letra y un número.");
 	node.appendChild(textnode);
 	node.setAttribute("style", "color: red");
 	node.setAttribute("id", "passReg");
@@ -43,15 +42,14 @@ document.getElementById("appbundle_usuario_password").onkeyup = function() {
 		errorPass = false;
 		if (document.getElementById("passReg")!=null)
 		document.getElementById("passReg").remove();
-		this.style.borderColor = "#5cb85c";
 	}
 	activateNext();
 }
 
 var errorEmail = false;
-document.getElementById("appbundle_usuario_email").onkeyup = function() {
+document.getElementById("appbundle_usuario_email").onblur = function() {
 	var node = document.createElement("P");
-	var textnode = document.createTextNode("Email incorrecto.");
+	var textnode = document.createTextNode("Email incorrecto. Ej: tuemail@gmail.com");
 	node.appendChild(textnode);
 	node.setAttribute("style", "color: red");
 	node.setAttribute("id", "emailReg");
@@ -64,7 +62,6 @@ document.getElementById("appbundle_usuario_email").onkeyup = function() {
 		errorEmail = false;
 		if (document.getElementById("emailReg")!=null)
 		document.getElementById("emailReg").remove();
-		this.style.borderColor = "#5cb85c";
 	}
 	activateNext();
 }
@@ -113,9 +110,9 @@ function checkEmail(value) {
 document.getElementById("expe-siguiente").setAttribute("disabled", "disabled");
 
 var errorNom = false;
-document.getElementById("appbundle_usuario_nombre").onkeyup = function() {
+document.getElementById("appbundle_usuario_nombre").onblur = function() {
 	var node = document.createElement("P");
-	var textnode = document.createTextNode("Nombre incorrecto.");
+	var textnode = document.createTextNode("El campo Nombre no puede estar en blanco.");
 	node.appendChild(textnode);
 	node.setAttribute("style", "color: red");
 	node.setAttribute("id", "nomReg");
@@ -128,15 +125,14 @@ document.getElementById("appbundle_usuario_nombre").onkeyup = function() {
 		errorNom = false;
 		if (document.getElementById("nomReg")!=null)
 		document.getElementById("nomReg").remove();
-		this.style.borderColor = "#5cb85c";
 	}
 	activateNextExpe();
 }
 
 var errorApe = false;
-document.getElementById("appbundle_usuario_apellidos").onkeyup = function() {
+document.getElementById("appbundle_usuario_apellidos").onblur = function() {
 	var node = document.createElement("P");
-	var textnode = document.createTextNode("Apellidos incorrecto.");
+	var textnode = document.createTextNode("El campo Apellidos no puede estar en blanco.");
 	node.appendChild(textnode);
 	node.setAttribute("style", "color: red");
 	node.setAttribute("id", "apeReg");
@@ -149,15 +145,14 @@ document.getElementById("appbundle_usuario_apellidos").onkeyup = function() {
 		errorApe = false;
 		if (document.getElementById("apeReg")!=null)
 		document.getElementById("apeReg").remove();
-		this.style.borderColor = "#5cb85c";
 	}
 	activateNextExpe();
 }
 
 var errorFechaNac = false;
-document.getElementById("appbundle_usuario_fecha_nacimiento").onkeyup = function() {
+document.getElementById("appbundle_usuario_fecha_nacimiento").onblur = function() {
 	var node = document.createElement("P");
-	var textnode = document.createTextNode("Fecha de nacimiento incorrecta.");
+	var textnode = document.createTextNode("Fecha de nacimiento incorrecta. Ej: 10/07/1990");
 	node.appendChild(textnode);
 	node.setAttribute("style", "color: red");
 	node.setAttribute("id", "fechaNacReg");
@@ -170,7 +165,6 @@ document.getElementById("appbundle_usuario_fecha_nacimiento").onkeyup = function
 		errorFechaNac = false;
 		if (document.getElementById("fechaNacReg")!=null)
 		document.getElementById("fechaNacReg").remove();
-		this.style.borderColor = "#5cb85c";
 	}
 	activateNextExpe();
 }
@@ -210,9 +204,9 @@ function checkFechaNac(value) {
 document.getElementById("habili-siguiente").setAttribute("disabled", "disabled");
 
 var errorDir = false;
-document.getElementById("appbundle_usuario_direccion").onkeyup = function() {
+document.getElementById("appbundle_usuario_direccion").onblur = function() {
 	var node = document.createElement("P");
-	var textnode = document.createTextNode("Dirección incorrecta.");
+	var textnode = document.createTextNode("El campo Dirección no puede estar en blanco.");
 	node.appendChild(textnode);
 	node.setAttribute("style", "color: red");
 	node.setAttribute("id", "dirReg");
@@ -225,15 +219,14 @@ document.getElementById("appbundle_usuario_direccion").onkeyup = function() {
 		errorDir = false;
 		if (document.getElementById("dirReg")!=null)
 		document.getElementById("dirReg").remove();
-		this.style.borderColor = "#5cb85c";
 	}
 	activateNextHabili();
 }
 
 var errorCod = false;
-document.getElementById("appbundle_usuario_cod_postal").onkeyup = function() {
+document.getElementById("appbundle_usuario_cod_postal").onblur = function() {
 	var node = document.createElement("P");
-	var textnode = document.createTextNode("Código postal incorrecto.");
+	var textnode = document.createTextNode("Código postal debe contener cinco dígitos.");
 	node.appendChild(textnode);
 	node.setAttribute("style", "color: red");
 	node.setAttribute("id", "codReg");
@@ -246,7 +239,6 @@ document.getElementById("appbundle_usuario_cod_postal").onkeyup = function() {
 		errorCod = false;
 		if (document.getElementById("codReg")!=null)
 		document.getElementById("codReg").remove();
-		this.style.borderColor = "#5cb85c";
 	}
 	activateNextHabili();
 }
@@ -285,9 +277,9 @@ function checkCodPostal(value) {
 document.getElementById("appbundle_usuario_Enviar").setAttribute("disabled", "disabled");
 
 var errorTelf = false;
-document.getElementById("appbundle_usuario_telefono").onkeyup = function() {
+document.getElementById("appbundle_usuario_telefono").onblur = function() {
 	var node = document.createElement("P");
-	var textnode = document.createTextNode("Teléfono móvil incorrecto.");
+	var textnode = document.createTextNode("El teléfono móvil debe contener 9 dígitos y comenzar por 9|6|7.");
 	node.appendChild(textnode);
 	node.setAttribute("style", "color: red");
 	node.setAttribute("id", "telfReg");
@@ -300,15 +292,14 @@ document.getElementById("appbundle_usuario_telefono").onkeyup = function() {
 		errorTelf = false;
 		if (document.getElementById("telfReg")!=null)
 		document.getElementById("telfReg").remove();
-		this.style.borderColor = "#5cb85c";
 	}
 	activateSend();
 }
 
 var errorEsp = false;
-document.getElementById("appbundle_usuario_especialidad").onkeyup = function() {
+document.getElementById("appbundle_usuario_especialidad").onblur = function() {
 	var node = document.createElement("P");
-	var textnode = document.createTextNode("Especialidad incorrecta.");
+	var textnode = document.createTextNode("El campo especialidad no puede estar en blanco.");
 	node.appendChild(textnode);
 	node.setAttribute("style", "color: red");
 	node.setAttribute("id", "espReg");
@@ -321,7 +312,6 @@ document.getElementById("appbundle_usuario_especialidad").onkeyup = function() {
 		errorEsp = false;
 		if (document.getElementById("espReg")!=null)
 		document.getElementById("espReg").remove();
-		this.style.borderColor = "#5cb85c";
 	}
 	activateSend();
 }
