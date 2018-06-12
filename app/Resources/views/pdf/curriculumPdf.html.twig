@@ -1,0 +1,48 @@
+<style type="text/css">
+	h1 {
+		color: red;
+	}
+</style>
+
+<h1>Curriculum</h1>
+
+{% for dato in datos %}
+        <p>{{ dato.nombre }}</p>
+        <p>{{ dato.apellidos }}</p>
+        <p>{{ dato.fechaNacimiento }}</p>
+        <p>{{ dato.sexo }}</p>
+        <p>{{ dato.direccion }}</p>
+        <p>{{ dato.codPostal }}</p>
+        <p>{{ dato.email }}</p>
+        <p>{{ dato.telefono }}</p>
+        <p>{{ dato.especialidad }}</p>
+{% endfor %}
+
+{% for conocimiento in conocimientos %}
+        <h2>{{ conocimiento.tipo }}</h2>
+        <p>{{ conocimiento.especialidad }}</p>
+        <p>{{ conocimiento.centro }}</p>
+        <p>{{ conocimiento.descripcion }}</p>
+{% endfor %}
+
+{% for educacion in educaciones %}
+        <h2>{{ educacion.tipo }}</h2>
+        <p>{{ educacion.fechaInicio }} - {{ educacion.fechaFin }}</p>
+        <p>{{ educacion.centro }}</p>
+        <p>{{ educacion.descripcion }}</p>
+{% endfor %}
+
+{% for experiencia in experiencias %}
+        <h2>{{ experiencia.oficio }}</h2>
+        <p>{{ experiencia.nombre_empresa }}</p>
+        <p>{{ experiencia.fechaInicio }} - {{ experiencia.fechaFin }}</p>
+        <p>{{ experiencia.descripcion }}</p>
+{% endfor %}
+
+{% for idioma in idiomas %}
+        <h2>{{ idioma.idIdioma }}</h2>
+        <p>{{ idioma.idNivel }}</p>
+        <p>{{ idioma.leido }}</p>
+        <p>{{ idioma.hablado }}</p>
+        <p>{{ idioma.escrito }}</p>
+{% endfor %}
