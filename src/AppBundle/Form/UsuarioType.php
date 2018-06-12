@@ -33,7 +33,6 @@ class UsuarioType extends AbstractType
                 'invalid_message' => 'La contraseña no es igual.',
                 'options' => array('attr' => array('class' => 'password-field',
                                                    'placeholder' => '************')),
-                'required' => true,
                 'first_options'  => array('label' => 'Contraseña'),
                 'second_options' => array('label' => 'Repetir contraseña'),
             ))
@@ -55,9 +54,9 @@ class UsuarioType extends AbstractType
             ->add('sexo', ChoiceType::Class, array(
                 'label' => 'Sexo',
                 'choices' => [
-                    'Hombre' => 'hombre',
-                    'Mujer' => 'mujer',
-                    'Indefinido' => 'indefinido'
+                    'Hombre' => 'Hombre',
+                    'Mujer' => 'Mujer',
+                    'Indefinido' => 'Indefinido'
                 ],
                 'attr' => ['class' => 'chosen']
             ))
@@ -112,7 +111,7 @@ class UsuarioType extends AbstractType
                 ]
             ))
             ->add('Enviar', SubmitType::Class, array(
-                'label' => 'Registrarse'
+                'label' => 'Guardar'
             ));
     }/**
  * {@inheritdoc}

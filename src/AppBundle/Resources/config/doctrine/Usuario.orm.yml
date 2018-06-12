@@ -127,3 +127,8 @@ AppBundle\Entity\Usuario:
             joinColumn:
                 name: id_paises
                 referencedColumnName: id
+
+    oneToMany:
+            usuOferta:
+              targetEntity: usuario_oferta
+              mappedBy: usuario

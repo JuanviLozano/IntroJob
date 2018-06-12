@@ -65,7 +65,6 @@ class SecurityController extends Controller
                 $user->setPassword($allpassword);
             }
 
-
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($user);
             $entityManager->flush();

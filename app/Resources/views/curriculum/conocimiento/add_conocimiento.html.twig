@@ -17,6 +17,12 @@
         </div>
     </section>
 
+    {% for flashMessage in app.session.flashbag.get('mensaje') %}
+        <div class="alert alert-success" role="alert">
+            <div class="container">{{ flashMessage }}</div>
+        </div>
+    {% endfor %}
+
     <section>
         <div class="block no-padding">
             <div class="container">
@@ -24,40 +30,30 @@
                     <div class="col-lg-9 column" style="margin-bottom: 50px">
                         <div class="padding-left">
                             <div class="profile-form-edit">
-                                {% for flashMessage in app.session.flashbag.get('mensaje') %}
-                                    <div class="alert alert-success alert-dismissible fade show mt-4" role="alert">
-                                        {{ flashMessage }}
-                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                {% endfor %}
                                 {{ form_start(form, { 'attr' : {'role':'form'}}) }}
                                 <div id="educacion" class="contact-edit" style="display: none;">
-                                    <div class="row">
-                                        <div class="col-lg-12">
-                                            <span class="pf-title">Tipo de conocimiento</span>
-                                            <div class="pf-field">
-                                                {{ form_widget(form.tipo) }}
-                                            </div>
+                                    <div class="col-lg-12">
+                                        <span class="pf-title">Tipo de conocimiento</span>
+                                        <div class="pf-field">
+                                            {{ form_widget(form.tipo) }}
                                         </div>
-                                        <div class="col-lg-6">
-                                            <span class="pf-title">Especialidad</span>
-                                            <div class="pf-field">
-                                                {{ form_widget(form.especialidad) }}
-                                            </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <span class="pf-title">Especialidad</span>
+                                        <div class="pf-field">
+                                            {{ form_widget(form.especialidad) }}
                                         </div>
-                                        <div class="col-lg-6">
-                                            <span class="pf-title">Centro</span>
-                                            <div class="pf-field">
-                                                {{ form_widget(form.centro) }}
-                                            </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <span class="pf-title">Centro</span>
+                                        <div class="pf-field">
+                                            {{ form_widget(form.centro) }}
                                         </div>
-                                        <div class="col-lg-12">
-                                            <span class="pf-title">Descripción</span>
-                                            <div class="pf-field">
-                                                {{ form_widget(form.descripcion) }}
-                                            </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <span class="pf-title">Descripción</span>
+                                        <div class="pf-field">
+                                            {{ form_widget(form.descripcion) }}
                                         </div>
                                     </div>
                                 </div>

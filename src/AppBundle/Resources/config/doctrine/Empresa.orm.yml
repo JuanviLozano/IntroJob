@@ -37,32 +37,9 @@ AppBundle\Entity\Empresa:
             type: integer
         fax:
             type: integer
-            nullable: true
-        web:
-            type: string
-            length: 255
         imagen:
             type: string
             length: 255
-        descripcion:
-            type: text
-            nullable: true
-        facebook:
-            type: string
-            length: 255
-            nullable: true
-        google:
-            type: string
-            length: 255
-            nullable: true
-        twitter:
-            type: string
-            length: 255
-            nullable: true
-        linkedin:
-            type: string
-            length: 255
-            nullable: true
     lifecycleCallbacks: {  }
 
     manyToOne:
@@ -77,20 +54,10 @@ AppBundle\Entity\Empresa:
             inversedBy: empresa
             joinColumn:
                 name: id_paises
+<<<<<<< HEAD
                 referencedColumnName: id
 
-    manyToMany:
-        oferta:
-            targetEntity: Oferta
-            inversedBy: empresa
-            joinTable:
-                name: empresa_oferta
-                joinColumns:
-                    id_empresa:
-                        referencedColumnName: id
-                        nullable: false
-                        unique: false
-                inverseJoinColumns:
-                    id_oferta:
-                        referencedColumnName: id
-                        columnDefinition: INT NULL
+
+=======
+                referencedColumnName: id
+>>>>>>> a72a3be3ccc992e6d03786da7022e1d3ebf1043c

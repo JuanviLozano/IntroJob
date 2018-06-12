@@ -1,0 +1,29 @@
+AppBundle\Entity\usuario_oferta:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\usuario_ofertaRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+         solicitud:
+             type: date
+             nullable: false
+    lifecycleCallbacks: {  }
+
+    manyToOne:
+        oferta:
+            targetEntity: Oferta
+            inversedBy: usuOferta
+            joinColumn:
+                name: id_oferta
+                referencedColumnName: id
+        usuario:
+            targetEntity: Usuario
+            inversedBy: usuOferta
+            joinColumn:
+                name: id_usuario
+                referencedColumnName: id

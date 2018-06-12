@@ -36,42 +36,14 @@ class ConocimientoController extends Controller
         ));
     }
 
-    public function editConocimientoAction(Request $request, Usu_conocimiento $conocimiento)
+    public function editConocimientoAction()
     {
-        $form = $this->createForm(Usu_conocimientoType::Class, $conocimiento);
-
-        if($conocimiento->getUsuario() != $this->getUser()) {
-            throw new AccessDeniedHttpException();
-        }
-
-        $form->handleRequest($request);
-        if($form->isValid() && $form->isSubmitted()) {
-
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($conocimiento);
-            $em->flush();
-
-            $this->addFlash('mensaje', 'Su conocimiento ha sido editada correctamente!');
-
-            return $this->redirectToRoute('perfil');
-        }
-
-        return $this->render('curriculum/conocimiento/edit_conocimiento.html.twig', array(
-            'form' => $form->createView()
-        ));
+        return $this->render('curriculum/conocimiento/edit_curriculum.html.twig');
     }
 
-    public function deleteConocimientoAction(Usu_conocimiento $conocimiento)
+    public function deleteConocimientoAction()
     {
-        if($conocimiento->getUsuario() != $this->getUser()) {
-            throw new AccessDeniedHttpException();
-        }
-
-        $em = $this->getDoctrine()->getManager();
-        $em->remove($conocimiento);
-        $em->flush();
-
-        return $this->redirectToRoute('perfil');
+        return $this->render('curriculum/conocimiento/delete_curriculum.html.twig');
     }
 
 }

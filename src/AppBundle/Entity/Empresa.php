@@ -9,7 +9,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
 class Empresa implements UserInterface, \Serializable
 {
     /**
-     * @var int
+     * @var integer
      */
     private $id;
 
@@ -39,7 +39,7 @@ class Empresa implements UserInterface, \Serializable
     private $municipio;
 
     /**
-     * @var string
+     * @var integer
      */
     private $codigoPostal;
 
@@ -49,25 +49,77 @@ class Empresa implements UserInterface, \Serializable
     private $direccion;
 
     /**
-     * @var int
+     * @var integer
      */
     private $telefono;
 
     /**
-     * @var int
+     * @var integer
      */
     private $fax;
 
     /**
      * @var string
      */
+    private $web;
+
+    /**
+     * @var string
+     */
     private $imagen;
 
+    /**
+     * @var string
+     */
+    private $descripcion;
+
+    /**
+     * @var string
+     */
+    private $facebook;
+
+    /**
+     * @var string
+     */
+    private $google;
+
+    /**
+     * @var string
+     */
+    private $twitter;
+
+    /**
+     * @var string
+     */
+    private $linkedin;
+
+    /**
+     * @var \AppBundle\Entity\Provincias
+     */
+    private $provincias;
+
+    /**
+     * @var \AppBundle\Entity\Paises
+     */
+    private $paises;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $oferta;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->oferta = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * Get id
      *
-     * @return int
+     * @return integer
      */
     public function getId()
     {
@@ -197,7 +249,7 @@ class Empresa implements UserInterface, \Serializable
     /**
      * Set codigoPostal
      *
-     * @param string $codigoPostal
+     * @param integer $codigoPostal
      *
      * @return Empresa
      */
@@ -211,7 +263,7 @@ class Empresa implements UserInterface, \Serializable
     /**
      * Get codigoPostal
      *
-     * @return string
+     * @return integer
      */
     public function getCodigoPostal()
     {
@@ -259,7 +311,7 @@ class Empresa implements UserInterface, \Serializable
     /**
      * Get telefono
      *
-     * @return int
+     * @return integer
      */
     public function getTelefono()
     {
@@ -283,221 +335,12 @@ class Empresa implements UserInterface, \Serializable
     /**
      * Get fax
      *
-     * @return int
+     * @return integer
      */
     public function getFax()
     {
         return $this->fax;
     }
-
-    /**
-     * Set imagen
-     *
-     * @param string $imagen
-     *
-     * @return Empresa
-     */
-    public function setImagen($imagen)
-    {
-        $this->imagen = $imagen;
-
-        return $this;
-    }
-
-    /**
-     * Get imagen
-     *
-     * @return string
-     */
-    public function getImagen()
-    {
-        return $this->imagen;
-    }
-    /**
-     * @var \AppBundle\Entity\Provincias
-     */
-    private $provincias;
-
-    /**
-     * @var \AppBundle\Entity\Paises
-     */
-    private $paises;
-
-
-    /**
-     * Set provincias
-     *
-     * @param \AppBundle\Entity\Provincias $provincias
-     *
-     * @return Empresa
-     */
-    public function setProvincias(\AppBundle\Entity\Provincias $provincias = null)
-    {
-        $this->provincias = $provincias;
-
-        return $this;
-    }
-
-    /**
-     * Get provincias
-     *
-     * @return \AppBundle\Entity\Provincias
-     */
-    public function getProvincias()
-    {
-        return $this->provincias;
-    }
-
-    /**
-     * Set paises
-     *
-     * @param \AppBundle\Entity\Paises $paises
-     *
-     * @return Empresa
-     */
-    public function setPaises(\AppBundle\Entity\Paises $paises = null)
-    {
-        $this->paises = $paises;
-
-        return $this;
-    }
-
-    /**
-     * Get paises
-     *
-     * @return \AppBundle\Entity\Paises
-     */
-    public function getPaises()
-    {
-        return $this->paises;
-    }
-
-    /**
-     * @return string|void
-     */
-    public function serialize()
-    {
-        return serialize(array(
-            $this->password,
-            $this->id,
-            $this->imagen,
-            $this->email,
-            $this->direccion,
-            $this->telefono,
-            $this->nombre,
-            $this->alias,
-            $this->municipio,
-            $this->paises,
-            $this->provincias
-        ));
-    }
-
-    /**
-     * @param string $serialized
-     */
-    public function unserialize($serialized)
-    {
-        list(
-            $this->password,
-            $this->id,
-            $this->imagen,
-            $this->email,
-            $this->direccion,
-            $this->telefono,
-            $this->nombre,
-            $this->alias,
-            $this->municipio,
-            $this->paises,
-            $this->provincias
-            ) = unserialize($serialized);
-    }
-
-    public function getRoles()
-    {
-        return [
-            'ROLE_EMPRESA'
-        ];
-    }
-
-    public function getSalt()
-    {
-        return null;
-    }
-
-    /**
-     * @return string
-     */
-    public function getUsername()
-    {
-        return $this->email;
-    }
-
-
-    public function eraseCredentials()
-    {
-        return null;
-    }
-
-    public function __toString()
-    {
-        return $this->serialize();
-    }
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     */
-    private $oferta;
-
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->oferta = new \Doctrine\Common\Collections\ArrayCollection();
-    }
-
-    /**
-     * Add ofertum
-     *
-     * @param \AppBundle\Entity\Oferta $ofertum
-     *
-     * @return Empresa
-     */
-    public function addOfertum(\AppBundle\Entity\Oferta $ofertum)
-    {
-        $this->oferta[] = $ofertum;
-
-        return $this;
-    }
-
-    /**
-     * Remove ofertum
-     *
-     * @param \AppBundle\Entity\Oferta $ofertum
-     */
-    public function removeOfertum(\AppBundle\Entity\Oferta $ofertum)
-    {
-        $this->oferta->removeElement($ofertum);
-    }
-
-    /**
-     * Get oferta
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getOferta()
-    {
-        return $this->oferta;
-    }
-    /**
-     * @var string
-     */
-    private $web;
-
-    /**
-     * @var string
-     */
-    private $descripcion;
-
 
     /**
      * Set web
@@ -524,6 +367,30 @@ class Empresa implements UserInterface, \Serializable
     }
 
     /**
+     * Set imagen
+     *
+     * @param string $imagen
+     *
+     * @return Empresa
+     */
+    public function setImagen($imagen)
+    {
+        $this->imagen = $imagen;
+
+        return $this;
+    }
+
+    /**
+     * Get imagen
+     *
+     * @return string
+     */
+    public function getImagen()
+    {
+        return $this->imagen;
+    }
+
+    /**
      * Set descripcion
      *
      * @param string $descripcion
@@ -546,26 +413,6 @@ class Empresa implements UserInterface, \Serializable
     {
         return $this->descripcion;
     }
-    /**
-     * @var string
-     */
-    private $facebook;
-
-    /**
-     * @var string
-     */
-    private $google;
-
-    /**
-     * @var string
-     */
-    private $twitter;
-
-    /**
-     * @var string
-     */
-    private $linkedin;
-
 
     /**
      * Set facebook
@@ -661,5 +508,163 @@ class Empresa implements UserInterface, \Serializable
     public function getLinkedin()
     {
         return $this->linkedin;
+    }
+
+    /**
+     * Set provincias
+     *
+     * @param \AppBundle\Entity\Provincias $provincias
+     *
+     * @return Empresa
+     */
+    public function setProvincias(\AppBundle\Entity\Provincias $provincias = null)
+    {
+        $this->provincias = $provincias;
+
+        return $this;
+    }
+
+    /**
+     * Get provincias
+     *
+     * @return \AppBundle\Entity\Provincias
+     */
+    public function getProvincias()
+    {
+        return $this->provincias;
+    }
+
+    /**
+     * Set paises
+     *
+     * @param \AppBundle\Entity\Paises $paises
+     *
+     * @return Empresa
+     */
+    public function setPaises(\AppBundle\Entity\Paises $paises = null)
+    {
+        $this->paises = $paises;
+
+        return $this;
+    }
+
+    /**
+     * Get paises
+     *
+     * @return \AppBundle\Entity\Paises
+     */
+    public function getPaises()
+    {
+        return $this->paises;
+    }
+
+    /**
+     * Add ofertum
+     *
+     * @param \AppBundle\Entity\Oferta $ofertum
+     *
+     * @return Empresa
+     */
+    public function addOfertum(\AppBundle\Entity\Oferta $ofertum)
+    {
+        $this->oferta[] = $ofertum;
+
+        return $this;
+    }
+
+    /**
+     * Remove ofertum
+     *
+     * @param \AppBundle\Entity\Oferta $ofertum
+     */
+    public function removeOfertum(\AppBundle\Entity\Oferta $ofertum)
+    {
+        $this->oferta->removeElement($ofertum);
+    }
+
+    /**
+     * Get oferta
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getOferta()
+    {
+        return $this->oferta;
+    }
+
+
+    public function getRoles()
+    {
+        return [
+            'ROLE_EMPRESA'
+        ];
+    }
+
+    public function getSalt()
+    {
+        return null;
+    }
+
+
+    public function getUsername()
+    {
+        return $this->getEmail();
+    }
+
+    public function eraseCredentials()
+    {
+        return null;
+    }
+
+    public function serialize()
+    {
+        return serialize(array(
+            $this->id,
+            $this->email,
+            $this->password,
+            $this->nombre,
+            $this->paises,
+            $this->web,
+            $this->twitter,
+            $this->telefono,
+            $this->provincias,
+            $this->oferta,
+            $this->municipio,
+            $this->linkedin,
+            $this->google,
+            $this->fax,
+            $this->facebook,
+            $this->direccion,
+            $this->alias,
+            $this->codigoPostal,
+            $this->imagen,
+            $this->descripcion,
+        ));
+    }
+
+    public function unserialize($serialized)
+    {
+        list (
+            $this->id,
+            $this->email,
+            $this->password,
+            $this->nombre,
+            $this->paises,
+            $this->web,
+            $this->twitter,
+            $this->telefono,
+            $this->provincias,
+            $this->oferta,
+            $this->municipio,
+            $this->linkedin,
+            $this->google,
+            $this->fax,
+            $this->facebook,
+            $this->direccion,
+            $this->alias,
+            $this->codigoPostal,
+            $this->imagen,
+            $this->descripcion,
+            ) = unserialize($serialized);
     }
 }

@@ -33,6 +33,7 @@
                             <div class="profile-form-edit">
                                 {{ form_start(form, { 'attr' : {'role':'form'}}) }}
                                 <div id="educacion" class="contact-edit" style="display: none;">
+                                    <div class="row mt-5">
                                     <div class="row">
                                         <div class="profile-title">
                                             <h3>Información de la empresa</h3>
@@ -43,10 +44,16 @@
                                                 {{ form_widget(form.email) }}
                                             </div>
                                         </div>
-                                        <div class="col-lg-12">
+                                        <div class="col-lg-6">
                                             <span class="pf-title">Contraseña</span>
                                             <div class="pf-field">
-                                                {{ form_widget(form.password) }}
+                                                {{ form_widget(form.password.first) }}
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <span class="pf-title">Repetir contraseña</span>
+                                            <div class="pf-field">
+                                                {{ form_widget(form.password.second) }}
                                             </div>
                                         </div>
                                         <div class="col-lg-12">
