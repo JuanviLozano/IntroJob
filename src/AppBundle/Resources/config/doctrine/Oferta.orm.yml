@@ -91,7 +91,7 @@ AppBundle\Entity\Oferta:
             type: boolean
     lifecycleCallbacks: {  }
 
-    manyToMany:
-        empresa:
-            targetEntity: Empresa
-            mappedBy: oferta
+    oneToMany:
+        usuOferta:
+          targetEntity: usuario_oferta
+          mappedBy: oferta

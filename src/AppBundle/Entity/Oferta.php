@@ -678,6 +678,46 @@ class Oferta
         return $this->empresa;
     }
     /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $usuOferta;
+
+
+    /**
+     * Add usuOfertum
+     *
+     * @param \AppBundle\Entity\usuario_oferta $usuOfertum
+     *
+     * @return Oferta
+     */
+    public function addUsuOfertum(\AppBundle\Entity\usuario_oferta $usuOfertum)
+    {
+        $this->usuOferta[] = $usuOfertum;
+
+        return $this;
+    }
+
+    /**
+     * Remove usuOfertum
+     *
+     * @param \AppBundle\Entity\usuario_oferta $usuOfertum
+     */
+    public function removeUsuOfertum(\AppBundle\Entity\usuario_oferta $usuOfertum)
+    {
+        $this->usuOferta->removeElement($usuOfertum);
+    }
+
+    /**
+     * Get usuOferta
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getUsuOferta()
+    {
+        return $this->usuOferta;
+    }
+
+    /**
      * @var boolean
      */
     private $estado;

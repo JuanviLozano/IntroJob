@@ -5,6 +5,7 @@ namespace AppBundle\Form;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
@@ -19,6 +20,49 @@ class EmpresaType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+<<<<<<< HEAD
+        $builder->add('email', EmailType::Class, array(
+                'label' => 'Email',
+                'attr' => array('placeholder' => 'Email de la empresa')
+            ))
+            ->add('password', RepeatedType::class, array(
+                'type' => PasswordType::class,
+                'invalid_message' => 'La contraseña no es igual.',
+                'options' => array('attr' => array('class' => 'password-field',
+                    'placeholder' => '************')),
+                'required' => true,
+                'first_options'  => array('label' => 'Contraseña'),
+                'second_options' => array('label' => 'Repetir contraseña'),
+            ))
+            ->add('nombre', TextType::Class, array(
+                'label' => 'Nombre de la empresa',
+                'attr' => array('placeholder' => 'Nombre de la empresa')
+            ))
+            ->add('alias',TextType::Class, array(
+                'label' => 'Alias',
+                'attr' => array('placeholder' => 'Alias de la empresa')
+            ))
+            ->add('municipio',TextType::Class, array(
+                'label' => 'Municipio',
+                'attr' => array('placeholder' => 'Municipio')
+            ))
+            ->add('codigoPostal',TextType::Class, array(
+                'label' => 'Código postal',
+                'attr' => array('placeholder' => 'Código postal')
+            ))
+            ->add('direccion',TextType::Class, array(
+                'label' => 'Dirección',
+                'attr' => array('placeholder' => 'Dirección de la empresa')
+            ))
+            ->add('telefono',TextType::Class, array(
+                'label' => 'Teléfono',
+                'attr' => array('placeholder' => 'Teléfono de contacto')
+            ))
+            ->add('fax',TextType::Class, array(
+                'label' => 'Fax',
+                'attr' => array('placeholder' => 'Fax')
+            ))
+=======
         $builder->add('email', EmailType::Class)
             ->add('password', PasswordType::Class)
             ->add('nombre', TextType::Class)
@@ -28,6 +72,7 @@ class EmpresaType extends AbstractType
             ->add('direccion',TextType::Class)
             ->add('telefono',TextType::Class)
             ->add('fax',TextType::Class)
+>>>>>>> a72a3be3ccc992e6d03786da7022e1d3ebf1043c
             ->add('imagen',FileType::Class, array(
                 'label' => 'Imagen',
                 'mapped' => false,
