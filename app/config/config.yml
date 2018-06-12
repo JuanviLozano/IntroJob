@@ -71,7 +71,7 @@ swiftmailer:
 knp_snappy:
     pdf:
         enabled:    true
-        binary:     "\"C:\\wkhtmltopdf\\bin\\wkhtmltopdf.exe\""
+        binary:     "\"C:\\Program Files\\wkhtmltopdf\\bin\\wkhtmltopdf.exe\""
         options:
             no-outline: true
             page-size: LETTER
@@ -79,7 +79,7 @@ knp_snappy:
             encoding: UTF-8
     image:
         enabled:    true
-        binary:     "\"C:\\wkhtmltopdf\\bin\\wkhtmltoimage.exe\""
+        binary:     "\"C:\\Program Files\\wkhtmltopdf\\bin\\wkhtmltoimage.exe\""
         options:    []
         
     temporary_folder: %kernel.cache_dir%/snappy
