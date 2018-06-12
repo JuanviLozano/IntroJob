@@ -409,7 +409,7 @@ class Empresa implements UserInterface, \Serializable
             $this->municipio,
             $this->paises,
             $this->provincias
-            ) = unserialize(serialize);
+            ) = unserialize($serialized);
     }
 
     public function getRoles()
@@ -425,16 +425,241 @@ class Empresa implements UserInterface, \Serializable
     }
 
     /**
-     * @return null|string
+     * @return string
      */
     public function getUsername()
     {
-        return null;
+        return $this->email;
     }
 
 
     public function eraseCredentials()
     {
         return null;
+    }
+
+    public function __toString()
+    {
+        return $this->serialize();
+    }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $oferta;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->oferta = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add ofertum
+     *
+     * @param \AppBundle\Entity\Oferta $ofertum
+     *
+     * @return Empresa
+     */
+    public function addOfertum(\AppBundle\Entity\Oferta $ofertum)
+    {
+        $this->oferta[] = $ofertum;
+
+        return $this;
+    }
+
+    /**
+     * Remove ofertum
+     *
+     * @param \AppBundle\Entity\Oferta $ofertum
+     */
+    public function removeOfertum(\AppBundle\Entity\Oferta $ofertum)
+    {
+        $this->oferta->removeElement($ofertum);
+    }
+
+    /**
+     * Get oferta
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getOferta()
+    {
+        return $this->oferta;
+    }
+    /**
+     * @var string
+     */
+    private $web;
+
+    /**
+     * @var string
+     */
+    private $descripcion;
+
+
+    /**
+     * Set web
+     *
+     * @param string $web
+     *
+     * @return Empresa
+     */
+    public function setWeb($web)
+    {
+        $this->web = $web;
+
+        return $this;
+    }
+
+    /**
+     * Get web
+     *
+     * @return string
+     */
+    public function getWeb()
+    {
+        return $this->web;
+    }
+
+    /**
+     * Set descripcion
+     *
+     * @param string $descripcion
+     *
+     * @return Empresa
+     */
+    public function setDescripcion($descripcion)
+    {
+        $this->descripcion = $descripcion;
+
+        return $this;
+    }
+
+    /**
+     * Get descripcion
+     *
+     * @return string
+     */
+    public function getDescripcion()
+    {
+        return $this->descripcion;
+    }
+    /**
+     * @var string
+     */
+    private $facebook;
+
+    /**
+     * @var string
+     */
+    private $google;
+
+    /**
+     * @var string
+     */
+    private $twitter;
+
+    /**
+     * @var string
+     */
+    private $linkedin;
+
+
+    /**
+     * Set facebook
+     *
+     * @param string $facebook
+     *
+     * @return Empresa
+     */
+    public function setFacebook($facebook)
+    {
+        $this->facebook = $facebook;
+
+        return $this;
+    }
+
+    /**
+     * Get facebook
+     *
+     * @return string
+     */
+    public function getFacebook()
+    {
+        return $this->facebook;
+    }
+
+    /**
+     * Set google
+     *
+     * @param string $google
+     *
+     * @return Empresa
+     */
+    public function setGoogle($google)
+    {
+        $this->google = $google;
+
+        return $this;
+    }
+
+    /**
+     * Get google
+     *
+     * @return string
+     */
+    public function getGoogle()
+    {
+        return $this->google;
+    }
+
+    /**
+     * Set twitter
+     *
+     * @param string $twitter
+     *
+     * @return Empresa
+     */
+    public function setTwitter($twitter)
+    {
+        $this->twitter = $twitter;
+
+        return $this;
+    }
+
+    /**
+     * Get twitter
+     *
+     * @return string
+     */
+    public function getTwitter()
+    {
+        return $this->twitter;
+    }
+
+    /**
+     * Set linkedin
+     *
+     * @param string $linkedin
+     *
+     * @return Empresa
+     */
+    public function setLinkedin($linkedin)
+    {
+        $this->linkedin = $linkedin;
+
+        return $this;
+    }
+
+    /**
+     * Get linkedin
+     *
+     * @return string
+     */
+    public function getLinkedin()
+    {
+        return $this->linkedin;
     }
 }

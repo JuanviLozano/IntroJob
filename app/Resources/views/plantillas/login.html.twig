@@ -26,7 +26,7 @@
 
 <div class="page-loading">
 	<img src="{{ asset('images/loader.gif') }}" alt="cargando" />
-	<span>Cargando</span>
+	<span>Salir</span>
 </div>
 
 <div class="theme-layout" id="scrollup">
@@ -58,7 +58,7 @@
 							</ul>
 						</li>
 						<li>
-							<a href="{{ path('lista') }}" title="Busqueda de empleos">Buscador de empleo</a>
+							<a href="{{ path('list') }}" title="Busqueda de empleos">Buscador de empleo</a>
 						</li>
 					</ul>
 				</div>
@@ -85,7 +85,7 @@
 							</ul>
 						</li>
 						<li>
-							<a href="{{ path('lista') }}" title="Busqueda de empleos">Buscador de empleo</a>
+							<a href="{{ path('list') }}" title="Busqueda de empleos">Buscador de empleo</a>
 						</li>
 					</ul>
 				</div>
@@ -115,7 +115,7 @@
 								</ul>
 							</li>
 							<li>
-								<a href="{{ path('lista') }}" title="Busqueda de empleos">Buscador de empleo</a>
+								<a href="{{ path('list') }}" title="Busqueda de empleos">Buscador de empleo</a>
 							</li>
                         {% else %}
 							<li class="menu-item-has-children">
@@ -132,7 +132,7 @@
 								</ul>
 							</li>
 							<li>
-								<a href="{{ path('lista') }}" title="Busqueda de empleos">Buscador de empleo</a>
+								<a href="{{ path('list') }}" title="Busqueda de empleos">Buscador de empleo</a>
 							</li>
                         {% endif %}
 					</ul>
@@ -170,23 +170,15 @@
 					</div>
 					<div class="col-lg-4 column">
 						<div class="widget">
-							<h3 class="footer-title">Frequently Asked Questions</h3>
+							<h3 class="footer-title">Preguntas frecuentes</h3>
 							<div class="link_widgets">
 								<div class="row">
 									<div class="col-lg-6">
-										<a href="#" title="">Privacy & Seurty </a>
-										<a href="#" title="">Terms of Serice</a>
-										<a href="#" title="">Communications </a>
-										<a href="#" title="">Referral Terms </a>
-										<a href="#" title="">Lending Licnses </a>
-										<a href="#" title="">Disclaimers </a>
+										<a href="{{ path('funcionamos') }}" title="Como funcionamos">Como funcionamos</a>
+										<a href="{{ path('nosotros') }}" title="Nosotros">Nosotros</a>
 									</div>
 									<div class="col-lg-6">
 										<a href="#" title="">Support </a>
-										<a href="#" title="">How It Works </a>
-										<a href="#" title="">For Employers </a>
-										<a href="#" title="">Underwriting </a>
-										<a href="#" title="">Contact Us</a>
 									</div>
 								</div>
 							</div>
@@ -199,11 +191,6 @@
 								<div class="row">
 									<div class="col-lg-12">
 										<a href="#" title="">US Jobs</a>
-										<a href="#" title="">Canada Jobs</a>
-										<a href="#" title="">UK Jobs</a>
-										<a href="#" title="">Emplois en Fnce</a>
-										<a href="#" title="">Jobs in Deuts</a>
-										<a href="#" title="">Vacatures China</a>
 									</div>
 								</div>
 							</div>

@@ -278,6 +278,14 @@ $(document).on('ready',function(){
         $('#habilidades').show();
     });
 
+    $('#expe-atras').on('click',function() {
+        $('#circle-educacion').addClass('active');
+        $('#experiencia').hide();
+        $('#informacion').hide();
+        $('#educacion').show();
+        $('#habilidades').hide();
+    });
+
     $('#habili-siguiente').on('click',function() {
         $('#circle-informacion').addClass('active');
         $('#habilidades').hide();
@@ -286,8 +294,24 @@ $(document).on('ready',function(){
         $('#informacion').show();
     });
 
+    $('#habili-atras').on('click',function() {
+        $('#circle-experiencia').addClass('active');
+        $('#habilidades').hide();
+        $('#experiencia').show();
+        $('#educacion').hide();
+        $('#informacion').hide();
+    });
+
     $('#info-sigiente').on('click',function() {
         console.log('enviar datos');
+    });
+
+    $('#info-atras').on('click',function() {
+        $('#circle-habilidades').addClass('active');
+        $('#habilidades').show();
+        $('#experiencia').hide();
+        $('#educacion').hide();
+        $('#informacion').hide();
     });
 });
 

@@ -50,6 +50,11 @@ class Oferta
     /**
      * @var string
      */
+    private $topoPago;
+
+    /**
+     * @var string
+     */
     private $experienciaMin;
 
     /**
@@ -112,6 +117,18 @@ class Oferta
      */
     private $personalCargo;
 
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $empresa;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->empresa = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * Get id
@@ -289,6 +306,30 @@ class Oferta
     public function getSalarioFin()
     {
         return $this->salarioFin;
+    }
+
+    /**
+     * Set topoPago
+     *
+     * @param string $topoPago
+     *
+     * @return Oferta
+     */
+    public function setTopoPago($topoPago)
+    {
+        $this->topoPago = $topoPago;
+
+        return $this;
+    }
+
+    /**
+     * Get topoPago
+     *
+     * @return string
+     */
+    public function getTopoPago()
+    {
+        return $this->topoPago;
     }
 
     /**
@@ -602,18 +643,6 @@ class Oferta
     {
         return $this->personalCargo;
     }
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     */
-    private $empresa;
-
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->empresa = new \Doctrine\Common\Collections\ArrayCollection();
-    }
 
     /**
      * Add empresa
@@ -647,5 +676,34 @@ class Oferta
     public function getEmpresa()
     {
         return $this->empresa;
+    }
+    /**
+     * @var boolean
+     */
+    private $estado;
+
+
+    /**
+     * Set estado
+     *
+     * @param boolean $estado
+     *
+     * @return Oferta
+     */
+    public function setEstado($estado)
+    {
+        $this->estado = $estado;
+
+        return $this;
+    }
+
+    /**
+     * Get estado
+     *
+     * @return boolean
+     */
+    public function getEstado()
+    {
+        return $this->estado;
     }
 }

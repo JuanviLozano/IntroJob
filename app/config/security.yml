@@ -2,38 +2,61 @@ security:
     encoders:
         AppBundle\Entity\Usuario: 
             algorithm: bcrypt
-            
+        AppBundle\Entity\Empresa:
+            algorithm: bcrypt
+
     providers:
-        db_provider:
+        db_provider1:
             entity:
                 class: AppBundle:Usuario
                 property: username
+        db_provider2:
+            entity:
+                class: AppBundle:Empresa
+                property: email
 
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
 
-        main:
+        usuarios:
+            pattern: ^/(usuario|index|list_trabajos|como_funcionamos|nosotros)
             anonymous: ~
+            provider: db_provider1
             form_login:
-                login_path: login
-                check_path: login
+                login_path: /usuario/login
+                check_path: /usuario/login
                 username_parameter: username
                 password_parameter: password
             logout:
-                path:   /logout
-                target: /login
+                path:   /usuario/logout
+                target: /usuario/login
+        empresa:
+            pattern: ^/(empresa|index|list_trabajos|como_funcionamos|nosotros)
+            anonymous: ~
+            provider: db_provider2
+            form_login:
+                login_path: /empresa/login
+                check_path: /empresa/login
+                username_parameter: username
+                password_parameter: password
+            logout:
+                path:   /empresa/logout
+                target: /empresa/login
+        public:
+            pattern: /.*
+            security: false
+
     role_hierarchy:
         ROLE_USER: ROLE_USER
+        ROLE_EMPRESA: ROLE_EMPRESA
     access_control:
-        - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/register, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/dentro, roles: IS_AUTHENTICATED_FULLY }
-        - { path: ^/profile, roles: IS_AUTHENTICATED_FULLY }
-        - { path: ^/lista_trabajos, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/editar-usuario, roles: IS_AUTHENTICATED_FULLY }
-        - { path: ^/profile/curriculum, roles: IS_AUTHENTICATED_FULLY }
-        - { path: ^/profile, roles: IS_AUTHENTICATED_FULLY }
-        - { path: ^/curriculum/, roles: IS_AUTHENTICATED_FULLY }
+       - { path: ^/usuario/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+       - { path: ^/usuario/register, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+       - { path: ^/empresa/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+       - { path: ^/empresa/registro, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+       - { path: ^/usuario/, roles: ROLE_USER }
+       - { path: ^/empresa/, roles: ROLE_EMPRESA }
+
 

@@ -56,19 +56,25 @@
                                 <div id="educacion" class="contact-edit" style="display: none;">
                                     <div class="row">
                                         <div class="col-lg-12">
-                                            <span class="pf-title">Nombre del usuario</span>
+                                            <span class="pf-title">Nombre del usuario *</span>
                                             <div class="pf-field">
                                                 {{ form_widget(form.username) }}
                                             </div>
                                         </div>
-                                        <div class="col-lg-12">
-                                            <span class="pf-title">Contraseña</span>
+                                        <div class="col-lg-6">
+                                            <span class="pf-title">Contraseña *</span>
                                             <div class="pf-field">
-                                                {{ form_widget(form.password) }}
+                                                {{ form_widget(form.password.first) }}
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <span class="pf-title">Repetir contraseña *</span>
+                                            <div class="pf-field">
+                                                {{ form_widget(form.password.second) }}
                                             </div>
                                         </div>
                                         <div class="col-lg-12">
-                                            <span class="pf-title">Correo electónico</span>
+                                            <span class="pf-title">Correo electrónico *</span>
                                             <div class="pf-field">
                                                 {{ form_widget(form.email) }}
                                             </div>
@@ -81,19 +87,19 @@
                                 <div id="experiencia" class="contact-edit" style="display: none;">
                                     <div class="row">
                                         <div class="col-lg-12">
-                                            <span class="pf-title">Nombre</span>
+                                            <span class="pf-title">Nombre *</span>
                                             <div class="pf-field">
                                                 {{ form_widget(form.nombre) }}
                                             </div>
                                         </div>
                                         <div class="col-lg-12">
-                                            <span class="pf-title">Apellidos</span>
+                                            <span class="pf-title">Apellidos *</span>
                                             <div class="pf-field">
                                                 {{ form_widget(form.apellidos) }}
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
-                                            <span class="pf-title">Fecha de nacimiento</span>
+                                            <span class="pf-title">Fecha de nacimiento *</span>
                                             <div class="pf-field">
                                                 {{ form_widget(form.fecha_nacimiento) }}
                                             </div>
@@ -104,7 +110,8 @@
                                                 {{ form_widget(form.sexo) }}
                                             </div>
                                         </div>
-                                        <div class="col-lg-12">
+                                        <div class="col-lg-12" style="display: flex;justify-content: space-between;">
+                                            <button type="button" id="expe-atras">Atrás</button>
                                             <button type="button" id="expe-siguiente">Siguiente</button>
                                         </div>
                                     </div>
@@ -130,12 +137,13 @@
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
-                                            <span class="pf-title">Código postal</span>
+                                            <span class="pf-title">Código postal *</span>
                                             <div class="pf-field">
                                                 {{ form_widget(form.cod_postal) }}
                                             </div>
                                         </div>
-                                        <div class="col-lg-12">
+                                        <div class="col-lg-12" style="display: flex;justify-content: space-between;">
+                                            <button type="button" id="habili-atras">Atrás</button>
                                             <button type="button" id="habili-siguiente">Siguiente</button>
                                         </div>
                                     </div>
@@ -143,7 +151,7 @@
                                 <div id="informacion" class="contact-edit" style="display: none;">
                                     <div class="row">
                                         <div class="col-lg-6">
-                                            <span class="pf-title">Teléfono</span>
+                                            <span class="pf-title">Teléfono *</span>
                                             <div class="pf-field">
                                                 {{ form_widget(form.telefono) }}
                                             </div>
@@ -165,8 +173,11 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-lg-12">
-                                            {{ form_widget(form.Enviar) }}
+                                        <div class="col-lg-12" style="display: flex;justify-content: space-between;">
+                                            <button type="button" id="info-atras">Atrás</button>
+                                            <div class="col-lg-6">
+                                                {{ form_widget(form.Enviar) }}
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

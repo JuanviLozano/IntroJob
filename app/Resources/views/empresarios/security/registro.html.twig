@@ -34,8 +34,11 @@
                                 {{ form_start(form, { 'attr' : {'role':'form'}}) }}
                                 <div id="educacion" class="contact-edit" style="display: none;">
                                     <div class="row">
+                                        <div class="profile-title">
+                                            <h3>Información de la empresa</h3>
+                                        </div>
                                         <div class="col-lg-12">
-                                            <span class="pf-title">Email</span>
+                                            <span class="pf-title">Correo electrónico</span>
                                             <div class="pf-field">
                                                 {{ form_widget(form.email) }}
                                             </div>
@@ -58,11 +61,112 @@
                                                 {{ form_widget(form.alias) }}
                                             </div>
                                         </div>
+                                        <div class="profile-title">
+                                            <h3>Localización</h3>
+                                        </div>
                                         <div class="col-lg-6">
                                             <span class="pf-title">Pais de origen</span>
                                             <div class="pf-field">
                                                 {{ form_widget(form.paises) }}
                                             </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <span class="pf-title">Provincia</span>
+                                            <div class="pf-field">
+                                                {{ form_widget(form.provincias) }}
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <span class="pf-title">Municipio</span>
+                                            <div class="pf-field">
+                                                {{ form_widget(form.municipio) }}
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <span class="pf-title">Código postal</span>
+                                            <div class="pf-field">
+                                                {{ form_widget(form.codigoPostal) }}
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <span class="pf-title">Dirección</span>
+                                            <div class="pf-field">
+                                                {{ form_widget(form.direccion) }}
+                                            </div>
+                                        </div>
+                                        <div class="social-edit">
+                                            <h3>Contacto</h3>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <span class="pf-title">Telefono</span>
+                                            <div class="pf-field">
+                                                {{ form_widget(form.telefono) }}
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <span class="pf-title">Fax</span>
+                                            <div class="pf-field">
+                                                {{ form_widget(form.fax) }}
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <span class="pf-title">Sitio web</span>
+                                            <div class="pf-field">
+                                                {{ form_widget(form.web) }}
+                                            </div>
+                                        </div>
+                                        <div class="social-edit">
+                                            <h3>Redes sociales</h3>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <span class="pf-title">Facebook</span>
+                                            <div class="pf-field">
+                                                {{ form_widget(form.facebook) }}
+                                                <i class="fa fa-facebook"></i>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <span class="pf-title">Twitter</span>
+                                            <div class="pf-field">
+                                                {{ form_widget(form.twitter) }}
+                                                <i class="fa fa-twitter"></i>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <span class="pf-title">Google</span>
+                                            <div class="pf-field">
+                                                {{ form_widget(form.google) }}
+                                                <i class="fa fa-google"></i>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <span class="pf-title">Linkedin</span>
+                                            <div class="pf-field">
+                                                {{ form_widget(form.linkedin) }}
+                                                <i class="fa fa-linkedin"></i>
+                                            </div>
+                                        </div>
+                                        <div class="social-edit">
+                                            <h3>Información adicional</h3>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <div class="upload-portfolio">
+                                                <div class="uploadbox">
+                                                    <label for="appbundle_empresa_imagen" class="custom-file-upload">
+                                                        <i class="la la-cloud-upload"></i> <span>Subir imagen</span>
+                                                    </label>
+                                                    {{ form_widget(form.imagen) }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <span class="pf-title">Descripción</span>
+                                            <div class="pf-field">
+                                                {{ form_widget(form.descripcion) }}
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            {{ form_widget(form.enviar) }}
                                         </div>
                                     </div>
                                 </div>

@@ -155,6 +155,10 @@ header {
 .container.fluid {
     padding: 0;
 }
+.container.fluid1 {
+    padding: 0;
+    height: 40px;
+}
 .manage-jobs-sec > table {
     width: 1000px;
 }

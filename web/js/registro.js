@@ -7,9 +7,9 @@
 document.getElementById("edu-siguiente").setAttribute("disabled", "disabled");
 
 var errorUsu = false;
-document.getElementById("appbundle_usuario_username").onblur = function() {
+document.getElementById("appbundle_usuario_username").onkeyup = function() {
 	var node = document.createElement("P");
-	var textnode = document.createTextNode("El campo debe contener al menos 6 caracteres.");
+	var textnode = document.createTextNode("Nombre usuario incorrecto.");
 	node.appendChild(textnode);
 	node.setAttribute("style", "color: red");
 	node.setAttribute("id", "usuReg");
@@ -17,19 +17,21 @@ document.getElementById("appbundle_usuario_username").onblur = function() {
 	if (!checkNombreUsu(this.value) && errorUsu!=true) {
 		errorUsu = true;
 		this.after(node);
+		this.style.borderColor = "red";
 	}
 	else if (checkNombreUsu(this.value)) {
 		errorUsu = false;
 		if (document.getElementById("usuReg")!=null)
 		document.getElementById("usuReg").remove();
+		this.style.borderColor = "#5cb85c";
 	}
 	activateNext();
 }
 
 var errorPass = false;
-document.getElementById("appbundle_usuario_password").onblur = function() {
+document.getElementById("appbundle_usuario_password_first").onkeyup = function() {
 	var node = document.createElement("P");
-	var textnode = document.createTextNode("La contraseña debe contener 8 caracteres, una letra y un número.");
+	var textnode = document.createTextNode("Contraseña incorrecta.");
 	node.appendChild(textnode);
 	node.setAttribute("style", "color: red");
 	node.setAttribute("id", "passReg");
@@ -37,19 +39,43 @@ document.getElementById("appbundle_usuario_password").onblur = function() {
 	if (!checkPass(this.value) && errorPass!=true) {
 		errorPass = true;
 		this.after(node);
+		this.style.borderColor = "red";
 	}
 	else if (checkPass(this.value)) {
 		errorPass = false;
 		if (document.getElementById("passReg")!=null)
 		document.getElementById("passReg").remove();
+		this.style.borderColor = "#5cb85c";
+	}
+	activateNext();
+}
+
+var errorPassS = false;
+document.getElementById("appbundle_usuario_password_second").onkeyup = function() {
+	var node = document.createElement("P");
+	var textnode = document.createTextNode("Contraseña incorrecta.");
+	node.appendChild(textnode);
+	node.setAttribute("style", "color: red");
+	node.setAttribute("id", "passSReg");
+
+	if ((!checkPass(this.value) || this.value!=document.getElementById("appbundle_usuario_password_first").value) && errorPassS!=true) {
+		errorPassS = true;
+		this.after(node);
+		this.style.borderColor = "red";
+	}
+	else if (checkPass(this.value)) {
+		errorPassS = false;
+		if (document.getElementById("passSReg")!=null)
+		document.getElementById("passSReg").remove();
+		this.style.borderColor = "#5cb85c";
 	}
 	activateNext();
 }
 
 var errorEmail = false;
-document.getElementById("appbundle_usuario_email").onblur = function() {
+document.getElementById("appbundle_usuario_email").onkeyup = function() {
 	var node = document.createElement("P");
-	var textnode = document.createTextNode("Email incorrecto. Ej: tuemail@gmail.com");
+	var textnode = document.createTextNode("Email incorrecto.");
 	node.appendChild(textnode);
 	node.setAttribute("style", "color: red");
 	node.setAttribute("id", "emailReg");
@@ -57,11 +83,13 @@ document.getElementById("appbundle_usuario_email").onblur = function() {
 	if (!checkEmail(this.value) && errorEmail!=true) {
 		errorEmail = true;
 		this.after(node);
+		this.style.borderColor = "red";
 	}
 	else if (checkEmail(this.value)) {
 		errorEmail = false;
 		if (document.getElementById("emailReg")!=null)
 		document.getElementById("emailReg").remove();
+		this.style.borderColor = "#5cb85c";
 	}
 	activateNext();
 }
@@ -69,7 +97,8 @@ document.getElementById("appbundle_usuario_email").onblur = function() {
 function activateNext() {
 	if (
 		checkNombreUsu(document.getElementById("appbundle_usuario_username").value) &&
-		checkPass(document.getElementById("appbundle_usuario_password").value) &&
+		checkPass(document.getElementById("appbundle_usuario_password_first").value) &&
+		checkPass(document.getElementById("appbundle_usuario_password_second").value) &&
 		checkEmail(document.getElementById("appbundle_usuario_email").value)
 		) {
 		document.getElementById("edu-siguiente").removeAttribute("disabled");
@@ -110,9 +139,9 @@ function checkEmail(value) {
 document.getElementById("expe-siguiente").setAttribute("disabled", "disabled");
 
 var errorNom = false;
-document.getElementById("appbundle_usuario_nombre").onblur = function() {
+document.getElementById("appbundle_usuario_nombre").onkeyup = function() {
 	var node = document.createElement("P");
-	var textnode = document.createTextNode("El campo Nombre no puede estar en blanco.");
+	var textnode = document.createTextNode("Nombre incorrecto.");
 	node.appendChild(textnode);
 	node.setAttribute("style", "color: red");
 	node.setAttribute("id", "nomReg");
@@ -120,19 +149,21 @@ document.getElementById("appbundle_usuario_nombre").onblur = function() {
 	if (!checkNombre(this.value) && errorNom!=true) {
 		errorNom = true;
 		this.after(node);
+		this.style.borderColor = "red";
 	}
 	else if (checkNombre(this.value)) {
 		errorNom = false;
 		if (document.getElementById("nomReg")!=null)
 		document.getElementById("nomReg").remove();
+		this.style.borderColor = "#5cb85c";
 	}
 	activateNextExpe();
 }
 
 var errorApe = false;
-document.getElementById("appbundle_usuario_apellidos").onblur = function() {
+document.getElementById("appbundle_usuario_apellidos").onkeyup = function() {
 	var node = document.createElement("P");
-	var textnode = document.createTextNode("El campo Apellidos no puede estar en blanco.");
+	var textnode = document.createTextNode("Apellidos incorrecto.");
 	node.appendChild(textnode);
 	node.setAttribute("style", "color: red");
 	node.setAttribute("id", "apeReg");
@@ -140,19 +171,21 @@ document.getElementById("appbundle_usuario_apellidos").onblur = function() {
 	if (!checkNombre(this.value) && errorApe!=true) {
 		errorApe = true;
 		this.after(node);
+		this.style.borderColor = "red";
 	}
 	else if (checkNombre(this.value)) {
 		errorApe = false;
 		if (document.getElementById("apeReg")!=null)
 		document.getElementById("apeReg").remove();
+		this.style.borderColor = "#5cb85c";
 	}
 	activateNextExpe();
 }
 
 var errorFechaNac = false;
-document.getElementById("appbundle_usuario_fecha_nacimiento").onblur = function() {
+document.getElementById("appbundle_usuario_fecha_nacimiento").onkeyup = function() {
 	var node = document.createElement("P");
-	var textnode = document.createTextNode("Fecha de nacimiento incorrecta. Ej: 10/07/1990");
+	var textnode = document.createTextNode("Fecha de nacimiento incorrecta.");
 	node.appendChild(textnode);
 	node.setAttribute("style", "color: red");
 	node.setAttribute("id", "fechaNacReg");
@@ -160,11 +193,13 @@ document.getElementById("appbundle_usuario_fecha_nacimiento").onblur = function(
 	if (!checkFechaNac(this.value) && errorFechaNac!=true) {
 		errorFechaNac = true;
 		this.after(node);
+		this.style.borderColor = "red";
 	}
 	else if (checkFechaNac(this.value)) {
 		errorFechaNac = false;
 		if (document.getElementById("fechaNacReg")!=null)
 		document.getElementById("fechaNacReg").remove();
+		this.style.borderColor = "#5cb85c";
 	}
 	activateNextExpe();
 }
@@ -204,9 +239,9 @@ function checkFechaNac(value) {
 document.getElementById("habili-siguiente").setAttribute("disabled", "disabled");
 
 var errorDir = false;
-document.getElementById("appbundle_usuario_direccion").onblur = function() {
+document.getElementById("appbundle_usuario_direccion").onkeyup = function() {
 	var node = document.createElement("P");
-	var textnode = document.createTextNode("El campo Dirección no puede estar en blanco.");
+	var textnode = document.createTextNode("Dirección incorrecta.");
 	node.appendChild(textnode);
 	node.setAttribute("style", "color: red");
 	node.setAttribute("id", "dirReg");
@@ -214,19 +249,21 @@ document.getElementById("appbundle_usuario_direccion").onblur = function() {
 	if (!checkDireccion(this.value) && errorDir!=true) {
 		errorDir = true;
 		this.after(node);
+		this.style.borderColor = "red";
 	}
 	else if (checkDireccion(this.value)) {
 		errorDir = false;
 		if (document.getElementById("dirReg")!=null)
 		document.getElementById("dirReg").remove();
+		this.style.borderColor = "#5cb85c";
 	}
 	activateNextHabili();
 }
 
 var errorCod = false;
-document.getElementById("appbundle_usuario_cod_postal").onblur = function() {
+document.getElementById("appbundle_usuario_cod_postal").onkeyup = function() {
 	var node = document.createElement("P");
-	var textnode = document.createTextNode("Código postal debe contener cinco dígitos.");
+	var textnode = document.createTextNode("Código postal incorrecto.");
 	node.appendChild(textnode);
 	node.setAttribute("style", "color: red");
 	node.setAttribute("id", "codReg");
@@ -234,11 +271,13 @@ document.getElementById("appbundle_usuario_cod_postal").onblur = function() {
 	if (!checkCodPostal(this.value) && errorCod!=true) {
 		errorCod = true;
 		this.after(node);
+		this.style.borderColor = "red";
 	}
 	else if (checkCodPostal(this.value)) {
 		errorCod = false;
 		if (document.getElementById("codReg")!=null)
 		document.getElementById("codReg").remove();
+		this.style.borderColor = "#5cb85c";
 	}
 	activateNextHabili();
 }
@@ -277,9 +316,9 @@ function checkCodPostal(value) {
 document.getElementById("appbundle_usuario_Enviar").setAttribute("disabled", "disabled");
 
 var errorTelf = false;
-document.getElementById("appbundle_usuario_telefono").onblur = function() {
+document.getElementById("appbundle_usuario_telefono").onkeyup = function() {
 	var node = document.createElement("P");
-	var textnode = document.createTextNode("El teléfono móvil debe contener 9 dígitos y comenzar por 9|6|7.");
+	var textnode = document.createTextNode("Teléfono móvil incorrecto.");
 	node.appendChild(textnode);
 	node.setAttribute("style", "color: red");
 	node.setAttribute("id", "telfReg");
@@ -287,19 +326,21 @@ document.getElementById("appbundle_usuario_telefono").onblur = function() {
 	if (!checkTelefono(this.value) && errorTelf!=true) {
 		errorTelf = true;
 		this.after(node);
+		this.style.borderColor = "red";
 	}
 	else if (checkTelefono(this.value)) {
 		errorTelf = false;
 		if (document.getElementById("telfReg")!=null)
 		document.getElementById("telfReg").remove();
+		this.style.borderColor = "#5cb85c";
 	}
 	activateSend();
 }
 
 var errorEsp = false;
-document.getElementById("appbundle_usuario_especialidad").onblur = function() {
+document.getElementById("appbundle_usuario_especialidad").onkeyup = function() {
 	var node = document.createElement("P");
-	var textnode = document.createTextNode("El campo especialidad no puede estar en blanco.");
+	var textnode = document.createTextNode("Especialidad incorrecta.");
 	node.appendChild(textnode);
 	node.setAttribute("style", "color: red");
 	node.setAttribute("id", "espReg");
@@ -307,11 +348,13 @@ document.getElementById("appbundle_usuario_especialidad").onblur = function() {
 	if (!checkEspecialidad(this.value) && errorEsp!=true) {
 		errorEsp = true;
 		this.after(node);
+		this.style.borderColor = "red";
 	}
 	else if (checkEspecialidad(this.value)) {
 		errorEsp = false;
 		if (document.getElementById("espReg")!=null)
 		document.getElementById("espReg").remove();
+		this.style.borderColor = "#5cb85c";
 	}
 	activateSend();
 }

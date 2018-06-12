@@ -26,3 +26,7 @@ edit_idioma:
 edit_informacion:
     path:     /editInformacion
     defaults: { _controller: AppBundle:Curriculum:editInformacion }
+
+oferta_empresa:
+    path:     /ofertaEmpresa
+    defaults: { _controller: AppBundle:OfertasEmpresa:ofertaEmpresa }

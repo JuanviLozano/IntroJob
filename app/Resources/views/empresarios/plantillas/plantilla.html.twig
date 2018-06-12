@@ -26,7 +26,7 @@
 
 <div class="page-loading">
     <img src="{{ asset('images/loader.gif') }}" alt="cargando" />
-    <span>Cargando</span>
+    <span>Salir</span>
 </div>
 
 <div class="theme-layout" id="scrollup">
@@ -36,22 +36,22 @@
             <div class="res-logo"><a href="{{ path('index') }}" title=""><img src="{{ asset('images/introjobs-title.png') }}" alt="" /></a></div>
             <div class="menu-resaction">
                 <div class="res-openmenu">
-                    <img src="images/icon.png" alt="" /> Menu
+                    <img src="images/icon.png" alt="Menu" /> Menu
                 </div>
                 <div class="res-closemenu">
-                    <img src="images/icon2.png" alt="" /> Close
+                    <img src="images/icon2.png" alt="Cerrar menu" /> Close
                 </div>
             </div>
         </div>
         <div class="responsive-opensec">
             <!-- MOVIL -->
-            {% if is_granted('ROLE_USER') %}
+            {% if is_granted('ROLE_EMPRESA') %}
                 <div class="responsivemenu">
                     <ul>
                         <li class="menu-item-has-children">
                             <a title="Inicio">Inicio</a>
                             <ul>
-                                <li><a href="{{ path('index') }}" title="">Página principal</a></li>
+                                <li><a href="{{ path('index') }}" title="Página principal">Página principal</a></li>
                             </ul>
                         </li>
                         <li>
@@ -61,9 +61,9 @@
                 </div>
             {% else %}
                 <div class="btn-extars">
-                    <a href="{{ path('registro') }}" title="" class="post-job-btn"><i class="la la-plus"></i>Registrarse</a>
+                    <a href="{{ path('registro') }}" title="registro usuarios" class="post-job-btn"><i class="la la-plus"></i>Registrarse</a>
                     <ul class="account-btns">
-                        <li class="signin-popup"><a href="{{ path('login') }}" title=""><i class="la la-external-link-square"></i> Iniciar sesión</a></li>
+                        <li class="signin-popup"><a href="{{ path('login') }}" title="Login usuarios"><i class="la la-external-link-square"></i> Iniciar sesión</a></li>
                     </ul>
                 </div><!-- Btn Extras -->
                 <div class="responsivemenu">
@@ -71,14 +71,14 @@
                         <li class="menu-item-has-children">
                             <a title="Inicio">Inicio</a>
                             <ul>
-                                <li><a href="{{ path('index') }}" title="">Página principal</a></li>
+                                <li><a href="{{ path('index') }}" title="Página principal">Página principal</a></li>
                             </ul>
                         </li>
                         <li class="menu-item-has-children">
                             <a title="Zona empresario">Zona empresario</a>
                             <ul>
-                                <li><a href="#" title="">Login</a></li>
-                                <li><a href="#" title="">Registro</a></li>
+                                <li><a href="{{ path('loginEmp') }}" title="Login empresas">Login</a></li>
+                                <li><a href="{{ path('registroEmp') }}" title="Registro empresas">Registro</a></li>
                             </ul>
                         </li>
                         <li>
@@ -94,27 +94,25 @@
         <div class="menu-sec">
             <div class="container">
                 <div class="logo">
-                    <a href="{{ path('index') }}" title=""><img src="{{ asset('images/introjobs-title.png') }}" alt="" /></a>
+                    <a href="{{ path('index') }}" title="Página principal"><img src="{{ asset('images/introjobs-title.png') }}" alt="" /></a>
                 </div><!-- Logo -->
                 <!-- Pantalla PC -->
-                {% if is_granted('ROLE_USER') %}
-                    <div class="my-profiles-sec">
-                    <span>
-                        <img src="/img_user/{{ app.user.imagen }}" alt="" class="img-profile-60" />
-                        {{ app.user.nombre }} <i class="la la-bars"></i></span>
-                    </div>
+                {% if is_granted('ROLE_EMPRESA') %}
                     <nav>
                         <ul>
                             <li class="menu-item-has-children">
                                 <a title="Inicio">Inicio</a>
                                 <ul>
-                                    <li><a href="{{ path('index') }}" title="">Página principal</a></li>
+                                    <li><a href="{{ path('index') }}" title="Página principal">Página principal</a></li>
                                 </ul>
                             </li>
                             <li>
                                 <a href="{{ path('lista') }}" title="Busqueda de empleos">Buscador de empleo</a>
                             </li>
                         </ul>
+                        <div class="btn-extars">
+                            <a href="#" title="Nueva oferta de trabajo" class="post-job-btn"><i class="la la-plus"></i>Nueva oferta</a>
+                        </div>
                     </nav><!-- Menus -->
                 {% else %}
                     <nav>
@@ -122,14 +120,14 @@
                             <li class="menu-item-has-children">
                                 <a title="Inicio">Inicio</a>
                                 <ul>
-                                    <li><a href="{{ path('index') }}" title="">Página principal</a></li>
+                                    <li><a href="{{ path('index') }}" title="Página principal">Página principal</a></li>
                                 </ul>
                             </li>
                             <li class="menu-item-has-children">
                                 <a title="Zona empresario">Zona empresario</a>
                                 <ul>
-                                    <li><a href="#" title="">Login</a></li>
-                                    <li><a href="#" title="">Registro</a></li>
+                                    <li><a href="{{ path('loginEmp') }}" title="Login empresas">Login</a></li>
+                                    <li><a href="{{ path('registroEmp') }}" title="Registro empresas">Registro</a></li>
                                 </ul>
                             </li>
                             <li>
@@ -139,7 +137,7 @@
                         <div class="btn-extars">
                             <a href="{{ path('registro') }}" title="" class="post-job-btn"><i class="la la-plus"></i>Registrarse</a>
                             <ul class="account-btns">
-                                <li class="signin-popup"><a href="{{ path('login') }}" title=""><i class="la la-external-link-square"></i> Iniciar sesión</a></li>
+                                <li class="signin-popup"><a href="{{ path('login') }}" title="Login usuario"><i class="la la-external-link-square"></i> Iniciar sesión</a></li>
                             </ul>
                         </div>
                     </nav><!-- Menus -->
@@ -233,144 +231,7 @@
     </footer>
 
 </div>
-{% if is_granted('ROLE_USER') %}
-    <div class="profile-sidebar">
-        <span class="close-profile"><i class="la la-close"></i></span>
-        <div class="can-detail-s">
-            <div class="cst">
-                <img src="/img_user/{{ app.user.imagen }}" alt="" class="img-profile-145" />
-            </div>
-            <h3>{{ app.user.nombre }}<br>{{ app.user.apellidos }}</h3>
-            <span><i>{{ app.user.especialidad }}</i></span>
-            <p>{{ app.user.email }}</p>
-            <p>{{ app.user.fechaNacimiento }}</p>
-            <p><i class="la la-map-marker"></i>{{ app.user.paises }} / {{ app.user.provincias }}</p>
-        </div>
-        <div class="tree_widget-sec">
-            <ul>
-                <li class="inner-child">
-                    <a title=""><i class="la la-briefcase"></i>Mi perfil</a>
-                    <ul>
-                        <li><a href="{{ path('perfil') }}" title="">Sobre mi</a></li>
-                        <li><a href="{{ path('perfil-editar') }}" title="">Editar mi información</a></li>
-                    </ul>
-                </li>
-                <li><a href="{{ path('logout') }}" title=""><i class="la la-unlink"></i>Cerrar sesión</a></li>
-            </ul>
-        </div>
-    </div><!-- Profile Sidebar -->
-{% endif %}
-<div class="view-resumesec">
-    <div class="view-resumes">
-        <span class="close-resume-popup"><i class="la la-close"></i></span>
-        <h3>13 Times Viewed By 8 Companies.</h3>
-        <div class="job-listing wtabs">
-            <div class="job-title-sec">
-                <div class="c-logo"> <img src="http://placehold.it/98x51" alt="" /> </div>
-                <h3><a href="#" title="">Web Designer / Developer</a></h3>
-                <span>Massimo Artemisis</span>
-                <div class="job-lctn">Sacramento, California</div>
-            </div>
-            <span class="date-resume">11.02.2017</span>
-        </div><!-- Job -->
-        <div class="job-listing wtabs">
-            <div class="job-title-sec">
-                <div class="c-logo"> <img src="http://placehold.it/98x51" alt="" /> </div>
-                <h3><a href="#" title="">C Developer (Senior) C .Net</a></h3>
-                <span>Massimo Artemisis</span>
-                <div class="job-lctn"><i class="la la-map-marker"></i>Sacramento, California</div>
-            </div>
-            <span class="date-resume">11.02.2017</span>
-        </div><!-- Job -->
-        <div class="job-listing wtabs">
-            <div class="job-title-sec">
-                <div class="c-logo"> <img src="http://placehold.it/98x51" alt="" /> </div>
-                <h3><a href="#" title="">Web Designer / Developer</a></h3>
-                <span>Massimo Artemisis</span>
-                <div class="job-lctn">Sacramento, California</div>
-            </div>
-            <span class="date-resume">11.02.2017</span>
-        </div><!-- Job -->
-        <div class="job-listing wtabs">
-            <div class="job-title-sec">
-                <div class="c-logo"> <img src="http://placehold.it/98x51" alt="" /> </div>
-                <h3><a href="#" title="">Web Designer / Developer</a></h3>
-                <span>Massimo Artemisis</span>
-                <div class="job-lctn">Sacramento, California</div>
-            </div>
-            <span class="date-resume">11.02.2017</span>
-        </div><!-- Job -->
-    </div>
-</div>
 
-<div class="follow-companiesec">
-    <div class="follow-companies">
-        <span class="close-follow-company"><i class="la la-close"></i></span>
-        <h3>Follow Companies.</h3>
-        <ul id="scrollbar">
-            <li>
-                <div class="job-listing wtabs">
-                    <div class="job-title-sec">
-                        <div class="c-logo"> <img src="http://placehold.it/98x51" alt="" /> </div>
-                        <h3><a href="#" title="">Web Designer / Developer</a></h3>
-                        <div class="job-lctn">Sacramento, California</div>
-                    </div>
-                    <a href="#" title="" class="go-unfollow">Unfollow</a>
-                </div><!-- Job -->
-            </li>
-            <li>
-                <div class="job-listing wtabs">
-                    <div class="job-title-sec">
-                        <div class="c-logo"> <img src="http://placehold.it/98x51" alt="" /> </div>
-                        <h3><a href="#" title="">Tix Dog</a></h3>
-                        <div class="job-lctn">Sacramento, California</div>
-                    </div>
-                    <a href="#" title="" class="go-unfollow">Unfollow</a>
-                </div><!-- Job -->
-            </li>
-            <li>
-                <div class="job-listing wtabs">
-                    <div class="job-title-sec">
-                        <div class="c-logo"> <img src="http://placehold.it/98x51" alt="" /> </div>
-                        <h3><a href="#" title="">StarHealth</a></h3>
-                        <div class="job-lctn">Sacramento, California</div>
-                    </div>
-                    <a href="#" title="" class="go-unfollow">Unfollow</a>
-                </div><!-- Job -->
-            </li>
-            <li>
-                <div class="job-listing wtabs">
-                    <div class="job-title-sec">
-                        <div class="c-logo"> <img src="http://placehold.it/98x51" alt="" /> </div>
-                        <h3><a href="#" title="">Altes Bank</a></h3>
-                        <div class="job-lctn">Sacramento, California</div>
-                    </div>
-                    <a href="#" title="" class="go-unfollow">Unfollow</a>
-                </div><!-- Job -->
-            </li>
-            <li>
-                <div class="job-listing wtabs">
-                    <div class="job-title-sec">
-                        <div class="c-logo"> <img src="http://placehold.it/98x51" alt="" /> </div>
-                        <h3><a href="#" title="">StarHealth</a></h3>
-                        <div class="job-lctn">Sacramento, California</div>
-                    </div>
-                    <a href="#" title="" class="go-unfollow">Unfollow</a>
-                </div><!-- Job -->
-            </li>
-            <li>
-                <div class="job-listing wtabs">
-                    <div class="job-title-sec">
-                        <div class="c-logo"> <img src="http://placehold.it/98x51" alt="" /> </div>
-                        <h3><a href="#" title="">Altes Bank</a></h3>
-                        <div class="job-lctn">Sacramento, California</div>
-                    </div>
-                    <a href="#" title="" class="go-unfollow">Unfollow</a>
-                </div><!-- Job -->
-            </li>
-        </ul>
-    </div>
-</div>
 
 
 <script src={{ asset("js/jquery.min.js") }} type="text/javascript"></script>
