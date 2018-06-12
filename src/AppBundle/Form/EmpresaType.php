@@ -20,7 +20,6 @@ class EmpresaType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-<<<<<<< HEAD
         $builder->add('email', EmailType::Class, array(
                 'label' => 'Email',
                 'attr' => array('placeholder' => 'Email de la empresa')
@@ -62,17 +61,6 @@ class EmpresaType extends AbstractType
                 'label' => 'Fax',
                 'attr' => array('placeholder' => 'Fax')
             ))
-=======
-        $builder->add('email', EmailType::Class)
-            ->add('password', PasswordType::Class)
-            ->add('nombre', TextType::Class)
-            ->add('alias',TextType::Class)
-            ->add('municipio',TextType::Class)
-            ->add('codigoPostal',TextType::Class)
-            ->add('direccion',TextType::Class)
-            ->add('telefono',TextType::Class)
-            ->add('fax',TextType::Class)
->>>>>>> a72a3be3ccc992e6d03786da7022e1d3ebf1043c
             ->add('imagen',FileType::Class, array(
                 'label' => 'Imagen',
                 'mapped' => false,

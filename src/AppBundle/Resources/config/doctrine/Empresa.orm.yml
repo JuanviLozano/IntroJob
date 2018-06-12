@@ -54,10 +54,4 @@ AppBundle\Entity\Empresa:
             inversedBy: empresa
             joinColumn:
                 name: id_paises
-<<<<<<< HEAD
                 referencedColumnName: id
-
-
-=======
-                referencedColumnName: id
->>>>>>> a72a3be3ccc992e6d03786da7022e1d3ebf1043c
