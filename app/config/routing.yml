@@ -107,6 +107,11 @@ deleteConocimiento:
     path: /usuario/curriculum/delete_conocimiento
     defaults: { _controller: "AppBundle:Conocimiento:deleteConocimiento" }
 
+#Curriculum Pdf
+generatePdf:
+    path: /usuario/curriculumPdf
+    defaults:  { _controller: "AppBundle:Pdf:generatePdf" }
+
 #------------------------ ZONA EMPRESARIO ------------------------
 loginEmp:
     path: /empresa/login
