@@ -6641,7 +6641,7 @@ aside .widget.border:first-child {
 .pf-title {
     float: left;
     width: 100%;
-    margin-top: 30px;
+    margin-top: 20px;
     font-family: Open Sans;
     font-size: 14px;
     color: #202020;
@@ -6668,7 +6668,7 @@ aside .widget.border:first-child {
     font-family: Open Sans;
     font-size: 13px;
     color: #101010;
-    line-height: 24px;
+    line-height: 10px;
 }
 .pf-field > textarea {
     color: #888888;

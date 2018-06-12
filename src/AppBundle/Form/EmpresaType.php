@@ -5,6 +5,7 @@ namespace AppBundle\Form;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
@@ -23,9 +24,14 @@ class EmpresaType extends AbstractType
                 'label' => 'Email',
                 'attr' => array('placeholder' => 'Email de la empresa')
             ))
-            ->add('password', PasswordType::Class, array(
-                'label' => 'Contraseña',
-                'attr' => array('placeholder' => 'Contraseña')
+            ->add('password', RepeatedType::class, array(
+                'type' => PasswordType::class,
+                'invalid_message' => 'La contraseña no es igual.',
+                'options' => array('attr' => array('class' => 'password-field',
+                    'placeholder' => '************')),
+                'required' => true,
+                'first_options'  => array('label' => 'Contraseña'),
+                'second_options' => array('label' => 'Repetir contraseña'),
             ))
             ->add('nombre', TextType::Class, array(
                 'label' => 'Nombre de la empresa',
