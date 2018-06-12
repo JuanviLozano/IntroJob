@@ -36,10 +36,10 @@
 			<div class="res-logo"><a href="{{ path('index') }}" title=""><img src="{{ asset('images/introjobs-title.png') }}" alt="" /></a></div>
 			<div class="menu-resaction">
 				<div class="res-openmenu">
-					<img src="images/icon.png" alt="Menu" /> Menu
+					<img src="images/icon.png" alt="" /> Menu
 				</div>
 				<div class="res-closemenu">
-					<img src="images/icon2.png" alt="Cerrar menu" /> Close
+					<img src="images/icon2.png" alt="" /> Close
 				</div>
 			</div>
 		</div>
@@ -50,7 +50,7 @@
 						<li class="menu-item-has-children">
 							<a title="Inicio">Inicio</a>
 							<ul>
-								<li><a href="{{ path('index') }}" title="Página principal">Página principal</a></li>
+								<li><a href="{{ path('index') }}" title="">Página principal</a></li>
 							</ul>
 						</li>
 						<li>
@@ -61,8 +61,9 @@
             {% else %}
 				<div class="btn-extars">
 					<a href="{{ path('registro') }}" title="registro usuarios" class="post-job-btn"><i class="la la-plus"></i>Registrarse</a>
+					<a href="{{ path('registro') }}" title="" class="post-job-btn"><i class="la la-plus"></i>Registrarse</a>
 					<ul class="account-btns">
-						<li class="signin-popup"><a href="{{ path('login') }}" title="Login usuarios"><i class="la la-external-link-square"></i> Iniciar sesión</a></li>
+						<li class="signin-popup"><a href="{{ path('login') }}" title=""><i class="la la-external-link-square"></i> Iniciar sesión</a></li>
 					</ul>
 				</div><!-- Btn Extras -->
 				<div class="responsivemenu">
@@ -70,7 +71,7 @@
 						<li class="menu-item-has-children">
 							<a title="Inicio">Inicio</a>
 							<ul>
-								<li><a href="{{ path('index') }}" title="Página principal">Página principal</a></li>
+								<li><a href="{{ path('index') }}" title="">Página principal</a></li>
 							</ul>
 						</li>
 						<li class="menu-item-has-children">
@@ -78,6 +79,8 @@
 							<ul>
 								<li><a href="{{ path('loginEmp') }}" title="Login empresas">Login</a></li>
 								<li><a href="{{ path('registroEmp') }}" title="Registro empresas">Registro</a></li>
+								<li><a href="{{ path('loginEmp') }}" title="">Login</a></li>
+								<li><a href="#" title="">Registro</a></li>
 							</ul>
 						</li>
 						<li>
@@ -93,7 +96,7 @@
 		<div class="menu-sec">
 			<div class="container">
 				<div class="logo">
-					<a href="{{ path('index') }}" title="Página principal"><img src="{{ asset('images/introjobs-title.png') }}" alt="Logo de introjobs" /></a>
+					<a href="{{ path('index') }}" title=""><img src="{{ asset('images/introjobs-title.png') }}" alt="" /></a>
 				</div><!-- Logo -->
                 {% if is_granted('ROLE_EMPRESA') %}
 					<div class="btn-extars">
@@ -101,10 +104,19 @@
 					</div>
 					<nav>
 						<ul>
+				<div class="btn-extars">
+					<a href="{{ path('registro') }}" title="" class="post-job-btn"><i class="la la-plus"></i>Registrarse</a>
+					<ul class="account-btns">
+						<li class="signin-popup"><a href="{{ path('login') }}" title=""><i class="la la-external-link-square"></i> Iniciar sesión</a></li>
+					</ul>
+				</div>
+				<nav>
+					<ul>
+                        {% if is_granted('ROLE_USER') %}
 							<li class="menu-item-has-children">
 								<a title="Inicio">Inicio</a>
 								<ul>
-									<li><a href="{{ path('index') }}" title="Página principal">Página principal</a></li>
+									<li><a href="{{ path('index') }}" title="">Página principal</a></li>
 								</ul>
 							</li>
 							<li>
@@ -124,7 +136,7 @@
 							<li class="menu-item-has-children">
 								<a title="Inicio">Inicio</a>
 								<ul>
-									<li><a href="{{ path('index') }}" title="Página principal">Página principal</a></li>
+									<li><a href="{{ path('index') }}" title="">Página principal</a></li>
 								</ul>
 							</li>
 							<li class="menu-item-has-children">
@@ -132,6 +144,8 @@
 								<ul>
 									<li><a href="{{ path('loginEmp') }}" title="Login empresas">Login</a></li>
 									<li><a href="{{ path('registroEmp') }}" title="Registro empresas">Registro</a></li>
+									<li><a href="{{ path('loginEmp') }}" title="">Login</a></li>
+									<li><a href="#" title="">Registro</a></li>
 								</ul>
 							</li>
 							<li>
@@ -247,6 +261,7 @@
 <script src={{ asset("js/select-chosen.js") }} type="text/javascript"></script>
 <script src={{ asset("js/jquery.scrollbar.min.js") }} type="text/javascript"></script>
 <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCYc537bQom7ajFpWE5sQaVyz1SQa9_tuY&sensor=true&libraries=places"></script>
+<!--<script src={{ asset("js/maps2.js") }} type="text/javascript"></script>-->
 
 </body>
 </html>

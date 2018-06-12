@@ -9,7 +9,7 @@ document.getElementById("edu-siguiente").setAttribute("disabled", "disabled");
 var errorUsu = false;
 document.getElementById("appbundle_usuario_username").onkeyup = function() {
 	var node = document.createElement("P");
-	var textnode = document.createTextNode("Nombre usuario incorrecto.");
+	var textnode = document.createTextNode("El campo nombre debe contener al menos 6 cracteres.");
 	node.appendChild(textnode);
 	node.setAttribute("style", "color: red");
 	node.setAttribute("id", "usuReg");
@@ -30,7 +30,7 @@ document.getElementById("appbundle_usuario_username").onkeyup = function() {
 var errorPass = false;
 document.getElementById("appbundle_usuario_password_first").onkeyup = function() {
 	var node = document.createElement("P");
-	var textnode = document.createTextNode("Contraseña incorrecta.");
+	var textnode = document.createTextNode("El campo contraseña debe contener 8 caracteres entre letras y números.");
 	node.appendChild(textnode);
 	node.setAttribute("style", "color: red");
 	node.setAttribute("id", "passReg");
@@ -72,7 +72,7 @@ document.getElementById("appbundle_usuario_password_second").onkeyup = function(
 var errorEmail = false;
 document.getElementById("appbundle_usuario_email").onkeyup = function() {
 	var node = document.createElement("P");
-	var textnode = document.createTextNode("Email incorrecto.");
+	var textnode = document.createTextNode("Email incorrecto. EJ: tuemail@gmail.com");
 	node.appendChild(textnode);
 	node.setAttribute("style", "color: red");
 	node.setAttribute("id", "emailReg");
@@ -136,7 +136,7 @@ document.getElementById("expe-siguiente").setAttribute("disabled", "disabled");
 var errorNom = false;
 document.getElementById("appbundle_usuario_nombre").onkeyup = function() {
 	var node = document.createElement("P");
-	var textnode = document.createTextNode("Nombre incorrecto.");
+	var textnode = document.createTextNode("El campo nombre no puede estar en blanco.");
 	node.appendChild(textnode);
 	node.setAttribute("style", "color: red");
 	node.setAttribute("id", "nomReg");
@@ -157,7 +157,7 @@ document.getElementById("appbundle_usuario_nombre").onkeyup = function() {
 var errorApe = false;
 document.getElementById("appbundle_usuario_apellidos").onkeyup = function() {
 	var node = document.createElement("P");
-	var textnode = document.createTextNode("Apellidos incorrecto.");
+	var textnode = document.createTextNode("El campo Apellidos no puede estar en blanco..");
 	node.appendChild(textnode);
 	node.setAttribute("style", "color: red");
 	node.setAttribute("id", "apeReg");
@@ -178,7 +178,7 @@ document.getElementById("appbundle_usuario_apellidos").onkeyup = function() {
 var errorFechaNac = false;
 document.getElementById("appbundle_usuario_fecha_nacimiento").onkeyup = function() {
 	var node = document.createElement("P");
-	var textnode = document.createTextNode("Fecha de nacimiento incorrecta.");
+	var textnode = document.createTextNode("Fecha de nacimiento incorrecta. EJ: 10/07/1994");
 	node.appendChild(textnode);
 	node.setAttribute("style", "color: red");
 	node.setAttribute("id", "fechaNacReg");
@@ -233,7 +233,7 @@ document.getElementById("habili-siguiente").setAttribute("disabled", "disabled")
 var errorDir = false;
 document.getElementById("appbundle_usuario_direccion").onkeyup = function() {
 	var node = document.createElement("P");
-	var textnode = document.createTextNode("Dirección incorrecta.");
+	var textnode = document.createTextNode("El campo Dirección no puede estar en blanco.");
 	node.appendChild(textnode);
 	node.setAttribute("style", "color: red");
 	node.setAttribute("id", "dirReg");
@@ -254,7 +254,7 @@ document.getElementById("appbundle_usuario_direccion").onkeyup = function() {
 var errorCod = false;
 document.getElementById("appbundle_usuario_cod_postal").onkeyup = function() {
 	var node = document.createElement("P");
-	var textnode = document.createTextNode("Código postal incorrecto.");
+	var textnode = document.createTextNode("El campo Código postal consta de 5 dígitos.");
 	node.appendChild(textnode);
 	node.setAttribute("style", "color: red");
 	node.setAttribute("id", "codReg");
@@ -308,7 +308,7 @@ document.getElementById("appbundle_usuario_Enviar").setAttribute("disabled", "di
 var errorTelf = false;
 document.getElementById("appbundle_usuario_telefono").onkeyup = function() {
 	var node = document.createElement("P");
-	var textnode = document.createTextNode("Teléfono móvil incorrecto.");
+	var textnode = document.createTextNode("El campo Teléfono móvil debe empezar por 9|6|7 y consta de 9 dígitos.");
 	node.appendChild(textnode);
 	node.setAttribute("style", "color: red");
 	node.setAttribute("id", "telfReg");
@@ -329,7 +329,7 @@ document.getElementById("appbundle_usuario_telefono").onkeyup = function() {
 var errorEsp = false;
 document.getElementById("appbundle_usuario_especialidad").onkeyup = function() {
 	var node = document.createElement("P");
-	var textnode = document.createTextNode("Especialidad incorrecta.");
+	var textnode = document.createTextNode("El campo especialidad no puede estar en blanco.");
 	node.appendChild(textnode);
 	node.setAttribute("style", "color: red");
 	node.setAttribute("id", "espReg");

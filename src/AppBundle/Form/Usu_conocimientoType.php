@@ -18,12 +18,12 @@ class Usu_conocimientoType extends AbstractType
     {
         $builder->add('tipo', TextType::Class, array(
                 'label' => 'Tipo',
-                'attr' => array('placeholder' => 'Manipulador de alimentos',),
+                'attr' => array('placeholder' => 'Universidad',),
                 'required' => true
             ))
             ->add('especialidad', TextType::Class, array(
                 'label' => 'Especialidad',
-                'attr' => array('placeholder' => 'Cocina',),
+                'attr' => array('placeholder' => 'Informática',),
                 'required' => true
             ))
             ->add('descripcion', TextareaType::Class, array(
