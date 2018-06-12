@@ -34,14 +34,14 @@
 
 {% for experiencia in experiencias %}
         <h2>{{ experiencia.oficio }}</h2>
-        <p>{{ experiencia.nombre_empresa }}</p>
+        <p>{{ experiencia.nombreEmpresa }}</p>
         <p>{{ experiencia.fechaInicio }} - {{ experiencia.fechaFin }}</p>
         <p>{{ experiencia.descripcion }}</p>
 {% endfor %}
 
 {% for idioma in idiomas %}
-        <h2>{{ idioma.idIdioma }}</h2>
-        <p>{{ idioma.idNivel }}</p>
+        <h2>{{ idioma }}</h2>
+        <p>{{ idioma.nivel }}</p>
         <p>{{ idioma.leido }}</p>
         <p>{{ idioma.hablado }}</p>
         <p>{{ idioma.escrito }}</p>

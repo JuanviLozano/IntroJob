@@ -44,11 +44,7 @@
 			</div>
 		</div>
 		<div class="responsive-opensec">
-            {% if is_granted('ROLE_USER') %}
-				<form class="res-search">
-					<input type="text" placeholder="Job title, keywords or company name" />
-					<button type="submit"><i class="la la-search"></i></button>
-				</form>
+            {% if is_granted('ROLE_EMPRESA') %}
 				<div class="responsivemenu">
 					<ul>
 						<li class="menu-item-has-children">
@@ -64,7 +60,7 @@
 				</div>
             {% else %}
 				<div class="btn-extars">
-					<a href="{{ path('registro') }}" title="Registro usuarios" class="post-job-btn"><i class="la la-plus"></i>Registrarse</a>
+					<a href="{{ path('registro') }}" title="registro usuarios" class="post-job-btn"><i class="la la-plus"></i>Registrarse</a>
 					<ul class="account-btns">
 						<li class="signin-popup"><a href="{{ path('login') }}" title="Login usuarios"><i class="la la-external-link-square"></i> Iniciar sesión</a></li>
 					</ul>
@@ -81,7 +77,7 @@
 							<a title="Zona empresario">Zona empresario</a>
 							<ul>
 								<li><a href="{{ path('loginEmp') }}" title="Login empresas">Login</a></li>
-								<li><a href="{{ path('registroEmp') }}" title="Registro empresa">Registro</a></li>
+								<li><a href="{{ path('registroEmp') }}" title="Registro empresas">Registro</a></li>
 							</ul>
 						</li>
 						<li>
@@ -99,15 +95,12 @@
 				<div class="logo">
 					<a href="{{ path('index') }}" title="Página principal"><img src="{{ asset('images/introjobs-title.png') }}" alt="Logo de introjobs" /></a>
 				</div><!-- Logo -->
-				<div class="btn-extars">
-					<a href="{{ path('registro') }}" title="Registro usuarios" class="post-job-btn"><i class="la la-plus"></i>Registrarse</a>
-					<ul class="account-btns">
-						<li class="signin-popup"><a href="{{ path('login') }}" title="Login usuarios"><i class="la la-external-link-square"></i> Iniciar sesión</a></li>
-					</ul>
-				</div>
-				<nav>
-					<ul>
-                        {% if is_granted('ROLE_USER') %}
+                {% if is_granted('ROLE_EMPRESA') %}
+					<div class="btn-extars">
+						<a href="{{ path('registro') }}" title="Nueva oferta" class="post-job-btn"><i class="la la-plus"></i>Nueva oferta</a>
+					</div>
+					<nav>
+						<ul>
 							<li class="menu-item-has-children">
 								<a title="Inicio">Inicio</a>
 								<ul>
@@ -117,7 +110,17 @@
 							<li>
 								<a href="{{ path('lista') }}" title="Busqueda de empleos">Buscador de empleo</a>
 							</li>
-                        {% else %}
+						</ul>
+					</nav><!-- Menus -->
+                {% else %}
+					<div class="btn-extars">
+						<a href="{{ path('registro') }}" title="Registro usuarios" class="post-job-btn"><i class="la la-plus"></i>Registrarse</a>
+						<ul class="account-btns">
+							<li class="signin-popup"><a href="{{ path('login') }}" title="Login usuarios"><i class="la la-external-link-square"></i> Iniciar sesión</a></li>
+						</ul>
+					</div>
+					<nav>
+						<ul>
 							<li class="menu-item-has-children">
 								<a title="Inicio">Inicio</a>
 								<ul>
@@ -127,16 +130,22 @@
 							<li class="menu-item-has-children">
 								<a title="Zona empresario">Zona empresario</a>
 								<ul>
-									<li><a href="{{ path('loginEmp') }}" title="login usuarios">Login</a></li>
-									<li><a href="{{ path('registroEmp') }}" title="registro usuarios">Registro</a></li>
+									<li><a href="{{ path('loginEmp') }}" title="Login empresas">Login</a></li>
+									<li><a href="{{ path('registroEmp') }}" title="Registro empresas">Registro</a></li>
 								</ul>
 							</li>
 							<li>
 								<a href="{{ path('lista') }}" title="Busqueda de empleos">Buscador de empleo</a>
 							</li>
-                        {% endif %}
-					</ul>
-				</nav><!-- Menus -->
+						</ul>
+						<div class="btn-extars">
+							<a href="{{ path('registro') }}" title="" class="post-job-btn"><i class="la la-plus"></i>Registrarse</a>
+							<ul class="account-btns">
+								<li class="signin-popup"><a href="{{ path('login') }}" title="Login usuario"><i class="la la-external-link-square"></i> Iniciar sesión</a></li>
+							</ul>
+						</div>
+					</nav><!-- Menus -->
+                {% endif %}
 			</div>
 		</div>
 	</header>

@@ -4358,25 +4358,6 @@ footer.style3 span, footer.style3 a {
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8b91dd', endColorstr='#10195d',GradientType=1 );
     opacity: 0.8;
 }
-.inner-header::before {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    content: "";
-    z-index: -1;
-
-    background: rgb(157, 221, 151);
-    background: -moz-linear-gradient(45deg, rgb(157, 221, 151) 0%, rgb(0, 93, 4) 71%, rgb(0, 93, 4) 100%);
-    background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, rgb(157, 221, 151)), color-stop(71%, rgb(0, 93, 4)), color-stop(100%, rgb(0, 93, 4)));
-    background: -webkit-linear-gradient(45deg, rgb(157, 221, 151) 0%, rgb(0, 93, 4) 71%, rgb(0, 93, 4) 100%);
-    background: -o-linear-gradient(45deg, rgb(157, 221, 151) 0%, rgb(0, 93, 4) 71%, rgb(0, 93, 4) 100%);
-    background: -ms-linear-gradient(45deg, rgb(157, 221, 151) 0%, rgb(0, 93, 4) 71%, rgb(0, 93, 4) 100%);
-    background: linear-gradient(45deg, rgb(157, 221, 151) 0%, rgb(0, 93, 4) 71%, rgb(0, 93, 4) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8b91dd', endColorstr='#10195d',GradientType=1 );
-    opacity: 0.8;
-}
 .inner-header::after {
     position: absolute;
     left: 0;
@@ -4395,6 +4376,55 @@ footer.style3 span, footer.style3 a {
     z-index: 0;
 }
 .inner-header.wform .job-search-sec {
+    position: relative;
+    float: left;
+    z-index: 4;
+    top: 0;
+
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+
+}
+.inner-header-empresa::before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    content: "";
+    z-index: -1;
+
+    background: rgb(157, 221, 151);
+    background: -moz-linear-gradient(45deg, rgb(157, 221, 151) 0%, rgb(0, 93, 4) 71%, rgb(0, 93, 4) 100%);
+    background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, rgb(157, 221, 151)), color-stop(71%, rgb(0, 93, 4)), color-stop(100%, rgb(0, 93, 4)));
+    background: -webkit-linear-gradient(45deg, rgb(157, 221, 151) 0%, rgb(0, 93, 4) 71%, rgb(0, 93, 4) 100%);
+    background: -o-linear-gradient(45deg, rgb(157, 221, 151) 0%, rgb(0, 93, 4) 71%, rgb(0, 93, 4) 100%);
+    background: -ms-linear-gradient(45deg, rgb(157, 221, 151) 0%, rgb(0, 93, 4) 71%, rgb(0, 93, 4) 100%);
+    background: linear-gradient(45deg, rgb(157, 221, 151) 0%, rgb(0, 93, 4) 71%, rgb(0, 93, 4) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8b91dd', endColorstr='#10195d',GradientType=1 );
+    opacity: 0.8;
+}
+.inner-header-empresa::after {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    content: "";
+    z-index: 0;
+    opacity: 0.14;
+}
+.inner-header-empresa {
+    float: left;
+    width: 100%;
+    position: relative;
+    padding-top: 240px; padding-bottom: 15px;
+    z-index: 0;
+}
+.inner-header-empresa.wform .job-search-sec {
     position: relative;
     float: left;
     z-index: 4;
@@ -4576,6 +4606,18 @@ section.overlape {
     color: #fb236a;
 }
 .inner-header > h3 {
+    float: left;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 30px;
+    text-align: center;
+    margin: 0;
+    margin-bottom: 50px;
+}
+.inner-header-empresa > h3 {
     float: left;
     width: 100%;
     position: relative;
@@ -7848,6 +7890,10 @@ header.gradientEmpres{
     margin: 0;
 }
 .inner-header .container {
+    position: relative;
+    z-index: 1;
+}
+.inner-header-empresa .container {
     position: relative;
     z-index: 1;
 }
