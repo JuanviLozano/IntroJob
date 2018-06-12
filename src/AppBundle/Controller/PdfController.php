@@ -19,6 +19,10 @@ class PdfController extends Controller
 
         $id = $this->getUser()->getId();
 
+        $datos = $this->getDoctrine()
+            ->getRepository(Usuario::Class)
+            ->findById($id);
+
         $conocimientos = $this->getDoctrine()
             ->getRepository(Usu_conocimiento::Class)
             ->findById($id);
@@ -44,6 +48,7 @@ class PdfController extends Controller
         $snappy = $this->get('knp_snappy.pdf');
 
         $html = $this->renderView('pdf/curriculumPdf.html.twig', array(
+                    'datos' => $datos,
                     'conocimientos' => $conocimientos,
                     'educaciones' => $educaciones,
                     'experiencias' => $experiencias,

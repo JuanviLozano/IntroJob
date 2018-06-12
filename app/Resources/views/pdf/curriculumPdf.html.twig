@@ -6,6 +6,18 @@
 
 <h1>Curriculum</h1>
 
+{% for dato in datos %}
+        <p>{{ dato.nombre }}</p>
+        <p>{{ dato.apellidos }}</p>
+        <p>{{ dato.fechaNacimiento }}</p>
+        <p>{{ dato.sexo }}</p>
+        <p>{{ dato.direccion }}</p>
+        <p>{{ dato.codPostal }}</p>
+        <p>{{ dato.email }}</p>
+        <p>{{ dato.telefono }}</p>
+        <p>{{ dato.especialidad }}</p>
+{% endfor %}
+
 {% for conocimiento in conocimientos %}
         <h2>{{ conocimiento.tipo }}</h2>
         <p>{{ conocimiento.especialidad }}</p>
@@ -28,8 +40,8 @@
 {% endfor %}
 
 {% for idioma in idiomas %}
-        <h2>{{ idioma.id_idioma }}</h2>
-        <p>{{ idioma.id_nivel }}</p>
+        <h2>{{ idioma.idIdioma }}</h2>
+        <p>{{ idioma.idNivel }}</p>
         <p>{{ idioma.leido }}</p>
         <p>{{ idioma.hablado }}</p>
         <p>{{ idioma.escrito }}</p>
