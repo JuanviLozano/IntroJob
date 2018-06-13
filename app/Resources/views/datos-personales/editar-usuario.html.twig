@@ -106,7 +106,8 @@
                                                 {{ form_widget(form.sexo) }}
                                             </div>
                                         </div>
-                                        <div class="col-lg-12">
+                                        <div class="col-lg-12" style="display: flex;justify-content: space-between;">
+                                            <button type="button" id="expe-atras">Atrás</button>
                                             <button type="button" id="expe-siguiente">Siguiente</button>
                                         </div>
                                     </div>
@@ -137,7 +138,8 @@
                                                 {{ form_widget(form.cod_postal) }}
                                             </div>
                                         </div>
-                                        <div class="col-lg-12">
+                                        <div class="col-lg-12" style="display: flex;justify-content: space-between;">
+                                            <button type="button" id="habili-atras">Atrás</button>
                                             <button type="button" id="habili-siguiente">Siguiente</button>
                                         </div>
                                     </div>
@@ -167,8 +169,11 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-lg-12">
-                                            {{ form_widget(form.Enviar) }}
+                                        <div class="col-lg-12" style="display: flex;justify-content: space-between;">
+                                            <button type="button" id="info-atras">Atrás</button>
+                                            <div class="col-lg-6">
+                                                {{ form_widget(form.Enviar) }}
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
