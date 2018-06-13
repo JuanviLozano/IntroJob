@@ -116,6 +116,11 @@ class Empresa implements UserInterface, \Serializable
         $this->oferta = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
+    public function __toString()
+    {
+        return $this->serialize();
+    }
+
     /**
      * Get id
      *

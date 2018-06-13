@@ -10,4 +10,14 @@ namespace AppBundle\Repository;
  */
 class OfertaRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function ofertasEmpresa($id)
+    {
+        $result = $this->getEntityManager()
+            ->createQuery('SELECT o
+                               FROM AppBundle:Oferta o 
+                               WHERE :id = o.empresa')
+            ->setParameter('id', $id);
+
+        return $result->getResult();
+    }
 }

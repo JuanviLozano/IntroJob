@@ -122,3 +122,6 @@ registroEmp:
 ofertasEmp:
     path: /empresa/ofertas
     defaults: {_controller: "AppBundle:OfertasEmpresa:ofertaEmpresa" }
+addOferta:
+    path: /empresa/nuevaOferta
+    defaults: {_controller: "AppBundle:OfertasEmpresa:addOferta" }

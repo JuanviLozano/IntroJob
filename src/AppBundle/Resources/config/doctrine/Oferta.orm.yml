@@ -12,25 +12,21 @@ AppBundle\Entity\Oferta:
         titulo:
             type: string
             length: 255
-        pais:
-            type: string
-            length: 255
         provincia:
             type: string
             length: 255
-        ciudad:
+        fechaCreacion:
             type: string
             length: 255
-        fechaCreacion:
-            type: datetime
-            column: fecha_creacion
         salarioInicio:
             type: integer
             column: salario_inicio
+            nullable: true
         salarioFin:
             type: integer
             column: salario_fin
-        topoPago:
+            nullable: true
+        tipoPago:
             type: string
             length: 50
             nullable: true
@@ -43,6 +39,7 @@ AppBundle\Entity\Oferta:
             type: string
             length: 255
             column: estudios_min
+            nullable: true
         residente:
             type: string
             length: 255
@@ -93,5 +90,13 @@ AppBundle\Entity\Oferta:
 
     oneToMany:
         usuOferta:
-          targetEntity: usuario_oferta
-          mappedBy: oferta
+            targetEntity: usuario_oferta
+            mappedBy: oferta
+
+    manyToOne:
+        empresa:
+            targetEntity: Empresa
+            inversedBy: oferta
+            joinColumn:
+                name: id_empresa
+                referencedColumnName: id

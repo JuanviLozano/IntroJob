@@ -129,6 +129,6 @@ AppBundle\Entity\Usuario:
                 referencedColumnName: id
 
     oneToMany:
-            usuOferta:
-              targetEntity: usuario_oferta
-              mappedBy: usuario
+        usuOferta:
+            targetEntity: usuario_oferta
+            mappedBy: usuario

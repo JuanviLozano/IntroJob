@@ -20,20 +20,10 @@ class Oferta
     /**
      * @var string
      */
-    private $pais;
-
-    /**
-     * @var string
-     */
     private $provincia;
 
     /**
      * @var string
-     */
-    private $ciudad;
-
-    /**
-     * @var \DateTime
      */
     private $fechaCreacion;
 
@@ -50,7 +40,7 @@ class Oferta
     /**
      * @var string
      */
-    private $topoPago;
+    private $tipoPago;
 
     /**
      * @var string
@@ -118,7 +108,17 @@ class Oferta
     private $personalCargo;
 
     /**
+     * @var boolean
+     */
+    private $estado;
+
+    /**
      * @var \Doctrine\Common\Collections\Collection
+     */
+    private $usuOferta;
+
+    /**
+     * @var \AppBundle\Entity\Empresa
      */
     private $empresa;
 
@@ -127,7 +127,7 @@ class Oferta
      */
     public function __construct()
     {
-        $this->empresa = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->usuOferta = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -165,30 +165,6 @@ class Oferta
     }
 
     /**
-     * Set pais
-     *
-     * @param string $pais
-     *
-     * @return Oferta
-     */
-    public function setPais($pais)
-    {
-        $this->pais = $pais;
-
-        return $this;
-    }
-
-    /**
-     * Get pais
-     *
-     * @return string
-     */
-    public function getPais()
-    {
-        return $this->pais;
-    }
-
-    /**
      * Set provincia
      *
      * @param string $provincia
@@ -213,33 +189,9 @@ class Oferta
     }
 
     /**
-     * Set ciudad
-     *
-     * @param string $ciudad
-     *
-     * @return Oferta
-     */
-    public function setCiudad($ciudad)
-    {
-        $this->ciudad = $ciudad;
-
-        return $this;
-    }
-
-    /**
-     * Get ciudad
-     *
-     * @return string
-     */
-    public function getCiudad()
-    {
-        return $this->ciudad;
-    }
-
-    /**
      * Set fechaCreacion
      *
-     * @param \DateTime $fechaCreacion
+     * @param string $fechaCreacion
      *
      * @return Oferta
      */
@@ -253,7 +205,7 @@ class Oferta
     /**
      * Get fechaCreacion
      *
-     * @return \DateTime
+     * @return string
      */
     public function getFechaCreacion()
     {
@@ -309,27 +261,27 @@ class Oferta
     }
 
     /**
-     * Set topoPago
+     * Set tipoPago
      *
-     * @param string $topoPago
+     * @param string $tipoPago
      *
      * @return Oferta
      */
-    public function setTopoPago($topoPago)
+    public function setTipoPago($tipoPago)
     {
-        $this->topoPago = $topoPago;
+        $this->tipoPago = $tipoPago;
 
         return $this;
     }
 
     /**
-     * Get topoPago
+     * Get tipoPago
      *
      * @return string
      */
-    public function getTopoPago()
+    public function getTipoPago()
     {
-        return $this->topoPago;
+        return $this->tipoPago;
     }
 
     /**
@@ -645,43 +597,28 @@ class Oferta
     }
 
     /**
-     * Add empresa
+     * Set estado
      *
-     * @param \AppBundle\Entity\Empresa $empresa
+     * @param boolean $estado
      *
      * @return Oferta
      */
-    public function addEmpresa(\AppBundle\Entity\Empresa $empresa)
+    public function setEstado($estado)
     {
-        $this->empresa[] = $empresa;
+        $this->estado = $estado;
 
         return $this;
     }
 
     /**
-     * Remove empresa
+     * Get estado
      *
-     * @param \AppBundle\Entity\Empresa $empresa
+     * @return boolean
      */
-    public function removeEmpresa(\AppBundle\Entity\Empresa $empresa)
+    public function getEstado()
     {
-        $this->empresa->removeElement($empresa);
+        return $this->estado;
     }
-
-    /**
-     * Get empresa
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getEmpresa()
-    {
-        return $this->empresa;
-    }
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     */
-    private $usuOferta;
-
 
     /**
      * Add usuOfertum
@@ -718,32 +655,26 @@ class Oferta
     }
 
     /**
-     * @var boolean
-     */
-    private $estado;
-
-
-    /**
-     * Set estado
+     * Set empresa
      *
-     * @param boolean $estado
+     * @param \AppBundle\Entity\Empresa $empresa
      *
      * @return Oferta
      */
-    public function setEstado($estado)
+    public function setEmpresa(\AppBundle\Entity\Empresa $empresa = null)
     {
-        $this->estado = $estado;
+        $this->empresa = $empresa;
 
         return $this;
     }
 
     /**
-     * Get estado
+     * Get empresa
      *
-     * @return boolean
+     * @return \AppBundle\Entity\Empresa
      */
-    public function getEstado()
+    public function getEmpresa()
     {
-        return $this->estado;
+        return $this->empresa;
     }
 }

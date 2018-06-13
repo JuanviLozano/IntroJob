@@ -55,3 +55,8 @@ AppBundle\Entity\Empresa:
             joinColumn:
                 name: id_paises
                 referencedColumnName: id
+
+    oneToMany:
+        oferta:
+            targetEntity: Oferta
+            mappedBy: empresa

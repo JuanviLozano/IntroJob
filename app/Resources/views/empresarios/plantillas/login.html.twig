@@ -97,7 +97,7 @@
 				</div><!-- Logo -->
 				<div class="btn-extars">
 					{% if is_granted('ROLE_EMPRESA') %}
-						<a href="{{ path('registro') }}" title="Registro usuarios" class="post-job-btn"><i class="la la-plus"></i>Nueva oferta</a>
+						<a href="{{ path('addOferta') }}" title="Nueva oferta" class="post-job-btn"><i class="la la-plus"></i>Nueva oferta</a>
 					{% else %}
 						<a href="{{ path('registro') }}" title="Registro usuarios" class="post-job-btn"><i class="la la-plus"></i>Registrarse</a>
 						<ul class="account-btns">
