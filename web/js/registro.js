@@ -58,12 +58,14 @@ document.getElementById("appbundle_usuario_password_second").onkeyup = function(
 	node.setAttribute("style", "color: red");
 	node.setAttribute("id", "passSReg");
 
-	if ((!checkPass(this.value) || this.value!=document.getElementById("appbundle_usuario_password_first").value) && errorPassS!=true) {
+	var passF = document.getElementById("appbundle_usuario_password_first").value;
+
+	if ((!checkPass(this.value) || this.value!=passF) && errorPassS!=true) {
 		errorPassS = true;
 		this.after(node);
 		this.style.borderColor = "red";
 	}
-	else if (checkPass(this.value)) {
+	else if (checkPass(this.value) && this.value==passF) {
 		errorPassS = false;
 		if (document.getElementById("passSReg")!=null)
 		document.getElementById("passSReg").remove();
@@ -75,7 +77,7 @@ document.getElementById("appbundle_usuario_password_second").onkeyup = function(
 var errorEmail = false;
 document.getElementById("appbundle_usuario_email").onkeyup = function() {
 	var node = document.createElement("P");
-	var textnode = document.createTextNode("Email incorrecto.");
+	var textnode = document.createTextNode("Email incorrecto. EJ: tuemail@gmail.com");
 	node.appendChild(textnode);
 	node.setAttribute("style", "color: red");
 	node.setAttribute("id", "emailReg");
@@ -296,7 +298,7 @@ function activateNextHabili() {
 
 function checkDireccion(value) {
 	//Direccion
-	var re = /^[a-z ,.'-]+$/i;
+	var re = /^[0-9a-z ,.'-]+$/i;
 	if (re.test(value)) return true;
 	else return false;
 }

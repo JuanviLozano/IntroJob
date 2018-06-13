@@ -296,7 +296,7 @@ function activateNextHabili() {
 
 function checkDireccion(value) {
 	//Direccion
-	var re = /^[a-z ,.'-]+$/i;
+	var re = /^[0-9a-z ,.'-]+$/i;
 	if (re.test(value)) return true;
 	else return false;
 }
