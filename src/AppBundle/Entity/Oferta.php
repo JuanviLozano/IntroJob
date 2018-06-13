@@ -105,6 +105,11 @@ class Oferta
     /**
      * @var string
      */
+    private $horario;
+
+    /**
+     * @var string
+     */
     private $personalCargo;
 
     /**
@@ -573,6 +578,30 @@ class Oferta
     }
 
     /**
+     * Set horario
+     *
+     * @param string $horario
+     *
+     * @return Oferta
+     */
+    public function setHorario($horario)
+    {
+        $this->horario = $horario;
+
+        return $this;
+    }
+
+    /**
+     * Get horario
+     *
+     * @return string
+     */
+    public function getHorario()
+    {
+        return $this->horario;
+    }
+
+    /**
      * Set personalCargo
      *
      * @param string $personalCargo
@@ -678,3 +707,4 @@ class Oferta
         return $this->empresa;
     }
 }
+

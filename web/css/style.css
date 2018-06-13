@@ -11669,6 +11669,7 @@ header.style4 .account-btns > li a,
     background-position: center;
     background-size: contain;
     border-radius: 50%;
+    background-repeat: no-repeat;
 }
 
 .img-profile-145 {
@@ -11677,6 +11678,14 @@ header.style4 .account-btns > li a,
     background-position: center;
     background-size: contain;
     border-radius: 50%;
+    background-repeat: no-repeat;
+}
+
+.img-profile-98-65 {
+    width: 70%;
+    height: 65%;
+    background-position: center;
+    background-size: contain;
 }
 
 /*!

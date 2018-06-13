@@ -39,6 +39,7 @@ class OfertaType extends AbstractType
                     'label' => 'Tipo de pago',
                     'required' => false,
                     'choices' => [
+                        'No definido' => 'No definido',
                         'Mensual' => 'mes',
                         'Anual' => 'año'
                     ],
@@ -107,6 +108,15 @@ class OfertaType extends AbstractType
                     ],
                     'attr' => ['class' => 'chosen']
                 ))
+            ->add('horario', ChoiceType::Class, array(
+                'label' => 'Horario',
+                'choices' => [
+                    'No definido' => 'No definido',
+                    'Jornada partida' => 'Jornada partida',
+                    'Jornada completa' => 'Jornada completa'
+                ],
+                'attr' => ['class' => 'chosen']
+            ))
                 ->add('enviar', SubmitType::Class);
     }/**
      * {@inheritdoc}

@@ -79,6 +79,10 @@ AppBundle\Entity\Oferta:
             length: 255
             nullable: true
             column: duracion_contrato
+        horario:
+            type: string
+            length: 255
+            nullable: true
         personalCargo:
             type: string
             length: 255

@@ -17,8 +17,18 @@ class OfertasEmpresaController extends Controller
                         ->getRepository(Oferta::Class)
                         ->ofertasEmpresa($id);
 
+        $cuantas = $this->getDoctrine()
+                        ->getRepository(Oferta::Class)
+                        ->count($id);
+
+        $activos = $this->getDoctrine()
+                        ->getRepository(Oferta::Class)
+                        ->activos($id);
+
         return $this->render('empresarios/ofertas/ofertasEmpresa.html.twig', array(
-            'ofertas' => $ofertas
+            'ofertas' => $ofertas,
+            'cuantas' => $cuantas,
+            'activos' => $activos
         ));
     }
 
@@ -47,4 +57,13 @@ class OfertasEmpresaController extends Controller
         ));
     }
 
+    public function editOfertaAction()
+    {
+
+    }
+
+    public function deleteOfertaAction()
+    {
+
+    }
 }

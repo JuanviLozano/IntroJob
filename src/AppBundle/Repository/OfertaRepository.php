@@ -20,4 +20,26 @@ class OfertaRepository extends \Doctrine\ORM\EntityRepository
 
         return $result->getResult();
     }
+
+    public function count($id)
+    {
+        $result = $this->getEntityManager()
+            ->createQuery('SELECT COUNT(o) AS num
+                               FROM AppBundle:Oferta o 
+                               WHERE :id = o.empresa')
+            ->setParameter('id', $id);
+
+        return $result->getResult();
+    }
+
+    public function activos($id)
+    {
+        $result = $this->getEntityManager()
+            ->createQuery('SELECT COUNT(o) AS activo
+                               FROM AppBundle:Oferta o 
+                               WHERE 1 = o.estado AND :id = o.empresa')
+            ->setParameter('id', $id);
+
+        return $result->getResult();
+    }
 }

@@ -20,7 +20,7 @@
                                     <li class="inner-child">
                                         <a title="Administrar ofertas"><i class="la la-briefcase"></i>Administrar ofertas</a>
                                         <ul>
-                                            <li><a href="#" title="Lista de ofertas">Lista de ofertas</a></li>
+                                            <li><a href="{{ path('ofertasEmp') }}" title="Lista de ofertas">Lista de ofertas</a></li>
                                             <li><a href="{{ path('addOferta') }}" title="Añadir oferta">Añadir ofertas</a></li>
                                         </ul>
                                     </li>
@@ -34,9 +34,13 @@
                             <div class="manage-jobs-sec">
                                 <h3>Administrar trabajos</h3>
                                 <div class="extra-job-info">
-                                    <span><i class="la la-clock-o"></i><strong>9</strong> Trabajos publicados</span>
+                                    {% for num in cuantas %}
+                                        <span><i class="la la-clock-o"></i><strong>{{ num.num }}</strong> Trabajos publicados</span>
+                                    {% endfor %}
                                     <span><i class="la la-file-text"></i><strong>20</strong> Application</span>
-                                    <span><i class="la la-users"></i><strong>18</strong> Trabajos activos</span>
+                                    {% for activ in activos %}
+                                        <span><i class="la la-users"></i><strong>{{ activ.activo }}</strong> Trabajos activos</span>
+                                    {% endfor %}
                                 </div>
                                 <table>
                                     <thead>
@@ -61,7 +65,7 @@
                                                 <span class="applied-field">{{ oferta.categoria }}</span>
                                             </td>
                                             <td>
-                                                <span>{{ oferta.fechaCreacion }}</span>
+                                                <span>{{ oferta.fechaCreacion|date("M d, Y") }}</span>
                                             </td>
                                             <td>
                                                 {% if oferta.estado == 1 %}
