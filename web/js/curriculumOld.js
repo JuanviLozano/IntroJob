@@ -11,20 +11,17 @@ document.getElementById("appbundle_usu_informacion_enviar").setAttribute("disabl
 var errorSalMin = false;
 document.getElementById("appbundle_usu_informacion_expectativaSalario").onkeyup = function() {
 	var node = document.createElement("P");
-	var textnode = document.createTextNode("El campo Salario mínimo debe ser menor que el campo Salario máximo.");
+	var textnode = document.createTextNode("Salario mínimo incorrecto.");
 	node.appendChild(textnode);
 	node.setAttribute("style", "color: red");
 	node.setAttribute("id", "salMinInfo");
 
-	var salMinVal = parseInt(document.getElementById("appbundle_usu_informacion_expectativaSalario").value);
-	var salMaxVal = parseInt(document.getElementById("appbundle_usu_informacion_expectativaSalarioFinal").value);
-
-	if ((!checkSalMin(this.value) || salMinVal>=salMaxVal) && errorSalMin!=true) {
+	if (!checkSalMin(this.value) && errorSalMin!=true) {
 		errorSalMin = true;
 		this.after(node);
 		this.style.borderColor = "red";
 	}
-	else if (checkSalMin(this.value) && salMinVal<salMaxVal) {
+	else if (checkSalMin(this.value)) {
 		errorSalMin = false;
 		if (document.getElementById("salMinInfo")!=null)
 		document.getElementById("salMinInfo").remove();
@@ -36,20 +33,17 @@ document.getElementById("appbundle_usu_informacion_expectativaSalario").onkeyup 
 var errorSalMax = false;
 document.getElementById("appbundle_usu_informacion_expectativaSalarioFinal").onkeyup = function() {
 	var node = document.createElement("P");
-	var textnode = document.createTextNode("El campo Salario máximo debe ser mayor que el campo Salario mínimo.");
+	var textnode = document.createTextNode("Salario máximo incorrecto.");
 	node.appendChild(textnode);
 	node.setAttribute("style", "color: red");
 	node.setAttribute("id", "salMaxInfo");
 
-	var salMinVal = parseInt(document.getElementById("appbundle_usu_informacion_expectativaSalario").value);
-	var salMaxVal = parseInt(document.getElementById("appbundle_usu_informacion_expectativaSalarioFinal").value);
-
-	if ((!checkSalMin(this.value) || salMinVal>=salMaxVal) && errorSalMax!=true) {
+	if (!checkSalMin(this.value) && errorSalMax!=true) {
 		errorSalMax = true;
 		this.after(node);
 		this.style.borderColor = "red";
 	}
-	else if (checkSalMin(this.value) && salMinVal<salMaxVal) {
+	else if (checkSalMin(this.value)) {
 		errorSalMax = false;
 		if (document.getElementById("salMaxInfo")!=null)
 		document.getElementById("salMaxInfo").remove();
@@ -61,7 +55,7 @@ document.getElementById("appbundle_usu_informacion_expectativaSalarioFinal").onk
 var errorSec = false;
 document.getElementById("appbundle_usu_informacion_industria").onkeyup = function() {
 	var node = document.createElement("P");
-	var textnode = document.createTextNode("El campo Industria no puede estar en blanco.");
+	var textnode = document.createTextNode("Sector incorrecto.");
 	node.appendChild(textnode);
 	node.setAttribute("style", "color: red");
 	node.setAttribute("id", "secInfo");
@@ -83,7 +77,7 @@ document.getElementById("appbundle_usu_informacion_industria").onkeyup = functio
 var errorExp = false;
 document.getElementById("appbundle_usu_informacion_experiencia").onkeyup = function() {
 	var node = document.createElement("P");
-	var textnode = document.createTextNode("El campo Experiencia solo puede conter letras y número. EJ: 2 años.");
+	var textnode = document.createTextNode("Experiencia incorrecta.");
 	node.appendChild(textnode);
 	node.setAttribute("style", "color: red");
 	node.setAttribute("id", "expInfo");
@@ -105,7 +99,7 @@ document.getElementById("appbundle_usu_informacion_experiencia").onkeyup = funct
 var errorTit = false;
 document.getElementById("appbundle_usu_informacion_nivelCarrera").onkeyup = function() {
 	var node = document.createElement("P");
-	var textnode = document.createTextNode("El campo Nivel de la carrera no puede estar en blanco.");
+	var textnode = document.createTextNode("Título académico incorrecto.");
 	node.appendChild(textnode);
 	node.setAttribute("style", "color: red");
 	node.setAttribute("id", "titInfo");
@@ -127,7 +121,7 @@ document.getElementById("appbundle_usu_informacion_nivelCarrera").onkeyup = func
 var errorPers = false;
 document.getElementById("appbundle_usu_informacion_infoPersonal").onkeyup = function() {
 	var node = document.createElement("P");
-	var textnode = document.createTextNode("El campo Información personal no puede estar en blanco.");
+	var textnode = document.createTextNode("Información personal incorrecta.");
 	node.appendChild(textnode);
 	node.setAttribute("style", "color: red");
 	node.setAttribute("id", "persInfo");
@@ -178,19 +172,19 @@ function activateNext() {
 }
 
 function checkSalMin(value) {
-	var re = /^[0-9]\d*$/;
+	var re = /^[1-9]\d*$/;
 	if (re.test(value)) return true;
 	else return false;
 }
 
 function checkText(value) {
-	var re = /^[0-9a-záéíóúÁÉÍÓÚ ,.'-]+$/i;
+	var re = /^[1-9a-z ,.'-]+$/i;
 	if (re.test(value)) return true;
 	else return false;
 }
 
 function checkTextL(value) {
-	var re = /^[\n0-9a-záéíóúÁÉÍÓÚ ,.'-]+$/i;
+	var re = /^[\n1-9a-z ,.'-]+$/i;
 	if (re.test(value)) return true;
 	else return false;
 }
@@ -201,8 +195,11 @@ function checkTextL(value) {
 
 if ( document.getElementsByName("appbundle_usu_educacion")[0]!=null ) {
 
-document.getElementById("appbundle_usu_educacion_fechaInicio").setAttribute('placeholder', 'mm/yyyy');
-document.getElementById("appbundle_usu_educacion_fechaFin").setAttribute('placeholder', 'mm/yyyy');
+document.getElementById("appbundle_usu_educacion_fechaInicio").setAttribute('placeholder', 'dd/mm/yyyy');
+document.getElementById("appbundle_usu_educacion_fechaFin").setAttribute('placeholder', 'dd/mm/yyyy');
+
+document.getElementById("appbundle_usu_educacion_fechaInicio").removeAttribute("maxlength");
+document.getElementById("appbundle_usu_educacion_fechaFin").removeAttribute("maxlength");
 
 document.getElementById("appbundle_usu_educacion_enviar").setAttribute("disabled", "disabled");
 
@@ -258,23 +255,16 @@ document.getElementById("appbundle_usu_educacion_fechaInicio").onkeyup = functio
 	node.setAttribute("style", "color: red");
 	node.setAttribute("id", "FechIEstExp");
 
-	var inicioF = document.getElementById("appbundle_usu_educacion_fechaInicio").value;
-	var finF = document.getElementById("appbundle_usu_educacion_fechaFin").value;
-
-	if (!checkFechaRangoEstudios(inicioF, finF) && errorFechIEst!=true) {
+	if (!checkFecha(this.value) && errorFechIEst!=true) {
 		errorFechIEst = true;
 		this.after(node);
 		this.style.borderColor = "red";
 	}
-	else if (checkFechaRangoEstudios(inicioF, finF)) {
+	else if (checkFecha(this.value)) {
 		errorFechIEst = false;
 		if (document.getElementById("FechIEstExp")!=null)
 		document.getElementById("FechIEstExp").remove();
 		this.style.borderColor = "#5cb85c";
-
-		if (document.getElementById("FechFEstExp")!=null)
-		document.getElementById("FechFEstExp").remove();
-		document.getElementById("appbundle_usu_educacion_fechaFin").style.borderColor = "#5cb85c";
 	}
 	activateNextEst();
 }
@@ -287,23 +277,16 @@ document.getElementById("appbundle_usu_educacion_fechaFin").onkeyup = function()
 	node.setAttribute("style", "color: red");
 	node.setAttribute("id", "FechFEstExp");
 
-	var inicioF = document.getElementById("appbundle_usu_educacion_fechaInicio").value;
-	var finF = document.getElementById("appbundle_usu_educacion_fechaFin").value;
-
-	if (!checkFechaRangoEstudios(inicioF, finF) && errorFechFEst!=true) {
+	if (!checkFecha(this.value) && errorFechFEst!=true) {
 		errorFechFEst = true;
 		this.after(node);
 		this.style.borderColor = "red";
 	}
-	else if (checkFechaRangoEstudios(inicioF, finF)) {
+	else if (checkFecha(this.value)) {
 		errorFechFEst = false;
 		if (document.getElementById("FechFEstExp")!=null)
 		document.getElementById("FechFEstExp").remove();
 		this.style.borderColor = "#5cb85c";
-
-		if (document.getElementById("FechIEstExp")!=null)
-		document.getElementById("FechIEstExp").remove();
-		document.getElementById("appbundle_usu_educacion_fechaInicio").style.borderColor = "#5cb85c";
 	}
 	activateNextEst();
 }
@@ -314,6 +297,8 @@ function activateNextEst() {
 	if (
 		checkText(document.getElementById("appbundle_usu_educacion_tipo").value) &&
 		checkText(document.getElementById("appbundle_usu_educacion_centro").value) &&
+		checkFecha(document.getElementById("appbundle_usu_educacion_fechaInicio").value) &&
+		checkFecha(document.getElementById("appbundle_usu_educacion_fechaFin").value) &&
 		checkFechaRangoEstudios(document.getElementById("appbundle_usu_educacion_fechaInicio").value, document.getElementById("appbundle_usu_educacion_fechaFin").value)
 		) {
 		document.getElementById("appbundle_usu_educacion_enviar").removeAttribute("disabled");
@@ -324,25 +309,24 @@ function activateNextEst() {
 }
 
 function checkFechaRangoEstudios(inicio, fin) {
-	var regex = /(\d+)/g;
-	if (inicio!='' && fin!='') {
-	    var mI = inicio.match(regex)[0];
-	    var aI = inicio.match(regex)[1];
-    	var mF = fin.match(regex)[0];
-    	var aF = fin.match(regex)[1];
-    	if (mI>=1 && mI<=12 && mF>=1 && mF<=12 && aI>1900 && aI<2100 && aF>1900 && aF<2100) {
-		    if (aI==aF) {
-		    	if (mI<mF) {
-		    		return true;
-		    	}
-		    }
-		    else if (aI<aF) {
-		    	return true;
-		    }
-		    else {
-		    	return false;
-		    }
-		}
+	var i = Date.parse(inicio);
+	var f = Date.parse(fin);
+	if (i<f) {
+		if (document.getElementById("fechaRExp")!=null)
+			document.getElementById("fechaRExp").remove();
+		return true;
+	}
+	else {
+
+		var node = document.createElement("P");
+		var textnode = document.createTextNode("Fecha inicio debe ser menor que fecha fin.");
+		node.appendChild(textnode);
+		node.setAttribute("style", "color: red");
+		node.setAttribute("id", "fechaRExp");
+		if (document.getElementById("fechaRExp")==null)
+		document.getElementById("appbundle_usu_educacion_fechaInicio").after(node);
+
+		return false;
 	}
 }
 
@@ -352,6 +336,9 @@ function checkFechaRangoEstudios(inicio, fin) {
 // --- --- --- --- --- --- ---
 
 if ( document.getElementsByName("appbundle_usu_exp_laboral")[0]!=null ) {
+
+document.getElementById("appbundle_usu_exp_laboral_fechaInicio").setAttribute('placeholder', 'dd/mm/yyyy');
+document.getElementById("appbundle_usu_exp_laboral_fechaFin").setAttribute('placeholder', 'dd/mm/yyyy');
 
 document.getElementById("appbundle_usu_exp_laboral_enviar").setAttribute("disabled", "disabled");
 
@@ -407,23 +394,16 @@ document.getElementById("appbundle_usu_exp_laboral_fechaInicio").onkeyup = funct
 	node.setAttribute("style", "color: red");
 	node.setAttribute("id", "FechIExp");
 
-	var inicioF = document.getElementById("appbundle_usu_exp_laboral_fechaInicio").value;
-	var finF = document.getElementById("appbundle_usu_exp_laboral_fechaFin").value;
-
-	if (!checkFechaRangoEstudios(inicioF, finF) && errorFechI!=true) {
+	if (!checkFecha(this.value) && errorFechI!=true) {
 		errorFechI = true;
 		this.after(node);
 		this.style.borderColor = "red";
 	}
-	else if (checkFechaRangoEstudios(inicioF, finF)) {
+	else if (checkFecha(this.value)) {
 		errorFechI = false;
 		if (document.getElementById("FechIExp")!=null)
 		document.getElementById("FechIExp").remove();
 		this.style.borderColor = "#5cb85c";
-
-		if (document.getElementById("FechFExp")!=null)
-		document.getElementById("FechFExp").remove();
-		document.getElementById("appbundle_usu_exp_laboral_fechaFin").style.borderColor = "#5cb85c";
 	}
 	activateNextExp();
 }
@@ -436,23 +416,16 @@ document.getElementById("appbundle_usu_exp_laboral_fechaFin").onkeyup = function
 	node.setAttribute("style", "color: red");
 	node.setAttribute("id", "FechFExp");
 
-	var inicioF = document.getElementById("appbundle_usu_exp_laboral_fechaInicio").value;
-	var finF = document.getElementById("appbundle_usu_exp_laboral_fechaFin").value;
-
-	if (!checkFechaRangoEstudios(inicioF, finF) && errorFechF!=true) {
+	if (!checkFecha(this.value) && errorFechF!=true) {
 		errorFechF = true;
 		this.after(node);
 		this.style.borderColor = "red";
 	}
-	else if (checkFechaRangoEstudios(inicioF, finF)) {
+	else if (checkFecha(this.value)) {
 		errorFechF = false;
 		if (document.getElementById("FechFExp")!=null)
 		document.getElementById("FechFExp").remove();
 		this.style.borderColor = "#5cb85c";
-
-		if (document.getElementById("FechIExp")!=null)
-		document.getElementById("FechIExp").remove();
-		document.getElementById("appbundle_usu_exp_laboral_fechaInicio").style.borderColor = "#5cb85c";
 	}
 	activateNextExp();
 }
@@ -463,7 +436,9 @@ function activateNextExp() {
 	if (
 		checkText(document.getElementById("appbundle_usu_exp_laboral_oficio").value) &&
 		checkText(document.getElementById("appbundle_usu_exp_laboral_nombreEmpresa").value) &&
-		checkFechaRangoEstudios(document.getElementById("appbundle_usu_exp_laboral_fechaInicio").value, document.getElementById("appbundle_usu_exp_laboral_fechaFin").value)
+		checkFecha(document.getElementById("appbundle_usu_exp_laboral_fechaInicio").value) &&
+		checkFecha(document.getElementById("appbundle_usu_exp_laboral_fechaFin").value) &&
+		checkFechaRango(document.getElementById("appbundle_usu_exp_laboral_fechaInicio").value, document.getElementById("appbundle_usu_exp_laboral_fechaFin").value)
 		) {
 		document.getElementById("appbundle_usu_exp_laboral_enviar").removeAttribute("disabled");
 	}

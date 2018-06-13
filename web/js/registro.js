@@ -219,7 +219,7 @@ function activateNextExpe() {
 
 function checkNombre(value) {
 	//Nombre o apellido
-	var re = /^[a-z ,.'-]+$/i;
+	var re = /^[a-záéíóúÁÉÍÓÚ ,.'-]+$/i;
 	if (re.test(value)) return true;
 	else return false;
 }
