@@ -219,7 +219,7 @@ function activateNextExpe() {
 
 function checkNombre(value) {
 	//Nombre o apellido
-	var re = /^[a-záéíóúÁÉÍÓÚ ,.'-]+$/i;
+	var re = /^[a-záéíóúÁÉÍÓÚñÑ ,.'-]+$/i;
 	if (re.test(value)) return true;
 	else return false;
 }
@@ -296,7 +296,7 @@ function activateNextHabili() {
 
 function checkDireccion(value) {
 	//Direccion
-	var re = /^[0-9a-z ,.'-]+$/i;
+	var re = /^[0-9a-záéíóúÁÉÍÓÚñÑ ,.'-]+$/i;
 	if (re.test(value)) return true;
 	else return false;
 }

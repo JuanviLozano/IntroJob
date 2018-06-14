@@ -1,4 +1,6 @@
 
+if ( document.getElementById("appbundle_empresa_enviar")!=null ) {
+
 document.getElementById("appbundle_empresa_enviar").setAttribute("disabled", "disabled");
 
 var errorEmail = false;
@@ -223,13 +225,14 @@ document.getElementById("appbundle_empresa_web").onkeyup = function() {
 	activateSend();
 }
 
-document.getElementById("appbundle_empresa_imagen").setAttribute("required", "required");
-var node = document.createElement("P");
-var textnode = document.createTextNode("*Imagen obligatoria.");
-node.appendChild(textnode);
-node.setAttribute("style", "color: orange");
-node.setAttribute("id", "imgReg");
-document.getElementById("appbundle_empresa_imagen").parentNode.parentNode.after(node);
+document.getElementById("appbundle_empresa_imagen").setAttribute("required",
+"required"); var node = document.createElement("P"); var textnode =
+document.createTextNode("*Imagen obligatoria."); node.appendChild(textnode);
+node.setAttribute("style", "color: orange"); node.setAttribute("id",
+"imgReg"); document.getElementById("appbundle_empresa_imagen").parentNode.pare
+ntNode.after(node);
+
+}
 
 function activateSend() {
 	if (
@@ -265,7 +268,7 @@ function checkPass(value) {
 }
 
 function checkNombre(value) {
-	var re = /^[a-záéíóúÁÉÍÓÚ ,.'-]+$/i;
+	var re = /^[a-záéíóúÁÉÍÓÚñÑ ,.'-]+$/i;
 	if (re.test(value)) return true;
 	else return false;
 }
@@ -277,7 +280,7 @@ function checkCodPostal(value) {
 }
 
 function checkDireccion(value) {
-	var re = /^[0-9a-z ,.'-]+$/i;
+	var re = /^[0-9a-záéíóúÁÉÍÓÚñÑ ,.'-]+$/i;
 	if (re.test(value)) return true;
 	else return false;
 }

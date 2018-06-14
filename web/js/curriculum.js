@@ -184,13 +184,13 @@ function checkSalMin(value) {
 }
 
 function checkText(value) {
-	var re = /^[0-9a-záéíóúÁÉÍÓÚ ,.'-]+$/i;
+	var re = /^[0-9a-záéíóúÁÉÍÓÚñÑ ,.'-]+$/i;
 	if (re.test(value)) return true;
 	else return false;
 }
 
 function checkTextL(value) {
-	var re = /^[\n0-9a-záéíóúÁÉÍÓÚ ,.'-]+$/i;
+	var re = /^[\n0-9a-záéíóúÁÉÍÓÚñÑ ,.'-]+$/i;
 	if (re.test(value)) return true;
 	else return false;
 }
