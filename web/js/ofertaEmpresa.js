@@ -83,17 +83,18 @@ document.getElementById("appbundle_oferta_experienciaMin").onkeyup = function() 
 	node.setAttribute("style", "color: red");
 	node.setAttribute("id", "expInfo");
 
-	if (!checkText(this.value) && errorExp!=true) {
+	if (!checkText(this.value) && this.value!='' && errorExp!=true) {
 		errorExp = true;
 		this.after(node);
 		this.style.borderColor = "red";
 	}
-	else if (checkText(this.value)) {
+	else if (checkText(this.value) || this.value=='') {
 		errorExp = false;
 		if (document.getElementById("expInfo")!=null)
 		document.getElementById("expInfo").remove();
 		this.style.borderColor = "#5cb85c";
 	}
+	if (this.value=='') this.style.borderColor = "#e8ecec";
 	activateSendOfer();
 }
 
@@ -105,17 +106,18 @@ document.getElementById("appbundle_oferta_estudiosMin").onkeyup = function() {
 	node.setAttribute("style", "color: red");
 	node.setAttribute("id", "estMinInfo");
 
-	if (!checkText(this.value) && errorEstMin!=true) {
+	if (!checkText(this.value) && this.value!='' && errorEstMin!=true) {
 		errorEstMin = true;
 		this.after(node);
 		this.style.borderColor = "red";
 	}
-	else if (checkText(this.value)) {
+	else if (checkText(this.value) || this.value=='') {
 		errorEstMin = false;
 		if (document.getElementById("estMinInfo")!=null)
 		document.getElementById("estMinInfo").remove();
 		this.style.borderColor = "#5cb85c";
 	}
+	if (this.value=='') this.style.borderColor = "#e8ecec";
 	activateSendOfer();
 }
 
@@ -127,17 +129,18 @@ document.getElementById("appbundle_oferta_categoria").onkeyup = function() {
 	node.setAttribute("style", "color: red");
 	node.setAttribute("id", "catInfo");
 
-	if (!checkText(this.value) && errorCat!=true) {
+	if (!checkText(this.value) && this.value!='' && errorCat!=true) {
 		errorCat = true;
 		this.after(node);
 		this.style.borderColor = "red";
 	}
-	else if (checkText(this.value)) {
+	else if (checkText(this.value) || this.value=='') {
 		errorCat = false;
 		if (document.getElementById("catInfo")!=null)
 		document.getElementById("catInfo").remove();
 		this.style.borderColor = "#5cb85c";
 	}
+	if (this.value=='') this.style.borderColor = "#e8ecec";
 	activateSendOfer();
 }
 
@@ -149,17 +152,18 @@ document.getElementById("appbundle_oferta_conocimientos").onkeyup = function() {
 	node.setAttribute("style", "color: red");
 	node.setAttribute("id", "conocInfo");
 
-	if (!checkText(this.value) && errorConoc!=true) {
+	if (!checkText(this.value) && this.value!='' && errorConoc!=true) {
 		errorConoc = true;
 		this.after(node);
 		this.style.borderColor = "red";
 	}
-	else if (checkText(this.value)) {
+	else if (checkText(this.value) || this.value=='') {
 		errorConoc = false;
 		if (document.getElementById("conocInfo")!=null)
 		document.getElementById("conocInfo").remove();
 		this.style.borderColor = "#5cb85c";
 	}
+	if (this.value=='') this.style.borderColor = "#e8ecec";
 	activateSendOfer();
 }
 
@@ -171,17 +175,18 @@ document.getElementById("appbundle_oferta_requisitos").onkeyup = function() {
 	node.setAttribute("style", "color: red");
 	node.setAttribute("id", "reqInfo");
 
-	if (!checkText(this.value) && errorReq!=true) {
+	if (!checkText(this.value) && this.value!='' && errorReq!=true) {
 		errorReq = true;
 		this.after(node);
 		this.style.borderColor = "red";
 	}
-	else if (checkText(this.value)) {
+	else if (checkText(this.value) || this.value=='') {
 		errorReq = false;
 		if (document.getElementById("reqInfo")!=null)
 		document.getElementById("reqInfo").remove();
 		this.style.borderColor = "#5cb85c";
 	}
+	if (this.value=='') this.style.borderColor = "#e8ecec";
 	activateSendOfer();
 }
 
@@ -193,17 +198,18 @@ document.getElementById("appbundle_oferta_industria").onkeyup = function() {
 	node.setAttribute("style", "color: red");
 	node.setAttribute("id", "indInfo");
 
-	if (!checkText(this.value) && errorInd!=true) {
+	if (!checkText(this.value) && this.value!='' && errorInd!=true) {
 		errorInd = true;
 		this.after(node);
 		this.style.borderColor = "red";
 	}
-	else if (checkText(this.value)) {
+	else if (checkText(this.value) || this.value=='') {
 		errorInd = false;
 		if (document.getElementById("indInfo")!=null)
 		document.getElementById("indInfo").remove();
 		this.style.borderColor = "#5cb85c";
 	}
+	if (this.value=='') this.style.borderColor = "#e8ecec";
 	activateSendOfer();
 }
 
@@ -215,17 +221,18 @@ document.getElementById("appbundle_oferta_referencia").onkeyup = function() {
 	node.setAttribute("style", "color: red");
 	node.setAttribute("id", "refInfo");
 
-	if (!checkText(this.value) && errorRef!=true) {
+	if (!checkText(this.value) && this.value!='' && errorRef!=true) {
 		errorRef = true;
 		this.after(node);
 		this.style.borderColor = "red";
 	}
-	else if (checkText(this.value)) {
+	else if (checkText(this.value) || this.value=='') {
 		errorRef = false;
 		if (document.getElementById("refInfo")!=null)
 		document.getElementById("refInfo").remove();
 		this.style.borderColor = "#5cb85c";
 	}
+	if (this.value=='') this.style.borderColor = "#e8ecec";
 	activateSendOfer();
 }
 
@@ -259,17 +266,18 @@ document.getElementById("appbundle_oferta_nivel").onkeyup = function() {
 	node.setAttribute("style", "color: red");
 	node.setAttribute("id", "nivInfo");
 
-	if (!checkText(this.value) && errorNiv!=true) {
+	if (!checkText(this.value) && this.value!='' && errorNiv!=true) {
 		errorNiv = true;
 		this.after(node);
 		this.style.borderColor = "red";
 	}
-	else if (checkText(this.value)) {
+	else if (checkText(this.value) || this.value=='') {
 		errorNiv = false;
 		if (document.getElementById("nivInfo")!=null)
 		document.getElementById("nivInfo").remove();
 		this.style.borderColor = "#5cb85c";
 	}
+	if (this.value=='') this.style.borderColor = "#e8ecec";
 	activateSendOfer();
 }
 
@@ -281,17 +289,18 @@ document.getElementById("appbundle_oferta_nVacantes").onkeyup = function() {
 	node.setAttribute("style", "color: red");
 	node.setAttribute("id", "vacInfo");
 
-	if (!checkSalMin(this.value) && errorVac!=true) {
+	if (!checkSalMin(this.value) && this.value!='' && errorVac!=true) {
 		errorVac = true;
 		this.after(node);
 		this.style.borderColor = "red";
 	}
-	else if (checkSalMin(this.value)) {
+	else if (checkSalMin(this.value) || this.value=='') {
 		errorVac = false;
 		if (document.getElementById("vacInfo")!=null)
 		document.getElementById("vacInfo").remove();
 		this.style.borderColor = "#5cb85c";
 	}
+	if (this.value=='') this.style.borderColor = "#e8ecec";
 	activateSendOfer();
 }
 
@@ -303,17 +312,18 @@ document.getElementById("appbundle_oferta_duracionContrato").onkeyup = function(
 	node.setAttribute("style", "color: red");
 	node.setAttribute("id", "durConInfo");
 
-	if (!checkText(this.value) && errorDurCon!=true) {
+	if (!checkText(this.value) && this.value!='' && errorDurCon!=true) {
 		errorDurCon = true;
 		this.after(node);
 		this.style.borderColor = "red";
 	}
-	else if (checkText(this.value)) {
+	else if (checkText(this.value) || this.value=='') {
 		errorDurCon = false;
 		if (document.getElementById("durConInfo")!=null)
 		document.getElementById("durConInfo").remove();
 		this.style.borderColor = "#5cb85c";
 	}
+	if (this.value=='') this.style.borderColor = "#e8ecec";
 	activateSendOfer();
 }
 
@@ -326,17 +336,17 @@ function activateSendOfer() {
 		checkText(document.getElementById("appbundle_oferta_titulo").value) &&
 		checkSalMin(document.getElementById("appbundle_oferta_salarioInicio").value) &&
 		checkSalMin(document.getElementById("appbundle_oferta_salarioFin").value) &&
-		checkText(document.getElementById("appbundle_oferta_experienciaMin").value) &&
-		checkText(document.getElementById("appbundle_oferta_estudiosMin").value) &&
-		checkText(document.getElementById("appbundle_oferta_categoria").value) &&
-		checkText(document.getElementById("appbundle_oferta_conocimientos").value) &&
-		checkText(document.getElementById("appbundle_oferta_requisitos").value) &&
-		checkText(document.getElementById("appbundle_oferta_industria").value) &&
-		checkText(document.getElementById("appbundle_oferta_referencia").value) &&
-		checkText(document.getElementById("appbundle_oferta_descripcion").value) &&
-		checkText(document.getElementById("appbundle_oferta_nivel").value) &&
-		checkSalMin(document.getElementById("appbundle_oferta_nVacantes").value) &&
-		checkText(document.getElementById("appbundle_oferta_duracionContrato").value)
+		// checkText(document.getElementById("appbundle_oferta_experienciaMin").value) &&
+		// checkText(document.getElementById("appbundle_oferta_estudiosMin").value) &&
+		// checkText(document.getElementById("appbundle_oferta_categoria").value) &&
+		// checkText(document.getElementById("appbundle_oferta_conocimientos").value) &&
+		// checkText(document.getElementById("appbundle_oferta_requisitos").value) &&
+		// checkText(document.getElementById("appbundle_oferta_industria").value) &&
+		// checkText(document.getElementById("appbundle_oferta_referencia").value) &&
+		checkText(document.getElementById("appbundle_oferta_descripcion").value)
+		// checkText(document.getElementById("appbundle_oferta_nivel").value) &&
+		// checkSalMin(document.getElementById("appbundle_oferta_nVacantes").value) &&
+		// checkText(document.getElementById("appbundle_oferta_duracionContrato").value)
 		) {
 		document.getElementById("appbundle_oferta_enviar").removeAttribute("disabled");
 	}

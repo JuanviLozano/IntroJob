@@ -1,5 +1,9 @@
 
-var fechaCreacion = document.getElementById('fechaCreacionJS').innerHTML;
+var fechas = document.getElementsByClassName('fechaCreacionJS');
+
+for (var i=0; i<fechas.length; i++) {
+
+var fechaCreacion = document.getElementsByClassName('fechaCreacionJS')[i].innerHTML;
 
 var currentdate = new Date();
 
@@ -69,13 +73,15 @@ console.log(hoursT);
 if (parseInt(hoursT)!=0) {
 	if (parseInt(hoursT)>24) {
 		var diffDays = Math.round(Math.abs((dateCreation.getTime() - currentdate.getTime())/(24*60*60*1000)));
-		document.getElementById('fechaCreacionJS').innerHTML = "Hace "+parseInt(diffDays)+"d";
+		document.getElementsByClassName('fechaCreacionJS')[i].innerHTML = "Hace "+parseInt(diffDays)+"d";
 	}
 	else {
-		document.getElementById('fechaCreacionJS').innerHTML = "Hace "+parseInt(hoursT)+"h";
+		document.getElementsByClassName('fechaCreacionJS')[i].innerHTML = "Hace "+parseInt(hoursT)+"h";
 	}
 }
 else {
-	document.getElementById('fechaCreacionJS').innerHTML = "Hace menos de una hora";
+	document.getElementsByClassName('fechaCreacionJS')[i].innerHTML = "Hace menos de una hora";
+}
+
 }
 
