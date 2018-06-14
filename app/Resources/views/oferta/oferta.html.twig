@@ -1,0 +1,137 @@
+{% extends 'plantillas/plantilla.html.twig' %}
+
+{% block contenido %}
+    <section class="overlape">
+        <div class="block no-padding">
+            <div data-velocity="-.1" style="background: repeat scroll 50% 422.28px transparent;" class="parallax scrolly-invisible no-parallax"></div><!-- PARALLAX BACKGROUND IMAGE -->
+            <div class="container fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="inner-header">
+                            <h3>{{ ofertas.titulo }}</h3>
+                            <div class="job-statistic">
+                                <span>{{ ofertas.horario }}</span>
+                                <p><i class="la la-map-marker"></i> {{ ofertas.provincia }}</p>
+                                <p id="fechaCreacionJS"><i class="la la-calendar-o"></i>{{ ofertas.fechaCreacion }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="block">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 column">
+                        <div class="job-single-sec">
+                            <div class="job-single-head">
+                                <div class="job-thumb"> <img src="{{ asset('img_empresa/') }}{{ empresa.imagen }}" alt="" /> </div>
+                                <div class="job-head-info">
+                                    <h4>{{ empresa.nombre }}</h4>
+                                    <span>{{ empresa.direccion }}</span>
+                                    {% if empresa.web != null %}
+                                    <p><i class="la la-unlink"></i> {{ empresa.web }}</p>
+                                    {% endif %}
+                                    <p><i class="la la-phone"></i> {{ empresa.telefono }}</p>
+                                    <p><i class="la la-envelope-o"></i> {{ empresa.email }}</p>
+                                </div>
+                            </div><!-- Job Head -->
+                            <div class="job-details">
+                                <h3>Descripción</h3>
+                                <p>{{ ofertas.descripcion }}</p>
+                                {% if ofertas.requisitos != null %}
+                                <h3>Requisitos</h3>
+                                <ul>
+                                    <p>{{ ofertas.requisitos }}</p>
+                                </ul>
+                                {% endif %}
+                                {% if ofertas.conocimientos != null %}
+                                <h3>Conocimientos</h3>
+                                <ul>
+                                    <p>{{ ofertas.conocimientos }}</p>
+                                </ul>
+                                {% endif %}
+                            </div>
+                            <div class="share-bar">
+                                <span>Encuentranos en: </span>
+                                {% if empresa.facebook != null %}
+                                    <a href="{{ empresa.facebook }}" title="" class="share-fb"><i class="fa fa-facebook"></i></a>
+                                {% endif %}
+                                {% if empresa.twitter != null %}
+                                    <a href="{{ empresa.twitter }}" title="" class="share-twitter"><i class="fa fa-twitter"></i></a>
+                                {% endif %}
+                                {% if empresa.google != null %}
+                                    <a href="{{ empresa.google }}" title="" class="share-google"><i class="fa fa-google"></i></a>
+                                {% endif %}
+                                {% if empresa.linkedin != null %}
+                                    <a href="{{ empresa.linkedin }}" title="" class="share-fb"><i class="fa fa-linkedin"></i></a>
+                                {% endif %}
+                            </div>
+                            <div class="recent-jobs">
+                                <h3>Trabajos recientes</h3>
+                                <div class="job-list-modern">
+                                    <div class="job-listings-sec no-border">
+                                        {% for trabajo in trabajos %}
+                                            {% set empresa = trabajo.empresa %}
+                                            <div class="job-listing wtabs">
+                                                <div class="job-title-sec">
+                                                    <div class="c-logo"> <img src="{{ asset('img_empresa/') }}{{ empresa.imagen }}" alt="" class="img-profile-98-65"/> </div>
+                                                    <h3><a href="{{ path('oferta', {titulo:trabajo.titulo}) }}" title="">{{ trabajo.titulo }}</a></h3>
+                                                    <span>{{ trabajo.categoria }}</span>
+                                                    <div class="job-lctn"><i class="la la-map-marker"></i>{{ empresa.provincias }}</div>
+                                                </div>
+                                                <div class="job-style-bx">
+                                                    {% if trabajo.horario == 'Jornada parcial' %}
+                                                        <span class="job-is ft">{{ trabajo.horario }}</span>
+                                                    {% else %}
+                                                        <span class="job-is pt">{{ trabajo.horario }}</span>
+                                                    {% endif %}
+                                                    <span class="fav-job"><i class="la la-heart-o"></i></span>
+                                                    <i id="fechaCreacionJS">{{ trabajo.fechaCreacion }}</i>
+                                                </div>
+                                            </div>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 column">
+                        <a class="apply-thisjob" href="#" title=""><i class="la la-paper-plane"></i>Solicitar trabajo</a>
+                        <div class="job-overview">
+                            <h3>Descripción general del trabajo</h3>
+                            <ul>
+                                {% if ofertas.tipoPago != 'No definido' %}
+                                    <li><i class="la la-money"></i><h3>Salario ofrecido</h3><span>€{{ ofertas.salarioInicio }} - €{{ ofertas.salarioFin }}</span></li>
+                                {% else %}
+                                    <li><i class="la la-money"></i><h3>Salario ofrecido</h3><span>No especificado</span></li>
+                                {% endif %}
+                                {% if ofertas.estudiosMin != null %}
+                                    <li><i class="la la-thumb-tack"></i><h3>Estudios mínimos</h3><span>{{ ofertas.estudiosMin }}</span></li>
+                                {% else %}
+                                    <li><i class="la la-thumb-tack"></i><h3>Estudios mínimos</h3><span>No especificado</span></li>
+                                {% endif %}
+                                {% if ofertas.industria != null %}
+                                    <li><i class="la la-puzzle-piece"></i><h3>Industria</h3><span>{{ ofertas.industria }}</span></li>
+                                {% else %}
+                                    <li><i class="la la-puzzle-piece"></i><h3>Industria</h3><span>No especificado</span></li>
+                                {% endif %}
+                                {% if ofertas.experienciaMin != null %}
+                                    <li><i class="la la-shield"></i><h3>Experiencia</h3><span>{{ ofertas.experienciaMin }}</span></li>
+                                {% else %}
+                                    <li><i class="la la-shield"></i><h3>Experiencia</h3><span>No especificado</span></li>
+                                {% endif %}
+                            </ul>
+                        </div><!-- Job Overview -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+{% endblock %}

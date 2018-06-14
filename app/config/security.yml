@@ -21,7 +21,7 @@ security:
             security: false
 
         usuarios:
-            pattern: ^/(usuario|index|list_trabajos|como_funcionamos|nosotros)
+            pattern: ^/(usuario|index|list_trabajos|como_funcionamos|nosotros|oferta)
             anonymous: ~
             provider: db_provider1
             form_login:
@@ -33,7 +33,7 @@ security:
                 path:   /usuario/logout
                 target: /usuario/login
         empresa:
-            pattern: ^/(empresa|index|list_trabajos|como_funcionamos|nosotros)
+            pattern: ^/(empresa|index|list_trabajos|como_funcionamos|nosotros|oferta)
             anonymous: ~
             provider: db_provider2
             form_login:

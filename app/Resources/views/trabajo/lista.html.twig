@@ -4,7 +4,7 @@
 	<section class="overlape">
 		<section class="overlape">
 		<div class="block no-padding">
-			<div data-velocity="-.1" style="background: url(http://placehold.it/1600x800) repeat scroll 50% 422.28px transparent;" class="parallax scrolly-invisible no-parallax"></div><!-- PARALLAX BACKGROUND IMAGE -->
+			<div data-velocity="-.1" style="background: repeat scroll 50% 422.28px transparent;" class="parallax scrolly-invisible no-parallax"></div><!-- PARALLAX BACKGROUND IMAGE -->
 			<div class="container fluid">
 				<div class="row">
 					<div class="col-lg-12">
@@ -200,7 +200,7 @@
 									<div class="job-listing wtabs">
 										<div class="job-title-sec">
 											<div class="c-logo"> <img src="{{ asset('img_empresa/') }}{{ empresa.imagen }}" alt="" class="img-profile-98-65"/> </div>
-											<h3><a href="#" title="">{{ trabajo.titulo }}</a></h3>
+											<h3><a href="{{ path('oferta', {titulo:trabajo.titulo}) }}" title="">{{ trabajo.titulo }}</a></h3>
 											<span>{{ trabajo.categoria }}</span>
 											<div class="job-lctn"><i class="la la-map-marker"></i>{{ empresa.provincias }}</div>
 										</div>
@@ -211,7 +211,7 @@
 												<span class="job-is pt">{{ trabajo.horario }}</span>
 											{% endif %}
 											<span class="fav-job"><i class="la la-heart-o"></i></span>
-											<i id="tiempo">{{ trabajo.fechaCreacion }}</i>
+											<i id="fechaCreacionJS">{{ trabajo.fechaCreacion }}</i>
 										</div>
 									</div>
                                 {% endfor %}
