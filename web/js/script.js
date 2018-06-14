@@ -313,6 +313,7 @@ $(document).on('ready',function(){
         $('#educacion').hide();
         $('#informacion').hide();
     });
+
 });
 
 

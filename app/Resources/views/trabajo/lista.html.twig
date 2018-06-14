@@ -192,8 +192,8 @@
 					 			</div>
 					 			<h5>98 Jobs & Vacancies</h5>
 					 		</div>
-						 </div><!-- MOdern Job LIst -->
-						 <div class="job-list-modern">
+					 	</div><!-- MOdern Job LIst -->
+					 	<div class="job-list-modern">
 						 	<div class="job-listings-sec no-border">
                                 {% for trabajo in pagination %}
 									{% set empresa = trabajo.empresa %}
@@ -211,26 +211,16 @@
 												<span class="job-is pt">{{ trabajo.horario }}</span>
 											{% endif %}
 											<span class="fav-job"><i class="la la-heart-o"></i></span>
-											<i>5 months ago</i>
+											<i id="tiempo">{{ trabajo.fechaCreacion }}</i>
 										</div>
 									</div>
                                 {% endfor %}
-							<div class="pagination">
-								<ul>
-                                    {{ knp_pagination_render(pagination) }}
-									<li class="prev"><a href=""><i class="la la-long-arrow-left"></i> Prev</a></li>
-									<li><a href="">1</a></li>
-									<li class="active"><a href="">2</a></li>
-									<li><a href="">3</a></li>
-									<li><span class="delimeter">...</span></li>
-									<li><a href="">14</a></li>
-									<li class="next"><a href="">Next <i class="la la-long-arrow-right"></i></a></li>
-								</ul>
-							</div><!-- Pagination -->
-						 </div>
-					 </div>
-				 </div>
-			</div>
+								{{ knp_pagination_render(pagination) }}
+					 		</div>
+				 		</div>
+				 	</div>
+			 	</div>
+		  	</div>
 		</div>
 	</section>
 

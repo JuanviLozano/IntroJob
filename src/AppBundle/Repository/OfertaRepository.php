@@ -42,4 +42,13 @@ class OfertaRepository extends \Doctrine\ORM\EntityRepository
 
         return $result->getResult();
     }
+
+    public function tiempo()
+    {
+        $result = $this->getEntityManager()
+            ->createQuery('SELECT o.fechaCreacion AS tiempo
+                                FROM AppBundle:Oferta o');
+
+        return $result->getResult();
+    }
 }
