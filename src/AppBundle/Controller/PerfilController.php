@@ -8,7 +8,6 @@ use AppBundle\Entity\Usu_educacion;
 use AppBundle\Entity\Usu_exp_laboral;
 use AppBundle\Entity\Usu_idioma;
 use AppBundle\Entity\Usu_informacion;
-use AppBundle\Entity\Usuario;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 use Symfony\Component\HttpFoundation\Request;

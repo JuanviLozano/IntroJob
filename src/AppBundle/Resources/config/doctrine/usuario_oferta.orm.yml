@@ -23,7 +23,7 @@ AppBundle\Entity\usuario_oferta:
                 referencedColumnName: id
         usuario:
             targetEntity: Usuario
-            inversedBy: usuOferta
+            inversedBy: usuOfertas
             joinColumn:
                 name: id_usuario
                 referencedColumnName: id

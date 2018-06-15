@@ -117,6 +117,24 @@
 							<li>
 								<a href="{{ path('list') }}" title="Busqueda de empleos">Buscador de empleo</a>
 							</li>
+                        {% elseif is_granted('ROLE_EMPRESA') %}
+							<form class="res-search">
+								<input type="text" placeholder="Job title, keywords or company name" />
+								<button type="submit"><i class="la la-search"></i></button>
+							</form>
+							<div class="responsivemenu">
+								<ul>
+									<li class="menu-item-has-children">
+										<a title="Inicio">Inicio</a>
+										<ul>
+											<li><a href="{{ path('index') }}" title="Página principal">Página principal</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="{{ path('list') }}" title="Busqueda de empleos">Buscador de empleo</a>
+									</li>
+								</ul>
+							</div>
                         {% else %}
 							<li class="menu-item-has-children">
 								<a title="Inicio">Inicio</a>

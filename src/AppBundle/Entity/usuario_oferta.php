@@ -8,25 +8,59 @@ namespace AppBundle\Entity;
 class usuario_oferta
 {
     /**
-     * @var int
+     * @var integer
      */
     private $id;
 
-
     /**
-     * Get id
-     *
-     * @return int
+     * @var \DateTime
      */
-    public function getId()
-    {
-        return $this->id;
-    }
+    private $solicitud;
+
     /**
      * @var \AppBundle\Entity\Oferta
      */
     private $oferta;
 
+    /**
+     * @var \AppBundle\Entity\Usuario
+     */
+    private $usuario;
+
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set solicitud
+     *
+     * @param \DateTime $solicitud
+     *
+     * @return usuario_oferta
+     */
+    public function setSolicitud($solicitud)
+    {
+        $this->solicitud = $solicitud;
+
+        return $this;
+    }
+
+    /**
+     * Get solicitud
+     *
+     * @return \DateTime
+     */
+    public function getSolicitud()
+    {
+        return $this->solicitud;
+    }
 
     /**
      * Set oferta
@@ -51,11 +85,6 @@ class usuario_oferta
     {
         return $this->oferta;
     }
-    /**
-     * @var \AppBundle\Entity\Usuario
-     */
-    private $usuario;
-
 
     /**
      * Set usuario
@@ -79,34 +108,5 @@ class usuario_oferta
     public function getUsuario()
     {
         return $this->usuario;
-    }
-    /**
-     * @var \DateTime
-     */
-    private $solicitud;
-
-
-    /**
-     * Set solicitud
-     *
-     * @param \DateTime $solicitud
-     *
-     * @return usuario_oferta
-     */
-    public function setSolicitud($solicitud)
-    {
-        $this->solicitud = $solicitud;
-
-        return $this;
-    }
-
-    /**
-     * Get solicitud
-     *
-     * @return \DateTime
-     */
-    public function getSolicitud()
-    {
-        return $this->solicitud;
     }
 }

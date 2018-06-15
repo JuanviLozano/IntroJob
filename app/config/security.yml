@@ -17,11 +17,11 @@ security:
 
     firewalls:
         dev:
-            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            pattern: ^\/(_(profiler|wdt)|css|images|js)/
             security: false
 
         usuarios:
-            pattern: ^/(usuario|index|list_trabajos|como_funcionamos|nosotros|oferta)
+            pattern: ^\/(usuario|index|list_trabajos|como_funcionamos|nosotros|oferta\/)
             anonymous: ~
             provider: db_provider1
             form_login:
@@ -33,7 +33,7 @@ security:
                 path:   /usuario/logout
                 target: /usuario/login
         empresa:
-            pattern: ^/(empresa|index|list_trabajos|como_funcionamos|nosotros|oferta)
+            pattern: ^\/(empresa|index|list_trabajos|como_funcionamos|nosotros|oferta\/)
             anonymous: ~
             provider: db_provider2
             form_login:
@@ -47,10 +47,6 @@ security:
         public:
             pattern: /.*
             security: false
-
-    role_hierarchy:
-        ROLE_USER: ROLE_USER
-        ROLE_EMPRESA: ROLE_EMPRESA
     access_control:
        - { path: ^/usuario/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
        - { path: ^/usuario/register, roles: IS_AUTHENTICATED_ANONYMOUSLY }
@@ -58,5 +54,7 @@ security:
        - { path: ^/empresa/registro, roles: IS_AUTHENTICATED_ANONYMOUSLY }
        - { path: ^/usuario/, roles: ROLE_USER }
        - { path: ^/empresa/, roles: ROLE_EMPRESA }
+
+
 
 

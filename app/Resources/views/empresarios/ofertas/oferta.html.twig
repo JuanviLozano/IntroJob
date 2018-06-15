@@ -1,4 +1,4 @@
-{% extends 'plantillas/plantilla.html.twig' %}
+{% extends 'empresarios/plantillas/plantilla.html.twig' %}
 
 {% block contenido %}
     <section class="overlape">
@@ -33,7 +33,7 @@
                                     <h4>{{ empresa.nombre }}</h4>
                                     <span>{{ empresa.direccion }}</span>
                                     {% if empresa.web != null %}
-                                    <p><i class="la la-unlink"></i> {{ empresa.web }}</p>
+                                        <p><i class="la la-unlink"></i> {{ empresa.web }}</p>
                                     {% endif %}
                                     <p><i class="la la-phone"></i> {{ empresa.telefono }}</p>
                                     <p><i class="la la-envelope-o"></i> {{ empresa.email }}</p>
@@ -43,16 +43,16 @@
                                 <h3>Descripción</h3>
                                 <p>{{ ofertas.descripcion }}</p>
                                 {% if ofertas.requisitos != null %}
-                                <h3>Requisitos</h3>
-                                <ul>
-                                    <p>{{ ofertas.requisitos }}</p>
-                                </ul>
+                                    <h3>Requisitos</h3>
+                                    <ul>
+                                        <p>{{ ofertas.requisitos }}</p>
+                                    </ul>
                                 {% endif %}
                                 {% if ofertas.conocimientos != null %}
-                                <h3>Conocimientos</h3>
-                                <ul>
-                                    <p>{{ ofertas.conocimientos }}</p>
-                                </ul>
+                                    <h3>Conocimientos</h3>
+                                    <ul>
+                                        <p>{{ ofertas.conocimientos }}</p>
+                                    </ul>
                                 {% endif %}
                                 {% if ofertas.residente != null %}
                                     <h3>Residente</h3>
@@ -163,6 +163,6 @@
         </div>
     </section>
 
-</div>
+    </div>
 
 {% endblock %}

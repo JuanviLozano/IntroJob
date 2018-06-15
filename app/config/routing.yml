@@ -122,6 +122,15 @@ registroEmp:
 ofertasEmp:
     path: /empresa/ofertas
     defaults: { _controller: "AppBundle:OfertasEmpresa:ofertaEmpresa" }
+editEmpresa:
+    path: /empresa/editar
+    defaults: { _controller: "AppBundle:Empresa:editEmpresa"}
+ofertaEmp:
+    path: /empresa/oferta/{titulo}
+    defaults: { _controller: "AppBundle:Ofertas:ofertasEmp"}
+empresa:
+    path: /empresa/tu_empresa
+    defaults: { _controller: "AppBundle:Empresa:empresa"}
 
 #------------------------ ZONA OFERTA ------------------------
 addOferta:

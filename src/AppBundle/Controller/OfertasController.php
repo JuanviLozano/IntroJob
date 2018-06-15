@@ -26,4 +26,24 @@ class OfertasController extends Controller
             'trabajos' => $trabajos
         ));
     }
+
+    /* OFERTA EMPRESA */
+    public function ofertasEmpAction(Oferta $oferta)
+    {
+        $id = $oferta->getEmpresa();
+
+        $empresa = $this->getDoctrine()
+            ->getRepository(Empresa::Class)
+            ->find($id);
+
+        $trabajos = $this->getDoctrine()
+            ->getRepository(Oferta::Class)
+            ->findAll();
+
+        return $this->render('empresarios/ofertas/oferta.html.twig', array(
+            'ofertas' => $oferta,
+            'empresa' => $empresa,
+            'trabajos' => $trabajos
+        ));
+    }
 }

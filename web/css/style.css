@@ -7984,6 +7984,21 @@ header.gradientEmpres{
     height: 175px;
     padding: 17px;
 }
+.cst-img {
+    float: none;
+    display: inline-block;
+    border: 2px solid #ffffff;
+
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;
+
+    width: 175px;
+    height: 175px;
+    padding: 17px;
+}
 .cst img {
     float: left;
     width: 100%;

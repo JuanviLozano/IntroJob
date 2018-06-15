@@ -572,6 +572,7 @@ class Usuario implements UserInterface, \Serializable
     {
         return $this->serialize();
     }
+    
     /**
      * @var \Doctrine\Common\Collections\Collection
      */
@@ -746,5 +747,44 @@ class Usuario implements UserInterface, \Serializable
     public function getPaises()
     {
         return $this->paises;
+    }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $usuOfertas;
+
+
+    /**
+     * Add usuOferta
+     *
+     * @param \AppBundle\Entity\usuario_oferta $usuOferta
+     *
+     * @return Usuario
+     */
+    public function addUsuOferta(\AppBundle\Entity\usuario_oferta $usuOferta)
+    {
+        $this->usuOfertas[] = $usuOferta;
+
+        return $this;
+    }
+
+    /**
+     * Remove usuOferta
+     *
+     * @param \AppBundle\Entity\usuario_oferta $usuOferta
+     */
+    public function removeUsuOferta(\AppBundle\Entity\usuario_oferta $usuOferta)
+    {
+        $this->usuOfertas->removeElement($usuOferta);
+    }
+
+    /**
+     * Get usuOfertas
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getUsuOfertas()
+    {
+        return $this->usuOfertas;
     }
 }

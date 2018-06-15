@@ -8,14 +8,8 @@
                     <div class="col-lg-12">
                         <div class="inner2">
                             <div class="inner-title2">
-                                <h3>Registro de empresa</h3>
-                                <span>Registrate para poder subir tus ofertas de empleo</span>
-                            </div>
-                            <div class="page-breacrumbs">
-                                <ul class="breadcrumbs">
-                                    <li><a href="{{ path('loginEmp') }}" title="">Index</a></li>
-                                    <li><a href="{{ path('registroEmp') }}" title="">Register</a></li>
-                                </ul>
+                                <h3>Edicion de la empresa</h3>
+                                <span>Si tiene cuestión no dude en ponerse en contacto con el equipo de HelloWork</span>
                             </div>
                         </div>
                     </div>
@@ -46,13 +40,13 @@
                                         <div class="col-lg-6">
                                             <span class="pf-title">Contraseña</span>
                                             <div class="pf-field">
-                                                {{ form_widget(form.password.first) }}
+                                                {{ form_widget(form.password.first, {required : false}) }}
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
                                             <span class="pf-title">Repetir contraseña</span>
                                             <div class="pf-field">
-                                                {{ form_widget(form.password.second) }}
+                                                {{ form_widget(form.password.second, {required : false}) }}
                                             </div>
                                         </div>
                                         <div class="col-lg-12">
@@ -175,8 +169,8 @@
                                             {{ form_widget(form.enviar) }}
                                         </div>
                                     </div>
+                                    {{ form_end(form) }}
                                 </div>
-                                {{ form_end(form) }}
                             </div>
                         </div>
                     </div>

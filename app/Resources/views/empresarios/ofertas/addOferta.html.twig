@@ -13,15 +13,14 @@
                                     <li class="inner-child">
                                         <a title="Perfil de la compañia"><i class="la la-file-text"></i>Perfil de la compañia</a>
                                         <ul>
-                                            <li><a href="#" title="Mi perfil">Mi perfil</a></li>
-                                            <li><a href="#" title="Redes sociales">Redes sociales</a></li>
-                                            <li><a href="#" title="Contacto">Información de contacto</a></li>
+                                            <li><a href="{{ path('empresa') }}" title="Mi perfil">Mi perfil</a></li>
+                                            <li><a href="{{ path('editEmpresa') }}" title="Editar perfil">Editar perfil</a></li>
                                         </ul>
                                     </li>
                                     <li class="inner-child">
                                         <a title="Administrar ofertas"><i class="la la-briefcase"></i>Administrar ofertas</a>
                                         <ul>
-                                            <li><a href="#" title="Lista de ofertas">Lista de ofertas</a></li>
+                                            <li><a href="{{ path('ofertasEmp') }}" title="Lista de ofertas">Lista de ofertas</a></li>
                                             <li><a href="{{ path('addOferta') }}" title="Añadir oferta">Añadir ofertas</a></li>
                                         </ul>
                                     </li>

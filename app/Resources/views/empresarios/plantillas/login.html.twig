@@ -36,10 +36,10 @@
 			<div class="res-logo"><a href="{{ path('index') }}" title=""><img src="{{ asset('images/introjobs-title.png') }}" alt="" /></a></div>
 			<div class="menu-resaction">
 				<div class="res-openmenu">
-					<img src="images/icon.png" alt="Menu" /> Menu
+					<img src="{{ asset('images/icon.png') }}" alt="Menu" /> Menu
 				</div>
 				<div class="res-closemenu">
-					<img src="images/icon2.png" alt="Cerrar menu" /> Close
+					<img src="{{ asset('images/icon2.png') }}" alt="Cerrar menu" /> Close
 				</div>
 			</div>
 		</div>
@@ -54,7 +54,10 @@
 							</ul>
 						</li>
 						<li>
-							<a href="{{ path('lista') }}" title="Busqueda de empleos">Buscador de empleo</a>
+							<a href="{{ path('list') }}" title="Busqueda de empleos">Buscador de empleo</a>
+						</li>
+						<li>
+							<a href="{{ path('ofertasEmp') }}" title="Tus ofertas">Tus ofertas</a>
 						</li>
 					</ul>
 				</div>
@@ -81,7 +84,7 @@
 							</ul>
 						</li>
 						<li>
-							<a href="{{ path('lista') }}" title="Busqueda de empleos">Buscador de empleo</a>
+							<a href="{{ path('list') }}" title="Busqueda de empleos">Buscador de empleo</a>
 						</li>
 					</ul>
 				</div>
@@ -115,7 +118,10 @@
 								</ul>
 							</li>
 							<li>
-								<a href="{{ path('lista') }}" title="Busqueda de usuarios">Buscador de usuarios</a>
+								<a href="{{ path('list') }}" title="Busqueda de usuarios">Buscador de usuarios</a>
+							</li>
+							<li>
+								<a href="{{ path('ofertasEmp') }}" title="Tus ofertas">Tus ofertas</a>
 							</li>
 						{% else %}
 							<li class="menu-item-has-children">

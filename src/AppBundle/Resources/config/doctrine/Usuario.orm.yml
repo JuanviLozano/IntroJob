@@ -114,6 +114,10 @@ AppBundle\Entity\Usuario:
             targetEntity: Usu_conocimiento
             mappedBy: usuario
 
+        usuOfertas:
+            targetEntity: usuario_oferta
+            mappedBy: usuario
+
     manyToOne:
         provincias:
             targetEntity: Provincias
@@ -127,8 +131,3 @@ AppBundle\Entity\Usuario:
             joinColumn:
                 name: id_paises
                 referencedColumnName: id
-
-    oneToMany:
-        usuOferta:
-            targetEntity: usuario_oferta
-            mappedBy: usuario

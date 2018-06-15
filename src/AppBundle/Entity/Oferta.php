@@ -707,4 +707,3 @@ class Oferta
         return $this->empresa;
     }
 }
-
