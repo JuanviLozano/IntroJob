@@ -68,4 +68,16 @@ class PdfController extends Controller
         );
 
     }
+    public function imageAction()
+    {
+        $html = $this->renderView('pdf/curriculumPdf.html.twig', array(
+            'some'  => $vars
+        ));
+
+        return new Response(
+            $this->get('knp_snappy.image')->getOutputFromHtml($html),
+            'image.jpg'
+        );
+    }
 }
+

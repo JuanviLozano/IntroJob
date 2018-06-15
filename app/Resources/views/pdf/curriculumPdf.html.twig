@@ -8,7 +8,6 @@
     <meta name="description" content="Curriculum Vitae."/>
     <meta charset="UTF-8">
 
-    <link type="text/css" rel="stylesheet" href={{ asset('style.css') }}>
     <link href='http://fonts.googleapis.com/css?family=Rokkitt:400,700|Lato:400,300' rel='stylesheet' type='text/css'>
 
     <!--[if lt IE 9]>
@@ -387,9 +386,12 @@
             padding: 0;
 
         }
-        .negrita{
-            color:black;
-            font-weight:bold;
+        .negrita {
+            color: black;
+            font-weight: bold;
+        }
+        body{
+            background-color: black;
         }
     </style>
 </head>
@@ -400,8 +402,8 @@
 
 <div id="cv" class="instaFade">
     <div class="mainDetails">
-        <div id="headshot" class="quickFade">
-            <img  src="{{ dato.imagen }}" alt="{{ dato.nombre }}{{ dato.apellidos }}" />
+        <div>
+            <img  style="width: 200px; height: 200px;" src="{{ asset('images/chico.jpg') }}" alt="{{ dato.nombre }}{{ dato.apellidos }}" />
         </div>
 
         <div id="name">
@@ -411,7 +413,7 @@
 
         <div id="contactDetails" class="quickFade delayFour">
             <ul>
-                <li><spam class="negrita">Email:</spam> <a href="{{ dato.email }}" target="_blank">{{ dato.email }}</a></li>
+                <li><spam class="negrita">Email:</spam> {{ dato.email }}</li>
                 <li><spam class="negrita">Fecha de Nacimiento:</spam>{{ dato.fechaNacimiento }}</li>
                 <li><spam class="negrita">Dirección:</spam> {{ dato.direccion }}</li>
                 <li><spam class="negrita">Código Postal: </spam>{{ dato.codPostal }}</li>
