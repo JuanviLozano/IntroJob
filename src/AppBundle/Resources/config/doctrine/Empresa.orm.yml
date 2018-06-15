@@ -37,6 +37,30 @@ AppBundle\Entity\Empresa:
             type: integer
         fax:
             type: integer
+            length: 255
+            nullable: true
+        facebook:
+            type: integer
+            length: 255
+            nullable: true
+        google:
+            type: integer
+            length: 255
+            nullable: true
+        twitter:
+            type: integer
+            length: 255
+            nullable: true
+        linkedin:
+            type: integer
+            length: 255
+            nullable: true
+        web:
+            type: integer
+            length: 255
+            nullable: true
+        descripcion:
+            type: text
         imagen:
             type: string
             length: 255

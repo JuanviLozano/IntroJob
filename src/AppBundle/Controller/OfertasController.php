@@ -46,4 +46,6 @@ class OfertasController extends Controller
             'trabajos' => $trabajos
         ));
     }
+
+
 }

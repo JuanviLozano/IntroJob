@@ -139,3 +139,9 @@ addOferta:
 oferta:
     path: /oferta/{titulo}
     defaults: { _controller: "AppBundle:Ofertas:ofertas"}
+editOferta:
+    path: /empresa/oferta/editar/{titulo}
+    defaults: { _controller: "AppBundle:OfertasEmpresa:editOferta"}
+deleteOferta:
+    path: /empresa/oferta/delete/{titulo}
+    defaults: { _controller: "AppBundle:OfertasEmpresa:deleteOferta"}

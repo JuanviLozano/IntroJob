@@ -1,0 +1,170 @@
+{%  extends 'empresarios/plantillas/login.html.twig' %}
+
+{% block contenido %}
+
+    <section>
+        <div class="block no-padding">
+            <div class="container">
+                <div class="row no-gape">
+                    <aside class="col-lg-3 column border-right">
+                        <div class="widget">
+                            <div class="tree_widget-sec">
+                                <ul>
+                                    <li class="inner-child">
+                                        <a title="Perfil de la compañia"><i class="la la-file-text"></i>Perfil de la compañia</a>
+                                        <ul>
+                                            <li><a href="{{ path('empresa') }}" title="Mi perfil">Mi perfil</a></li>
+                                            <li><a href="{{ path('editEmpresa') }}" title="Editar perfil">Editar perfil</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="inner-child">
+                                        <a title="Administrar ofertas"><i class="la la-briefcase"></i>Administrar ofertas</a>
+                                        <ul>
+                                            <li><a href="{{ path('ofertasEmp') }}" title="Lista de ofertas">Lista de ofertas</a></li>
+                                            <li><a href="{{ path('addOferta') }}" title="Añadir oferta">Añadir ofertas</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="{{ path('logoutEmp') }}" title="Cerrar sesion"><i class="la la-unlink"></i>Cerrar sesión</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </aside>
+                    <!-- Contenido -->
+                    <div class="col-lg-9 column" style="margin-bottom: 50px">
+                        <div class="padding-left">
+                            <div class="profile-form-edit">
+                                {{ form_start(form, { 'attr' : {'role':'form'}}) }}
+                                <div id="educacion" class="contact-edit" style="display: none;">
+                                    <div class="row ml-3">
+                                        <div class="col-lg-12">
+                                            <span class="pf-title">Título *</span>
+                                            <div class="pf-field">
+                                                {{ form_widget(form.titulo) }}
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <span class="pf-title">Provincia *</span>
+                                            <div class="pf-field">
+                                                {{ form_widget(form.provincia) }}
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <span class="pf-title">Tipo de pago</span>
+                                            <div class="pf-field">
+                                                {{ form_widget(form.tipoPago) }}
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <span class="pf-title">Salario inicio</span>
+                                            <div class="pf-field">
+                                                {{ form_widget(form.salarioInicio) }}
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <span class="pf-title">Salario fin</span>
+                                            <div class="pf-field">
+                                                {{ form_widget(form.salarioFin) }}
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <span class="pf-title">Experiencia mínima</span>
+                                            <div class="pf-field">
+                                                {{ form_widget(form.experienciaMin) }}
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <span class="pf-title">Estudio mínimo</span>
+                                            <div class="pf-field">
+                                                {{ form_widget(form.estudiosMin) }}
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <span class="pf-title">Residente</span>
+                                            <div class="pf-field">
+                                                {{ form_widget(form.residente) }}
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <span class="pf-title">Categoría</span>
+                                            <div class="pf-field">
+                                                {{ form_widget(form.categoria) }}
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <span class="pf-title">Conocimientos</span>
+                                            <div class="pf-field">
+                                                {{ form_widget(form.conocimientos) }}
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <span class="pf-title">Requisitos</span>
+                                            <div class="pf-field">
+                                                {{ form_widget(form.requisitos) }}
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <span class="pf-title">Industria</span>
+                                            <div class="pf-field">
+                                                {{ form_widget(form.industria) }}
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <span class="pf-title">Referencia</span>
+                                            <div class="pf-field">
+                                                {{ form_widget(form.referencia) }}
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <span class="pf-title">Descripcion *</span>
+                                            <div class="pf-field">
+                                                {{ form_widget(form.descripcion) }}
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <span class="pf-title">Nivel</span>
+                                            <div class="pf-field">
+                                                {{ form_widget(form.nivel) }}
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <span class="pf-title">Número de vacantes</span>
+                                            <div class="pf-field">
+                                                {{ form_widget(form.nVacantes) }}
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <span class="pf-title">Duración del contrato</span>
+                                            <div class="pf-field">
+                                                {{ form_widget(form.duracionContrato) }}
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <span class="pf-title">Personal al cargo</span>
+                                            <div class="pf-field">
+                                                {{ form_widget(form.personalCargo) }}
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <span class="pf-title">Tipo de jornada</span>
+                                            <div class="pf-field">
+                                                {{ form_widget(form.horario) }}
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <span class="pf-title">Estado *</span>
+                                            <div class="pf-field">
+                                                {{ form_widget(form.estado) }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {{ form_end(form) }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

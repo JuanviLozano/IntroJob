@@ -42,7 +42,7 @@ class OfertasEmpresaController extends Controller
         if($form->isSubmitted() && $form->isValid()) {
 
             $oferta->setEmpresa($id);
-            $oferta->setFechaCreacion(date('d-m-Y h:i:s'));
+            $oferta->setFechaCreacion(date('d-m-Y H:i:s'));
             $em = $this->getDoctrine()->getManager();
             $em->persist($oferta);
             $em->flush();
@@ -57,13 +57,41 @@ class OfertasEmpresaController extends Controller
         ));
     }
 
-    public function editOfertaAction()
+    public function editOfertaAction(Request $request, Oferta $oferta)
     {
+        $form = $this->createForm(OfertaType::Class, $oferta);
 
+        $form->handleRequest($request);
+        if($form->isSubmitted() && $form->isValid()) {
+
+            if($oferta->getEmpresa() != $this->getUser()) {
+                throw new AccessDeniedHttpException();
+            }
+
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($oferta);
+            $em->flush();
+
+            $this->addFlash('mensaje', 'La oferta se ha editado correctamente!');
+
+            return $this->redirectToRoute('ofertasEmp');
+        }
+
+        return $this->render('empresarios/ofertas/editOferta.html.twig', array(
+            'form' => $form->createView()
+        ));
     }
 
-    public function deleteOfertaAction()
+    public function deleteOfertaAction(Oferta $oferta)
     {
+        if($oferta->getEmpresa() != $this->getUser()) {
+            throw new AccessDeniedHttpException();
+        }
 
+        $em = $this->getDoctrine()->getManager();
+        $em->remove($oferta);
+        $em->flush();
+
+        return $this->redirectToRoute('ofertasEmp');
     }
 }

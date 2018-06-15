@@ -36,7 +36,6 @@
                                     {% for num in cuantas %}
                                         <span><i class="la la-clock-o"></i><strong>{{ num.num }}</strong> Trabajos publicados</span>
                                     {% endfor %}
-                                    <span><i class="la la-file-text"></i><strong>20</strong> Application</span>
                                     {% for activ in activos %}
                                         <span><i class="la la-users"></i><strong>{{ activ.activo }}</strong> Trabajos activos</span>
                                     {% endfor %}
@@ -76,8 +75,8 @@
                                             <td>
                                                 <ul class="action_job">
                                                     <li><span>Ver oferta</span><a href="{{ path('ofertaEmp', {titulo:oferta.titulo}) }}" title="Ver oferta"><i class="la la-eye"></i></a></li>
-                                                    <li><span>Editar</span><a href="#" title="Editar"><i class="la la-pencil"></i></a></li>
-                                                    <li><span>Borrar</span><a href="#" title="Borrar"><i class="la la-trash-o"></i></a></li>
+                                                    <li><span>Editar</span><a href="{{ path('editOferta', {titulo:oferta.titulo}) }}" title="Editar"><i class="la la-pencil"></i></a></li>
+                                                    <li><span>Borrar</span><a href="{{ path('deleteOferta', {titulo:oferta.titulo}) }}" title="Borrar"><i class="la la-trash-o"></i></a></li>
                                                 </ul>
                                             </td>
                                         </tr>
