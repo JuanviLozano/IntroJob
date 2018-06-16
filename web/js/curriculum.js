@@ -29,6 +29,10 @@ document.getElementById("appbundle_usu_informacion_expectativaSalario").onkeyup 
 		if (document.getElementById("salMinInfo")!=null)
 		document.getElementById("salMinInfo").remove();
 		this.style.borderColor = "#5cb85c";
+
+		if (document.getElementById("salMaxInfo")!=null)
+		document.getElementById("salMaxInfo").remove();
+		document.getElementById("appbundle_usu_informacion_expectativaSalarioFinal").style.borderColor = "#5cb85c";
 	}
 	activateNext();
 }
@@ -54,6 +58,10 @@ document.getElementById("appbundle_usu_informacion_expectativaSalarioFinal").onk
 		if (document.getElementById("salMaxInfo")!=null)
 		document.getElementById("salMaxInfo").remove();
 		this.style.borderColor = "#5cb85c";
+
+		if (document.getElementById("salMinInfo")!=null)
+		document.getElementById("salMinInfo").remove();
+		document.getElementById("appbundle_usu_informacion_expectativaSalario").style.borderColor = "#5cb85c";
 	}
 	activateNext();
 }
@@ -326,10 +334,10 @@ function activateNextEst() {
 function checkFechaRangoEstudios(inicio, fin) {
 	var regex = /(\d+)/g;
 	if (inicio!='' && fin!='') {
-	    var mI = inicio.match(regex)[0];
-	    var aI = inicio.match(regex)[1];
-    	var mF = fin.match(regex)[0];
-    	var aF = fin.match(regex)[1];
+	    var mI = parseInt(inicio.match(regex)[0]);
+	    var aI = parseInt(inicio.match(regex)[1]);
+    	var mF = parseInt(fin.match(regex)[0]);
+    	var aF = parseInt(fin.match(regex)[1]);
     	if (mI>=1 && mI<=12 && mF>=1 && mF<=12 && aI>1900 && aI<2100 && aF>1900 && aF<2100) {
 		    if (aI==aF) {
 		    	if (mI<mF) {

@@ -111,12 +111,9 @@ function activateNext() {
 }
 
 function checkNombreUsu(value) {
-	if (value.length<6) {
-		return false;
-	}
-	else {
-		return true;
-	}
+	var re = /^[0-9a-z_]+$/i;
+	if (re.test(value) && value<7) return true;
+	else return false;
 }
 
 function checkPass(value) {
