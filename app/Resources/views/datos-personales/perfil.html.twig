@@ -58,7 +58,7 @@
                                                     </button>
                                                 </div>
                                             {% endfor %}
-                                            <div class="border-title"><h3>Información personal</h3><a href="{{ path('addInformacion') }}" title="Añadir información" id="about"><i class="la la-plus"></i> Añadir información</a>
+                                            <div class="border-title"><h3>Información personal</h3><a href="{{ path('addInformacion') }}" title="Añadir información" id="about"><i class="la la-plus"></i></a>
                                                 {% for informacion in informaciones %}
                                                 <ul class="action_job">
                                                     <li><span>Editar</span><a href="{{ path('editInformacion', {id:informacion.id}) }}" title=""><i class="la la-pencil"></i></a></li>
@@ -69,7 +69,7 @@
                                                 </div>
                                             </div>
                                             {% endfor %}
-                                            <div class="border-title"><h3>Estudios</h3><a href="{{ path('addEducacion') }}" title="Añadir nuevo estudio" id="education"><i class="la la-plus"></i> Añadir estudio</a></div>
+                                            <div class="border-title"><h3>Estudios</h3><a href="{{ path('addEducacion') }}" title="Añadir nuevo estudio" id="education"><i class="la la-plus"></i></a></div>
                                             <div class="edu-history-sec">
                                                 {% for educacion in educaciones %}
                                                 <div class="edu-history">
@@ -87,7 +87,7 @@
                                                 </div>
                                                 {% endfor %}
                                             </div>
-                                            <div class="border-title"><h3>Experiencia laboral</h3><a href="{{ path('addExperiencia') }}" title="Añadir nueva experiencia" id="experience"><i class="la la-plus"></i> Añadir experiencia</a></div>
+                                            <div class="border-title"><h3>Experiencia laboral</h3><a href="{{ path('addExperiencia') }}" title="Añadir nueva experiencia" id="experience"><i class="la la-plus"></i></a></div>
                                             <div class="edu-history-sec">
                                                 {% for experiencia in experiencias %}
                                                 <div class="edu-history style2">
@@ -104,7 +104,7 @@
                                                 </div>
                                                 {% endfor %}
                                             </div>
-                                            <div class="border-title"><h3>Idiomas</h3><a href="{{ path('addIdioma') }}" title="Añadir idioma" id="skills"><i class="la la-plus"></i> Añadir idioma</a></div>
+                                            <div class="border-title"><h3>Idiomas</h3><a href="{{ path('addIdioma') }}" title="Añadir idioma" id="skills"><i class="la la-plus"></i></a></div>
                                             <div class="edu-history-sec">
                                                 {% for idioma in idiomas %}
                                                 <div class="edu-history style2">

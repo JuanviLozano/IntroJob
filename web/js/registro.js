@@ -112,7 +112,7 @@ function activateNext() {
 
 function checkNombreUsu(value) {
 	var re = /^[0-9a-z_]+$/i;
-	if (re.test(value) && value<7) return true;
+	if (re.test(value) && value.length>5) return true;
 	else return false;
 }
 
