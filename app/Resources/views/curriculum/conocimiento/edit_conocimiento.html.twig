@@ -17,18 +17,17 @@
         </div>
     </section>
 
-    {% for flashMessage in app.session.flashbag.get('mensaje') %}
-        <div class="alert alert-success" role="alert">
-            <div class="container">{{ flashMessage }}</div>
-        </div>
-    {% endfor %}
-
     <section>
         <div class="block no-padding">
             <div class="container">
                 <div style="display: flex;justify-content: flex-end;">
                     <a href="{{ path('perfil') }}" id="volverPerfil">Volver</a>
                 </div>
+                {% for flashMessage in app.session.flashbag.get('mensaje') %}
+                    <div class="alert alert-success" role="alert">
+                        <div class="container">{{ flashMessage }}</div>
+                    </div>
+                {% endfor %}
                 <div class="row no-gape justify-content-center">
                     <div class="col-lg-9 column" style="margin-bottom: 50px">
                         <div class="padding-left">

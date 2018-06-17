@@ -6,6 +6,7 @@ use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
@@ -110,7 +111,7 @@ class EmpresaType extends AbstractType
                 'attr' => array('placeholder' => 'Sitio web'),
                 'required' => false
             ))
-            ->add('descripcion',TextType::Class, array(
+            ->add('descripcion',TextareaType::Class, array(
                 'label' => 'Descripción',
                 'attr' => array('placeholder' => 'Una descripción breve de la empresa...'),
                 'required' => false

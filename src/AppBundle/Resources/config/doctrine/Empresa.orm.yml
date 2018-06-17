@@ -40,27 +40,27 @@ AppBundle\Entity\Empresa:
             length: 255
             nullable: true
         facebook:
-            type: integer
+            type: string
             length: 255
             nullable: true
         google:
-            type: integer
+            type: string
             length: 255
             nullable: true
         twitter:
-            type: integer
+            type: string
             length: 255
             nullable: true
         linkedin:
-            type: integer
+            type: string
             length: 255
             nullable: true
         web:
-            type: integer
+            type: string
             length: 255
             nullable: true
         descripcion:
-            type: text
+            type: string
         imagen:
             type: string
             length: 255

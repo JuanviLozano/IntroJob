@@ -36,9 +36,28 @@ class ConocimientoController extends Controller
         ));
     }
 
-    public function editConocimientoAction()
+    public function editConocimientoAction(Request $request, Usu_conocimiento $conocimiento)
     {
-        return $this->render('curriculum/conocimiento/edit_curriculum.html.twig');
+        $form = $this->createForm(Usu_conocimientoType::Class, $conocimiento);
+
+        if($conocimiento->getUsuario() != $this->getUser()) {
+            throw new AccessDeniedHttpException();
+        }
+
+        $form->handleRequest($request);
+        if($form->isValid() && $form->isSubmitted()) {
+
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($conocimiento);
+            $em->flush();
+
+            $this->addFlash('mensaje', 'Conocimiento editado correctamente!');
+
+            return $this->redirectToRoute('perfil');
+        }
+        return $this->render('curriculum/conocimiento/edit_conocimiento.html.twig', array(
+            'form' => $form->createView()
+        ));
     }
 
     public function deleteConocimientoAction()

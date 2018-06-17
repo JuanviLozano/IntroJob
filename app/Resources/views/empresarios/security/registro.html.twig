@@ -38,31 +38,31 @@
                                             <h3>Información de la empresa</h3>
                                         </div>
                                         <div class="col-lg-12">
-                                            <span class="pf-title">Correo electrónico</span>
+                                            <span class="pf-title">Correo electrónico *</span>
                                             <div class="pf-field">
                                                 {{ form_widget(form.email) }}
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
-                                            <span class="pf-title">Contraseña</span>
+                                            <span class="pf-title">Contraseña *</span>
                                             <div class="pf-field">
                                                 {{ form_widget(form.password.first) }}
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
-                                            <span class="pf-title">Repetir contraseña</span>
+                                            <span class="pf-title">Repetir contraseña *</span>
                                             <div class="pf-field">
                                                 {{ form_widget(form.password.second) }}
                                             </div>
                                         </div>
                                         <div class="col-lg-12">
-                                            <span class="pf-title">Nombre de la empresa</span>
+                                            <span class="pf-title">Nombre de la empresa *</span>
                                             <div class="pf-field">
                                                 {{ form_widget(form.nombre) }}
                                             </div>
                                         </div>
                                         <div class="col-lg-12">
-                                            <span class="pf-title">Alias de la empresa</span>
+                                            <span class="pf-title">Alias de la empresa *</span>
                                             <div class="pf-field">
                                                 {{ form_widget(form.alias) }}
                                             </div>
@@ -83,19 +83,19 @@
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
-                                            <span class="pf-title">Municipio</span>
+                                            <span class="pf-title">Municipio *</span>
                                             <div class="pf-field">
                                                 {{ form_widget(form.municipio) }}
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
-                                            <span class="pf-title">Código postal</span>
+                                            <span class="pf-title">Código postal *</span>
                                             <div class="pf-field">
                                                 {{ form_widget(form.codigoPostal) }}
                                             </div>
                                         </div>
                                         <div class="col-lg-12">
-                                            <span class="pf-title">Dirección</span>
+                                            <span class="pf-title">Dirección *</span>
                                             <div class="pf-field">
                                                 {{ form_widget(form.direccion) }}
                                             </div>
@@ -104,7 +104,7 @@
                                             <h3>Contacto</h3>
                                         </div>
                                         <div class="col-lg-6">
-                                            <span class="pf-title">Telefono</span>
+                                            <span class="pf-title">Telefono *</span>
                                             <div class="pf-field">
                                                 {{ form_widget(form.telefono) }}
                                             </div>
@@ -112,7 +112,7 @@
                                         <div class="col-lg-6">
                                             <span class="pf-title">Fax</span>
                                             <div class="pf-field">
-                                                {{ form_widget(form.fax) }}
+                                                {{ form_widget(form.fax, { required : false }) }}
                                             </div>
                                         </div>
                                         <div class="col-lg-12">
@@ -156,17 +156,18 @@
                                             <h3>Información adicional</h3>
                                         </div>
                                         <div class="col-lg-12">
+                                            <span class="pf-title">Imagen *</span>
                                             <div class="upload-portfolio">
                                                 <div class="uploadbox">
                                                     <label for="appbundle_empresa_imagen" class="custom-file-upload">
-                                                        <i class="la la-cloud-upload"></i> <span>Subir imagen</span>
+                                                        <i class="la la-cloud-upload"></i> <span>Subir imagen <br> Obligatorio</span>
                                                     </label>
                                                     {{ form_widget(form.imagen) }}
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-lg-12">
-                                            <span class="pf-title">Descripción</span>
+                                            <span class="pf-title">Descripción *</span>
                                             <div class="pf-field">
                                                 {{ form_widget(form.descripcion) }}
                                             </div>

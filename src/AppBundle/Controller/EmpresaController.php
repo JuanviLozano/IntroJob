@@ -34,15 +34,14 @@ class EmpresaController extends Controller
         $empresa = $this->getUser();
         $allpassword = $empresa->getPassword();
         $foto_antigua = $empresa->getImagen();
-
         $form = $this->createForm(EmpresaType::Class, $empresa);
-
 
         $form->handleRequest($request);
         if($form->isSubmitted() && $form->isValid()) {
 
             $foto = $form['imagen']->getData();
 
+            $password = $empresa->getPassword();
             if(!empty($password)) {
                 $password = $passwordEncoder->encodePassword($empresa, $empresa->getPassword());
                 $empresa->setPassword($password);
@@ -51,16 +50,17 @@ class EmpresaController extends Controller
                 $empresa->setPassword($allpassword);
             }
 
-            if($foto_antigua != $foto) {
-                unlink('img_empresa/'.$foto_antigua);
-                $empresa->setImagen();
-            }
-            else {
-                $file = $form['imagen']->getData();
-                $ext = $file->guessExtension();
-                $file_name = time().'.'.$ext;
-                $file->move('img_empresa',$file_name);
-                $empresa->setImagen($file_name);
+            if($foto) {
+                if($foto_antigua != $foto) {
+                    unlink('img_empresa/'.$foto_antigua);
+                }
+                else {
+                    $file = $form['imagen']->getData();
+                    $ext = $file->guessExtension();
+                    $file_name = time().'.'.$ext;
+                    $file->move('img_empresa',$file_name);
+                    $empresa->setImagen($file_name);
+                }
             }
 
             $em = $this->getDoctrine()->getManager();
