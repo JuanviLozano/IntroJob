@@ -249,13 +249,13 @@ document.getElementById("appbundle_empresa_descripcion").onkeyup = function() {
 	activateSend();
 }
 
-document.getElementById("appbundle_empresa_imagen").setAttribute("required","required");
-var node = document.createElement("P");
-var textnode = document.createTextNode("*Imagen obligatoria.");
-node.appendChild(textnode);
-node.setAttribute("style", "color: orange");
-node.setAttribute("id","imgReg");
-document.getElementById("appbundle_empresa_imagen").parentNode.parentNode.after(node);
+// document.getElementById("appbundle_empresa_imagen").setAttribute("required","required");
+// var node = document.createElement("P");
+// var textnode = document.createTextNode("*Imagen obligatoria.");
+// node.appendChild(textnode);
+// node.setAttribute("style", "color: orange");
+// node.setAttribute("id","imgReg");
+// document.getElementById("appbundle_empresa_imagen").parentNode.parentNode.after(node);
 
 }
 
