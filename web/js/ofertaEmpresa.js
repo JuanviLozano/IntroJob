@@ -46,6 +46,10 @@ document.getElementById("appbundle_oferta_salarioInicio").onkeyup = function() {
 		if (document.getElementById("salIOfer")!=null)
 		document.getElementById("salIOfer").remove();
 		this.style.borderColor = "#5cb85c";
+
+		if (document.getElementById("salMaxInfo")!=null)
+		document.getElementById("salMaxInfo").remove();
+		document.getElementById("appbundle_oferta_salarioFin").style.borderColor = "#5cb85c";
 	}
 	activateSendOfer();
 }
@@ -71,6 +75,10 @@ document.getElementById("appbundle_oferta_salarioFin").onkeyup = function() {
 		if (document.getElementById("salMaxInfo")!=null)
 		document.getElementById("salMaxInfo").remove();
 		this.style.borderColor = "#5cb85c";
+
+		if (document.getElementById("salIOfer")!=null)
+		document.getElementById("salIOfer").remove();
+		document.getElementById("appbundle_oferta_salarioInicio").style.borderColor = "#5cb85c";
 	}
 	activateSendOfer();
 }
@@ -356,7 +364,7 @@ function activateSendOfer() {
 }
 
 function checkText(value) {
-	var re = /^[0-9a-záéíóúÁÉÍÓÚñÑ ,.;:'-]+$/i;
+	var re = /^[0-9a-záéíóúÁÉÍÓÚñÑ ?¿!¡,.;:'-]+$/i;
 	if (re.test(value)) return true;
 	else return false;
 }

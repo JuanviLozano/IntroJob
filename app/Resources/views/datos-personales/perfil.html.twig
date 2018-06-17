@@ -58,8 +58,7 @@
                                                     </button>
                                                 </div>
                                             {% endfor %}
-                                            <div class="border-title"><h3>Información personal</h3>
-                                                <a href="{{ path('addInformacion') }}" title="Añadir información" id="about"><i class="la la-plus"></i></a>
+                                            <div class="border-title"><h3>Información personal</h3><a href="{{ path('addInformacion') }}" title="Añadir información" id="about"><i class="la la-plus"></i></a>
                                                 {% for informacion in informaciones %}
                                                 <ul class="action_job">
                                                     <li><span>Editar</span><a href="{{ path('editInformacion', {id:informacion.id}) }}" title=""><i class="la la-pencil"></i></a></li>

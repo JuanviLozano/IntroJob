@@ -50,17 +50,19 @@ class EmpresaController extends Controller
                 $empresa->setPassword($allpassword);
             }
 
+
             if($foto) {
                 if($foto_antigua != $foto) {
                     unlink('img_empresa/'.$foto_antigua);
                 }
-                else {
-                    $file = $form['imagen']->getData();
-                    $ext = $file->guessExtension();
-                    $file_name = time().'.'.$ext;
-                    $file->move('img_empresa',$file_name);
-                    $empresa->setImagen($file_name);
-                }
+                $file = $form['imagen']->getData();
+                $ext = $file->guessExtension();
+                $file_name = time().'.'.$ext;
+                $file->move('img_empresa',$file_name);
+                $empresa->setImagen($file_name);
+            }
+            else {
+                $empresa->setImagen($foto_antigua);
             }
 
             $em = $this->getDoctrine()->getManager();

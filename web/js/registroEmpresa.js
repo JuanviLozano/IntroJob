@@ -3,6 +3,8 @@ if ( document.getElementById("appbundle_empresa_enviar")!=null ) {
 
 document.getElementById("appbundle_empresa_enviar").setAttribute("disabled", "disabled");
 
+activateSend();
+
 var errorEmail = false;
 document.getElementById("appbundle_empresa_email").onkeyup = function() {
 	var node = document.createElement("P");
@@ -206,17 +208,17 @@ document.getElementById("appbundle_empresa_telefono").onkeyup = function() {
 var errorWeb = false;
 document.getElementById("appbundle_empresa_web").onkeyup = function() {
 	var node = document.createElement("P");
-	var textnode = document.createTextNode("El campo  Sitio web no puede estar en blanco.");
+	var textnode = document.createTextNode("EJ: example.com");
 	node.appendChild(textnode);
 	node.setAttribute("style", "color: red");
 	node.setAttribute("id", "webReg");
 
-	if (!checkWeb(this.value) && errorWeb!=true) {
+	if (!checkWeb(this.value) && this.value!='' && errorWeb!=true) {
 		errorWeb = true;
 		this.after(node);
 		this.style.borderColor = "red";
 	}
-	else if (checkWeb(this.value)) {
+	else if (checkWeb(this.value) || this.value=='') {
 		errorWeb = false;
 		if (document.getElementById("webReg")!=null)
 		document.getElementById("webReg").remove();
@@ -225,29 +227,79 @@ document.getElementById("appbundle_empresa_web").onkeyup = function() {
 	activateSend();
 }
 
-document.getElementById("appbundle_empresa_imagen").setAttribute("required",
-"required"); var node = document.createElement("P"); var textnode =
-document.createTextNode("*Imagen obligatoria."); node.appendChild(textnode);
-node.setAttribute("style", "color: orange"); node.setAttribute("id",
-"imgReg"); document.getElementById("appbundle_empresa_imagen").parentNode.pare
-ntNode.after(node);
+var errorDesc = false;
+document.getElementById("appbundle_empresa_descripcion").onkeyup = function() {
+	var node = document.createElement("P");
+	var textnode = document.createTextNode("El campo Descripción no puede estar en blanco.");
+	node.appendChild(textnode);
+	node.setAttribute("style", "color: red");
+	node.setAttribute("id", "descReg");
+
+	if (!checkText(this.value) && errorDesc!=true) {
+		errorDesc = true;
+		this.after(node);
+		this.style.borderColor = "red";
+	}
+	else if (checkText(this.value)) {
+		errorDesc = false;
+		if (document.getElementById("descReg")!=null)
+		document.getElementById("descReg").remove();
+		this.style.borderColor = "#5cb85c";
+	}
+	activateSend();
+}
+
+document.getElementById("appbundle_empresa_imagen").setAttribute("required","required");
+var node = document.createElement("P");
+var textnode = document.createTextNode("*Imagen obligatoria.");
+node.appendChild(textnode);
+node.setAttribute("style", "color: orange");
+node.setAttribute("id","imgReg");
+document.getElementById("appbundle_empresa_imagen").parentNode.parentNode.after(node);
 
 }
 
 function activateSend() {
 	if (
 		checkEmail(document.getElementById("appbundle_empresa_email").value) &&
-		checkPass(document.getElementById("appbundle_empresa_password_first").value) &&
-		checkPass(document.getElementById("appbundle_empresa_password_second").value) &&
+		//checkPass(document.getElementById("appbundle_empresa_password_first").value) &&
+		//checkPass(document.getElementById("appbundle_empresa_password_second").value) &&
 		checkNombre(document.getElementById("appbundle_empresa_nombre").value) &&
 		checkNombre(document.getElementById("appbundle_empresa_alias").value) &&
 		checkNombre(document.getElementById("appbundle_empresa_municipio").value) &&
 		checkCodPostal(document.getElementById("appbundle_empresa_codigoPostal").value) &&
 		checkDireccion(document.getElementById("appbundle_empresa_direccion").value) &&
 		checkTelefono(document.getElementById("appbundle_empresa_telefono").value) &&
-		checkWeb(document.getElementById("appbundle_empresa_web").value)
+		checkText(document.getElementById("appbundle_empresa_descripcion").value)
+		//checkWeb(document.getElementById("appbundle_empresa_web").value)
 		) {
-		document.getElementById("appbundle_empresa_enviar").removeAttribute("disabled");
+		console.log('entra');
+		if (document.getElementsByTagName('H3')[0].innerHTML == "Edicion de la empresa") {
+			if (document.getElementById("appbundle_empresa_password_first").value=='' &&
+				document.getElementById("appbundle_empresa_password_second").value=='') {
+				console.log('here');
+				document.getElementById("appbundle_empresa_enviar").removeAttribute("disabled");
+			}
+			else {
+				if (
+				checkPass(document.getElementById("appbundle_empresa_password_first").value) &&
+				checkPass(document.getElementById("appbundle_empresa_password_second").value)
+				) {
+					document.getElementById("appbundle_empresa_enviar").removeAttribute("disabled");
+				}
+				else {
+					document.getElementById("appbundle_empresa_enviar").setAttribute("disabled", "disabled");
+				}
+			}
+		}
+		else {
+			if (
+			checkPass(document.getElementById("appbundle_empresa_password_first").value) &&
+			checkPass(document.getElementById("appbundle_empresa_password_second").value)
+			) {
+				document.getElementById("appbundle_empresa_enviar").removeAttribute("disabled");
+			}
+		}
 	}
 	else {
 		document.getElementById("appbundle_empresa_enviar").setAttribute("disabled", "disabled");
@@ -293,6 +345,12 @@ function checkTelefono(value) {
 
 function checkWeb(value) {
 	var re = /[-a-zA-Z0-9@:%_\+.~#?&//=]{2,256}\.[a-z]{2,4}\b(\/[-a-zA-Z0-9@:%_\+.~#?&//=]*)?/gi;
+	if (re.test(value)) return true;
+	else return false;
+}
+
+function checkText(value) {
+	var re = /^[0-9a-záéíóúÁÉÍÓÚñÑ ?¿!¡,.;:'-]+$/i;
 	if (re.test(value)) return true;
 	else return false;
 }
