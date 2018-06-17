@@ -208,17 +208,17 @@ document.getElementById("appbundle_empresa_telefono").onkeyup = function() {
 var errorWeb = false;
 document.getElementById("appbundle_empresa_web").onkeyup = function() {
 	var node = document.createElement("P");
-	var textnode = document.createTextNode("El campo  Sitio web no puede estar en blanco.");
+	var textnode = document.createTextNode("EJ: example.com");
 	node.appendChild(textnode);
 	node.setAttribute("style", "color: red");
 	node.setAttribute("id", "webReg");
 
-	if (!checkWeb(this.value) && errorWeb!=true) {
+	if (!checkWeb(this.value) && this.value!='' && errorWeb!=true) {
 		errorWeb = true;
 		this.after(node);
 		this.style.borderColor = "red";
 	}
-	else if (checkWeb(this.value)) {
+	else if (checkWeb(this.value) || this.value=='') {
 		errorWeb = false;
 		if (document.getElementById("webReg")!=null)
 		document.getElementById("webReg").remove();

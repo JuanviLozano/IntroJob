@@ -256,7 +256,7 @@ document.getElementById("appbundle_usuario_direccion").onkeyup = function() {
 		document.getElementById("dirReg").remove();
 		this.style.borderColor = "#5cb85c";
 	}
-	activateNextHabili();
+	//activateNextHabili();
 }
 
 var errorCod = false;
@@ -283,7 +283,7 @@ document.getElementById("appbundle_usuario_cod_postal").onkeyup = function() {
 
 function activateNextHabili() {
 	if (
-		checkDireccion(document.getElementById("appbundle_usuario_direccion").value) &&
+		//checkDireccion(document.getElementById("appbundle_usuario_direccion").value) &&
 		checkCodPostal(document.getElementById("appbundle_usuario_cod_postal").value)
 		) {
 		document.getElementById("habili-siguiente").removeAttribute("disabled");
@@ -355,13 +355,13 @@ document.getElementById("appbundle_usuario_especialidad").onkeyup = function() {
 		document.getElementById("espReg").remove();
 		this.style.borderColor = "#5cb85c";
 	}
-	activateSend();
+	//activateSend();
 }
 
 function activateSend() {
 	if (
-		checkTelefono(document.getElementById("appbundle_usuario_telefono").value) &&
-		checkEspecialidad(document.getElementById("appbundle_usuario_especialidad").value)
+		checkTelefono(document.getElementById("appbundle_usuario_telefono").value)
+		//checkEspecialidad(document.getElementById("appbundle_usuario_especialidad").value)
 		) {
 		document.getElementById("appbundle_usuario_Enviar").removeAttribute("disabled");
 	}
