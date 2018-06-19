@@ -77,7 +77,7 @@ class OfertaType extends AbstractType
                     'required' => false
                 ))
                 ->add('referencia', TextType::Class, array(
-                    'attr' => array('placeholder' => 'Ver a que se refiere'),
+                    'attr' => array('placeholder' => ''),
                     'required' => false
                 ))
                 ->add('categoria', TextType::Class, array(
@@ -97,7 +97,7 @@ class OfertaType extends AbstractType
                     'required' => false
                 ))
                 ->add('personalCargo', TextType::Class, array(
-                    'attr' => array('placeholder' => 'CEO'),
+                    'attr' => array('placeholder' => ''),
                     'required' => false
                 ))
                 ->add('estado', ChoiceType::Class, array(
