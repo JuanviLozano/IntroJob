@@ -26,7 +26,7 @@ class IdiomaController extends Controller
             $em->persist($idioma);
             $em->flush();
 
-            $this->addFlash('mensaje','El idioma ha sido creado correctamente!');
+            $this->addFlash('mensajeIdio','El idioma ha sido creado correctamente!');
 
             return $this->redirectToRoute('addIdioma');
         }
@@ -68,6 +68,8 @@ class IdiomaController extends Controller
         $em = $this->getDoctrine()->getManager();
         $em->remove($idioma);
         $em->flush();
+
+        $this->addFlash('mensaje', 'Idioma eliminado correctamente!');
 
         return $this->redirectToRoute('perfil');
     }

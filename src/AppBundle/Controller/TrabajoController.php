@@ -12,7 +12,7 @@ class TrabajoController extends Controller
     {
         $trabajos = $this->getDoctrine()
                          ->getRepository(Oferta::Class)
-                         ->findAll();
+                         ->descendente();
 
         $paginator = $this->get('knp_paginator');
         $pagination = $paginator->paginate(
@@ -23,5 +23,4 @@ class TrabajoController extends Controller
             'pagination' => $pagination
         ));
     }
-
 }

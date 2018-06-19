@@ -26,7 +26,7 @@ class ExperienciaController extends Controller
             $em->persist($experiencia);
             $em->flush();
 
-            $this->addFlash('mensaje', 'Experiencia laboral creada correctamente!');
+            $this->addFlash('mensajeExp', 'Experiencia laboral creada correctamente!');
 
             return $this->redirectToRoute('addExperiencia');
         }
@@ -69,6 +69,8 @@ class ExperienciaController extends Controller
         $em = $this->getDoctrine()->getManager();
         $em->remove($experiencia);
         $em->flush();
+
+        $this->addFlash('mensaje', 'Experiencia eliminada correctamente!');
 
         return $this->redirectToRoute('perfil');
     }
