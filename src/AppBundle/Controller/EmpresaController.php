@@ -71,7 +71,7 @@ class EmpresaController extends Controller
 
             $this->addFlash('mensaje', 'Se han realizado los cambios correctamente');
 
-            return $this->redirectToRoute('editEmpresa');
+            return $this->redirectToRoute('empresa');
         }
 
         return $this->render('empresarios/perfil-empresa/editar-empresa.html.twig', array(
