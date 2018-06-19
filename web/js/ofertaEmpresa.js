@@ -41,7 +41,7 @@ document.getElementById("appbundle_oferta_salarioInicio").onkeyup = function() {
 		this.after(node);
 		this.style.borderColor = "red";
 	}
-	else if (checkSalMin(this.value) && salIVal<salFVal) {
+	else if ((checkSalMin(this.value) && salIVal<salFVal)|| this.value=='') {
 		errorSalI = false;
 		if (document.getElementById("salIOfer")!=null)
 		document.getElementById("salIOfer").remove();
@@ -51,6 +51,7 @@ document.getElementById("appbundle_oferta_salarioInicio").onkeyup = function() {
 		document.getElementById("salMaxInfo").remove();
 		document.getElementById("appbundle_oferta_salarioFin").style.borderColor = "#5cb85c";
 	}
+    if (this.value=='') this.style.borderColor = "#e8ecec";
 	activateSendOfer();
 }
 
@@ -70,7 +71,7 @@ document.getElementById("appbundle_oferta_salarioFin").onkeyup = function() {
 		this.after(node);
 		this.style.borderColor = "red";
 	}
-	else if (checkSalMin(this.value) && salIVal<salFVal) {
+	else if ((checkSalMin(this.value) && salIVal<salFVal) || this.value=='') {
 		errorSalF = false;
 		if (document.getElementById("salMaxInfo")!=null)
 		document.getElementById("salMaxInfo").remove();
@@ -80,6 +81,7 @@ document.getElementById("appbundle_oferta_salarioFin").onkeyup = function() {
 		document.getElementById("salIOfer").remove();
 		document.getElementById("appbundle_oferta_salarioInicio").style.borderColor = "#5cb85c";
 	}
+    if (this.value=='') this.style.borderColor = "#e8ecec";
 	activateSendOfer();
 }
 
@@ -342,8 +344,8 @@ document.getElementById("appbundle_oferta_duracionContrato").onkeyup = function(
 function activateSendOfer() {
 	if (
 		checkText(document.getElementById("appbundle_oferta_titulo").value) &&
-		checkSalMin(document.getElementById("appbundle_oferta_salarioInicio").value) &&
-		checkSalMin(document.getElementById("appbundle_oferta_salarioFin").value) &&
+		//zcheckSalMin(document.getElementById("appbundle_oferta_salarioInicio").value) &&
+		//checkSalMin(document.getElementById("appbundle_oferta_salarioFin").value) &&
 		// checkText(document.getElementById("appbundle_oferta_experienciaMin").value) &&
 		// checkText(document.getElementById("appbundle_oferta_estudiosMin").value) &&
 		// checkText(document.getElementById("appbundle_oferta_categoria").value) &&
