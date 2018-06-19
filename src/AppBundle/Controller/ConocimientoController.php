@@ -26,7 +26,7 @@ class ConocimientoController extends Controller
             $em->persist($conocimiento);
             $em->flush();
 
-            $this->addFlash('mensaje', 'Conocimiento creado correctamente!');
+            $this->addFlash('mensajeCono', 'Conocimiento creado correctamente!');
 
             return $this->redirectToRoute('addConocimiento');
         }
@@ -60,9 +60,19 @@ class ConocimientoController extends Controller
         ));
     }
 
-    public function deleteConocimientoAction()
+    public function deleteConocimientoAction(Usu_conocimiento $conocimiento)
     {
-        return $this->render('curriculum/conocimiento/delete_curriculum.html.twig');
+        if($conocimiento->getUsuario() != $this->getUser()) {
+            throw new AccessDeniedHttpException();
+        }
+
+        $em = $this->getDoctrine()->getManager();
+        $em->remove($conocimiento);
+        $em->flush();
+
+        $this->addFlash('mensaje', 'Conocimiento eliminado correctamente!');
+
+        return $this->redirectToRoute('perfil');
     }
 
 }

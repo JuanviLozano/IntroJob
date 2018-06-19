@@ -51,4 +51,13 @@ class OfertaRepository extends \Doctrine\ORM\EntityRepository
 
         return $result->getResult();
     }
+
+    public function descendente()
+    {
+        $result = $this->getEntityManager()
+            ->createQuery('SELECT o
+                                FROM AppBundle:Oferta o ORDER BY o.id DESC');
+
+        return $result->getResult();
+    }
 }

@@ -26,7 +26,7 @@ class EducacionController extends Controller
             $em->persist($educacion);
             $em->flush();
 
-            $this->addFlash('mansaje', 'La educación ha sido insertada correctamente!');
+            $this->addFlash('mansajeEdu', 'La educación ha sido insertada correctamente!');
 
             return $this->redirectToRoute('addEducacion');
         }
@@ -51,7 +51,7 @@ class EducacionController extends Controller
             $em->persist($educacion);
             $em->flush();
 
-            $this->addFlash('mensaje', 'La educación ha sido insertada correctamente!');
+            $this->addFlash('mensaje', 'Educación editada correctamente!');
 
             return $this->redirectToRoute('perfil');
         }
@@ -70,6 +70,8 @@ class EducacionController extends Controller
         $em = $this->getDoctrine()->getManager();
         $em->remove($educacion);
         $em->flush();
+
+        $this->addFlash('mensaje', 'Educación eliminada correctamente!');
 
         return $this->redirectToRoute('perfil');
     }

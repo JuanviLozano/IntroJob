@@ -25,7 +25,7 @@ class InformacionController extends Controller
             $em->persist($informacion);
             $em->flush();
 
-            $this->addFlash('mensaje', 'Información insertada correctamente!');
+            $this->addFlash('mensajeInfo', 'Información insertada correctamente!');
 
             return $this->redirectToRoute('perfil');
         }
@@ -49,7 +49,7 @@ class InformacionController extends Controller
             $em->persist($informacion);
             $em->flush();
 
-            $this->addFlash('mensaje', 'Su información ha sido enditada correctamente!');
+            $this->addFlash('mensaje', 'Su información ha sido editada correctamente!');
 
             return $this->redirectToRoute('perfil');
         }
