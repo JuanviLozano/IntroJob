@@ -37,9 +37,11 @@ document.getElementById("appbundle_oferta_salarioInicio").onkeyup = function() {
 	var salFVal = parseInt(document.getElementById("appbundle_oferta_salarioFin").value);
 
 	if ((!checkSalMin(this.value) || salIVal>=salFVal) && errorSalI!=true) {
-		errorSalI = true;
-		this.after(node);
-		this.style.borderColor = "red";
+		if (document.getElementById("appbundle_oferta_salarioInicio").value!='') {
+			errorSalI = true;
+			this.after(node);
+			this.style.borderColor = "red";
+		}
 	}
 	else if ((checkSalMin(this.value) && salIVal<salFVal)|| this.value=='') {
 		errorSalI = false;
@@ -67,9 +69,11 @@ document.getElementById("appbundle_oferta_salarioFin").onkeyup = function() {
 	var salFVal = parseInt(document.getElementById("appbundle_oferta_salarioFin").value);
 
 	if ((!checkSalMin(this.value) || salIVal>=salFVal) && errorSalF!=true) {
-		errorSalF = true;
-		this.after(node);
-		this.style.borderColor = "red";
+		if (document.getElementById("appbundle_oferta_salarioFin").value!='') {
+			errorSalF = true;
+			this.after(node);
+			this.style.borderColor = "red";
+		}
 	}
 	else if ((checkSalMin(this.value) && salIVal<salFVal) || this.value=='') {
 		errorSalF = false;
@@ -344,8 +348,11 @@ document.getElementById("appbundle_oferta_duracionContrato").onkeyup = function(
 function activateSendOfer() {
 	if (
 		checkText(document.getElementById("appbundle_oferta_titulo").value) &&
-		//zcheckSalMin(document.getElementById("appbundle_oferta_salarioInicio").value) &&
-		//checkSalMin(document.getElementById("appbundle_oferta_salarioFin").value) &&
+		((checkSalMin(document.getElementById("appbundle_oferta_salarioInicio").value) &&
+		checkSalMin(document.getElementById("appbundle_oferta_salarioFin").value) ||
+		(document.getElementById("appbundle_oferta_salarioInicio").value=='' &&
+		document.getElementById("appbundle_oferta_salarioFin").value=='')
+		)) &&
 		// checkText(document.getElementById("appbundle_oferta_experienciaMin").value) &&
 		// checkText(document.getElementById("appbundle_oferta_estudiosMin").value) &&
 		// checkText(document.getElementById("appbundle_oferta_categoria").value) &&
