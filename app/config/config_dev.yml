@@ -40,4 +40,4 @@ monolog:
 swiftmailer:
     transport: gmail
     username:  juanvi.lozano96@gmail.com
-    password:  9999
+    password:  manolotieneUnpedo
